@@ -1,0 +1,82 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const p    = Astro.url.pathname
+
+function active(segment: string): boolean {
+  if (segment === '') return p === base + '/' || p === base || p === base + '/index.html'
+  return p.startsWith(base + '/' + segment)
+}
+
+const linkClass = (segment: string) =>
+  `text-[0.78rem] tracking-[0.13em] uppercase transition-colors duration-200 ${
+    active(segment) ? 'text-gold' : 'text-white/65 hover:text-white'
+  }`
+---
+
+<nav id="navbar"
+     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+     style="background:transparent;">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Logo -->
+      <a href={`${base}/`} class="flex items-center gap-3 group">
+        <img src={`${base}/logo.jpeg`} alt="ARSOLVING"
+             class="w-10 h-10 rounded-full object-contain bg-white shadow-sm" />
+        <div class="flex flex-col leading-none">
+          <span class="font-heading text-[1.15rem] tracking-widest text-white">
+            <span class="font-bold">AR</span><span class="font-light text-gold">SOLVING</span>
+          </span>
+          <span class="text-[0.58rem] tracking-[0.22em] uppercase text-gold/60 mt-0.5">
+            Premium Multiservice Group
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden lg:flex items-center gap-7">
+        <a href={`${base}/`}              class={linkClass('')}>Home</a>
+        <a href={`${base}/il-gruppo/`}    class={linkClass('il-gruppo')}>Il Gruppo</a>
+        <a href={`${base}/services/`}     class={linkClass('services')}>Services</a>
+        <a href={`${base}/digital/`}      class={linkClass('digital')}>Digital</a>
+        <a href={`${base}/projects/`}     class={linkClass('projects')}>Projects</a>
+        <a href={`${base}/contatti/`}     class={linkClass('contatti')}>Contatti</a>
+        <a href={`${base}/contatti/`}
+           class="ml-2 text-[0.75rem] tracking-[0.14em] uppercase font-medium
+                  text-gold border border-gold/50 px-5 py-2.5 rounded
+                  hover:bg-gold hover:text-navy-dark transition-all duration-200">
+          Richiedi una consulenza
+        </a>
+      </div>
+
+      <!-- Hamburger -->
+      <button id="hamburger"
+              class="lg:hidden flex flex-col gap-[5px] p-1.5 text-white"
+              aria-label="Apri menu" aria-expanded="false">
+        <span class="block w-6 h-px bg-white transition-all"></span>
+        <span class="block w-6 h-px bg-white transition-all"></span>
+        <span class="block w-4 h-px bg-white transition-all"></span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-navy-dark border-t border-gold/10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col">
+      <a href={`${base}/`}           class="py-3 border-b border-white/6 text-[0.88rem] tracking-[0.12em] uppercase text-white/65 hover:text-gold transition-colors">Home</a>
+      <a href={`${base}/il-gruppo/`} class="py-3 border-b border-white/6 text-[0.88rem] tracking-[0.12em] uppercase text-white/65 hover:text-gold transition-colors">Il Gruppo</a>
+      <a href={`${base}/services/`}  class="py-3 border-b border-white/6 text-[0.88rem] tracking-[0.12em] uppercase text-white/65 hover:text-gold transition-colors">Services</a>
+      <a href={`${base}/digital/`}   class="py-3 border-b border-white/6 text-[0.88rem] tracking-[0.12em] uppercase text-white/65 hover:text-gold transition-colors">Digital</a>
+      <a href={`${base}/projects/`}  class="py-3 border-b border-white/6 text-[0.88rem] tracking-[0.12em] uppercase text-white/65 hover:text-gold transition-colors">Projects</a>
+      <a href={`${base}/contatti/`}  class="py-3 border-b border-white/6 text-[0.88rem] tracking-[0.12em] uppercase text-white/65 hover:text-gold transition-colors">Contatti</a>
+      <a href={`${base}/contatti/`}  class="mt-5 text-center text-[0.82rem] tracking-[0.14em] uppercase text-gold border border-gold/50 py-3 rounded hover:bg-gold hover:text-navy-dark transition-all">
+        Richiedi una consulenza
+      </a>
+    </div>
+  </div>
+
+</nav>
+
+<script src="../scripts/nav.js"></script>

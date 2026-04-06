@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy:       #1D2D50;
+  --color-navy-dark:  #141e38;
+  --color-navy-light: #253660;
+  --color-gold:       #B5973A;
+  --color-gold-light: #C9AC52;
+  --color-gold-pale:  #f0e6c8;
+  --color-cream:      #F7F7F5;
+
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Inter', 'Helvetica Neue', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Font utility ── */
+.font-heading { font-family: var(--font-heading); }
+
+/* ── Reveal on scroll ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* ── Keyframes ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes pulse-ring {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50%       { transform: scale(1.06); opacity: 0.25; }
+}
+@keyframes bounce-y {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float        { animation: float 5s ease-in-out infinite; }
+.animate-pulse-ring   { animation: pulse-ring 3.5s ease-in-out infinite; }
+.animate-pulse-ring2  { animation: pulse-ring 3.5s ease-in-out 0.8s infinite; }
+.animate-bounce-scroll { animation: bounce-y 2s ease-in-out infinite; }
+.animate-fade-in-up   { animation: fade-in-up 0.7s ease both; }
+
+/* ── Division card hover line ── */
+.division-card {
+  position: relative;
+  overflow: hidden;
+}
+.division-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #B5973A, #C9AC52);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.division-card:hover::after { transform: scaleX(1); }
+
+/* ── Step connector ── */
+.step-connector {
+  position: absolute;
+  top: 26px;
+  left: calc(12.5% + 26px);
+  right: calc(12.5% + 26px);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(181,151,58,0.5) 0%, rgba(181,151,58,0.1) 100%);
+  pointer-events: none;
+}
+
+/* ── Page hero (inner pages) ── */
+.page-hero {
+  padding-top: 140px;
+  padding-bottom: 80px;
+  background: #141e38;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(181,151,58,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(181,151,58,0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}

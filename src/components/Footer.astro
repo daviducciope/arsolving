@@ -1,0 +1,105 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const year = new Date().getFullYear()
+---
+
+<footer class="bg-[#0d1525]">
+
+  <!-- Main footer -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <a href={`${base}/`} class="flex items-center gap-3 mb-5 group w-fit">
+          <img src={`${base}/logo.jpeg`} alt="ARSOLVING"
+               class="w-10 h-10 rounded-full object-contain bg-white" />
+          <div class="leading-none">
+            <div class="font-heading text-[1.1rem] text-white tracking-widest">
+              <span class="font-bold">AR</span><span class="font-light text-gold">SOLVING</span>
+            </div>
+            <div class="text-[0.58rem] tracking-[0.2em] uppercase text-gold/50 mt-0.5">
+              Premium Multiservice Group
+            </div>
+          </div>
+        </a>
+        <p class="font-heading italic text-gold/45 text-[0.9rem] mb-5">
+          Global Vision / Arsolv' Mindset
+        </p>
+        <p class="text-[0.83rem] text-white/28 leading-[1.8] max-w-xs">
+          Partner strategici per la crescita del tuo business.
+          Un unico interlocutore, competenze complementari, metodo rigoroso.
+        </p>
+      </div>
+
+      <!-- Navigazione -->
+      <div>
+        <h5 class="text-[0.68rem] tracking-[0.22em] uppercase text-gold mb-6">Navigazione</h5>
+        <ul class="flex flex-col gap-3">
+          <li><a href={`${base}/`}           class="text-[0.83rem] text-white/35 hover:text-white/70 transition-colors duration-200">Home</a></li>
+          <li><a href={`${base}/il-gruppo/`} class="text-[0.83rem] text-white/35 hover:text-white/70 transition-colors duration-200">Il Gruppo</a></li>
+          <li><a href={`${base}/services/`}  class="text-[0.83rem] text-white/35 hover:text-white/70 transition-colors duration-200">Arsolving Services</a></li>
+          <li><a href={`${base}/digital/`}   class="text-[0.83rem] text-white/35 hover:text-white/70 transition-colors duration-200">Arsolving Digital</a></li>
+          <li><a href={`${base}/projects/`}  class="text-[0.83rem] text-white/35 hover:text-white/70 transition-colors duration-200">Projects</a></li>
+          <li><a href={`${base}/contatti/`}  class="text-[0.83rem] text-white/35 hover:text-white/70 transition-colors duration-200">Contatti</a></li>
+        </ul>
+      </div>
+
+      <!-- Contatti -->
+      <div>
+        <h5 class="text-[0.68rem] tracking-[0.22em] uppercase text-gold mb-6">Contatti</h5>
+        <ul class="flex flex-col gap-3">
+          <li class="text-[0.83rem] text-white/35">info@arsolving.com</li>
+          <li class="text-[0.83rem] text-white/35">+39 000 000 0000</li>
+          <li class="text-[0.83rem] text-white/35">Italia</li>
+        </ul>
+        <a href={`${base}/contatti/`}
+           class="inline-block mt-7 text-[0.72rem] tracking-[0.16em] uppercase
+                  text-gold border border-gold/40 px-5 py-2.5 rounded
+                  hover:bg-gold hover:text-navy-dark transition-all duration-200">
+          Richiedi una consulenza
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Sostanza — brand operativo territoriale -->
+    <div class="border-t border-white/6 pt-10 pb-2">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+        <div class="flex items-start gap-5">
+          <div class="w-px h-10 bg-gold/30 flex-shrink-0 mt-1 hidden md:block"></div>
+          <div>
+            <div class="text-[0.65rem] tracking-[0.2em] uppercase text-white/25 mb-1.5">
+              Brand operativo territoriale
+            </div>
+            <div class="font-heading text-white/50 text-[1.05rem] tracking-wider">
+              Sostanza
+            </div>
+            <p class="text-[0.78rem] text-white/22 mt-1 max-w-sm leading-relaxed">
+              Presidio operativo dedicato alla gestione professionale dei rifiuti
+              condominiali sul territorio. Stessi standard. Diverso brand.
+            </p>
+          </div>
+        </div>
+        <a href="#"
+           class="self-start md:self-center text-[0.68rem] tracking-[0.14em] uppercase
+                  text-white/30 border border-white/12 px-4 py-2 rounded
+                  hover:border-white/25 hover:text-white/50 transition-all duration-200 whitespace-nowrap">
+          Vai a Sostanza →
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex flex-col md:flex-row justify-between items-center gap-3">
+      <p class="text-[0.72rem] text-white/18">
+        © {year} ARSOLVING — Premium Multiservice Group. Tutti i diritti riservati.
+      </p>
+      <p class="text-[0.72rem] text-white/18">P.IVA: IT00000000000</p>
+    </div>
+  </div>
+
+</footer>
