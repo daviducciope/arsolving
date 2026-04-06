@@ -6,44 +6,44 @@ const services = [
   {
     n: '01',
     title: 'Edifici & Condomini',
-    desc: 'Gestione integrata degli spazi condominiali e delle aree comuni. Programmazione degli interventi, coordinamento con amministratori e supervisione continuativa della qualità.',
-    tags: ['Aree comuni', 'Coordinamento', 'Programmazione'],
+    desc: 'Gestione integrata degli spazi condominiali e delle aree comuni. Pianificazione degli interventi, coordinamento con amministratori e supervisione continuativa della qualità.',
+    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
   },
   {
     n: '02',
     title: 'Isole Ecologiche',
-    desc: 'Gestione professionale delle isole ecologiche condominiali e di quartiere. Organizzazione dei flussi, pulizia strutturata, rispetto dei protocolli normativi locali.',
-    tags: ['Rifiuti', 'Normativa', 'Presidio'],
+    desc: 'Gestione professionale delle isole ecologiche condominiali e di quartiere. Organizzazione dei flussi, pulizia strutturata e rispetto dei protocolli normativi locali.',
+    icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
   },
   {
     n: '03',
     title: 'Pulizie Professionali',
-    desc: 'Servizi di pulizia con standard industriali per uffici, spazi commerciali, edifici residenziali e strutture. Protocolli documentati, materiali certificati, personale formato.',
-    tags: ['Uffici', 'Residenziale', 'Commerciale'],
+    desc: 'Servizi di pulizia con standard industriali per uffici, spazi commerciali e residenziali. Protocolli documentati, materiali certificati, personale qualificato.',
+    icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
   },
   {
     n: '04',
-    title: 'Cura del Verde',
-    desc: 'Manutenzione di aree verdi private e condominiali. Taglio, potatura, trattamenti stagionali e ripristino. Pianificazione annuale degli interventi su richiesta.',
-    tags: ['Giardini', 'Aree esterne', 'Stagionale'],
+    title: 'Gestione Aree Verdi',
+    desc: 'Manutenzione programmata di aree verdi private e condominiali. Taglio, potatura, trattamenti stagionali e ripristino. Pianificazione annuale su richiesta.',
+    icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064',
   },
   {
     n: '05',
-    title: 'Piccole Manutenzioni',
-    desc: 'Interventi di manutenzione ordinaria e straordinaria per edifici e spazi: idraulica leggera, elettricità di base, riparazioni, ripristini estetici. Tempistica rapida e tracciata.',
-    tags: ['Rapidità', 'Tracciabilità', 'Multidisciplina'],
+    title: 'Manutenzione Ordinaria',
+    desc: 'Interventi di manutenzione per edifici e spazi: idraulica, elettricità di base, riparazioni, ripristini estetici. Tempistica rapida, ogni intervento tracciato.',
+    icon: 'M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z',
   },
   {
     n: '06',
     title: 'Facility Management',
-    desc: 'Supervisione e coordinamento di tutti i servizi operativi per strutture complesse. Un referente unico gestisce fornitori, schedulazioni e reportistica per il cliente.',
-    tags: ['Coordinamento', 'Reporting', 'Referente unico'],
+    desc: 'Supervisione e coordinamento di tutti i servizi operativi per strutture complesse. Un referente unico gestisce fornitori, programmazione e reportistica.',
+    icon: 'M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2',
   },
 ]
 ---
 
 <Base title="Arsolving Services"
-      description="Arsolving Services — servizi operativi integrati per edifici, condomini, spazi e facility management.">
+      description="Arsolving Services — gestione operativa di edifici, strutture e spazi. Facility management, isole ecologiche, manutenzione, pulizie.">
 
   <!-- Hero -->
   <div class="page-hero">
@@ -56,20 +56,20 @@ const services = [
         Services
       </h1>
       <p class="text-[1.05rem] text-white/48 leading-[1.8] max-w-xl">
-        Servizi operativi integrati per edifici, spazi e strutture.
-        Un presidio professionale sul territorio, con standard di gruppo.
+        Gestione operativa professionale per edifici, strutture e spazi.
+        Protocolli documentati, referente dedicato, standard uniformi.
       </p>
     </div>
   </div>
 
 
-  <!-- Intro -->
-  <section class="py-20 bg-white border-b border-gray-100">
+  <!-- ── Intro ── -->
+  <section class="py-24 bg-white border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="reveal">
           <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>L'approccio operativo
+            <span class="block w-7 h-px bg-gold"></span>L'approccio
           </div>
           <h2 class="font-heading font-semibold text-navy leading-[1.15]"
               style="font-size: clamp(1.8rem, 3vw, 2.4rem);">
@@ -78,13 +78,13 @@ const services = [
         </div>
         <div class="reveal delay-2">
           <p class="text-[1rem] text-gray-500 leading-[1.85] mb-5">
-            Arsolving Services è la divisione operativa del gruppo. Gestiamo gli spazi fisici
-            — edifici, aree esterne, isole ecologiche, impianti — con la stessa cura metodologica
+            Arsolving Services è la divisione operativa del gruppo. Gestiamo edifici,
+            aree esterne, isole ecologiche e strutture con la stessa cura metodologica
             che applichiamo ai servizi strategici e digitali.
           </p>
           <p class="text-[1rem] text-gray-500 leading-[1.85]">
-            Non siamo un'impresa generalista. Siamo un partner operativo che lavora con
-            protocolli documentati, reportistica trasparente e un referente dedicato per ogni cliente.
+            Non siamo un'impresa generalista. Lavoriamo con protocolli documentati,
+            reportistica trasparente e un referente dedicato per ogni cliente.
           </p>
         </div>
       </div>
@@ -92,40 +92,37 @@ const services = [
   </section>
 
 
-  <!-- Services grid -->
+  <!-- ── Servizi ── -->
   <section class="py-28 bg-cream">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="reveal mb-14 text-center">
         <div class="flex items-center justify-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">
-          <span class="block w-7 h-px bg-gold"></span>I servizi<span class="block w-7 h-px bg-gold"></span>
+          <span class="block w-7 h-px bg-gold"></span>Aree di intervento<span class="block w-7 h-px bg-gold"></span>
         </div>
         <h2 class="font-heading font-semibold text-navy leading-[1.15]"
             style="font-size: clamp(1.8rem, 3vw, 2.6rem);">
-          Aree di intervento
+          Cosa gestiamo
         </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {services.map((s, i) => (
           <div class={`reveal delay-${(i % 3) + 1} group bg-white border border-gray-100 rounded-lg p-8
-                       relative overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300`}>
+                       relative overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all duration-300`}>
+            <!-- Hover gradient top bar -->
             <div class="absolute top-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100
-                        transition-transform duration-400 origin-left"
+                        transition-transform duration-350 origin-left"
                  style="background: linear-gradient(90deg, #1D2D50, #B5973A);"></div>
             <div class="font-heading text-[2.8rem] font-bold text-gray-100 leading-none mb-4">{s.n}</div>
+            <!-- Icon -->
             <div class="w-10 h-10 bg-navy rounded flex items-center justify-center text-gold mb-5
                         group-hover:bg-gold group-hover:text-navy-dark transition-colors duration-300">
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d={s.icon}/>
               </svg>
             </div>
             <h3 class="text-[1rem] font-semibold text-navy mb-3">{s.title}</h3>
-            <p class="text-[0.87rem] text-gray-500 leading-[1.75] mb-5">{s.desc}</p>
-            <div class="flex flex-wrap gap-1.5">
-              {s.tags.map(t => (
-                <span class="text-[0.62rem] tracking-wide uppercase text-navy bg-gold-pale px-2.5 py-1 rounded-full">{t}</span>
-              ))}
-            </div>
+            <p class="text-[0.87rem] text-gray-500 leading-[1.78]">{s.desc}</p>
           </div>
         ))}
       </div>
@@ -133,12 +130,13 @@ const services = [
   </section>
 
 
-  <!-- Perché scegliere Services -->
+  <!-- ── Il vantaggio ── -->
   <section class="py-24 bg-navy-dark relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none"
          style="background: radial-gradient(ellipse 60% 60% at 20% 50%, rgba(181,151,58,0.05) 0%, transparent 60%);"></div>
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
         <div class="reveal">
           <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
             <span class="block w-7 h-px bg-gold"></span>Il vantaggio
@@ -148,42 +146,44 @@ const services = [
             Un referente.<br />Zero frammentazione.
           </h2>
           <p class="text-[1rem] text-white/48 leading-[1.85]">
-            Gestire edifici e strutture significa coordinare decine di variabili.
+            Gestire edifici e strutture significa coordinare più variabili in contemporanea.
             Con Arsolving Services hai un unico interlocutore che supervisiona tutto,
-            traccia ogni intervento e risponde in modo diretto.
+            traccia ogni intervento e risponde direttamente.
           </p>
         </div>
-        <div class="reveal delay-2 flex flex-col gap-4">
+
+        <div class="reveal delay-2 flex flex-col gap-0">
           {[
             'Protocolli operativi documentati per ogni servizio',
-            'Reportistica periodica trasparente al cliente',
-            'Referente dedicato per ogni struttura gestita',
-            'Interventi tracciati con tempi e responsabilità chiare',
-            'Standard qualitativi uniformi su tutti i servizi',
-          ].map(item => (
-            <div class="flex items-start gap-4">
-              <div class="w-5 h-5 rounded-full border border-gold/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+            'Reportistica periodica e trasparente',
+            'Referente dedicato per ogni struttura',
+            'Interventi tracciati con tempi e responsabilità definite',
+            'Standard qualitativi uniformi su tutti i fronti',
+          ].map((item, i) => (
+            <div class={`flex items-start gap-4 py-4 ${i > 0 ? 'border-t border-white/8' : ''}`}>
+              <div class="w-5 h-5 rounded-full border border-gold/35 flex items-center
+                          justify-center flex-shrink-0 mt-0.5">
                 <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
               </div>
-              <p class="text-[0.92rem] text-white/55 leading-[1.7]">{item}</p>
+              <p class="text-[0.9rem] text-white/52 leading-[1.7]">{item}</p>
             </div>
           ))}
         </div>
+
       </div>
     </div>
   </section>
 
 
-  <!-- CTA -->
+  <!-- ── CTA ── -->
   <section class="py-20 bg-white border-t border-gray-100">
     <div class="max-w-3xl mx-auto px-6 text-center reveal">
       <h2 class="font-heading font-semibold text-navy leading-[1.2] mb-5"
           style="font-size: clamp(1.8rem, 3vw, 2.4rem);">
-        Gestisci edifici o strutture?
+        Cerchi un partner operativo strutturato?
       </h2>
       <p class="text-[1rem] text-gray-400 leading-[1.8] mb-10">
-        Parliamoci. Valutiamo insieme come strutturare un servizio su misura
-        per le tue esigenze operative.
+        Analizziamo le tue esigenze e costruiamo insieme il presidio operativo più adatto.
       </p>
       <a href={`${base}/contatti/`}
          class="inline-block px-10 py-4 bg-gold text-navy-dark text-[0.8rem] font-semibold
