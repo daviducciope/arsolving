@@ -1,5 +1,4 @@
 ---
-import LogoFull from './LogoFull.astro'
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 const year = new Date().getFullYear()
 ---
@@ -9,8 +8,8 @@ const year = new Date().getFullYear()
 
     <!-- Logo grande in cima al footer -->
     <div class="border-b border-white/7 pb-10 mb-10">
-      <a href={`${base}/`} class="block max-w-sm hover:opacity-80 transition-opacity duration-200">
-        <LogoFull dark={false} showSub={true} height="60px" />
+      <a href={`${base}/`} class="block hover:opacity-80 transition-opacity duration-200 inline-block">
+        <img src={`${base}/logo2.jpeg`} alt="ARSOLVING" class="footer-logo-img" />
       </a>
       <p class="mt-5 text-white/36 text-[0.9rem] leading-[1.8] max-w-lg">
         Qualsiasi problema — operativo, digitale, logistico, commerciale.
@@ -59,3 +58,12 @@ const year = new Date().getFullYear()
     </div>
   </div>
 </footer>
+
+<style>
+.footer-logo-img {
+  display: block;
+  height: 72px;
+  width: auto;
+  border-radius: 4px;
+}
+</style>

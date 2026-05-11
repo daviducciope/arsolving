@@ -1,5 +1,4 @@
 ---
-import LogoFull from './LogoFull.astro'
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 const p    = Astro.url.pathname
 
@@ -18,14 +17,7 @@ function active(segment: string): boolean {
 
     <!-- ── LOGO ── -->
     <a href={`${base}/`} class="navbar-logo-link" aria-label="ARSOLVING — Home">
-      <!-- Full logo with subtitle (hidden when scrolled via CSS) -->
-      <div class="logo-full-state">
-        <LogoFull dark={false} showSub={true} height="54px" />
-      </div>
-      <!-- Compact logo without subtitle (shown when scrolled) -->
-      <div class="logo-compact-state">
-        <LogoFull dark={false} showSub={false} height="36px" />
-      </div>
+      <img src={`${base}/logo2.jpeg`} alt="ARSOLVING" class="navbar-logo-img" />
     </a>
 
     <!-- ── DESKTOP NAV ── -->
@@ -66,7 +58,7 @@ function active(segment: string): boolean {
   <div class="mobile-overlay-content">
 
     <div class="mobile-overlay-header">
-      <LogoFull dark={false} showSub={false} height="32px" />
+      <img src={`${base}/logo2.jpeg`} alt="ARSOLVING" class="mobile-logo-img" />
       <button onclick="document.getElementById('hamburger').click()"
               class="text-white/50 hover:text-white transition-colors p-2"
               aria-label="Chiudi menu">
@@ -145,12 +137,21 @@ function active(segment: string): boolean {
 }
 .navbar-logo-link:hover { opacity: 0.88; }
 
-/* Full logo (top) vs compact (scrolled) */
-.logo-full-state    { display: block; }
-.logo-compact-state { display: none; }
+.navbar-logo-img {
+  display: block;
+  height: 52px;
+  width: auto;
+  border-radius: 3px;
+  transition: height 0.38s ease;
+}
+.navbar-root.is-scrolled .navbar-logo-img { height: 36px; }
 
-.navbar-root.is-scrolled .logo-full-state    { display: none; }
-.navbar-root.is-scrolled .logo-compact-state { display: block; }
+.mobile-logo-img {
+  display: block;
+  height: 36px;
+  width: auto;
+  border-radius: 2px;
+}
 
 /* ══ DESKTOP LINKS ══ */
 .navbar-links {
