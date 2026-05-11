@@ -2,98 +2,27 @@
 import Base from '../layouts/Base.astro'
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
-const manifestoPoints = [
-  'Meno frammentazione',
-  'Più controllo',
-  'Più chiarezza',
-  'Più continuità',
-  'Un unico interlocutore',
-  'Una visione completa',
-]
-
-const framework = [
-  {
-    letter: 'A',
-    title: 'Analizzare',
-    text: 'Leggere il contesto, individuare criticità, priorità e possibilità.',
-  },
-  {
-    letter: 'R',
-    title: 'Ridurre complessità',
-    text: 'Eliminare dispersione, sovrapposizioni e passaggi inutili.',
-  },
-  {
-    letter: 'S',
-    title: 'Strutturare',
-    text: 'Creare processi, responsabilità, strumenti e direzioni chiare.',
-  },
-  {
-    letter: 'O',
-    title: 'Operare',
-    text: "Passare dalla strategia all'esecuzione concreta.",
-  },
-  {
-    letter: 'L',
-    title: 'Legare competenze',
-    text: 'Integrare ambiti diversi: operativo, digitale, gestionale, comunicativo.',
-  },
-  {
-    letter: 'V',
-    title: 'Valorizzare',
-    text: 'Generare continuità, ordine, percezione e valore nel tempo.',
-  },
+const method = [
+  ['A', 'Analizza', 'Legge il contesto reale.'],
+  ['R', 'Riduce', 'Taglia dispersioni e attriti.'],
+  ['S', 'Struttura', 'Ordina processi e responsabilità.'],
+  ['O', 'Opera', 'Porta metodo nell’esecuzione.'],
+  ['L', 'Lega', 'Connette competenze diverse.'],
+  ['V', 'Valorizza', 'Genera continuità e valore.'],
 ]
 
 const dimensions = [
-  {
-    title: 'Operativa',
-    text: 'Rendiamo più ordinati, efficienti e gestibili gli spazi, le strutture e le attività quotidiane.',
-    examples: 'Facility, manutenzione, gestione, presidio, continuità',
-    href: `${base}/services/`,
-  },
-  {
-    title: 'Digitale',
-    text: 'Costruiamo presenza, strumenti e linguaggi digitali coerenti con identità e obiettivi del progetto.',
-    examples: 'Identità, comunicazione, web, piattaforme, marketing',
-    href: `${base}/digital/`,
-  },
-  {
-    title: 'Strategica',
-    text: 'Affianchiamo idee, progetti e imprese nella costruzione di percorsi sostenibili e scalabili.',
-    examples: 'Partnership, sviluppo, iniziative, nuove opportunità',
-    href: `${base}/projects/`,
-  },
+  ['Operativa', 'Spazi, strutture, attività quotidiane.', 'Facility / gestione / continuità', `${base}/services/`],
+  ['Digitale', 'Identità, strumenti, presenza e linguaggi.', 'Brand / web / piattaforme', `${base}/digital/`],
+  ['Strategica', 'Idee, iniziative, partnership e crescita.', 'Sviluppo / regia / opportunità', `${base}/projects/`],
 ]
 
 const problems = [
-  {
-    title: 'Disordine operativo',
-    text: 'Quando attività, fornitori e responsabilità non sono coordinati.',
-  },
-  {
-    title: 'Identità poco chiara',
-    text: 'Quando un progetto ha valore, ma non riesce a comunicarlo.',
-  },
-  {
-    title: 'Processi frammentati',
-    text: 'Quando ogni parte funziona da sola, ma manca una regia.',
-  },
-  {
-    title: 'Crescita senza struttura',
-    text: "Quando un'idea o un'attività ha potenziale, ma non ha ancora sistema.",
-  },
-  {
-    title: 'Gestione senza continuità',
-    text: 'Quando servono presenza, controllo e affidabilità nel tempo.',
-  },
-]
-
-const process = [
-  'Problema grezzo',
-  'Lettura del contesto',
-  "Metodo Arsolv'",
-  'Soluzione integrata',
-  'Gestione continua',
+  'Disordine operativo',
+  'Identità debole',
+  'Processi frammentati',
+  'Crescita senza struttura',
+  'Gestione discontinua',
 ]
 ---
 
@@ -103,76 +32,90 @@ const process = [
 >
 
   <!-- Hero -->
-  <section id="mindset" class="relative min-h-[92vh] flex items-center bg-navy-dark overflow-hidden pt-20">
-    <div class="maze-grid absolute inset-0 pointer-events-none"></div>
-    <div class="gold-route absolute inset-x-0 top-[22%] h-px pointer-events-none"></div>
-    <div class="absolute inset-0 pointer-events-none"
-         style="background: radial-gradient(ellipse 70% 70% at 50% 45%, rgba(181,151,58,0.07) 0%, transparent 66%);"></div>
+  <section id="mindset" class="home-hero relative min-h-[100svh] overflow-hidden bg-[#07101f] pt-24 lg:pt-28">
+    <div class="stellar-field absolute inset-0 pointer-events-none"></div>
+    <div class="hero-grid absolute inset-0 pointer-events-none"></div>
+    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_74%_42%,rgba(181,151,58,0.18),transparent_29%),radial-gradient(circle_at_32%_64%,rgba(77,107,160,0.24),transparent_34%)]"></div>
 
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10 py-28 w-full">
-      <div class="max-w-4xl">
-        <div class="animate-fade-in-up flex items-center gap-4 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-8"
-             style="animation-delay:0.1s;">
-          <span class="block w-9 h-px bg-gold"></span>Arsolv' Mindset
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-10 min-h-[calc(100svh-7rem)] grid grid-cols-1 lg:grid-cols-[1fr_0.82fr] gap-10 lg:gap-16 items-center">
+      <div class="relative z-10 max-w-4xl py-12 lg:py-20">
+        <div class="animate-fade-in-up inline-flex items-center gap-3 rounded-full border border-gold/25 bg-white/[0.035] px-4 py-2 text-gold text-[0.68rem] tracking-[0.22em] uppercase mb-7"
+             style="animation-delay:0.05s;">
+          <span class="h-1.5 w-1.5 rounded-full bg-gold shadow-[0_0_18px_rgba(181,151,58,0.9)]"></span>
+          Arsolv' Mindset
         </div>
 
-        <h1 class="animate-fade-in-up font-heading font-semibold text-white leading-[0.98] mb-8"
-            style="font-size: clamp(3rem, 8vw, 6.8rem); animation-delay:0.22s;">
-          Trasformiamo complessità in sistemi.
+        <h1 class="animate-fade-in-up font-heading font-semibold text-white leading-[0.92] max-w-[11ch] mb-7"
+            style="font-size: clamp(4.1rem, 10vw, 9.5rem); animation-delay:0.16s;">
+          Caos. Metodo. Sistema.
         </h1>
 
-        <p class="animate-fade-in-up text-[1.05rem] md:text-[1.16rem] text-white/58 leading-[1.9] max-w-2xl mb-11"
-           style="animation-delay:0.36s;">
-          Arsolving è un gruppo nato per leggere problemi diversi, integrarli in una visione unica e trasformarli in sistemi operativi, digitali e strategici.
+        <p class="animate-fade-in-up text-[1.05rem] md:text-[1.2rem] text-white/68 leading-[1.7] max-w-2xl mb-9"
+           style="animation-delay:0.28s;">
+          Arsolving entra dove tutto è frammentato e costruisce una regia unica: operativa, digitale, strategica.
         </p>
 
-        <div class="animate-fade-in-up flex flex-wrap items-center gap-4"
-             style="animation-delay:0.5s;">
-          <a href="#arsolv"
-             class="px-8 py-3.5 bg-gold text-navy-dark text-[0.78rem] font-semibold tracking-[0.14em] uppercase rounded hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
-            Scopri l'Arsolv' Mindset
-          </a>
+        <div class="animate-fade-in-up flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10"
+             style="animation-delay:0.4s;">
           <a href={`${base}/contatti/`}
-             class="px-8 py-3.5 border border-white/22 text-white text-[0.78rem] tracking-[0.14em] uppercase rounded hover:border-gold/50 hover:text-gold transition-all duration-200">
-            Portaci una complessità
+             class="inline-flex justify-center px-7 py-4 bg-gold text-navy-dark text-[0.78rem] font-bold tracking-[0.16em] uppercase rounded hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
+            Avvia analisi
+          </a>
+          <a href="#arsolv"
+             class="inline-flex justify-center px-7 py-4 border border-white/24 text-white text-[0.78rem] font-semibold tracking-[0.16em] uppercase rounded hover:border-gold/60 hover:text-gold transition-all duration-200">
+            Vedi il metodo
           </a>
         </div>
-      </div>
-    </div>
 
-    <div class="animate-bounce-scroll absolute bottom-10 left-1/2">
-      <div class="flex flex-col items-center gap-2.5">
-        <span class="text-[0.58rem] tracking-[0.22em] uppercase text-white/28">Scroll</span>
-        <svg class="w-3.5 h-3.5 text-white/28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
-        </svg>
+        <div class="animate-fade-in-up grid grid-cols-3 gap-3 max-w-xl" style="animation-delay:0.52s;">
+          {['Problema', 'Regia', 'Sistema'].map((item, i) => (
+            <div class="border border-white/10 bg-white/[0.035] rounded p-4">
+              <div class="text-[0.62rem] tracking-[0.18em] uppercase text-gold/70 mb-2">0{i + 1}</div>
+              <div class="text-[0.82rem] font-semibold text-white">{item}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="relative hidden lg:flex items-center justify-center min-h-[560px]">
+        <div class="orbit-system">
+          <div class="orbit-ring orbit-ring-1"></div>
+          <div class="orbit-ring orbit-ring-2"></div>
+          <div class="orbit-ring orbit-ring-3"></div>
+          <div class="orbit-core">
+            <img src={`${base}/logo.jpeg`} alt="ARSOLVING" />
+          </div>
+          {method.map((step, i) => (
+            <div class={`orbit-node orbit-node-${i + 1}`}>
+              <span>{step[0]}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Manifesto -->
-  <section class="py-28 bg-white">
+  <section class="bg-white py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-18 items-start">
         <div class="reveal">
-          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>Manifesto
-          </div>
-          <h2 class="font-heading font-semibold text-navy leading-[1.12]"
-              style="font-size: clamp(2.1rem, 4vw, 3.25rem);">
-            Non partiamo dal servizio.<br />Partiamo dal problema.
+          <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">Cambio di paradigma</div>
+          <h2 class="font-heading font-semibold text-navy leading-[1.02] max-w-[12ch]"
+              style="font-size: clamp(2.6rem, 5vw, 5.2rem);">
+            Non siamo un catalogo.
           </h2>
         </div>
 
         <div class="reveal delay-2">
-          <p class="text-[1.02rem] text-gray-500 leading-[1.85] mb-9">
-            Ogni azienda, struttura o progetto porta con sé complessità diverse: operative, organizzative, comunicative, digitali. Arsolving nasce per affrontarle con un approccio integrato: analisi, metodo, esecuzione e continuità.
+          <p class="text-[1.18rem] lg:text-[1.35rem] leading-[1.55] text-navy/72 mb-8">
+            Partiamo dal problema, troviamo la struttura, coordiniamo le competenze. Il risultato non è una lista di servizi: è un sistema che funziona.
           </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {manifestoPoints.map((point) => (
-              <div class="flex items-center gap-3 py-3 border-b border-gray-100">
-                <span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span>
-                <span class="text-[0.86rem] text-navy/70">{point}</span>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {['Meno frammentazione', 'Più controllo', 'Una sola regia'].map((item) => (
+              <div class="bg-cream border border-gray-100 rounded p-5">
+                <div class="h-1 w-10 bg-gold mb-5"></div>
+                <p class="text-[0.92rem] font-semibold text-navy leading-snug">{item}</p>
               </div>
             ))}
           </div>
@@ -181,215 +124,119 @@ const process = [
     </div>
   </section>
 
-  <!-- Arsolv Framework -->
-  <section id="arsolv" class="py-28 bg-navy-dark relative overflow-hidden">
-    <div class="maze-grid absolute inset-0 pointer-events-none opacity-60"></div>
-    <div class="absolute inset-0 pointer-events-none"
-         style="background: radial-gradient(ellipse 70% 80% at 20% 10%, rgba(181,151,58,0.075) 0%, transparent 62%);"></div>
+  <!-- Method -->
+  <section id="arsolv" class="relative overflow-hidden bg-[#07101f] py-20 lg:py-28">
+    <div class="stellar-field absolute inset-0 pointer-events-none opacity-80"></div>
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent"></div>
 
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-end mb-16">
-        <div class="reveal lg:col-span-2">
-          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>Metodo proprietario
-          </div>
-          <h2 class="font-heading font-semibold text-white leading-[1.1] mb-5"
-              style="font-size: clamp(2.3rem, 5vw, 4rem);">
-            Arsolv' Mindset
-          </h2>
-          <p class="text-[1rem] text-white/50 leading-[1.85] max-w-2xl">
-            Un modo di leggere la complessità e trasformarla in struttura.
-          </p>
-        </div>
-        <p class="reveal delay-2 text-[0.95rem] text-white/42 leading-[1.8]">
-          La traccia dorata non è decorazione: rappresenta il percorso che rende leggibile ciò che prima era disperso.
+      <div class="reveal mb-12 lg:mb-16 max-w-3xl">
+        <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">A.R.S.O.L.V.</div>
+        <h2 class="font-heading font-semibold text-white leading-[1.02] mb-5"
+            style="font-size: clamp(2.7rem, 6vw, 6rem);">
+          Il metodo che mette ordine.
+        </h2>
+        <p class="text-[1rem] text-white/58 leading-[1.7] max-w-2xl">
+          Sei passaggi. Una direzione. Dalla complessità grezza a una struttura gestibile nel tempo.
         </p>
       </div>
 
-      <div class="relative">
-        <div class="hidden lg:block absolute left-0 right-0 top-[3.25rem] h-px bg-gradient-to-r from-gold/70 via-gold/35 to-gold/5"></div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5">
-          {framework.map((step, i) => (
-            <div class={`reveal delay-${Math.min(i + 1, 5)} relative bg-white/[0.035] border border-white/8 rounded p-6 min-h-[220px]`}>
-              <div class="relative z-10 w-14 h-14 rounded-full bg-navy-dark border border-gold/45 flex items-center justify-center mb-7">
-                <span class="font-heading text-[2.2rem] leading-none text-gold">{step.letter}</span>
-              </div>
-              <h3 class="text-[0.9rem] font-semibold text-white mb-3">{step.title}</h3>
-              <p class="text-[0.78rem] text-white/43 leading-[1.7]">{step.text}</p>
-            </div>
-          ))}
-        </div>
+      <div class="method-strip">
+        {method.map((step, i) => (
+          <div class={`reveal delay-${Math.min(i + 1, 5)} method-tile`}>
+            <div class="method-letter">{step[0]}</div>
+            <h3>{step[1]}</h3>
+            <p>{step[2]}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- Dimensions -->
-  <section id="cosa-risolviamo" class="py-28 bg-cream">
+  <section id="cosa-risolviamo" class="bg-cream py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal text-center mb-16">
-        <div class="flex items-center justify-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">
-          <span class="block w-7 h-px bg-gold"></span>Cosa risolviamo<span class="block w-7 h-px bg-gold"></span>
+      <div class="reveal flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
+        <div>
+          <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">Cosa risolviamo</div>
+          <h2 class="font-heading font-semibold text-navy leading-[1.02] max-w-[11ch]"
+              style="font-size: clamp(2.7rem, 5.6vw, 5.8rem);">
+            Tre campi. Una regia.
+          </h2>
         </div>
-        <h2 class="font-heading font-semibold text-navy leading-[1.15] mb-5"
-            style="font-size: clamp(2rem, 3.8vw, 3rem);">
-          Tre dimensioni. Un'unica logica di soluzione.
-        </h2>
-        <p class="text-[0.98rem] text-gray-500 leading-[1.8] max-w-2xl mx-auto">
-          Operativo, digitale e strategico restano ambiti distinti, ma vengono letti dentro una sola regia.
+        <p class="text-[1rem] text-navy/58 leading-[1.7] max-w-xl">
+          Non separiamo i problemi in reparti. Li leggiamo come parti dello stesso sistema.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-12">
         {dimensions.map((dimension, i) => (
-          <a href={dimension.href}
-             class={`division-card reveal delay-${i + 1} group block bg-white rounded-lg p-9 border border-gray-100 hover:border-gold/30 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300`}>
+          <a href={dimension[3]}
+             class={`solution-panel reveal delay-${i + 1} group`}>
             <div class="flex items-start justify-between mb-12">
-              <div class="font-heading text-[3.5rem] leading-none text-gold/24 group-hover:text-gold/40 transition-colors">
-                0{i + 1}
-              </div>
-              <svg class="w-5 h-5 text-navy/25 group-hover:text-gold group-hover:translate-x-1 transition-all duration-300"
-                   fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
+              <span class="text-[0.68rem] tracking-[0.22em] uppercase text-gold">0{i + 1}</span>
+              <span class="text-gold/60 group-hover:text-gold group-hover:translate-x-1 transition-all">→</span>
             </div>
-            <h3 class="font-heading font-semibold text-navy leading-none mb-5"
-                style="font-size: clamp(1.8rem, 2.8vw, 2.4rem);">{dimension.title}</h3>
-            <p class="text-[0.92rem] text-gray-500 leading-[1.8] mb-8">{dimension.text}</p>
-            <p class="text-[0.68rem] tracking-[0.13em] uppercase text-gold/80 leading-[1.7]">
-              {dimension.examples}
-            </p>
+            <h3>{dimension[0]}</h3>
+            <p>{dimension[1]}</p>
+            <div>{dimension[2]}</div>
           </a>
         ))}
       </div>
+
+      <div class="reveal delay-2 flex flex-wrap gap-3">
+        {problems.map((problem) => (
+          <span class="rounded-full border border-navy/10 bg-white px-4 py-2 text-[0.78rem] font-semibold text-navy/62">
+            {problem}
+          </span>
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- Problems -->
-  <section class="py-28 bg-white">
+  <!-- System flow -->
+  <section id="soluzioni-applicate" class="bg-white py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-14 lg:gap-20 items-start">
-        <div class="reveal">
-          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>Bisogni reali
-          </div>
-          <h2 class="font-heading font-semibold text-navy leading-[1.15] mb-6"
-              style="font-size: clamp(2rem, 3.4vw, 2.8rem);">
-          Risolviamo ciò che rallenta, disperde o complica.
+      <div class="system-flow reveal">
+        <div>
+          <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">Da problema a sistema</div>
+          <h2 class="font-heading font-semibold text-navy leading-[1.04] mb-6"
+              style="font-size: clamp(2.5rem, 5.2vw, 5.4rem);">
+            La soluzione non è l’intervento. È la struttura.
           </h2>
-          <p class="text-[0.96rem] text-gray-500 leading-[1.8]">
-            Il servizio arriva dopo. Prima c'è la lettura del contesto: cosa non funziona, cosa manca, cosa va ricondotto a sistema.
+          <p class="text-[1.02rem] text-navy/58 leading-[1.7] max-w-2xl">
+            Analisi, metodo, esecuzione e continuità diventano un unico percorso.
           </p>
         </div>
 
-        <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-5">
-          {problems.map((problem, i) => (
-            <div class={`reveal delay-${Math.min(i + 1, 5)} bg-cream rounded-lg border border-gray-100 p-7 ${i === 4 ? 'md:col-span-2' : ''}`}>
-              <div class="w-9 h-9 rounded-full bg-white border border-gold/20 flex items-center justify-center mb-6">
-                <span class="text-[0.72rem] font-semibold text-gold">0{i + 1}</span>
-              </div>
-              <h3 class="text-[0.94rem] font-semibold text-navy mb-3">{problem.title}</h3>
-              <p class="text-[0.84rem] text-gray-500 leading-[1.75]">{problem.text}</p>
+        <div class="flow-steps">
+          {['Contesto', 'Metodo', 'Sistema', 'Continuità'].map((item, i) => (
+            <div>
+              <span>0{i + 1}</span>
+              <strong>{item}</strong>
             </div>
           ))}
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Problem to system -->
-  <section class="py-28 bg-navy relative overflow-hidden">
-    <div class="absolute inset-0 pointer-events-none"
-         style="background: radial-gradient(ellipse 70% 60% at 30% 50%, rgba(181,151,58,0.06) 0%, transparent 60%);"></div>
-
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20 mb-16">
-        <div class="reveal">
-          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>Da problema a sistema
-          </div>
-          <h2 class="font-heading font-semibold text-white leading-[1.15]"
-              style="font-size: clamp(2rem, 3.4vw, 2.8rem);">
-            La risposta rapida non basta.
-          </h2>
-        </div>
-        <p class="reveal delay-2 lg:col-span-2 text-[1rem] text-white/52 leading-[1.85]">
-          Non cerchiamo la risposta più rapida. Cerchiamo la struttura più adatta. Una soluzione Arsolving non è un intervento isolato, ma un sistema pensato per funzionare nel tempo.
-        </p>
-      </div>
-
-      <div class="relative">
-        <div class="hidden lg:block absolute left-0 right-0 top-9 h-px bg-gradient-to-r from-gold/70 via-gold/35 to-transparent"></div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-          {process.map((item, i) => (
-            <div class={`reveal delay-${Math.min(i + 1, 5)} relative bg-navy-dark/55 border border-white/8 rounded p-6`}>
-              <div class="relative z-10 w-16 h-16 rounded-full bg-navy border border-gold/35 flex items-center justify-center mb-7">
-                <span class="font-heading text-gold text-[1.2rem]">0{i + 1}</span>
-              </div>
-              <h3 class="text-[0.86rem] font-semibold text-white leading-[1.5]">{item}</h3>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Applied solutions -->
-  <section id="soluzioni-applicate" class="py-28 bg-cream">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal max-w-3xl mb-14">
-        <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-          <span class="block w-7 h-px bg-gold"></span>Soluzioni applicate
-        </div>
-        <h2 class="font-heading font-semibold text-navy leading-[1.15] mb-5"
-            style="font-size: clamp(2rem, 3.6vw, 3rem);">
-          Metodo, operatività e visione trasformati in percorsi concreti.
-        </h2>
-        <p class="text-[0.98rem] text-gray-500 leading-[1.8]">
-          I casi digitali e progettuali vengono ricondotti alla logica problema, complessità, soluzione, risultato.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {[
-          ['Identità e presenza digitale', 'Un progetto con valore ma senza una comunicazione capace di renderlo leggibile.'],
-          ['Presidio operativo', 'Attività quotidiane frammentate tra fornitori, tempi e responsabilità non sempre chiari.'],
-          ['Sviluppo iniziativa', 'Un potenziale da validare prima di trasformarlo in struttura e investimento.'],
-        ].map((item, i) => (
-          <div class={`reveal delay-${i + 1} bg-white rounded-lg p-8 border border-gray-100`}>
-            <div class="text-[0.62rem] tracking-[0.22em] uppercase text-gold mb-5">Caso 0{i + 1}</div>
-            <h3 class="text-[0.95rem] font-semibold text-navy mb-4">{item[0]}</h3>
-            <p class="text-[0.84rem] text-gray-500 leading-[1.75] mb-7">{item[1]}</p>
-            <div class="grid grid-cols-2 gap-3 text-[0.68rem] tracking-[0.12em] uppercase text-navy/45">
-              <span>Contesto</span>
-              <span>Complessità</span>
-              <span>Soluzione</span>
-              <span>Direzione</span>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   </section>
 
   <!-- Final CTA -->
-  <section class="py-28 bg-navy-dark relative overflow-hidden">
-    <div class="gold-route absolute inset-x-0 top-0 h-px pointer-events-none"></div>
-    <div class="absolute inset-0 pointer-events-none"
-         style="background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(181,151,58,0.07) 0%, transparent 65%);"></div>
+  <section class="relative overflow-hidden bg-[#07101f] py-20 lg:py-28">
+    <div class="stellar-field absolute inset-0 pointer-events-none"></div>
+    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_100%,rgba(181,151,58,0.16),transparent_42%)]"></div>
 
-    <div class="relative max-w-3xl mx-auto px-6 text-center reveal">
-      <div class="flex items-center justify-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-        <span class="block w-7 h-px bg-gold"></span>Avvio analisi<span class="block w-7 h-px bg-gold"></span>
-      </div>
-      <h2 class="font-heading font-semibold text-white leading-[1.2] mb-5"
-          style="font-size: clamp(2rem, 4vw, 3rem);">
-        Hai una complessità da risolvere?
+    <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
+      <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">Avvio analisi</div>
+      <h2 class="font-heading font-semibold text-white leading-[1.02] mb-7"
+          style="font-size: clamp(3rem, 7vw, 7rem);">
+        Portaci il caos.
       </h2>
-      <p class="text-[1rem] text-white/50 leading-[1.8] mb-10">
-        Raccontaci il contesto. Lo analizziamo, lo ordiniamo e costruiamo il percorso più adatto.
+      <p class="text-[1.05rem] text-white/60 leading-[1.7] max-w-2xl mx-auto mb-9">
+        Lo leggiamo, lo ordiniamo e costruiamo il sistema più adatto.
       </p>
       <a href={`${base}/contatti/`}
-         class="inline-flex px-9 py-4 bg-gold text-navy-dark text-[0.8rem] font-semibold tracking-[0.16em] uppercase rounded hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
+         class="inline-flex px-8 py-4 bg-gold text-navy-dark text-[0.8rem] font-bold tracking-[0.16em] uppercase rounded hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
         Avvia il confronto
       </a>
     </div>

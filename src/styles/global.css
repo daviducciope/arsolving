@@ -9,8 +9,8 @@
   --color-gold-pale:  #f0e6c8;
   --color-cream:      #F7F7F5;
 
-  --font-heading: 'Cormorant Garamond', Georgia, serif;
-  --font-body:    'Inter', 'Helvetica Neue', sans-serif;
+  --font-heading: 'Sora', 'Helvetica Neue', sans-serif;
+  --font-body:    'Manrope', 'Helvetica Neue', sans-serif;
 }
 
 html {
@@ -29,7 +29,10 @@ body {
 }
 
 /* ── Font utility ── */
-.font-heading { font-family: var(--font-heading); }
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: 0;
+}
 
 /* ── Reveal on scroll ── */
 .reveal {
@@ -103,6 +106,256 @@ body {
 .gold-route {
   background:
     linear-gradient(90deg, transparent 0%, rgba(181,151,58,0.12) 12%, rgba(181,151,58,0.72) 42%, rgba(201,172,82,0.86) 58%, rgba(181,151,58,0.18) 84%, transparent 100%);
+}
+
+/* ── High-impact Home ── */
+.home-hero {
+  isolation: isolate;
+}
+
+.stellar-field {
+  background-image:
+    radial-gradient(circle at 12% 24%, rgba(255,255,255,0.34) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 82% 18%, rgba(181,151,58,0.48) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 28% 78%, rgba(255,255,255,0.24) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 68% 70%, rgba(201,172,82,0.34) 0 1px, transparent 1.5px);
+  background-size: 220px 220px, 280px 280px, 260px 260px, 320px 320px;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at 54% 44%, black 0%, transparent 72%);
+}
+
+.orbit-system {
+  position: relative;
+  width: min(42vw, 560px);
+  aspect-ratio: 1;
+}
+
+.orbit-system::before {
+  content: '';
+  position: absolute;
+  inset: 13%;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(181,151,58,0.16), transparent 62%);
+  filter: blur(8px);
+}
+
+.orbit-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(181,151,58,0.22);
+  box-shadow: inset 0 0 38px rgba(181,151,58,0.04);
+}
+
+.orbit-ring-1 { inset: 7%; animation: spin-slow 28s linear infinite; }
+.orbit-ring-2 { inset: 20%; border-color: rgba(255,255,255,0.13); animation: spin-slow 38s linear reverse infinite; }
+.orbit-ring-3 { inset: 33%; border-color: rgba(181,151,58,0.34); animation: spin-slow 22s linear infinite; }
+
+.orbit-core {
+  position: absolute;
+  inset: 38%;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.94);
+  box-shadow: 0 0 0 1px rgba(181,151,58,0.35), 0 0 80px rgba(181,151,58,0.24);
+}
+
+.orbit-core img {
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+  border-radius: 999px;
+}
+
+.orbit-node {
+  position: absolute;
+  width: 3.4rem;
+  height: 3.4rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(181,151,58,0.42);
+  border-radius: 999px;
+  background: rgba(7,16,31,0.82);
+  box-shadow: 0 0 36px rgba(181,151,58,0.14);
+}
+
+.orbit-node span {
+  color: #C9AC52;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.orbit-node-1 { top: 4%; left: 46%; }
+.orbit-node-2 { top: 22%; right: 6%; }
+.orbit-node-3 { right: 14%; bottom: 18%; }
+.orbit-node-4 { bottom: 3%; left: 45%; }
+.orbit-node-5 { left: 10%; bottom: 21%; }
+.orbit-node-6 { top: 24%; left: 4%; }
+
+.method-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.08);
+}
+
+.method-tile {
+  min-height: 15rem;
+  padding: 1.45rem;
+  background: rgba(255,255,255,0.035);
+  position: relative;
+  overflow: hidden;
+}
+
+.method-tile::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, #B5973A, transparent);
+}
+
+.method-letter {
+  color: rgba(201,172,82,0.2);
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.method-tile h3 {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 0.65rem;
+}
+
+.method-tile p {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.solution-panel {
+  display: block;
+  min-height: 24rem;
+  padding: 2rem;
+  border-radius: 0.35rem;
+  border: 1px solid rgba(29,45,80,0.1);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72)),
+    radial-gradient(circle at 100% 0%, rgba(181,151,58,0.16), transparent 34%);
+  transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.solution-panel:hover {
+  transform: translateY(-4px);
+  border-color: rgba(181,151,58,0.36);
+  box-shadow: 0 24px 70px rgba(20,30,56,0.1);
+}
+
+.solution-panel h3 {
+  color: #1D2D50;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.solution-panel p {
+  color: rgba(29,45,80,0.62);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 2.2rem;
+}
+
+.solution-panel div:last-child {
+  color: #B5973A;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.system-flow {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.flow-steps {
+  display: grid;
+  gap: 1px;
+  background: rgba(29,45,80,0.12);
+  border: 1px solid rgba(29,45,80,0.12);
+}
+
+.flow-steps div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 6.5rem;
+  padding: 1.4rem 1.6rem;
+  background: #F7F7F5;
+}
+
+.flow-steps span {
+  color: #B5973A;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.flow-steps strong {
+  color: #1D2D50;
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.5vw, 2.4rem);
+  line-height: 1;
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1023px) {
+  .method-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .method-tile {
+    min-height: 12rem;
+    padding: 1.2rem;
+  }
+
+  .solution-panel {
+    min-height: auto;
+  }
+
+  .system-flow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-hero h1 {
+    max-width: 8.5ch;
+  }
+
+  .method-strip {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── Step connector ── */

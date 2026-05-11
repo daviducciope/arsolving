@@ -8,7 +8,7 @@ function active(segment: string): boolean {
 }
 
 const linkClass = (segment: string) =>
-  `text-[0.78rem] tracking-[0.13em] uppercase transition-colors duration-200 ${
+  `text-[0.72rem] xl:text-[0.78rem] tracking-[0.11em] xl:tracking-[0.13em] uppercase transition-colors duration-200 ${
     active(segment) ? 'text-gold' : 'text-white/65 hover:text-white'
   }`
 ---
@@ -35,15 +35,15 @@ const linkClass = (segment: string) =>
       </a>
 
       <!-- Desktop links -->
-      <div class="hidden lg:flex items-center gap-7">
+      <div class="hidden xl:flex items-center gap-7">
         <a href={`${base}/`}              class={linkClass('')}>Mindset</a>
-        <a href={`${base}/#cosa-risolviamo`} class="text-[0.78rem] tracking-[0.13em] uppercase text-white/65 hover:text-white transition-colors duration-200">Cosa risolviamo</a>
-        <a href={`${base}/#arsolv`} class="text-[0.78rem] tracking-[0.13em] uppercase text-white/65 hover:text-white transition-colors duration-200">Come lavoriamo</a>
-        <a href={`${base}/#soluzioni-applicate`} class="text-[0.78rem] tracking-[0.13em] uppercase text-white/65 hover:text-white transition-colors duration-200">Soluzioni applicate</a>
+        <a href={`${base}/#cosa-risolviamo`} class="text-[0.72rem] xl:text-[0.78rem] tracking-[0.11em] xl:tracking-[0.13em] uppercase text-white/65 hover:text-white transition-colors duration-200">Cosa risolviamo</a>
+        <a href={`${base}/#arsolv`} class="text-[0.72rem] xl:text-[0.78rem] tracking-[0.11em] xl:tracking-[0.13em] uppercase text-white/65 hover:text-white transition-colors duration-200">Come lavoriamo</a>
+        <a href={`${base}/#soluzioni-applicate`} class="text-[0.72rem] xl:text-[0.78rem] tracking-[0.11em] xl:tracking-[0.13em] uppercase text-white/65 hover:text-white transition-colors duration-200">Soluzioni applicate</a>
         <a href={`${base}/il-gruppo/`}    class={linkClass('il-gruppo')}>Il Gruppo</a>
         <a href={`${base}/contatti/`}
-           class="ml-2 text-[0.75rem] tracking-[0.14em] uppercase font-medium
-                  text-gold border border-gold/50 px-5 py-2.5 rounded
+           class="ml-1 xl:ml-2 text-[0.7rem] xl:text-[0.75rem] tracking-[0.12em] xl:tracking-[0.14em] uppercase font-medium
+                  text-gold border border-gold/50 px-4 xl:px-5 py-2.5 rounded
                   hover:bg-gold hover:text-navy-dark transition-all duration-200">
           Avvia analisi
         </a>
@@ -51,7 +51,7 @@ const linkClass = (segment: string) =>
 
       <!-- Hamburger -->
       <button id="hamburger"
-              class="lg:hidden flex flex-col gap-[5px] p-1.5 text-white"
+              class="xl:hidden flex flex-col gap-[5px] p-1.5 text-white"
               aria-label="Apri menu" aria-expanded="false">
         <span class="block w-6 h-px bg-white transition-all"></span>
         <span class="block w-6 h-px bg-white transition-all"></span>
@@ -62,7 +62,7 @@ const linkClass = (segment: string) =>
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-navy-dark border-t border-gold/10">
+  <div id="mobile-menu" class="hidden xl:hidden bg-navy-dark border-t border-gold/10">
     <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col">
       <a href={`${base}/`}           class="py-3 border-b border-white/6 text-[0.88rem] tracking-[0.12em] uppercase text-white/65 hover:text-gold transition-colors">Mindset</a>
       <a href={`${base}/#cosa-risolviamo`} class="py-3 border-b border-white/6 text-[0.88rem] tracking-[0.12em] uppercase text-white/65 hover:text-gold transition-colors">Cosa risolviamo</a>
