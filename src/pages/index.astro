@@ -303,31 +303,37 @@ const method = [
 
 
   <!-- ═══ METODO ARSOLV ═══ -->
-  <section id="arsolv" class="py-20 lg:py-28 bg-off-white">
+  <section id="arsolv" class="arsolv-section">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
-      <div class="reveal mb-12 lg:mb-16">
-        <div class="label-chip mb-5">A.R.S.O.L.V.</div>
-        <div class="flex flex-col lg:flex-row lg:items-end gap-6">
-          <h2 class="font-display uppercase text-navy leading-[0.92]"
-              style="font-size: clamp(2.8rem, 6vw, 5.5rem);">
-            Il metodo dietro<br />ogni soluzione.
+      <!-- Header -->
+      <div class="reveal arsolv-header">
+        <div>
+          <div class="section-label mb-5">Metodo</div>
+          <h2 class="font-display uppercase text-white leading-[0.88]"
+              style="font-size: clamp(3rem, 6vw, 5.5rem);">
+            Il metodo dietro<br /><span class="text-gold">ogni soluzione.</span>
           </h2>
-          <p class="text-navy/50 text-[0.9rem] leading-[1.75] max-w-[40ch]">
-            La nostra capacità di problem solving non è improvvisazione — è metodo. Sei passaggi che trasformano qualsiasi problema in una soluzione strutturata, replicabile e duratura.
-          </p>
         </div>
+        <p class="text-white/38 text-[0.88rem] leading-[1.8] max-w-[38ch] lg:text-right">
+          Non è improvvisazione — è metodo. Sei passaggi che trasformano qualsiasi problema in una soluzione strutturata e duratura.
+        </p>
       </div>
 
-      <div class="method-strip">
+      <!-- Rows -->
+      <div class="arsolv-rows">
         {method.map((step, i) => (
-          <div class={`reveal delay-${Math.min(i + 1, 5)} method-tile`}>
-            <div class="method-letter">{step[0]}</div>
-            <h3>{step[1]}</h3>
-            <p>{step[2]}</p>
+          <div class={`reveal delay-${Math.min(i + 1, 5)} arsolv-row group`}>
+            <span class="arsolv-idx">0{i + 1}</span>
+            <span class="arsolv-ghost">{step[0]}</span>
+            <div class="arsolv-body">
+              <h3 class="arsolv-word">{step[1]}</h3>
+              <p class="arsolv-desc">{step[2]}</p>
+            </div>
           </div>
         ))}
       </div>
+
     </div>
   </section>
 
