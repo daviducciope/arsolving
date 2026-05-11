@@ -5,44 +5,38 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 const cases = [
   {
     tag: 'Operativa · Segnaletica',
-    title: 'Tabelle stradali in 24h',
-    problem: 'Una ditta appaltatrice non riusciva a reperire 10 tabelle per segnalare illeciti sulla raccolta porta a porta. Mancavano anche le tavole e il contenuto grafico.',
-    action: 'Trovate le 10 tabelle, progettato il messaggio visivo, stampato e consegnato. Tutto in 24 ore.',
+    problem: 'Un appalto pubblico bloccato. Materiali urgenti introvabili, grafica inesistente, scadenza imminente.',
+    action: 'Fornitura completa reperita, comunicazione visiva progettata e consegnata prima della scadenza.',
     badge: '24h',
   },
   {
     tag: 'Digitale · Web',
-    title: 'Sito ristorante in 48h',
-    problem: "Un ristorante stava aprendo i battenti senza un sito web. Zero tempo, zero materiali.",
-    action: 'Progettato, sviluppato e pubblicato online in 48 ore. Apertura avvenuta regolarmente.',
+    problem: "Un'attività commerciale stava aprendo senza alcuna presenza online. Zero materiali, zero tempo.",
+    action: 'Sito completo progettato, sviluppato e pubblicato prima del giorno di apertura. Nessun ritardo.',
     badge: '48h',
   },
   {
     tag: 'Operativa · Facility',
-    title: 'Finestre + piccioni risolti',
-    problem: "Il Comune di Montesilvano aveva un grave problema: piccioni che sporcavano le finestre fino al terzo piano.",
-    action: 'Pulizia con elevatore mobile fino al 3° piano. Problema risolto alla radice: accordo con falconiere per dissuasione permanente.',
+    problem: 'Un edificio pubblico con un problema igienico irrisolto da mesi. Interventi parziali falliti.',
+    action: 'Bonifica completa su più piani e sistema permanente di prevenzione attivato in due giorni.',
     badge: '2 gg',
   },
   {
     tag: 'Operativa · Eventi',
-    title: 'Food & beverage last-minute',
-    problem: "Un torneo sportivo si è trovato senza servizio ristorazione all'ultimo momento. Organizzatori in panico.",
-    action: "Allestimento food & beverage completo in tempi record. Torneo andato alla perfezione.",
+    problem: "Un evento sportivo di rilievo senza servizio di ristorazione all'ultimo momento. Organizzatori nel panico.",
+    action: 'Allestimento food & beverage completo attivato in meno di 24 ore. Evento regolare.',
     badge: '1 gg',
   },
   {
     tag: 'Strategica · Brand',
-    title: 'Temporary store da zero',
-    problem: "Un brand locale della ristorazione voleva aprire un temporary store in dicembre. Da idea, senza nulla.",
-    action: 'Trovato il locale, allestito, ingaggiati i fornitori, creato il logo e il brand digitale. Operativo in poche settimane.',
+    problem: "Un'idea commerciale concreta, ma nessuno strumento per realizzarla. Nessun locale, nessun brand.",
+    action: 'Spazio trovato, allestito, fornitori ingaggiati, identità di brand creata. Da zero a operativo.',
     badge: '3 sett.',
   },
   {
     tag: 'Operativa · Sport',
-    title: 'Paraolimpiadi di Montesilvano',
-    problem: "Ciclisti alle Paraolimpiadi senza modo di controllare la pressione delle gomme. Necessità urgente.",
-    action: 'Colonnine per controllo pressione e attrezzi reperiti e consegnati in tempi record. Gara regolare.',
+    problem: 'Atleti in competizione paralimpica senza attrezzatura tecnica indispensabile. Urgenza assoluta.',
+    action: 'Attrezzatura reperita e consegnata prima dell\'inizio della competizione. Gara regolare.',
     badge: 'Urgente',
   },
 ]
@@ -96,14 +90,6 @@ const method = [
          style="background: radial-gradient(ellipse 70% 60% at 15% 80%, rgba(199,162,74,0.1) 0%, transparent 60%), radial-gradient(ellipse 40% 50% at 85% 20%, rgba(26,43,74,0.8) 0%, transparent 60%);"></div>
 
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10 w-full">
-      <!-- Tag -->
-      <div class="animate-fade-in-up flex items-center gap-3 mb-6" style="animation-delay:0.05s">
-        <span class="h-px w-10 bg-gold opacity-70"></span>
-        <span class="text-gold/80 text-[0.6rem] tracking-[0.32em] uppercase">
-          Arsolv' Mindset &nbsp;·&nbsp; Premium Multiservice &nbsp;·&nbsp; Montesilvano
-        </span>
-      </div>
-
       <!-- Headline -->
       <h1 class="animate-fade-in-up font-display text-white uppercase leading-[0.88] mb-8 lg:mb-10"
           style="font-size: clamp(4.2rem, 11.5vw, 13rem); animation-delay: 0.12s;">
@@ -167,7 +153,7 @@ const method = [
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
           <h2 class="font-display uppercase text-navy leading-[0.92]"
               style="font-size: clamp(2.8rem, 6vw, 6rem);">
-            Poche chiacchiere.<br />Parlano i fatti.
+            Arsolv'<br /><span class="text-gold">mindset.</span>
           </h2>
           <p class="text-navy/52 text-[0.9rem] leading-[1.7] max-w-[36ch] lg:text-right">
             La nostra attività nasce da una capacità concreta di problem solving ad alto livello.
@@ -178,23 +164,43 @@ const method = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {cases.map((c, i) => (
-          <div class={`reveal delay-${(i % 3) + 1} case-card`}>
-            <div class="flex items-start justify-between gap-3 mb-4">
+          <div class={`reveal delay-${(i % 3) + 1} case-card-v2 group`}>
+
+            <!-- Header: tag + badge -->
+            <div class="flex items-center justify-between mb-6">
               <span class="case-tag">{c.tag}</span>
-              <span class="font-display text-gold/60 text-[1.4rem] leading-none flex-shrink-0">{c.badge}</span>
+              <span class="font-display text-[2.4rem] leading-none text-navy/8 group-hover:text-gold/18 transition-colors duration-400 select-none">{c.badge}</span>
             </div>
-            <h3 class="font-heading font-semibold text-navy text-[1.1rem] leading-tight mb-3">{c.title}</h3>
-            <div class="space-y-3">
-              <div>
-                <span class="text-[0.6rem] tracking-[0.2em] uppercase font-bold text-navy/38 block mb-1">Il problema</span>
-                <p class="text-[0.84rem] text-navy/62 leading-[1.68]">{c.problem}</p>
+
+            <!-- Problem block -->
+            <div class="mb-5">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-400/70 flex-shrink-0"></span>
+                <span class="text-[0.55rem] tracking-[0.28em] uppercase font-bold text-navy/35">Problema</span>
               </div>
-              <div class="h-px bg-gold/15"></div>
-              <div>
-                <span class="text-[0.6rem] tracking-[0.2em] uppercase font-bold text-gold/80 block mb-1">La soluzione</span>
-                <p class="text-[0.84rem] text-navy/75 leading-[1.68] font-medium">{c.action}</p>
-              </div>
+              <p class="font-heading font-semibold text-navy text-[1.05rem] leading-[1.4]">{c.problem}</p>
             </div>
+
+            <!-- Divider: gold arrow -->
+            <div class="flex items-center gap-3 my-5">
+              <div class="h-px flex-1 bg-navy/6"></div>
+              <div class="w-7 h-7 rounded-full border border-gold/35 flex items-center justify-center flex-shrink-0 group-hover:border-gold/70 group-hover:bg-gold/5 transition-all duration-300">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M1 6h10M7 2.5l3.5 3.5L7 9.5" stroke="#C7A24A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="h-px flex-1 bg-gold/20"></div>
+            </div>
+
+            <!-- Solution block -->
+            <div>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span>
+                <span class="text-[0.55rem] tracking-[0.28em] uppercase font-bold text-gold/75">Soluzione</span>
+              </div>
+              <p class="text-[0.88rem] text-navy/65 leading-[1.72]">{c.action}</p>
+            </div>
+
           </div>
         ))}
       </div>
