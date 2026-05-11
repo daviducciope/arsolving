@@ -1,402 +1,397 @@
 ---
 import Base from '../layouts/Base.astro'
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+
+const manifestoPoints = [
+  'Meno frammentazione',
+  'Più controllo',
+  'Più chiarezza',
+  'Più continuità',
+  'Un unico interlocutore',
+  'Una visione completa',
+]
+
+const framework = [
+  {
+    letter: 'A',
+    title: 'Analizzare',
+    text: 'Leggere il contesto, individuare criticità, priorità e possibilità.',
+  },
+  {
+    letter: 'R',
+    title: 'Ridurre complessità',
+    text: 'Eliminare dispersione, sovrapposizioni e passaggi inutili.',
+  },
+  {
+    letter: 'S',
+    title: 'Strutturare',
+    text: 'Creare processi, responsabilità, strumenti e direzioni chiare.',
+  },
+  {
+    letter: 'O',
+    title: 'Operare',
+    text: "Passare dalla strategia all'esecuzione concreta.",
+  },
+  {
+    letter: 'L',
+    title: 'Legare competenze',
+    text: 'Integrare ambiti diversi: operativo, digitale, gestionale, comunicativo.',
+  },
+  {
+    letter: 'V',
+    title: 'Valorizzare',
+    text: 'Generare continuità, ordine, percezione e valore nel tempo.',
+  },
+]
+
+const dimensions = [
+  {
+    title: 'Operativa',
+    text: 'Rendiamo più ordinati, efficienti e gestibili gli spazi, le strutture e le attività quotidiane.',
+    examples: 'Facility, manutenzione, gestione, presidio, continuità',
+    href: `${base}/services/`,
+  },
+  {
+    title: 'Digitale',
+    text: 'Costruiamo presenza, strumenti e linguaggi digitali coerenti con identità e obiettivi del progetto.',
+    examples: 'Identità, comunicazione, web, piattaforme, marketing',
+    href: `${base}/digital/`,
+  },
+  {
+    title: 'Strategica',
+    text: 'Affianchiamo idee, progetti e imprese nella costruzione di percorsi sostenibili e scalabili.',
+    examples: 'Partnership, sviluppo, iniziative, nuove opportunità',
+    href: `${base}/projects/`,
+  },
+]
+
+const problems = [
+  {
+    title: 'Disordine operativo',
+    text: 'Quando attività, fornitori e responsabilità non sono coordinati.',
+  },
+  {
+    title: 'Identità poco chiara',
+    text: 'Quando un progetto ha valore, ma non riesce a comunicarlo.',
+  },
+  {
+    title: 'Processi frammentati',
+    text: 'Quando ogni parte funziona da sola, ma manca una regia.',
+  },
+  {
+    title: 'Crescita senza struttura',
+    text: "Quando un'idea o un'attività ha potenziale, ma non ha ancora sistema.",
+  },
+  {
+    title: 'Gestione senza continuità',
+    text: 'Quando servono presenza, controllo e affidabilità nel tempo.',
+  },
+]
+
+const process = [
+  'Problema grezzo',
+  'Lettura del contesto',
+  "Metodo Arsolv'",
+  'Soluzione integrata',
+  'Gestione continua',
+]
 ---
 
-<Base title="Home">
+<Base
+  title="Home"
+  description="ARSOLVING trasforma complessità operative, digitali e strategiche in sistemi chiari, integrati e gestibili."
+>
 
-  <!-- ══════════════════════════════════
-       1 · HERO
-  ══════════════════════════════════ -->
-  <section class="relative min-h-screen flex items-center bg-navy-dark overflow-hidden">
-
+  <!-- Hero -->
+  <section id="mindset" class="relative min-h-[92vh] flex items-center bg-navy-dark overflow-hidden pt-20">
+    <div class="maze-grid absolute inset-0 pointer-events-none"></div>
+    <div class="gold-route absolute inset-x-0 top-[22%] h-px pointer-events-none"></div>
     <div class="absolute inset-0 pointer-events-none"
-         style="background-image: linear-gradient(rgba(181,151,58,0.038) 1px, transparent 1px),
-                                  linear-gradient(90deg, rgba(181,151,58,0.038) 1px, transparent 1px);
-                background-size: 68px 68px;"></div>
-    <div class="absolute inset-0 pointer-events-none"
-         style="background: radial-gradient(ellipse 60% 70% at 50% 40%, rgba(181,151,58,0.052) 0%, transparent 65%);"></div>
+         style="background: radial-gradient(ellipse 70% 70% at 50% 45%, rgba(181,151,58,0.07) 0%, transparent 66%);"></div>
 
-    <div class="relative max-w-4xl mx-auto px-6 lg:px-10 py-32 text-center w-full">
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-10 py-28 w-full">
+      <div class="max-w-4xl">
+        <div class="animate-fade-in-up flex items-center gap-4 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-8"
+             style="animation-delay:0.1s;">
+          <span class="block w-9 h-px bg-gold"></span>Arsolv' Mindset
+        </div>
 
-      <div class="animate-fade-in-up mb-10" style="animation-delay:0.1s;">
-        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden ring-1 ring-gold/20 shadow-2xl animate-float">
-          <img src={`${base}/logo.jpeg`} alt="ARSOLVING" class="w-full h-full object-contain bg-white" />
+        <h1 class="animate-fade-in-up font-heading font-semibold text-white leading-[0.98] mb-8"
+            style="font-size: clamp(3rem, 8vw, 6.8rem); animation-delay:0.22s;">
+          Trasformiamo complessità in sistemi.
+        </h1>
+
+        <p class="animate-fade-in-up text-[1.05rem] md:text-[1.16rem] text-white/58 leading-[1.9] max-w-2xl mb-11"
+           style="animation-delay:0.36s;">
+          Arsolving è un gruppo nato per leggere problemi diversi, integrarli in una visione unica e trasformarli in sistemi operativi, digitali e strategici.
+        </p>
+
+        <div class="animate-fade-in-up flex flex-wrap items-center gap-4"
+             style="animation-delay:0.5s;">
+          <a href="#arsolv"
+             class="px-8 py-3.5 bg-gold text-navy-dark text-[0.78rem] font-semibold tracking-[0.14em] uppercase rounded hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
+            Scopri l'Arsolv' Mindset
+          </a>
+          <a href={`${base}/contatti/`}
+             class="px-8 py-3.5 border border-white/22 text-white text-[0.78rem] tracking-[0.14em] uppercase rounded hover:border-gold/50 hover:text-gold transition-all duration-200">
+            Portaci una complessità
+          </a>
         </div>
       </div>
-
-      <div class="animate-fade-in-up" style="animation-delay:0.25s;">
-        <h1 class="font-heading font-semibold tracking-[0.08em] leading-none mb-3"
-            style="font-size: clamp(3.5rem, 8vw, 6.5rem);">
-          <span class="font-bold text-white">AR</span><span class="font-light text-gold">SOLVING</span>
-        </h1>
-        <p class="text-[0.72rem] tracking-[0.32em] uppercase text-white/35 mb-10">
-          Premium Multiservice Group
-        </p>
-      </div>
-
-      <div class="animate-fade-in-up flex items-center justify-center gap-4 mb-12"
-           style="animation-delay:0.4s;">
-        <span class="block w-12 h-px bg-gold/40"></span>
-        <span class="block w-1.5 h-1.5 rounded-full bg-gold/60"></span>
-        <span class="block w-12 h-px bg-gold/40"></span>
-      </div>
-
-      <div class="animate-fade-in-up mb-14" style="animation-delay:0.5s;">
-        <h2 class="font-heading font-medium text-white leading-[1.2]"
-            style="font-size: clamp(1.6rem, 3.5vw, 2.4rem);">
-          Visione strutturata. Soluzioni concrete.
-        </h2>
-      </div>
-
-      <!-- 2 CTAs, non 3 -->
-      <div class="animate-fade-in-up flex flex-wrap items-center justify-center gap-4"
-           style="animation-delay:0.65s;">
-        <a href={`${base}/il-gruppo/`}
-           class="px-8 py-3.5 bg-gold text-navy-dark text-[0.78rem] font-semibold
-                  tracking-[0.14em] uppercase rounded
-                  hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
-          Scopri il gruppo
-        </a>
-        <a href={`${base}/contatti/`}
-           class="px-8 py-3.5 border border-white/22 text-white text-[0.78rem]
-                  tracking-[0.14em] uppercase rounded
-                  hover:border-gold/50 hover:text-gold transition-all duration-200">
-          Contattaci
-        </a>
-      </div>
-
     </div>
 
     <div class="animate-bounce-scroll absolute bottom-10 left-1/2">
       <div class="flex flex-col items-center gap-2.5">
-        <span class="text-[0.58rem] tracking-[0.22em] uppercase text-white/22">Scroll</span>
-        <svg class="w-3.5 h-3.5 text-white/22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <span class="text-[0.58rem] tracking-[0.22em] uppercase text-white/28">Scroll</span>
+        <svg class="w-3.5 h-3.5 text-white/28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
         </svg>
       </div>
     </div>
-
   </section>
 
-
-  <!-- ══════════════════════════════════
-       2 · CHI SIAMO BREVE
-  ══════════════════════════════════ -->
+  <!-- Manifesto -->
   <section class="py-28 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-
         <div class="reveal">
           <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>Chi siamo
+            <span class="block w-7 h-px bg-gold"></span>Manifesto
           </div>
-          <h2 class="font-heading font-semibold text-navy leading-[1.15]"
-              style="font-size: clamp(2rem, 3.5vw, 2.8rem);">
-            Un gruppo.<br />Più competenze.
+          <h2 class="font-heading font-semibold text-navy leading-[1.12]"
+              style="font-size: clamp(2.1rem, 4vw, 3.25rem);">
+            Non partiamo dal servizio.<br />Partiamo dal problema.
           </h2>
         </div>
 
         <div class="reveal delay-2">
-          <p class="text-[1.02rem] text-gray-500 leading-[1.85] mb-6">
-            ARSOLVING è un Premium Multiservice Group: un unico interlocutore capace di
-            gestire ambiti diversi — operativi, digitali, strategici — con la stessa
-            qualità e lo stesso metodo.
+          <p class="text-[1.02rem] text-gray-500 leading-[1.85] mb-9">
+            Ogni azienda, struttura o progetto porta con sé complessità diverse: operative, organizzative, comunicative, digitali. Arsolving nasce per affrontarle con un approccio integrato: analisi, metodo, esecuzione e continuità.
           </p>
-          <p class="text-[1.02rem] text-gray-500 leading-[1.85] mb-8">
-            Non siamo un aggregatore di servizi. Siamo un gruppo strutturato, con divisioni
-            specializzate e una visione comune: permettere ai nostri clienti di concentrarsi
-            sul proprio business mentre noi gestiamo il resto.
-          </p>
-          <a href={`${base}/il-gruppo/`}
-             class="inline-flex items-center gap-2.5 text-[0.78rem] tracking-[0.14em] uppercase
-                    text-navy font-medium hover:text-gold transition-colors duration-200 group">
-            Il Gruppo
-            <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200"
-                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════
-       3 · LE DUE DIVISIONI
-  ══════════════════════════════════ -->
-  <section class="py-28 bg-cream">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-
-      <div class="reveal mb-16 text-center">
-        <div class="flex items-center justify-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">
-          <span class="block w-7 h-px bg-gold"></span>Le divisioni<span class="block w-7 h-px bg-gold"></span>
-        </div>
-        <h2 class="font-heading font-semibold text-navy leading-[1.15]"
-            style="font-size: clamp(2rem, 3.5vw, 2.8rem);">
-          Operativo e digitale.<br />Un unico interlocutore.
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-        <!-- Services -->
-        <a href={`${base}/services/`}
-           class="division-card reveal delay-1 group block bg-navy rounded-lg p-10 lg:p-14
-                  hover:bg-navy-light transition-colors duration-300 border border-transparent
-                  hover:border-gold/12">
-          <div class="flex items-start justify-between mb-10">
-            <div class="w-12 h-12 rounded border border-gold/25 flex items-center justify-center text-gold flex-shrink-0">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-              </svg>
-            </div>
-            <svg class="w-5 h-5 text-gold/25 group-hover:text-gold/55 group-hover:translate-x-1
-                        transition-all duration-300 flex-shrink-0 mt-1"
-                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </div>
-
-          <div class="text-[0.62rem] tracking-[0.22em] uppercase text-gold/55 mb-3">Arsolving</div>
-          <h3 class="font-heading font-semibold text-white leading-none mb-6"
-              style="font-size: clamp(2rem, 3vw, 2.6rem);">Services</h3>
-          <p class="text-[0.92rem] text-white/48 leading-[1.85] mb-8">
-            Gestione operativa di edifici e strutture: facility management, spazi comuni,
-            aree esterne, isole ecologiche, manutenzione ordinaria.
-            Un presidio strutturato sul territorio, con protocolli documentati e reportistica.
-          </p>
-          <div class="text-[0.75rem] tracking-[0.12em] uppercase text-gold/60 group-hover:text-gold
-                      transition-colors duration-200">
-            Esplora i servizi →
-          </div>
-        </a>
-
-        <!-- Digital -->
-        <a href={`${base}/digital/`}
-           class="division-card reveal delay-2 group block bg-navy-dark rounded-lg p-10 lg:p-14
-                  hover:bg-navy transition-colors duration-300 border border-gold/10
-                  hover:border-gold/22">
-          <div class="flex items-start justify-between mb-10">
-            <div class="w-12 h-12 rounded border border-gold/25 flex items-center justify-center text-gold flex-shrink-0">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-              </svg>
-            </div>
-            <svg class="w-5 h-5 text-gold/25 group-hover:text-gold/55 group-hover:translate-x-1
-                        transition-all duration-300 flex-shrink-0 mt-1"
-                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </div>
-
-          <div class="text-[0.62rem] tracking-[0.22em] uppercase text-gold/55 mb-3">Arsolving</div>
-          <h3 class="font-heading font-semibold text-white leading-none mb-6"
-              style="font-size: clamp(2rem, 3vw, 2.6rem);">Digital</h3>
-          <p class="text-[0.92rem] text-white/48 leading-[1.85] mb-8">
-            Comunicazione, identità visiva, sviluppo web e applicazioni, marketing digitale.
-            Una regia strategica unitaria per la presenza online e il posizionamento di marca.
-          </p>
-          <div class="text-[0.75rem] tracking-[0.12em] uppercase text-gold/60 group-hover:text-gold
-                      transition-colors duration-200">
-            Esplora Digital →
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════
-       4 · METODO
-  ══════════════════════════════════ -->
-  <section class="py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start mb-20">
-        <div class="reveal">
-          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>Il metodo
-          </div>
-          <h2 class="font-heading font-semibold text-navy leading-[1.15]"
-              style="font-size: clamp(2rem, 3.2vw, 2.6rem);">
-            Non improvvisiamo.<br />Progettiamo.
-          </h2>
-        </div>
-        <div class="lg:col-span-2 reveal delay-2 flex items-end">
-          <p class="text-[1rem] text-gray-400 leading-[1.85]">
-            Ogni mandato inizia dall'ascolto e termina con la verifica dei risultati.
-            In mezzo: metodo condiviso, esecuzione precisa e responsabilità diretta.
-          </p>
-        </div>
-      </div>
-
-      <div class="relative">
-        <div class="step-connector hidden lg:block"></div>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6">
-
-          {[
-            {
-              n: '01', title: 'Ascolto',
-              text: 'Analizziamo il contesto e gli obiettivi senza presupposti. Prima capiamo, poi proponiamo.'
-            },
-            {
-              n: '02', title: 'Progettazione',
-              text: 'Costruiamo soluzioni documentate e condivise prima di qualsiasi esecuzione.'
-            },
-            {
-              n: '03', title: 'Esecuzione',
-              text: 'Lavoriamo con precisione e rispetto dei tempi. Nessuna continuità operativa viene compromessa.'
-            },
-            {
-              n: '04', title: 'Verifica',
-              text: 'Misuriamo i risultati e aggiustiamo nel tempo. Il lavoro non finisce con la consegna.'
-            },
-          ].map((step, i) => (
-            <div class={`reveal delay-${i+1} flex flex-col items-center text-center group`}>
-              <div class="w-[52px] h-[52px] rounded-full border border-gold/40 flex items-center
-                          justify-center mb-6 relative z-10 bg-white
-                          group-hover:bg-gold group-hover:border-gold transition-all duration-300">
-                <span class="font-heading text-[0.85rem] text-gold group-hover:text-navy-dark
-                             transition-colors duration-300 font-semibold">{step.n}</span>
-              </div>
-              <h4 class="text-[0.92rem] font-semibold text-navy mb-3">{step.title}</h4>
-              <p class="text-[0.82rem] text-gray-400 leading-[1.7]">{step.text}</p>
-            </div>
-          ))}
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════
-       5 · PROJECTS PREVIEW
-  ══════════════════════════════════ -->
-  <section class="py-24 bg-navy relative overflow-hidden">
-    <div class="absolute inset-0 pointer-events-none"
-         style="background: radial-gradient(ellipse 70% 60% at 30% 50%, rgba(181,151,58,0.05) 0%, transparent 60%);"></div>
-
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-
-        <div class="reveal">
-          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>Projects
-          </div>
-          <h2 class="font-heading font-semibold text-white leading-[1.15] mb-6"
-              style="font-size: clamp(1.8rem, 3.2vw, 2.6rem);">
-            Non solo esecuzione.<br />Anche sviluppo.
-          </h2>
-          <p class="text-[1rem] text-white/50 leading-[1.85] mb-10">
-            ARSOLVING valuta nuove opportunità e costruisce iniziative proprie o in
-            partnership. Non ogni idea diventa un progetto — ma ogni progetto viene
-            analizzato con serietà prima di essere avviato.
-          </p>
-          <a href={`${base}/projects/`}
-             class="inline-flex items-center gap-3 text-[0.78rem] tracking-[0.14em] uppercase
-                    text-gold hover:text-gold-light transition-colors duration-200 group font-medium">
-            Projects & Ventures
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
-                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-        </div>
-
-        <div class="reveal delay-2">
-          <div class="flex flex-col gap-5">
-            {[
-              { title: 'Analisi preventiva',  text: 'Ogni iniziativa è valutata su fattibilità, mercato e coerenza con il gruppo prima di qualsiasi impegno di risorse.' },
-              { title: 'Sviluppo strutturato', text: 'Procediamo per fasi. Nessun progetto viene avviato senza un disegno chiaro di obiettivi e responsabilità.' },
-              { title: 'Partnership selettive', text: 'Lavoriamo con partner scelti sulla base di competenze complementari e allineamento di visione, non di opportunità contingenti.' },
-            ].map(item => (
-              <div class="flex items-start gap-5 py-5 border-b border-white/8 last:border-0">
-                <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 flex-shrink-0"></div>
-                <div>
-                  <h4 class="text-[0.88rem] font-semibold text-white mb-1.5">{item.title}</h4>
-                  <p class="text-[0.82rem] text-white/40 leading-[1.7]">{item.text}</p>
-                </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {manifestoPoints.map((point) => (
+              <div class="flex items-center gap-3 py-3 border-b border-gray-100">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span>
+                <span class="text-[0.86rem] text-navy/70">{point}</span>
               </div>
             ))}
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- ══════════════════════════════════
-       6 · SOSTANZA
-  ══════════════════════════════════ -->
-  <section class="py-14 bg-cream border-t border-gray-200/70">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 reveal">
-        <div class="flex items-start gap-5">
-          <div class="w-px h-10 bg-gold/30 flex-shrink-0 mt-0.5 hidden md:block"></div>
-          <div>
-            <div class="text-[0.6rem] tracking-[0.22em] uppercase text-gray-350 mb-1.5">
-              Brand operativo territoriale del gruppo
-            </div>
-            <div class="font-heading text-navy/70 text-[1.15rem] tracking-wider mb-1.5">Sostanza</div>
-            <p class="text-[0.82rem] text-gray-400 max-w-sm leading-[1.7]">
-              Gestione professionale dei rifiuti condominiali sul territorio.
-              Stessi standard, operatività locale.
-            </p>
-          </div>
-        </div>
-        <a href="#"
-           class="flex-shrink-0 text-[0.7rem] tracking-[0.14em] uppercase
-                  text-gray-400 border border-gray-200 px-5 py-2.5 rounded
-                  hover:border-navy/30 hover:text-navy transition-all duration-200">
-          Vai a Sostanza →
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════
-       7 · CTA FINALE
-  ══════════════════════════════════ -->
-  <section class="py-28 bg-navy-dark relative overflow-hidden">
+  <!-- Arsolv Framework -->
+  <section id="arsolv" class="py-28 bg-navy-dark relative overflow-hidden">
+    <div class="maze-grid absolute inset-0 pointer-events-none opacity-60"></div>
     <div class="absolute inset-0 pointer-events-none"
-         style="background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(181,151,58,0.06) 0%, transparent 65%);"></div>
+         style="background: radial-gradient(ellipse 70% 80% at 20% 10%, rgba(181,151,58,0.075) 0%, transparent 62%);"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-end mb-16">
+        <div class="reveal lg:col-span-2">
+          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
+            <span class="block w-7 h-px bg-gold"></span>Metodo proprietario
+          </div>
+          <h2 class="font-heading font-semibold text-white leading-[1.1] mb-5"
+              style="font-size: clamp(2.3rem, 5vw, 4rem);">
+            Arsolv' Mindset
+          </h2>
+          <p class="text-[1rem] text-white/50 leading-[1.85] max-w-2xl">
+            Un modo di leggere la complessità e trasformarla in struttura.
+          </p>
+        </div>
+        <p class="reveal delay-2 text-[0.95rem] text-white/42 leading-[1.8]">
+          La traccia dorata non è decorazione: rappresenta il percorso che rende leggibile ciò che prima era disperso.
+        </p>
+      </div>
+
+      <div class="relative">
+        <div class="hidden lg:block absolute left-0 right-0 top-[3.25rem] h-px bg-gradient-to-r from-gold/70 via-gold/35 to-gold/5"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5">
+          {framework.map((step, i) => (
+            <div class={`reveal delay-${Math.min(i + 1, 5)} relative bg-white/[0.035] border border-white/8 rounded p-6 min-h-[220px]`}>
+              <div class="relative z-10 w-14 h-14 rounded-full bg-navy-dark border border-gold/45 flex items-center justify-center mb-7">
+                <span class="font-heading text-[2.2rem] leading-none text-gold">{step.letter}</span>
+              </div>
+              <h3 class="text-[0.9rem] font-semibold text-white mb-3">{step.title}</h3>
+              <p class="text-[0.78rem] text-white/43 leading-[1.7]">{step.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dimensions -->
+  <section id="cosa-risolviamo" class="py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="reveal text-center mb-16">
+        <div class="flex items-center justify-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">
+          <span class="block w-7 h-px bg-gold"></span>Cosa risolviamo<span class="block w-7 h-px bg-gold"></span>
+        </div>
+        <h2 class="font-heading font-semibold text-navy leading-[1.15] mb-5"
+            style="font-size: clamp(2rem, 3.8vw, 3rem);">
+          Tre dimensioni. Un'unica logica di soluzione.
+        </h2>
+        <p class="text-[0.98rem] text-gray-500 leading-[1.8] max-w-2xl mx-auto">
+          Operativo, digitale e strategico restano ambiti distinti, ma vengono letti dentro una sola regia.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {dimensions.map((dimension, i) => (
+          <a href={dimension.href}
+             class={`division-card reveal delay-${i + 1} group block bg-white rounded-lg p-9 border border-gray-100 hover:border-gold/30 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300`}>
+            <div class="flex items-start justify-between mb-12">
+              <div class="font-heading text-[3.5rem] leading-none text-gold/24 group-hover:text-gold/40 transition-colors">
+                0{i + 1}
+              </div>
+              <svg class="w-5 h-5 text-navy/25 group-hover:text-gold group-hover:translate-x-1 transition-all duration-300"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </div>
+            <h3 class="font-heading font-semibold text-navy leading-none mb-5"
+                style="font-size: clamp(1.8rem, 2.8vw, 2.4rem);">{dimension.title}</h3>
+            <p class="text-[0.92rem] text-gray-500 leading-[1.8] mb-8">{dimension.text}</p>
+            <p class="text-[0.68rem] tracking-[0.13em] uppercase text-gold/80 leading-[1.7]">
+              {dimension.examples}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Problems -->
+  <section class="py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-14 lg:gap-20 items-start">
+        <div class="reveal">
+          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
+            <span class="block w-7 h-px bg-gold"></span>Bisogni reali
+          </div>
+          <h2 class="font-heading font-semibold text-navy leading-[1.15] mb-6"
+              style="font-size: clamp(2rem, 3.4vw, 2.8rem);">
+          Risolviamo ciò che rallenta, disperde o complica.
+          </h2>
+          <p class="text-[0.96rem] text-gray-500 leading-[1.8]">
+            Il servizio arriva dopo. Prima c'è la lettura del contesto: cosa non funziona, cosa manca, cosa va ricondotto a sistema.
+          </p>
+        </div>
+
+        <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-5">
+          {problems.map((problem, i) => (
+            <div class={`reveal delay-${Math.min(i + 1, 5)} bg-cream rounded-lg border border-gray-100 p-7 ${i === 4 ? 'md:col-span-2' : ''}`}>
+              <div class="w-9 h-9 rounded-full bg-white border border-gold/20 flex items-center justify-center mb-6">
+                <span class="text-[0.72rem] font-semibold text-gold">0{i + 1}</span>
+              </div>
+              <h3 class="text-[0.94rem] font-semibold text-navy mb-3">{problem.title}</h3>
+              <p class="text-[0.84rem] text-gray-500 leading-[1.75]">{problem.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem to system -->
+  <section class="py-28 bg-navy relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none"
+         style="background: radial-gradient(ellipse 70% 60% at 30% 50%, rgba(181,151,58,0.06) 0%, transparent 60%);"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20 mb-16">
+        <div class="reveal">
+          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
+            <span class="block w-7 h-px bg-gold"></span>Da problema a sistema
+          </div>
+          <h2 class="font-heading font-semibold text-white leading-[1.15]"
+              style="font-size: clamp(2rem, 3.4vw, 2.8rem);">
+            La risposta rapida non basta.
+          </h2>
+        </div>
+        <p class="reveal delay-2 lg:col-span-2 text-[1rem] text-white/52 leading-[1.85]">
+          Non cerchiamo la risposta più rapida. Cerchiamo la struttura più adatta. Una soluzione Arsolving non è un intervento isolato, ma un sistema pensato per funzionare nel tempo.
+        </p>
+      </div>
+
+      <div class="relative">
+        <div class="hidden lg:block absolute left-0 right-0 top-9 h-px bg-gradient-to-r from-gold/70 via-gold/35 to-transparent"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          {process.map((item, i) => (
+            <div class={`reveal delay-${Math.min(i + 1, 5)} relative bg-navy-dark/55 border border-white/8 rounded p-6`}>
+              <div class="relative z-10 w-16 h-16 rounded-full bg-navy border border-gold/35 flex items-center justify-center mb-7">
+                <span class="font-heading text-gold text-[1.2rem]">0{i + 1}</span>
+              </div>
+              <h3 class="text-[0.86rem] font-semibold text-white leading-[1.5]">{item}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applied solutions -->
+  <section id="soluzioni-applicate" class="py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="reveal max-w-3xl mb-14">
+        <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
+          <span class="block w-7 h-px bg-gold"></span>Soluzioni applicate
+        </div>
+        <h2 class="font-heading font-semibold text-navy leading-[1.15] mb-5"
+            style="font-size: clamp(2rem, 3.6vw, 3rem);">
+          Metodo, operatività e visione trasformati in percorsi concreti.
+        </h2>
+        <p class="text-[0.98rem] text-gray-500 leading-[1.8]">
+          I casi digitali e progettuali vengono ricondotti alla logica problema, complessità, soluzione, risultato.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {[
+          ['Identità e presenza digitale', 'Un progetto con valore ma senza una comunicazione capace di renderlo leggibile.'],
+          ['Presidio operativo', 'Attività quotidiane frammentate tra fornitori, tempi e responsabilità non sempre chiari.'],
+          ['Sviluppo iniziativa', 'Un potenziale da validare prima di trasformarlo in struttura e investimento.'],
+        ].map((item, i) => (
+          <div class={`reveal delay-${i + 1} bg-white rounded-lg p-8 border border-gray-100`}>
+            <div class="text-[0.62rem] tracking-[0.22em] uppercase text-gold mb-5">Caso 0{i + 1}</div>
+            <h3 class="text-[0.95rem] font-semibold text-navy mb-4">{item[0]}</h3>
+            <p class="text-[0.84rem] text-gray-500 leading-[1.75] mb-7">{item[1]}</p>
+            <div class="grid grid-cols-2 gap-3 text-[0.68rem] tracking-[0.12em] uppercase text-navy/45">
+              <span>Contesto</span>
+              <span>Complessità</span>
+              <span>Soluzione</span>
+              <span>Direzione</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-28 bg-navy-dark relative overflow-hidden">
+    <div class="gold-route absolute inset-x-0 top-0 h-px pointer-events-none"></div>
+    <div class="absolute inset-0 pointer-events-none"
+         style="background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(181,151,58,0.07) 0%, transparent 65%);"></div>
 
     <div class="relative max-w-3xl mx-auto px-6 text-center reveal">
       <div class="flex items-center justify-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-        <span class="block w-7 h-px bg-gold"></span>Lavoriamo insieme<span class="block w-7 h-px bg-gold"></span>
+        <span class="block w-7 h-px bg-gold"></span>Avvio analisi<span class="block w-7 h-px bg-gold"></span>
       </div>
       <h2 class="font-heading font-semibold text-white leading-[1.2] mb-5"
           style="font-size: clamp(2rem, 4vw, 3rem);">
-        Pronti quando lo sei tu.
+        Hai una complessità da risolvere?
       </h2>
-      <p class="text-[1rem] text-white/45 leading-[1.8] mb-10">
-        Raccontaci la tua situazione. Valutiamo le esigenze e ti proponiamo
-        un percorso concreto — non un preventivo generico.
+      <p class="text-[1rem] text-white/50 leading-[1.8] mb-10">
+        Raccontaci il contesto. Lo analizziamo, lo ordiniamo e costruiamo il percorso più adatto.
       </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href={`${base}/contatti/`}
-           class="px-9 py-4 bg-gold text-navy-dark text-[0.8rem] font-semibold
-                  tracking-[0.16em] uppercase rounded
-                  hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
-          Contattaci
-        </a>
-        <a href={`${base}/services/`}
-           class="px-9 py-4 border border-white/18 text-white text-[0.8rem]
-                  tracking-[0.16em] uppercase rounded
-                  hover:border-gold/40 hover:text-gold transition-all duration-200">
-          Esplora i servizi
-        </a>
-      </div>
+      <a href={`${base}/contatti/`}
+         class="inline-flex px-9 py-4 bg-gold text-navy-dark text-[0.8rem] font-semibold tracking-[0.16em] uppercase rounded hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
+        Avvia il confronto
+      </a>
     </div>
   </section>
 

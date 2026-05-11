@@ -4,7 +4,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 ---
 
 <Base title="Contatti"
-      description="Contatta ARSOLVING per richieste di servizi, partnership e collaborazioni.">
+      description="Racconta ad ARSOLVING la complessità da risolvere e avvia una richiesta di analisi.">
 
   <!-- Hero -->
   <div class="page-hero">
@@ -14,11 +14,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
       </div>
       <h1 class="font-heading font-semibold text-white leading-[1.1] mb-5"
           style="font-size: clamp(2.5rem, 5vw, 4rem);">
-        Parliamoci.
+        Raccontaci la complessità.
       </h1>
       <p class="text-[1.05rem] text-white/48 leading-[1.8] max-w-lg">
-        Raccontaci la tua sfida o il progetto su cui stai lavorando.
-        Ti risponderemo con un'analisi concreta.
+        Ogni confronto parte dal contesto: cosa rallenta, cosa disperde, cosa va ricondotto a sistema.
       </p>
     </div>
   </div>
@@ -33,7 +32,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
         <div class="lg:col-span-2 reveal">
           <h2 class="font-heading font-semibold text-navy leading-[1.15] mb-8"
               style="font-size: clamp(1.5rem, 2.5vw, 2rem);">
-            Come raggiungerci
+            Prima il contesto
           </h2>
 
           <div class="flex flex-col gap-6 mb-12">
@@ -44,14 +43,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
                 value: 'info@arsolving.com',
               },
               {
-                icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z',
-                label: 'Telefono',
-                value: '+39 000 000 0000',
-              },
-              {
-                icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
-                label: 'Sede',
-                value: 'Italia',
+                icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
+                label: 'Avvio',
+                value: 'Richiesta di analisi',
               },
             ].map(item => (
               <div class="flex items-start gap-4">
@@ -70,23 +64,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
           <!-- Due percorsi -->
           <div class="border-t border-gray-100 pt-8">
-            <h3 class="text-[0.82rem] font-semibold text-navy mb-5">Cosa puoi richiedere</h3>
+            <h3 class="text-[0.82rem] font-semibold text-navy mb-5">Che tipo di complessità puoi portare</h3>
             <div class="flex flex-col gap-4">
               <div class="flex items-start gap-3 p-4 bg-cream rounded-lg border border-gray-100">
                 <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2 flex-shrink-0"></div>
                 <div>
-                  <div class="text-[0.82rem] font-semibold text-navy mb-1">Richiesta servizi</div>
+                  <div class="text-[0.82rem] font-semibold text-navy mb-1">Contesto operativo, digitale o misto</div>
                   <p class="text-[0.76rem] text-gray-400 leading-[1.6]">
-                    Services operativi, Digital, consulenza strategica. Specificalo nel form.
+                    Spazi, processi, identità, comunicazione, strumenti o coordinamento.
                   </p>
                 </div>
               </div>
               <div class="flex items-start gap-3 p-4 bg-cream rounded-lg border border-gray-100">
                 <div class="w-1.5 h-1.5 rounded-full bg-navy mt-2 flex-shrink-0"></div>
                 <div>
-                  <div class="text-[0.82rem] font-semibold text-navy mb-1">Partnership & Collaborazioni</div>
+                  <div class="text-[0.82rem] font-semibold text-navy mb-1">Sviluppo e partnership</div>
                   <p class="text-[0.76rem] text-gray-400 leading-[1.6]">
-                    Proposte di collaborazione, joint venture, sviluppo progetti.
+                    Idee, iniziative, collaborazioni o percorsi da strutturare.
                   </p>
                 </div>
               </div>
@@ -97,7 +91,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
         <!-- Form -->
         <div class="lg:col-span-3 reveal delay-2">
           <div class="bg-cream border border-gray-100 rounded-lg p-10">
-            <h3 class="font-heading font-semibold text-navy text-[1.5rem] mb-8">Invia un messaggio</h3>
+            <h3 class="font-heading font-semibold text-navy text-[1.5rem] mb-8">Richiedi un'analisi</h3>
 
             <form id="contact-form" class="flex flex-col gap-4">
 
@@ -109,7 +103,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
                               border border-navy/20 rounded text-navy/60
                               peer-checked:border-gold peer-checked:text-gold peer-checked:bg-gold-pale
                               hover:border-navy/35 transition-all duration-200 cursor-pointer">
-                    Richiesta servizi
+                    Operativo / Digitale
                   </div>
                 </label>
                 <label class="cursor-pointer">
@@ -118,7 +112,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
                               border border-navy/20 rounded text-navy/60
                               peer-checked:border-gold peer-checked:text-gold peer-checked:bg-gold-pale
                               hover:border-navy/35 transition-all duration-200 cursor-pointer">
-                    Partnership
+                    Strategico / Misto
                   </div>
                 </label>
               </div>
@@ -139,44 +133,46 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
                             text-navy placeholder:text-gray-300
                             focus:border-gold focus:outline-none transition-colors duration-200" />
 
+              <input type="tel" name="telefono" placeholder="Telefono"
+                     class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
+                            text-navy placeholder:text-gray-300
+                            focus:border-gold focus:outline-none transition-colors duration-200" />
+
               <select name="area"
                       class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
                              text-gray-400 focus:border-gold focus:outline-none transition-colors duration-200 appearance-none">
-                <option value="" disabled selected>Area di interesse</option>
-                <optgroup label="Arsolving Services">
-                  <option value="edifici">Edifici & Condomini</option>
-                  <option value="ecologiche">Isole Ecologiche</option>
-                  <option value="pulizie">Pulizie Professionali</option>
-                  <option value="verde">Cura del Verde</option>
-                  <option value="manutenzioni">Manutenzioni</option>
-                  <option value="facility">Facility Management</option>
-                </optgroup>
-                <optgroup label="Arsolving Digital">
-                  <option value="branding">Branding & Identità</option>
-                  <option value="comunicazione">Comunicazione</option>
-                  <option value="web">Web & Siti</option>
-                  <option value="app">Applicazioni</option>
-                  <option value="marketing">Marketing Digitale</option>
-                </optgroup>
-                <optgroup label="Altro">
-                  <option value="consulenza">Consulenza Strategica</option>
-                  <option value="partnership">Partnership / Collaborazione</option>
-                  <option value="altro">Altro</option>
-                </optgroup>
+                <option value="" disabled selected>Tipologia contesto</option>
+                <option value="operativo">Operativo</option>
+                <option value="digitale">Digitale</option>
+                <option value="strategico">Strategico</option>
+                <option value="misto">Misto / da inquadrare</option>
               </select>
 
               <textarea name="messaggio" rows="5"
-                        placeholder="Descrivi la tua richiesta o il progetto su cui vuoi confrontarti..."
+                        placeholder="Che problema vuoi risolvere?"
                         class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
                                text-navy placeholder:text-gray-300
-                               focus:border-gold focus:outline-none transition-colors duration-200 resize-none">
-              </textarea>
+                               focus:border-gold focus:outline-none transition-colors duration-200 resize-none"></textarea>
+
+              <select name="struttura"
+                      class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
+                             text-gray-400 focus:border-gold focus:outline-none transition-colors duration-200 appearance-none">
+                <option value="" disabled selected>Hai già una struttura?</option>
+                <option value="esistente">Sì, esiste già</option>
+                <option value="parziale">Parziale / da ordinare</option>
+                <option value="zero">Partiamo da zero</option>
+              </select>
+
+              <input type="text" name="priorita" placeholder="Budget o priorità temporale (opzionale)"
+                     class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
+                            text-navy placeholder:text-gray-300
+                            focus:border-gold focus:outline-none transition-colors duration-200" />
 
               <button type="submit"
                       class="w-full py-4 bg-gold text-navy-dark font-semibold text-[0.8rem]
                              tracking-[0.18em] uppercase rounded
                              hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
-                Invia Messaggio
+                Invia la richiesta di analisi
               </button>
 
               <p class="text-center text-[0.72rem] text-gray-300 leading-relaxed">

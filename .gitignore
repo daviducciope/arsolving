@@ -11,6 +11,13 @@ node_modules
 dist
 dist-ssr
 *.local
+*.tmp
+.cert-status.tmp
+.dns-check.tmp
+.cf-fn.tmp
+.iam-check.tmp
+.astro/settings.json
+docs/aws_credential.md
 
 # Editor directories and files
 .vscode/*
