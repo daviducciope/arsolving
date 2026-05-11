@@ -1,0 +1,82 @@
+---
+interface Props {
+  class?: string
+  dark?: boolean   // true = navy text on light bg (default), false = white "AR" on dark bg
+  height?: string
+  showSub?: boolean
+}
+const {
+  class: cls = '',
+  dark = true,
+  height = 'auto',
+  showSub = true,
+} = Astro.props
+
+const arColor   = dark ? '#0E1D34' : 'rgba(255,255,255,0.92)'
+const subColor  = dark ? '#1A2B4A' : 'rgba(255,255,255,0.72)'
+---
+
+<svg
+  viewBox="0 0 860 178"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  class={cls}
+  style={height !== 'auto' ? `height:${height};width:auto;` : 'width:100%;'}
+  role="img"
+  aria-label="ARSOLVING — Premium Multiservice"
+>
+  <!-- ── AR (navy / white) ── -->
+  <text
+    x="12" y="118"
+    font-family="'Sora','Helvetica Neue',Arial,sans-serif"
+    font-weight="800"
+    font-size="118"
+    fill={arColor}
+    letter-spacing="-1"
+  >AR</text>
+
+  <!-- ── SOLVING (gold) ── -->
+  <text
+    x="182" y="118"
+    font-family="'Sora','Helvetica Neue',Arial,sans-serif"
+    font-weight="800"
+    font-size="118"
+    fill="#C7A24A"
+    letter-spacing="-1"
+  >SOLVING</text>
+
+  <!-- ── Arrow → (gold) ── -->
+  <!-- Circle -->
+  <circle cx="796" cy="64" r="30" stroke="#C7A24A" stroke-width="4.5" fill="none"/>
+  <!-- Arrow inside -->
+  <line x1="776" y1="64" x2="808" y2="64" stroke="#C7A24A" stroke-width="4" stroke-linecap="round"/>
+  <polyline points="795,49 812,64 795,79" stroke="#C7A24A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- ── Subtitle ── -->
+  {showSub && (
+    <>
+      <!-- Gold line left -->
+      <line x1="62" y1="150" x2="298" y2="150" stroke="#C7A24A" stroke-width="1.5"/>
+      <!-- "Premium" gold -->
+      <text
+        x="316" y="163"
+        font-family="'Sora','Helvetica Neue',Arial,sans-serif"
+        font-weight="400"
+        font-size="22"
+        fill="#C7A24A"
+        letter-spacing="4"
+      >Premium</text>
+      <!-- space + "Multiservice" navy/white -->
+      <text
+        x="466" y="163"
+        font-family="'Sora','Helvetica Neue',Arial,sans-serif"
+        font-weight="600"
+        font-size="22"
+        fill={subColor}
+        letter-spacing="4"
+      >Multiservice</text>
+      <!-- Gold line right -->
+      <line x1="658" y1="150" x2="844" y2="150" stroke="#C7A24A" stroke-width="1.5"/>
+    </>
+  )}
+</svg>

@@ -1,4 +1,5 @@
 ---
+import LogoFull from './LogoFull.astro'
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 const p    = Astro.url.pathname
 
@@ -10,64 +11,37 @@ function active(segment: string): boolean {
 
 <nav id="navbar" class="navbar-root">
 
-  <!-- Gold laser line — visible only when scrolled -->
+  <!-- Laser line — visible scrolled -->
   <div class="navbar-laser" aria-hidden="true"></div>
 
   <div class="navbar-inner max-w-7xl mx-auto px-6 lg:px-12">
 
     <!-- ── LOGO ── -->
-    <a href={`${base}/`} class="navbar-logo group" aria-label="ARSOLVING — Home">
-
-      <!-- Maze SVG icon (light version for dark bg) -->
-      <div class="navbar-icon-wrap">
-        <svg viewBox="0 0 114 82" fill="none" xmlns="http://www.w3.org/2000/svg"
-             class="navbar-maze-svg" aria-hidden="true">
-          <!-- Outer maze frame -->
-          <rect x="4" y="4" width="72" height="72" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linejoin="miter"/>
-          <!-- Horizontal walls -->
-          <line x1="4"  y1="22" x2="52" y2="22" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
-          <line x1="4"  y1="40" x2="28" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
-          <line x1="52" y1="40" x2="76" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
-          <line x1="28" y1="58" x2="76" y2="58" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
-          <!-- Vertical walls -->
-          <line x1="28" y1="4"  x2="28" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
-          <line x1="28" y1="58" x2="28" y2="76" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
-          <line x1="52" y1="4"  x2="52" y2="22" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
-          <line x1="52" y1="40" x2="52" y2="76" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
-          <!-- Solved path (gold) -->
-          <polyline points="4,67 16,67 16,49 40,49 40,31 64,31 64,4"
-                    stroke="#C7A24A" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Checkmark (gold) -->
-          <polyline points="84,24 93,36 112,14"
-                    stroke="#C7A24A" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <!-- Glow ring behind icon -->
-        <div class="navbar-icon-glow" aria-hidden="true"></div>
+    <a href={`${base}/`} class="navbar-logo-link" aria-label="ARSOLVING — Home">
+      <!-- Full logo with subtitle (hidden when scrolled via CSS) -->
+      <div class="logo-full-state">
+        <LogoFull dark={false} showSub={true} height="54px" />
       </div>
-
-      <!-- Brand wordmark -->
-      <div class="navbar-brand">
-        <span class="navbar-brand-name">
-          <span class="text-white">AR</span><span class="text-gold">SOLVING</span>
-        </span>
-        <span class="navbar-brand-sub">Premium Multiservice</span>
+      <!-- Compact logo without subtitle (shown when scrolled) -->
+      <div class="logo-compact-state">
+        <LogoFull dark={false} showSub={false} height="36px" />
       </div>
-
     </a>
 
     <!-- ── DESKTOP NAV ── -->
     <div class="navbar-links" role="navigation" aria-label="Navigazione principale">
-      <a href={`${base}/`}              class={`nav-link ${active('') ? 'nav-link--active' : ''}`}>Home</a>
+      <a href={`${base}/`}             class={`nav-link ${active('') ? 'nav-link--active' : ''}`}>Home</a>
       <a href={`${base}/#interventi`}  class="nav-link">Interventi</a>
       <a href={`${base}/#aree`}        class="nav-link">Cosa facciamo</a>
       <a href={`${base}/il-gruppo/`}   class={`nav-link ${active('il-gruppo') ? 'nav-link--active' : ''}`}>Il Gruppo</a>
 
       <div class="nav-divider" aria-hidden="true"></div>
 
-      <a href={`${base}/contatti/`} class="nav-cta" aria-label="Avvia analisi con ARSOLVING">
+      <a href={`${base}/contatti/`} class="nav-cta">
         <span>Avvia analisi</span>
         <svg class="nav-cta-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
     </div>
@@ -75,7 +49,7 @@ function active(segment: string): boolean {
     <!-- ── HAMBURGER ── -->
     <button id="hamburger"
             class="navbar-hamburger xl:hidden"
-            aria-label="Apri menu di navigazione"
+            aria-label="Apri menu"
             aria-expanded="false"
             aria-controls="mobile-menu">
       <span class="ham-line ham-line-1"></span>
@@ -86,22 +60,13 @@ function active(segment: string): boolean {
   </div>
 </nav>
 
-<!-- ── MOBILE MENU (full-screen overlay) ── -->
-<div id="mobile-menu"
-     class="mobile-overlay hidden"
-     role="dialog"
-     aria-modal="true"
-     aria-label="Menu di navigazione">
-
+<!-- ── MOBILE OVERLAY ── -->
+<div id="mobile-menu" class="mobile-overlay hidden" role="dialog" aria-modal="true">
   <div class="mobile-overlay-bg" aria-hidden="true"></div>
-
   <div class="mobile-overlay-content">
 
-    <!-- Header -->
     <div class="mobile-overlay-header">
-      <span class="navbar-brand-name text-white text-[1.5rem]">
-        <span>AR</span><span class="text-gold">SOLVING</span>
-      </span>
+      <LogoFull dark={false} showSub={false} height="32px" />
       <button onclick="document.getElementById('hamburger').click()"
               class="text-white/50 hover:text-white transition-colors p-2"
               aria-label="Chiudi menu">
@@ -111,23 +76,13 @@ function active(segment: string): boolean {
       </button>
     </div>
 
-    <!-- Nav links -->
     <nav class="mobile-nav" aria-label="Menu mobile">
-      <a href={`${base}/`}             class="mobile-nav-link">
-        <span class="mobile-nav-num">01</span>Home
-      </a>
-      <a href={`${base}/#interventi`}  class="mobile-nav-link">
-        <span class="mobile-nav-num">02</span>Interventi
-      </a>
-      <a href={`${base}/#aree`}        class="mobile-nav-link">
-        <span class="mobile-nav-num">03</span>Cosa facciamo
-      </a>
-      <a href={`${base}/il-gruppo/`}   class="mobile-nav-link">
-        <span class="mobile-nav-num">04</span>Il Gruppo
-      </a>
+      <a href={`${base}/`}             class="mobile-nav-link"><span class="mobile-nav-num">01</span>Home</a>
+      <a href={`${base}/#interventi`}  class="mobile-nav-link"><span class="mobile-nav-num">02</span>Interventi</a>
+      <a href={`${base}/#aree`}        class="mobile-nav-link"><span class="mobile-nav-num">03</span>Cosa facciamo</a>
+      <a href={`${base}/il-gruppo/`}   class="mobile-nav-link"><span class="mobile-nav-num">04</span>Il Gruppo</a>
     </nav>
 
-    <!-- CTA -->
     <div class="mobile-overlay-footer">
       <a href={`${base}/contatti/`} class="btn-gold w-full justify-center text-center py-4">
         Avvia analisi →
@@ -141,135 +96,69 @@ function active(segment: string): boolean {
 </div>
 
 <style>
-/* ══════════════════════════════════════
-   NAVBAR ROOT
-══════════════════════════════════════ */
+/* ══ ROOT ══ */
 .navbar-root {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 50;
-  transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: background 0.38s ease, box-shadow 0.38s ease, border-color 0.38s ease;
   border-bottom: 1px solid transparent;
 }
 .navbar-root.is-scrolled {
   background: rgba(14,29,52,0.97);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 48px rgba(0,0,0,0.38);
   border-bottom-color: rgba(199,162,74,0.1);
 }
 
-/* Laser line at top */
+/* Laser line */
 .navbar-laser {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 1.5px;
   background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(199,162,74,0.0) 10%,
-    rgba(199,162,74,0.8) 35%,
-    #C7A24A 50%,
-    rgba(199,162,74,0.8) 65%,
-    rgba(199,162,74,0.0) 90%,
-    transparent 100%);
+    transparent 0%, rgba(199,162,74,0) 10%,
+    rgba(199,162,74,0.9) 40%, #C7A24A 50%,
+    rgba(199,162,74,0.9) 60%, rgba(199,162,74,0) 90%, transparent 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
-.navbar-root.is-scrolled .navbar-laser {
-  opacity: 1;
-}
+.navbar-root.is-scrolled .navbar-laser { opacity: 1; }
 
-/* ── Inner container ── */
+/* Inner row */
 .navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 5.5rem;
-  transition: height 0.35s ease;
+  height: 6rem;
+  transition: height 0.38s ease;
 }
-.navbar-root.is-scrolled .navbar-inner {
-  height: 4.25rem;
-}
+.navbar-root.is-scrolled .navbar-inner { height: 4.25rem; }
 
-/* ══════════════════════════════════════
-   LOGO
-══════════════════════════════════════ */
-.navbar-logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-
-/* Maze icon container */
-.navbar-icon-wrap {
-  position: relative;
-  width: 3rem;
-  height: 2.2rem;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-.navbar-logo:hover .navbar-icon-wrap {
-  transform: scale(1.05);
-}
-.navbar-maze-svg {
-  width: 100%;
-  height: 100%;
+/* ══ LOGO ══ */
+.navbar-logo-link {
   display: block;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
+.navbar-logo-link:hover { opacity: 0.88; }
 
-/* Glow behind maze icon */
-.navbar-icon-glow {
-  position: absolute;
-  inset: -50%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(199,162,74,0.18) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-.navbar-logo:hover .navbar-icon-glow {
-  opacity: 1;
-}
+/* Full logo (top) vs compact (scrolled) */
+.logo-full-state    { display: block; }
+.logo-compact-state { display: none; }
 
-/* Brand text */
-.navbar-brand {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-  gap: 0.2rem;
-}
-.navbar-brand-name {
-  font-family: var(--font-heading, 'Sora', sans-serif);
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  line-height: 1;
-}
-.navbar-brand-sub {
-  font-size: 0.5rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(199,162,74,0.55);
-  transition: color 0.25s ease;
-}
-.navbar-logo:hover .navbar-brand-sub {
-  color: rgba(199,162,74,0.8);
-}
+.navbar-root.is-scrolled .logo-full-state    { display: none; }
+.navbar-root.is-scrolled .logo-compact-state { display: block; }
 
-/* ══════════════════════════════════════
-   DESKTOP LINKS
-══════════════════════════════════════ */
+/* ══ DESKTOP LINKS ══ */
 .navbar-links {
   display: none;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.15rem;
 }
-@media (min-width: 1280px) {
-  .navbar-links { display: flex; }
-}
+@media (min-width: 1280px) { .navbar-links { display: flex; } }
 
 .nav-link {
   position: relative;
@@ -278,10 +167,9 @@ function active(segment: string): boolean {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.52);
   text-decoration: none;
   transition: color 0.22s ease;
-  border-radius: 3px;
 }
 .nav-link::after {
   content: '';
@@ -292,34 +180,22 @@ function active(segment: string): boolean {
   transition: left 0.25s ease, right 0.25s ease;
 }
 .nav-link:hover,
-.nav-link--active {
-  color: rgba(255,255,255,0.95);
-}
+.nav-link--active { color: rgba(255,255,255,0.95); }
 .nav-link:hover::after,
-.nav-link--active::after {
-  left: 0.85rem;
-  right: 0.85rem;
-}
-.nav-link--active {
-  color: #C7A24A;
-}
-.nav-link--active::after {
-  background: #C7A24A;
-}
+.nav-link--active::after { left: 0.85rem; right: 0.85rem; }
+.nav-link--active { color: #C7A24A; }
+.nav-link--active::after { background: #C7A24A; }
 
-/* Divider before CTA */
 .nav-divider {
-  width: 1px;
-  height: 1.4rem;
-  background: rgba(255,255,255,0.12);
-  margin: 0 0.6rem;
+  width: 1px; height: 1.25rem;
+  background: rgba(255,255,255,0.1);
+  margin: 0 0.5rem;
 }
 
-/* CTA */
 .nav-cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   padding: 0.6rem 1.3rem;
   background: #C7A24A;
   color: #0E1D34;
@@ -329,34 +205,23 @@ function active(segment: string): boolean {
   text-transform: uppercase;
   border-radius: 2px;
   text-decoration: none;
-  transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
-  box-shadow: 0 0 0 rgba(199,162,74,0);
+  transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.2s ease;
 }
 .nav-cta:hover {
   background: #D4B464;
   transform: translateY(-1px);
-  box-shadow: 0 4px 24px rgba(199,162,74,0.35);
+  box-shadow: 0 4px 22px rgba(199,162,74,0.35);
 }
-.nav-cta-arrow {
-  width: 14px;
-  height: 14px;
-  transition: transform 0.22s ease;
-}
-.nav-cta:hover .nav-cta-arrow {
-  transform: translateX(3px);
-}
+.nav-cta-arrow { width: 14px; height: 14px; transition: transform 0.22s ease; }
+.nav-cta:hover .nav-cta-arrow { transform: translateX(3px); }
 
-/* ══════════════════════════════════════
-   HAMBURGER
-══════════════════════════════════════ */
+/* ══ HAMBURGER ══ */
 .navbar-hamburger {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.4rem; height: 2.4rem;
   padding: 0.3rem;
   background: transparent;
   border: none;
@@ -373,92 +238,54 @@ function active(segment: string): boolean {
 .ham-line-1 { width: 22px; }
 .ham-line-2 { width: 22px; }
 .ham-line-3 { width: 14px; }
+.navbar-hamburger.menu-open .ham-line-1 { transform: translateY(6.5px) rotate(45deg); width: 22px; }
+.navbar-hamburger.menu-open .ham-line-2 { opacity: 0; transform: scaleX(0); }
+.navbar-hamburger.menu-open .ham-line-3 { transform: translateY(-6.5px) rotate(-45deg); width: 22px; }
 
-.navbar-hamburger.menu-open .ham-line-1 {
-  transform: translateY(6.5px) rotate(45deg);
-  width: 22px;
-}
-.navbar-hamburger.menu-open .ham-line-2 {
-  opacity: 0;
-  transform: scaleX(0);
-}
-.navbar-hamburger.menu-open .ham-line-3 {
-  transform: translateY(-6.5px) rotate(-45deg);
-  width: 22px;
-}
-
-/* ══════════════════════════════════════
-   MOBILE OVERLAY
-══════════════════════════════════════ */
+/* ══ MOBILE OVERLAY ══ */
 .mobile-overlay {
-  position: fixed;
-  inset: 0;
+  position: fixed; inset: 0;
   z-index: 49;
-  display: flex;
-  flex-direction: column;
+  display: flex; flex-direction: column;
 }
 .mobile-overlay.hidden { display: none; }
-
 .mobile-overlay-bg {
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   background: rgba(14,29,52,0.98);
   backdrop-filter: blur(24px);
 }
-
 .mobile-overlay-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column;
   height: 100%;
   padding: 0 1.5rem 2rem;
 }
-
 .mobile-overlay-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between;
   height: 5rem;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   margin-bottom: 2rem;
 }
-
-.mobile-nav {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
+.mobile-nav { flex: 1; display: flex; flex-direction: column; }
 .mobile-nav-link {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  display: flex; align-items: center; gap: 1rem;
   padding: 1.1rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
-  color: rgba(255,255,255,0.65);
-  font-family: var(--font-display, 'Bebas Neue', sans-serif);
+  color: rgba(255,255,255,0.62);
+  font-family: var(--font-display,'Bebas Neue',sans-serif);
   font-size: clamp(2rem, 8vw, 3rem);
   letter-spacing: 0.06em;
-  text-decoration: none;
-  text-transform: uppercase;
+  text-decoration: none; text-transform: uppercase;
   transition: color 0.2s ease;
 }
-.mobile-nav-link:hover {
-  color: white;
-}
-
+.mobile-nav-link:hover { color: white; }
 .mobile-nav-num {
-  font-family: var(--font-body, 'Manrope', sans-serif);
-  font-size: 0.6rem;
-  font-weight: 700;
+  font-family: var(--font-body,'Manrope',sans-serif);
+  font-size: 0.6rem; font-weight: 700;
   letter-spacing: 0.2em;
   color: rgba(199,162,74,0.5);
-  margin-top: 0.35rem;
-  flex-shrink: 0;
+  margin-top: 0.35rem; flex-shrink: 0;
 }
-
 .mobile-overlay-footer {
   padding-top: 2rem;
   border-top: 1px solid rgba(255,255,255,0.06);
