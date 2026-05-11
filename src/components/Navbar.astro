@@ -8,8 +8,8 @@ function active(segment: string): boolean {
 }
 
 const linkClass = (segment: string) =>
-  `text-[0.72rem] xl:text-[0.78rem] tracking-[0.11em] xl:tracking-[0.13em] uppercase transition-colors duration-200 ${
-    active(segment) ? 'text-gold' : 'text-white/65 hover:text-white'
+  `text-[0.72rem] tracking-[0.14em] uppercase font-medium transition-colors duration-200 ${
+    active(segment) ? 'text-gold' : 'text-white/60 hover:text-white'
   }`
 ---
 
@@ -18,56 +18,56 @@ const linkClass = (segment: string) =>
      style="background:transparent;">
 
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-[4.5rem]">
 
       <!-- Logo -->
-      <a href={`${base}/`} class="flex items-center gap-3 group">
+      <a href={`${base}/`} class="flex items-center gap-3 group flex-shrink-0">
         <img src={`${base}/logo.jpeg`} alt="ARSOLVING"
-             class="w-12 h-12 rounded-full object-contain bg-white shadow-sm" />
+             class="w-10 h-10 rounded-full object-contain bg-white" />
         <div class="flex flex-col leading-none">
-          <span class="font-heading text-[1.15rem] tracking-widest text-white">
-            <span class="font-bold">AR</span><span class="font-light text-gold">SOLVING</span>
+          <span class="font-heading text-[1.05rem] tracking-widest text-white font-semibold">
+            <span class="font-bold">AR</span><span class="text-gold font-light">SOLVING</span>
           </span>
-          <span class="text-[0.58rem] tracking-[0.22em] uppercase text-gold/60 mt-0.5">
-            Arsolv' Mindset
+          <span class="text-[0.5rem] tracking-[0.24em] uppercase text-gold/55 mt-0.5">
+            Premium Multiservice
           </span>
         </div>
       </a>
 
       <!-- Desktop links -->
-      <div class="hidden xl:flex items-center gap-7">
-        <a href={`${base}/`}              class={linkClass('')}>Mindset</a>
-        <a href={`${base}/#cosa-risolviamo`} class="text-[0.72rem] xl:text-[0.78rem] tracking-[0.11em] xl:tracking-[0.13em] uppercase text-white/65 hover:text-white transition-colors duration-200">Cosa risolviamo</a>
-        <a href={`${base}/#arsolv`} class="text-[0.72rem] xl:text-[0.78rem] tracking-[0.11em] xl:tracking-[0.13em] uppercase text-white/65 hover:text-white transition-colors duration-200">Come lavoriamo</a>
-        <a href={`${base}/il-gruppo/`}    class={linkClass('il-gruppo')}>Il Gruppo</a>
+      <div class="hidden xl:flex items-center gap-8">
+        <a href={`${base}/`}                   class={linkClass('')}>Home</a>
+        <a href={`${base}/#interventi`}        class="text-[0.72rem] tracking-[0.14em] uppercase font-medium text-white/60 hover:text-white transition-colors duration-200">Interventi</a>
+        <a href={`${base}/#aree`}              class="text-[0.72rem] tracking-[0.14em] uppercase font-medium text-white/60 hover:text-white transition-colors duration-200">Cosa facciamo</a>
+        <a href={`${base}/il-gruppo/`}         class={linkClass('il-gruppo')}>Il Gruppo</a>
         <a href={`${base}/contatti/`}
-           class="ml-1 xl:ml-2 text-[0.7rem] xl:text-[0.75rem] tracking-[0.12em] xl:tracking-[0.14em] uppercase font-medium
-                  text-gold border border-gold/50 px-4 xl:px-5 py-2.5 rounded
-                  hover:bg-gold hover:text-navy-dark transition-all duration-200">
+           class="ml-2 text-[0.7rem] tracking-[0.16em] uppercase font-bold
+                  text-navy bg-gold px-5 py-2.5 rounded-sm
+                  hover:bg-gold-light transition-all duration-200">
           Avvia analisi
         </a>
       </div>
 
       <!-- Hamburger -->
       <button id="hamburger"
-              class="xl:hidden flex flex-col gap-[5px] p-1.5 text-white"
+              class="xl:hidden flex flex-col gap-[5px] p-2 text-white"
               aria-label="Apri menu" aria-expanded="false">
-        <span class="block w-6 h-px bg-white transition-all"></span>
-        <span class="block w-6 h-px bg-white transition-all"></span>
-        <span class="block w-4 h-px bg-white transition-all"></span>
+        <span class="block w-6 h-[1.5px] bg-white transition-all"></span>
+        <span class="block w-6 h-[1.5px] bg-white transition-all"></span>
+        <span class="block w-4 h-[1.5px] bg-white transition-all"></span>
       </button>
 
     </div>
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden xl:hidden bg-navy-dark border-t border-gold/10">
+  <div id="mobile-menu" class="hidden xl:hidden bg-navy border-t border-gold/10">
     <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col">
-      <a href={`${base}/`}           class="py-3 border-b border-white/6 text-[0.88rem] tracking-[0.12em] uppercase text-white/65 hover:text-gold transition-colors">Mindset</a>
-      <a href={`${base}/#cosa-risolviamo`} class="py-3 border-b border-white/6 text-[0.88rem] tracking-[0.12em] uppercase text-white/65 hover:text-gold transition-colors">Cosa risolviamo</a>
-      <a href={`${base}/#arsolv`} class="py-3 border-b border-white/6 text-[0.88rem] tracking-[0.12em] uppercase text-white/65 hover:text-gold transition-colors">Come lavoriamo</a>
-      <a href={`${base}/il-gruppo/`} class="py-3 border-b border-white/6 text-[0.88rem] tracking-[0.12em] uppercase text-white/65 hover:text-gold transition-colors">Il Gruppo</a>
-      <a href={`${base}/contatti/`}  class="mt-5 text-center text-[0.82rem] tracking-[0.14em] uppercase text-gold border border-gold/50 py-3 rounded hover:bg-gold hover:text-navy-dark transition-all">
+      <a href={`${base}/`}             class="py-3 border-b border-white/6 text-[0.85rem] tracking-[0.14em] uppercase text-white/60 hover:text-gold transition-colors">Home</a>
+      <a href={`${base}/#interventi`}  class="py-3 border-b border-white/6 text-[0.85rem] tracking-[0.14em] uppercase text-white/60 hover:text-gold transition-colors">Interventi</a>
+      <a href={`${base}/#aree`}        class="py-3 border-b border-white/6 text-[0.85rem] tracking-[0.14em] uppercase text-white/60 hover:text-gold transition-colors">Cosa facciamo</a>
+      <a href={`${base}/il-gruppo/`}   class="py-3 border-b border-white/6 text-[0.85rem] tracking-[0.14em] uppercase text-white/60 hover:text-gold transition-colors">Il Gruppo</a>
+      <a href={`${base}/contatti/`}    class="mt-5 text-center text-[0.8rem] tracking-[0.16em] uppercase font-bold text-navy bg-gold py-3 rounded-sm hover:bg-gold-light transition-all">
         Avvia analisi
       </a>
     </div>

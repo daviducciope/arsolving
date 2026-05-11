@@ -2,127 +2,314 @@
 import Base from '../layouts/Base.astro'
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
+const cases = [
+  {
+    tag: 'Operativa · Segnaletica',
+    title: 'Tabelle stradali in 24h',
+    problem: 'Una ditta appaltatrice non riusciva a reperire 10 tabelle per segnalare illeciti sulla raccolta porta a porta. Mancavano anche le tavole e il contenuto grafico.',
+    action: 'Trovate le 10 tabelle, progettato il messaggio visivo, stampato e consegnato. Tutto in 24 ore.',
+    badge: '24h',
+  },
+  {
+    tag: 'Digitale · Web',
+    title: 'Sito ristorante in 48h',
+    problem: "Un ristorante stava aprendo i battenti senza un sito web. Zero tempo, zero materiali.",
+    action: 'Progettato, sviluppato e pubblicato online in 48 ore. Apertura avvenuta regolarmente.',
+    badge: '48h',
+  },
+  {
+    tag: 'Operativa · Facility',
+    title: 'Finestre + piccioni risolti',
+    problem: "Il Comune di Montesilvano aveva un grave problema: piccioni che sporcavano le finestre fino al terzo piano.",
+    action: 'Pulizia con elevatore mobile fino al 3° piano. Problema risolto alla radice: accordo con falconiere per dissuasione permanente.',
+    badge: '2 gg',
+  },
+  {
+    tag: 'Operativa · Eventi',
+    title: 'Food & beverage last-minute',
+    problem: "Un torneo sportivo si è trovato senza servizio ristorazione all'ultimo momento. Organizzatori in panico.",
+    action: "Allestimento food & beverage completo in tempi record. Torneo andato alla perfezione.",
+    badge: '1 gg',
+  },
+  {
+    tag: 'Strategica · Brand',
+    title: 'Temporary store da zero',
+    problem: "Un brand locale della ristorazione voleva aprire un temporary store in dicembre. Da idea, senza nulla.",
+    action: 'Trovato il locale, allestito, ingaggiati i fornitori, creato il logo e il brand digitale. Operativo in poche settimane.',
+    badge: '3 sett.',
+  },
+  {
+    tag: 'Operativa · Sport',
+    title: 'Paraolimpiadi di Montesilvano',
+    problem: "Ciclisti alle Paraolimpiadi senza modo di controllare la pressione delle gomme. Necessità urgente.",
+    action: 'Colonnine per controllo pressione e attrezzi reperiti e consegnati in tempi record. Gara regolare.',
+    badge: 'Urgente',
+  },
+]
+
+const areas = [
+  {
+    n: '01',
+    label: 'Operativa',
+    title: 'Sul campo in ore',
+    desc: 'Pulizie, allestimenti, forniture, manutenzione, facility management, segnaletica, eventi, emergenze logistiche.',
+    href: `${base}/services/`,
+    items: ['Pulizie professionali', 'Allestimenti & eventi', 'Forniture urgenti', 'Facility management', 'Manutenzione edifici'],
+  },
+  {
+    n: '02',
+    label: 'Digitale',
+    title: 'Online in giorni',
+    desc: 'Siti web, brand identity, grafica, comunicazione strategica, marketing digitale. Dalla strategia al pixel.',
+    href: `${base}/digital/`,
+    items: ['Siti web & landing page', 'Brand identity & logo', 'Graphic design', 'Marketing digitale', 'Comunicazione strategica'],
+  },
+  {
+    n: '03',
+    label: 'Strategica',
+    title: 'Costruiamo da zero',
+    desc: 'Partnership, sviluppo iniziative, consulenza operativa, progettazione da zero. Dalla visione alla realtà.',
+    href: `${base}/projects/`,
+    items: ['Partnership & venture', 'Consulenza operativa', 'Progettazione spazi', 'Sviluppo business', 'Gestione progetti'],
+  },
+]
+
 const method = [
   ['A', 'Analizza', 'Legge il contesto reale.'],
   ['R', 'Riduce', 'Taglia dispersioni e attriti.'],
   ['S', 'Struttura', 'Ordina processi e responsabilità.'],
-  ['O', 'Opera', 'Porta metodo nell’esecuzione.'],
+  ['O', 'Opera', "Porta metodo nell'esecuzione."],
   ['L', 'Lega', 'Connette competenze diverse.'],
   ['V', 'Valorizza', 'Genera continuità e valore.'],
-]
-
-const problemMatrix = [
-  {
-    problem: 'Operatività fuori controllo',
-    signal: 'Troppe attività, fornitori scollegati, responsabilità poco chiare.',
-    action: 'Ridisegniamo presidio, priorità, processo e controllo.',
-    output: 'Gestione ordinata',
-  },
-  {
-    problem: 'Valore non percepito',
-    signal: 'Il progetto esiste, ma identità, messaggio e presenza non lo rendono credibile.',
-    action: 'Allineiamo brand, linguaggio, strumenti digitali e direzione commerciale.',
-    output: 'Percezione forte',
-  },
-  {
-    problem: 'Crescita senza struttura',
-    signal: 'L’idea funziona, ma manca una regia per scalarla senza dispersione.',
-    action: 'Costruiamo fasi, ruoli, priorità e condizioni operative sostenibili.',
-    output: 'Percorso scalabile',
-  },
-]
-
-const dimensions = [
-  ['Operativo', 'Spazi, strutture, attività quotidiane', `${base}/services/`],
-  ['Digitale', 'Identità, comunicazione, strumenti', `${base}/digital/`],
-  ['Strategico', 'Iniziative, partnership, sviluppo', `${base}/projects/`],
 ]
 ---
 
 <Base
   title="Home"
-  description="ARSOLVING trasforma problemi operativi, digitali e strategici in sistemi chiari, integrati e gestibili."
+  description="ARSOLVING — Qualsiasi problema: operativo, digitale, logistico, commerciale. Lo risolviamo. Oggi, non domani."
 >
 
-  <!-- Hero -->
-  <section id="mindset" class="home-hero relative min-h-[100svh] overflow-hidden bg-[#07101f] pt-24 lg:pt-28">
-    <div class="stellar-field absolute inset-0 pointer-events-none"></div>
+  <!-- ═══ HERO ═══ -->
+  <section class="relative min-h-[100svh] bg-navy overflow-hidden flex flex-col justify-end pb-16 lg:pb-24 pt-24">
     <div class="hero-grid absolute inset-0 pointer-events-none"></div>
-    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_74%_42%,rgba(181,151,58,0.18),transparent_29%),radial-gradient(circle_at_32%_64%,rgba(77,107,160,0.24),transparent_34%)]"></div>
+    <div class="absolute inset-0 pointer-events-none"
+         style="background: radial-gradient(ellipse 70% 60% at 15% 80%, rgba(199,162,74,0.1) 0%, transparent 60%), radial-gradient(ellipse 40% 50% at 85% 20%, rgba(26,43,74,0.8) 0%, transparent 60%);"></div>
 
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10 min-h-[calc(100svh-7rem)] grid grid-cols-1 lg:grid-cols-[1fr_0.82fr] gap-10 lg:gap-16 items-center">
-      <div class="relative z-10 max-w-4xl py-12 lg:py-20">
-        <div class="animate-fade-in-up inline-flex items-center gap-3 rounded-full border border-gold/25 bg-white/[0.035] px-4 py-2 text-gold text-[0.68rem] tracking-[0.22em] uppercase mb-7"
-             style="animation-delay:0.05s;">
-          <span class="h-1.5 w-1.5 rounded-full bg-gold shadow-[0_0_18px_rgba(181,151,58,0.9)]"></span>
-          Arsolv' Mindset
-        </div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-10 w-full">
+      <!-- Tag -->
+      <div class="animate-fade-in-up flex items-center gap-3 mb-6" style="animation-delay:0.05s">
+        <span class="h-px w-10 bg-gold opacity-70"></span>
+        <span class="text-gold/80 text-[0.6rem] tracking-[0.32em] uppercase">
+          Arsolv' Mindset &nbsp;·&nbsp; Premium Multiservice &nbsp;·&nbsp; Montesilvano
+        </span>
+      </div>
 
-        <h1 class="animate-fade-in-up font-heading font-semibold text-white leading-[0.92] max-w-[11ch] mb-7"
-            style="font-size: clamp(3.9rem, 9.4vw, 9.2rem); animation-delay:0.16s;">
-          Problema. Metodo. Sistema.
-        </h1>
+      <!-- Headline -->
+      <h1 class="animate-fade-in-up font-display text-white uppercase leading-[0.88] mb-8 lg:mb-10"
+          style="font-size: clamp(4.2rem, 11.5vw, 13rem); animation-delay: 0.12s;">
+        Qualsiasi<br />
+        <span class="text-gold">problema.</span><br />
+        Noi lo<br />
+        risolviamo.
+      </h1>
 
-        <p class="animate-fade-in-up text-[1.05rem] md:text-[1.22rem] text-white/70 leading-[1.65] max-w-2xl mb-9"
-           style="animation-delay:0.28s;">
-          Entriamo dove qualcosa non funziona, leggiamo il contesto e costruiamo una regia unica: operativa, digitale, strategica.
+      <!-- Sub + CTAs -->
+      <div class="animate-fade-in-up flex flex-col lg:flex-row items-start lg:items-end gap-8 lg:gap-16"
+           style="animation-delay: 0.3s;">
+        <p class="text-white/55 text-[1rem] lg:text-[1.1rem] leading-[1.75] max-w-[44ch]">
+          Segnaletica urgente, siti web in 48h, pulizie con elevatore, food&nbsp;&amp;&nbsp;beverage
+          last-minute, temporary store da zero. Non importa il problema — operativo,
+          digitale o strategico. Siamo già sul campo.
         </p>
-
-        <div class="animate-fade-in-up flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10"
-             style="animation-delay:0.4s;">
-          <a href={`${base}/contatti/`}
-             class="inline-flex justify-center px-7 py-4 bg-gold text-navy-dark text-[0.78rem] font-bold tracking-[0.16em] uppercase rounded hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
-            Avvia analisi
-          </a>
-          <a href="#cosa-risolviamo"
-             class="inline-flex justify-center px-7 py-4 border border-white/24 text-white text-[0.78rem] font-semibold tracking-[0.16em] uppercase rounded hover:border-gold/60 hover:text-gold transition-all duration-200">
-            Cosa risolviamo
-          </a>
+        <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+          <a href={`${base}/contatti/`} class="btn-gold">Raccontaci il problema</a>
+          <a href="#interventi"         class="btn-outline">Guarda cosa abbiamo fatto</a>
         </div>
+      </div>
+    </div>
 
-        <div class="animate-fade-in-up grid grid-cols-3 gap-3 max-w-xl" style="animation-delay:0.52s;">
-          {['Leggere', 'Ordinare', 'Far funzionare'].map((item, i) => (
-            <div class="border border-white/10 bg-white/[0.035] rounded p-4">
-              <div class="text-[0.62rem] tracking-[0.18em] uppercase text-gold/70 mb-2">0{i + 1}</div>
-              <div class="text-[0.82rem] font-semibold text-white leading-tight">{item}</div>
-            </div>
-          ))}
+    <!-- Scroll cue -->
+    <div class="animate-fade-in-up absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+         style="animation-delay:0.6s;">
+      <span class="text-white/25 text-[0.56rem] tracking-[0.3em] uppercase">Scorri</span>
+      <div class="w-px h-10 bg-gradient-to-b from-white/20 to-transparent"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══ STATS BAR ═══ -->
+  <div class="bg-navy border-y border-gold/12 py-6">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-x divide-white/8">
+        {[
+          { value: '6+',    label: 'Interventi documentati' },
+          { value: '24h',   label: 'Tempo di risposta medio' },
+          { value: '3',     label: 'Aree operative' },
+          { value: 'PE',    label: 'Base operativa, Abruzzo' },
+        ].map((s, i) => (
+          <div class={`flex flex-col gap-1 ${i % 2 === 0 ? 'pr-6' : 'pl-6'} lg:px-10 ${i === 0 ? 'lg:pl-0' : ''} py-1`}>
+            <span class="font-display text-gold leading-none"
+                  style="font-size: clamp(2rem, 4vw, 3rem);">{s.value}</span>
+            <span class="text-white/38 text-[0.68rem] tracking-[0.12em] uppercase">{s.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ INTERVENTI ═══ -->
+  <section id="interventi" class="py-20 lg:py-28 bg-off-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+      <div class="reveal mb-12 lg:mb-16">
+        <div class="label-chip mb-5">Interventi recenti</div>
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+          <h2 class="font-display uppercase text-navy leading-[0.92]"
+              style="font-size: clamp(2.8rem, 6vw, 6rem);">
+            Poche chiacchiere.<br />Parlano i fatti.
+          </h2>
+          <p class="text-navy/52 text-[0.9rem] leading-[1.7] max-w-[36ch] lg:text-right">
+            Casi reali, problemi reali. Niente casi studio gonfiati — solo quello che è successo davvero.
+          </p>
         </div>
       </div>
 
-      <div class="relative hidden lg:flex items-center justify-center min-h-[560px]">
-        <div class="orbit-system">
-          <div class="orbit-ring orbit-ring-1"></div>
-          <div class="orbit-ring orbit-ring-2"></div>
-          <div class="orbit-ring orbit-ring-3"></div>
-          <div class="orbit-core">
-            <img src={`${base}/logo.jpeg`} alt="ARSOLVING" />
-          </div>
-          {method.map((step, i) => (
-            <div class={`orbit-node orbit-node-${i + 1}`}>
-              <span>{step[0]}</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {cases.map((c, i) => (
+          <div class={`reveal delay-${(i % 3) + 1} case-card`}>
+            <div class="flex items-start justify-between gap-3 mb-4">
+              <span class="case-tag">{c.tag}</span>
+              <span class="font-display text-gold/60 text-[1.4rem] leading-none flex-shrink-0">{c.badge}</span>
             </div>
-          ))}
-        </div>
+            <h3 class="font-heading font-semibold text-navy text-[1.1rem] leading-tight mb-3">{c.title}</h3>
+            <div class="space-y-3">
+              <div>
+                <span class="text-[0.6rem] tracking-[0.2em] uppercase font-bold text-navy/38 block mb-1">Il problema</span>
+                <p class="text-[0.84rem] text-navy/62 leading-[1.68]">{c.problem}</p>
+              </div>
+              <div class="h-px bg-gold/15"></div>
+              <div>
+                <span class="text-[0.6rem] tracking-[0.2em] uppercase font-bold text-gold/80 block mb-1">La soluzione</span>
+                <p class="text-[0.84rem] text-navy/75 leading-[1.68] font-medium">{c.action}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Method -->
-  <section id="arsolv" class="relative overflow-hidden bg-[#07101f] py-20 lg:py-28">
-    <div class="stellar-field absolute inset-0 pointer-events-none opacity-80"></div>
-    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent"></div>
 
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal mb-12 lg:mb-16 max-w-3xl">
-        <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">A.R.S.O.L.V.</div>
-        <h2 class="font-heading font-semibold text-white leading-[1.02] mb-5"
-            style="font-size: clamp(2.7rem, 6vw, 6rem);">
-          Il metodo che mette ordine.
+  <!-- ═══ COME LAVORIAMO ═══ -->
+  <section class="py-20 lg:py-28 bg-white border-y border-navy/6">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+      <div class="reveal mb-12 lg:mb-16 text-center">
+        <div class="label-chip justify-center mb-5">Come funziona</div>
+        <h2 class="font-display uppercase text-navy leading-[0.92]"
+            style="font-size: clamp(2.4rem, 5vw, 5rem);">
+          Tre passi. Nessuna burocrazia.
         </h2>
-        <p class="text-[1rem] text-white/58 leading-[1.7] max-w-2xl">
-          Sei passaggi. Una direzione. Dalla complessità grezza a una struttura gestibile nel tempo.
-        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          {
+            n: '01',
+            title: 'Ci chiami o scrivi',
+            desc: 'Descrivi il problema, anche se non sai come descriverlo. Non servono capitolati né brief formali. Basta una telefonata o un messaggio.',
+          },
+          {
+            n: '02',
+            title: 'Capiamo in 30 minuti',
+            desc: 'Valutiamo il problema, proponiamo come risolverlo e ci mettiamo in moto. Niente attese, niente riunioni infinite.',
+          },
+          {
+            n: '03',
+            title: 'Problema risolto',
+            desc: 'Consegniamo, documentiamo e rimaniamo disponibili. Se qualcosa non va, torniamo. Non chiudiamo il file finché non è davvero risolto.',
+          },
+        ].map((s, i) => (
+          <div class={`reveal delay-${i + 1} step-card`}>
+            <div class="step-number">{s.n}</div>
+            <h3 class="font-heading font-semibold text-navy text-[1.1rem] mb-3">{s.title}</h3>
+            <p class="text-navy/55 text-[0.88rem] leading-[1.75]">{s.desc}</p>
+            {i < 2 && (
+              <div class="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 18l6-6-6-6" stroke="#C7A24A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ LE 3 AREE ═══ -->
+  <section id="aree" class="py-20 lg:py-28 bg-navy">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+      <div class="reveal mb-12 lg:mb-16">
+        <div class="section-label mb-5">Cosa facciamo</div>
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+          <h2 class="font-display uppercase text-white leading-[0.92]"
+              style="font-size: clamp(2.8rem, 6vw, 6rem);">
+            Tre aree.<br />Un solo interlocutore.
+          </h2>
+          <p class="text-white/45 text-[0.9rem] leading-[1.7] max-w-[38ch] lg:text-right">
+            Non siamo un'agenzia né un'impresa generalista. Siamo il partner che risolve — qualunque sia il fronte.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
+        {areas.map((area, i) => (
+          <a href={area.href} class={`reveal delay-${i + 1} area-panel group`}>
+            <div class="flex items-start justify-between mb-6">
+              <span class="text-gold/50 font-display text-[0.75rem] tracking-[0.3em]">{area.n}</span>
+              <svg class="w-4 h-4 text-gold/30 group-hover:text-gold transition-colors duration-200"
+                   fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </div>
+            <span class="text-gold text-[0.68rem] tracking-[0.22em] uppercase font-bold mb-2 block">{area.label}</span>
+            <h3 class="font-display text-white text-[2rem] leading-none uppercase mb-4">{area.title}</h3>
+            <p class="text-white/45 text-[0.86rem] leading-[1.7] mb-6 flex-1">{area.desc}</p>
+            <ul class="space-y-1.5">
+              {area.items.map(item => (
+                <li class="flex items-center gap-2.5 text-white/38 text-[0.78rem]">
+                  <span class="w-1 h-1 rounded-full bg-gold/50 flex-shrink-0"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ METODO ARSOLV ═══ -->
+  <section id="arsolv" class="py-20 lg:py-28 bg-off-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+      <div class="reveal mb-12 lg:mb-16">
+        <div class="label-chip mb-5">A.R.S.O.L.V.</div>
+        <div class="flex flex-col lg:flex-row lg:items-end gap-6">
+          <h2 class="font-display uppercase text-navy leading-[0.92]"
+              style="font-size: clamp(2.8rem, 6vw, 5.5rem);">
+            Il metodo dietro<br />ogni soluzione.
+          </h2>
+          <p class="text-navy/50 text-[0.9rem] leading-[1.75] max-w-[40ch]">
+            Ogni intervento — grande o piccolo — passa attraverso sei passaggi. Non improvvisiamo: il metodo è la differenza tra una toppa e una soluzione vera.
+          </p>
+        </div>
       </div>
 
       <div class="method-strip">
@@ -137,72 +324,27 @@ const dimensions = [
     </div>
   </section>
 
-  <!-- Problems -->
-  <section id="cosa-risolviamo" class="problem-lab relative overflow-hidden bg-cream py-20 lg:py-28">
-    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_90%_10%,rgba(181,151,58,0.18),transparent_34%)]"></div>
 
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal max-w-4xl mb-14">
-        <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">Cosa risolviamo</div>
-        <h2 class="font-heading font-semibold text-navy leading-[1.02] mb-6"
-            style="font-size: clamp(2.7rem, 5.8vw, 6.2rem);">
-          Non vendiamo pezzi. Risolviamo blocchi.
-        </h2>
-        <p class="text-[1.05rem] lg:text-[1.2rem] text-navy/62 leading-[1.7] max-w-3xl">
-          Se il problema è confuso, il primo lavoro è renderlo leggibile. Da lì nasce la soluzione: non prima.
-        </p>
-      </div>
-
-      <div class="problem-matrix reveal delay-1">
-        <div class="problem-head problem-head-main">Problema reale</div>
-        <div class="problem-head">Segnale</div>
-        <div class="problem-head">Regia Arsolving</div>
-        <div class="problem-head">Output</div>
-
-        {problemMatrix.map((item, i) => (
-          <>
-            <div class="problem-cell problem-name">
-              <span>0{i + 1}</span>
-              <strong>{item.problem}</strong>
-            </div>
-            <div class="problem-cell" data-label="Segnale">{item.signal}</div>
-            <div class="problem-cell" data-label="Regia Arsolving">{item.action}</div>
-            <div class="problem-cell problem-output" data-label="Output">{item.output}</div>
-          </>
-        ))}
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-12">
-        {dimensions.map((dimension, i) => (
-          <a href={dimension[2]} class={`dimension-rail reveal delay-${i + 2} group`}>
-            <span>0{i + 1}</span>
-            <strong>{dimension[0]}</strong>
-            <p>{dimension[1]}</p>
-            <div>Approfondisci →</div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="relative overflow-hidden bg-[#07101f] py-20 lg:py-28">
-    <div class="stellar-field absolute inset-0 pointer-events-none"></div>
-    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_100%,rgba(181,151,58,0.16),transparent_42%)]"></div>
+  <!-- ═══ CTA FINALE ═══ -->
+  <section class="relative overflow-hidden bg-navy py-24 lg:py-32">
+    <div class="hero-grid absolute inset-0 pointer-events-none opacity-60"></div>
+    <div class="absolute inset-0 pointer-events-none"
+         style="background: radial-gradient(ellipse 60% 80% at 50% 110%, rgba(199,162,74,0.12) 0%, transparent 60%);"></div>
 
     <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
-      <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">Avvio analisi</div>
-      <h2 class="font-heading font-semibold text-white leading-[1.02] mb-7"
-          style="font-size: clamp(3rem, 7vw, 7rem);">
-        Portaci il problema.
+      <div class="section-label justify-center mb-6">Avvia analisi</div>
+      <h2 class="font-display uppercase text-white leading-[0.88] mb-8"
+          style="font-size: clamp(3.5rem, 9vw, 9rem);">
+        Hai un<br /><span class="text-gold">problema?</span>
       </h2>
-      <p class="text-[1.05rem] text-white/60 leading-[1.7] max-w-2xl mx-auto mb-9">
-        Lo leggiamo, lo ordiniamo e costruiamo il sistema più adatto.
+      <p class="text-white/52 text-[1rem] leading-[1.75] max-w-[38ch] mx-auto mb-10">
+        Descrivici la situazione, anche se è complicata da spiegare.
+        In 30 minuti capiamo cosa fare e ci mettiamo in moto.
       </p>
-      <a href={`${base}/contatti/`}
-         class="inline-flex px-8 py-4 bg-gold text-navy-dark text-[0.8rem] font-bold tracking-[0.16em] uppercase rounded hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
-        Avvia il confronto
-      </a>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href={`${base}/contatti/`} class="btn-gold">Raccontaci il problema</a>
+        <a href={`${base}/il-gruppo/`} class="btn-outline">Chi siamo</a>
+      </div>
     </div>
   </section>
 

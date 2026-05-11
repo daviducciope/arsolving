@@ -4,87 +4,79 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 ---
 
 <Base title="Il Gruppo"
-      description="ARSOLVING — visione, posizionamento e struttura del gruppo. Un unico interlocutore per competenze diverse.">
+      description="ARSOLVING — chi siamo, la visione e il metodo dietro ogni soluzione. Un unico interlocutore per competenze diverse.">
 
   <!-- Hero -->
   <div class="page-hero">
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-        <span class="block w-7 h-px bg-gold"></span>Il Gruppo
-      </div>
-      <h1 class="font-heading font-semibold text-white leading-[1.1] mb-5"
-          style="font-size: clamp(2.5rem, 5vw, 4rem);">
+      <div class="section-label mb-6">Il Gruppo</div>
+      <h1 class="font-display uppercase text-white leading-[0.9] mb-5"
+          style="font-size: clamp(3rem, 7vw, 6.5rem);">
         Chi è ARSOLVING
       </h1>
-      <p class="text-[1.05rem] text-white/48 leading-[1.8] max-w-xl">
-        Un gruppo strutturato. Un metodo condiviso. Un posizionamento preciso.
+      <p class="text-[1rem] text-white/45 leading-[1.8] max-w-xl">
+        Non un'agenzia. Non un'impresa generalista.
+        Un gruppo che risolve — qualunque sia il problema.
       </p>
     </div>
   </div>
 
 
-  <!-- ── Visione ── -->
-  <section class="py-28 bg-white">
+  <!-- Visione -->
+  <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
         <div class="reveal">
-          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>Visione
-          </div>
-          <h2 class="font-heading font-semibold text-navy leading-[1.15] mb-8"
-              style="font-size: clamp(1.8rem, 3vw, 2.6rem);">
+          <div class="label-chip mb-6">Visione</div>
+          <h2 class="font-display uppercase text-navy leading-[0.92] mb-8"
+              style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
             Perché nasce ARSOLVING
           </h2>
-          <div class="space-y-5 text-[1rem] text-gray-500 leading-[1.85]">
+          <div class="space-y-5 text-[1rem] text-navy/55 leading-[1.85]">
             <p>
-              ARSOLVING nasce da un'osservazione concreta: le aziende in crescita,
-              le strutture complesse, i progetti ambiziosi hanno bisogno di un
-              interlocutore capace di operare a tutto campo — non di tanti fornitori
-              che lavorano in silos senza coordinarsi.
+              ARSOLVING nasce dall'esperienza diretta sul campo: le aziende, le strutture
+              pubbliche e i privati si trovano spesso di fronte a problemi che nessun fornitore
+              riesce a risolvere perché "non è il loro settore" o "non hanno il tempo".
             </p>
             <p>
-              La frammentazione dei servizi genera inefficienze, disomogeneità di
-              standard e un carico di coordinamento che ricade sempre sul cliente.
-              ARSOLVING risolve questa struttura: un gruppo con più divisioni
-              specializzate, un solo punto di responsabilità.
+              Abbiamo consegnato tabelle stradali in 24h, lanciato siti web in 48h,
+              risolto emergenze con piccioni e finestre sporche, allestito food & beverage
+              last-minute, costruito temporary store da zero. In tutti questi casi, il problema
+              comune era uno solo: serviva qualcuno che si muovesse davvero.
             </p>
             <p>
-              Il nome lo racconta con chiarezza: <span class="text-navy font-medium">AR</span>
-              come azione e radice del gruppo,
-              <span class="text-gold font-medium">SOLVING</span> come orientamento
-              permanente alla risoluzione. Non produciamo report. Portiamo risultati.
+              Il nome lo racconta chiaramente: <span class="text-navy font-semibold">AR</span>
+              come radice del gruppo, <span class="text-gold font-semibold">SOLVING</span>
+              come orientamento permanente alla soluzione. Non produciamo report. Portiamo risultati.
             </p>
           </div>
         </div>
 
         <div class="reveal delay-2">
-          <!-- Quote -->
-          <div class="bg-navy rounded-lg p-10 relative overflow-hidden mb-5">
-            <div class="absolute top-0 right-0 font-heading text-[9rem] text-gold/6 leading-none select-none">"</div>
-            <blockquote class="font-heading italic text-[1.3rem] text-white leading-[1.55] relative mb-8">
+          <div class="bg-navy p-10 relative overflow-hidden mb-4">
+            <div class="absolute top-0 right-0 font-display text-[8rem] text-gold/5 leading-none select-none">"</div>
+            <blockquote class="font-heading italic text-[1.2rem] text-white leading-[1.6] relative mb-7">
               "Non semplici fornitori,<br />
-              ma <span class="text-gold">partner strategici</span>.<br />
+              ma <span class="text-gold">partner operativi</span>.<br />
               La differenza è nel metodo<br />
               e nell'assunzione di responsabilità."
             </blockquote>
-            <cite class="text-[0.68rem] tracking-[0.2em] uppercase text-white/28 not-italic">
+            <cite class="text-[0.62rem] tracking-[0.22em] uppercase text-white/25 not-italic">
               — ARSOLVING, Vision Statement
             </cite>
           </div>
 
-          <!-- 4 valori -->
           <div class="grid grid-cols-2 gap-3">
             {[
               { v: 'Problem solving', d: 'Ogni mandato inizia da un problema reale da risolvere.' },
-              { v: 'Organizzazione',  d: 'Struttura chiara, ruoli definiti, processi tracciati.' },
+              { v: 'Velocità',        d: 'Ci muoviamo in ore, non in settimane.' },
               { v: 'Affidabilità',    d: 'Consegniamo quello che promettiamo, nei tempi concordati.' },
-              { v: 'Multidisciplina', d: 'Competenze diverse, coordinate da una visione unitaria.' },
+              { v: 'Multidisciplina', d: 'Operativa, digitale, strategica: una sola chiamata.' },
             ].map(item => (
-              <div class="bg-cream border border-gray-100 rounded-lg p-5
-                          hover:border-gold/25 transition-colors duration-200">
+              <div class="bg-off-white border border-navy/8 p-5 hover:border-gold/25 transition-colors duration-200">
                 <h4 class="text-[0.85rem] font-semibold text-navy mb-2">{item.v}</h4>
-                <p class="text-[0.76rem] text-gray-400 leading-[1.6]">{item.d}</p>
+                <p class="text-[0.76rem] text-navy/45 leading-[1.6]">{item.d}</p>
               </div>
             ))}
           </div>
@@ -95,44 +87,41 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
   </section>
 
 
-  <!-- ── Posizionamento ── -->
-  <section class="py-28 bg-cream">
+  <!-- Posizionamento -->
+  <section class="py-24 bg-off-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal text-center max-w-2xl mx-auto mb-16">
-        <div class="flex items-center justify-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">
-          <span class="block w-7 h-px bg-gold"></span>Posizionamento<span class="block w-7 h-px bg-gold"></span>
-        </div>
-        <h2 class="font-heading font-semibold text-navy leading-[1.15]"
-            style="font-size: clamp(1.8rem, 3vw, 2.6rem);">
-          Un gruppo premium.<br />Non un'agenzia. Non un'impresa generica.
+      <div class="reveal text-center max-w-2xl mx-auto mb-14">
+        <div class="label-chip justify-center mb-5">Posizionamento</div>
+        <h2 class="font-display uppercase text-navy leading-[0.92]"
+            style="font-size: clamp(2rem, 4.5vw, 4.5rem);">
+          Premium multiservice.<br />Zero compromessi.
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {[
           {
             n: '01',
             title: 'Struttura di gruppo',
-            text: "ARSOLVING ha divisioni specializzate con competenze proprie, che condividono metodo, standard qualitativi e visione. Non è un'aggregazione di servizi: è un sistema coordinato."
+            text: "Divisioni specializzate con competenze proprie, che condividono metodo e standard. Non è un'aggregazione di servizi: è un sistema coordinato con un solo punto di responsabilità.",
           },
           {
             n: '02',
             title: 'Standard uniformi',
-            text: 'La qualità non varia a seconda del servizio richiesto. Un intervento operativo risponde agli stessi criteri di cura e documentazione di un progetto digitale o strategico.'
+            text: 'La qualità non varia con il servizio richiesto. Un intervento operativo urgente riceve la stessa cura di un progetto digitale strutturato. Nessuna eccezione.',
           },
           {
             n: '03',
-            title: 'Crescita organica',
-            text: 'Il gruppo cresce aggiungendo competenze quando il mercato e la qualità lo consentono. Nessuna espansione a scapito degli standard già stabiliti.'
+            title: 'Velocità reale',
+            text: 'Non promettiamo velocità e poi mandiamo preventivi per settimane. Quando diciamo 24h, è 24h. Quando diciamo 48h, è 48h. Abbiamo i casi a dimostrarlo.',
           },
-        ].map(item => (
-          <div class="reveal bg-white border border-gray-100 rounded-lg p-8 relative overflow-hidden
-                      hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+        ].map((item, i) => (
+          <div class={`reveal delay-${i+1} bg-white border border-navy/8 p-8 relative overflow-hidden hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300`}>
             <div class="absolute top-0 left-0 right-0 h-[2px]"
-                 style="background: linear-gradient(90deg, #1D2D50, #B5973A);"></div>
-            <div class="font-heading text-[2.8rem] font-bold text-gray-100 leading-none mb-4">{item.n}</div>
-            <h3 class="text-[1rem] font-semibold text-navy mb-3">{item.title}</h3>
-            <p class="text-[0.88rem] text-gray-500 leading-[1.75]">{item.text}</p>
+                 style="background: linear-gradient(90deg, #0E1D34, #C7A24A);"></div>
+            <div class="font-display text-navy/8 text-[3rem] leading-none mb-4">{item.n}</div>
+            <h3 class="font-heading font-semibold text-navy text-[1rem] mb-3">{item.title}</h3>
+            <p class="text-[0.86rem] text-navy/50 leading-[1.75]">{item.text}</p>
           </div>
         ))}
       </div>
@@ -140,46 +129,40 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
   </section>
 
 
-  <!-- ── Brand identity ── -->
-  <section class="py-24 bg-navy-dark relative overflow-hidden">
-    <div class="absolute inset-0 pointer-events-none"
-         style="background: radial-gradient(ellipse 60% 70% at 80% 50%, rgba(181,151,58,0.05) 0%, transparent 60%);"></div>
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+  <!-- Brand identity -->
+  <section class="py-24 bg-navy">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         <div class="reveal flex justify-center">
-          <div class="relative w-52 h-52">
-            <div class="absolute inset-[-20px] rounded-full border border-gold/12 animate-pulse-ring"></div>
-            <div class="absolute inset-[-42px] rounded-full border border-gold/6 animate-pulse-ring2"></div>
+          <div class="relative w-44 h-44">
+            <div class="absolute inset-[-24px] rounded-full border border-gold/12"></div>
+            <div class="absolute inset-[-44px] rounded-full border border-gold/6"></div>
             <img src={`${base}/logo.jpeg`} alt="ARSOLVING"
                  class="w-full h-full object-contain rounded-full"
-                 style="filter: drop-shadow(0 16px 48px rgba(181,151,58,0.15));" />
+                 style="filter: drop-shadow(0 0 40px rgba(199,162,74,0.18));" />
           </div>
         </div>
 
         <div class="reveal delay-2">
-          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>Identità visiva
-          </div>
-          <h2 class="font-heading font-semibold text-white leading-[1.15] mb-7"
-              style="font-size: clamp(1.8rem, 3vw, 2.4rem);">
-            Un'identità che<br />riflette la struttura
+          <div class="section-label mb-6">Identità visiva</div>
+          <h2 class="font-display uppercase text-white leading-[0.92] mb-7"
+              style="font-size: clamp(2rem, 4vw, 4rem);">
+            Un'identità che<br />riflette la sostanza.
           </h2>
-          <div class="space-y-5 text-[0.92rem] text-white/50 leading-[1.8]">
+          <div class="space-y-4 text-[0.92rem] text-white/45 leading-[1.8]">
             <p>
-              Il <span class="text-white/75 font-medium">blu navy</span> rappresenta
-              solidità istituzionale, competenza tecnica e affidabilità operativa.
-              È il colore della fiducia nel tempo.
+              Il <span class="text-white/72 font-medium">blu navy profondo</span> rappresenta
+              solidità, competenza tecnica e affidabilità operativa.
             </p>
             <p>
-              L'<span class="text-gold font-medium">oro</span> definisce il carattere
-              premium del gruppo: eccellenza nei deliverable, cura del dettaglio,
-              visione di lungo periodo.
+              L'<span class="text-gold font-medium">oro</span> definisce il carattere premium:
+              eccellenza nei risultati, cura del dettaglio, visione a lungo termine.
             </p>
             <p>
-              Il payoff <span class="font-heading italic text-gold/65">Global Vision /
-              Arsolv' Mindset</span> sintetizza i due assi del metodo: lettura sistemica
-              del contesto e orientamento concreto alla soluzione.
+              Il payoff <span class="font-heading italic text-gold/60">Global Vision /
+              Arsolv' Mindset</span> sintetizza i due assi: lettura sistemica del contesto
+              e orientamento concreto alla soluzione.
             </p>
           </div>
         </div>
@@ -189,29 +172,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
   </section>
 
 
-  <!-- ── CTA ── -->
-  <section class="py-20 bg-white border-t border-gray-100">
+  <!-- CTA -->
+  <section class="py-20 bg-white border-t border-navy/6">
     <div class="max-w-3xl mx-auto px-6 text-center reveal">
-      <h2 class="font-heading font-semibold text-navy leading-[1.2] mb-5"
-          style="font-size: clamp(1.8rem, 3vw, 2.4rem);">
+      <h2 class="font-display uppercase text-navy leading-[0.92] mb-5"
+          style="font-size: clamp(2rem, 4vw, 4rem);">
         Vuoi lavorare con noi?
       </h2>
-      <p class="text-[1rem] text-gray-400 leading-[1.8] mb-10">
-        Contattaci per una prima conversazione diretta. Nessun impegno preliminare.
+      <p class="text-navy/50 text-[1rem] leading-[1.8] mb-10">
+        Contattaci direttamente. Nessun form complicato, nessun impegno preliminare.
       </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href={`${base}/contatti/`}
-           class="px-8 py-3.5 bg-gold text-navy-dark text-[0.78rem] font-semibold
-                  tracking-[0.14em] uppercase rounded hover:bg-gold-light
-                  transition-all duration-200 hover:-translate-y-0.5">
-          Contattaci
-        </a>
-        <a href={`${base}/services/`}
-           class="px-8 py-3.5 border border-navy/22 text-navy text-[0.78rem]
-                  tracking-[0.14em] uppercase rounded hover:bg-navy hover:text-white
-                  transition-all duration-200">
-          I nostri servizi
-        </a>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href={`${base}/contatti/`} class="btn-gold">Contattaci</a>
+        <a href={`${base}/services/`} class="btn-outline-navy">I nostri servizi</a>
       </div>
     </div>
   </section>

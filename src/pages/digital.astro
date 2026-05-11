@@ -5,86 +5,127 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 const services = [
   {
     n: '01',
-    title: 'Branding & Identità',
-    desc: 'Costruzione e sviluppo dell\'identità visiva. Logo system, palette, tipografia, brand guidelines. Un\'identità solida riduce il lavoro di comunicazione a lungo termine.',
-    icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
+    title: 'Siti Web & Landing Page',
+    desc: 'Progettazione e sviluppo da zero, anche in tempi record. Abbiamo consegnato un sito completo per un ristorante in 48 ore. Architettura orientata agli obiettivi, performance e mobile-first.',
+    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
   },
   {
     n: '02',
-    title: 'Comunicazione Strategica',
-    desc: 'Definizione del tono di voce, messaggi chiave e architettura dei contenuti. Costruiamo il sistema comunicativo prima di produrre qualsiasi contenuto.',
-    icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
+    title: 'Brand Identity & Logo',
+    desc: 'Costruzione dell\'identità visiva da zero: logo, palette, tipografia, brand guidelines. Abbiamo creato brand completi per temporary store, locali e progetti digitali.',
+    icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
   },
   {
     n: '03',
     title: 'Graphic Design',
-    desc: 'Produzione di materiali visivi per ogni contesto: print, digital, presentazioni, formati editoriali. Design funzionale prima che decorativo.',
+    desc: 'Materiali visivi per ogni contesto: segnaletica, print, digital, presentazioni. Abbiamo progettato il contenuto grafico per tabelle stradali in 24h. Design funzionale, non decorativo.',
     icon: 'M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z',
   },
   {
     n: '04',
-    title: 'Web & Siti',
-    desc: 'Progettazione e sviluppo di siti web corporate, landing page e portali. Architettura orientata agli obiettivi, performance e accessibilità.',
-    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+    title: 'Comunicazione Strategica',
+    desc: 'Tono di voce, messaggi chiave, architettura dei contenuti. Costruiamo il sistema comunicativo prima di produrre qualsiasi contenuto. Nessuna campagna senza strategia.',
+    icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
   },
   {
     n: '05',
     title: 'Applicazioni Web',
-    desc: 'Sviluppo di web application e strumenti digitali ad hoc. Dalla gestione interna ai portali cliente, con architetture moderne e codice manutenibile.',
+    desc: 'Web app e strumenti digitali custom. Dashboard gestionali, portali cliente, sistemi interni. Architetture moderne, codice pulito e manutenibile.',
     icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z',
   },
   {
     n: '06',
     title: 'Marketing Digitale',
-    desc: 'Pianificazione e gestione di campagne online. SEO, advertising e analytics strutturati su obiettivi di business misurabili, non su metriche vanity.',
+    desc: 'SEO, advertising, social media, analytics. Campagne strutturate su obiettivi di business misurabili, non su metriche vanity. Misuriamo ogni lira investita.',
     icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
+  },
+]
+
+const portfolio = [
+  {
+    title: 'AgriPlanet Store',
+    tags: ['E-commerce', 'Web Design', 'Brand Identity'],
+    desc: "E-commerce per fitofarmaci, concimi, sementi e macchine agricole. Identità e piattaforma di vendita costruite da zero.",
+    url: 'https://agriplanetstore.it',
+    img: 'https://stacomunicazionedesign.it/assets/img/agriplanetstore.png',
+  },
+  {
+    title: 'Sostanza Servizi',
+    tags: ['Web Platform', 'Brand Strategy', 'UX Design'],
+    desc: 'Piattaforma web per gruppo multicomparto: raccolta rifiuti, pulizie e ristrutturazioni. Brand e architettura della comunicazione.',
+    url: 'https://sostanzaservizi.it',
+    img: 'https://stacomunicazionedesign.it/assets/img/sostanza-multiservizi.png',
+  },
+  {
+    title: 'Hurka',
+    tags: ['Rebranding', 'Website', 'UX/UI'],
+    desc: 'Rebranding completo e nuovo sito per consulenza energetica specializzata in fotovoltaico. Posizionamento premium.',
+    url: 'https://hurka.it',
+    img: 'https://stacomunicazionedesign.it/assets/img/hurka_mobile.png',
+  },
+  {
+    title: 'De Marco Studio Legale',
+    tags: ['Corporate Website', 'UX', 'Copywriting'],
+    desc: 'Sito corporate per studio legale penalista e civilista a Pescara. Copywriting strategico e architettura orientata alla credibilità.',
+    url: 'https://demarcostudiolegale.it',
+    img: 'https://stacomunicazionedesign.it/assets/img/demarcostudiolegale_mobile.png',
+  },
+  {
+    title: 'Vignaluna',
+    tags: ['Restaurant Website', 'Food Experience', 'UX/UI'],
+    desc: 'Sito per pizzeria a legna ed enoteca a Santa Marinella. Esperienza digitale attorno all\'identità del locale: territorio, gusto, atmosfera.',
+    url: 'https://ristorantevignaluna.it',
+    img: null,
+  },
+  {
+    title: 'Girofacile',
+    tags: ['Web App', 'UI/UX', 'Logistica'],
+    desc: 'Dashboard per la gestione delle consegne e la logistica dell\'ultimo miglio. Interfaccia operativa progettata per semplicità e velocità.',
+    url: null,
+    img: null,
   },
 ]
 ---
 
 <Base title="Arsolving Digital"
-      description="Arsolving Digital — comunicazione, branding, web, app e marketing digitale per aziende e progetti.">
+      description="Arsolving Digital — siti web, brand identity, grafica, comunicazione strategica e marketing digitale. Online in giorni.">
 
   <!-- Hero -->
   <div class="page-hero">
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-        <span class="block w-7 h-px bg-gold"></span>Arsolving
-      </div>
-      <h1 class="font-heading font-semibold text-white leading-[1.1] mb-5"
-          style="font-size: clamp(2.5rem, 5vw, 4rem);">
-        Digital
+      <div class="section-label mb-6">Arsolving</div>
+      <h1 class="font-display uppercase text-white leading-[0.9] mb-5"
+          style="font-size: clamp(3rem, 7vw, 6.5rem);">
+        Area Digitale
       </h1>
-      <p class="text-[1.05rem] text-white/48 leading-[1.8] max-w-xl">
-        Comunicazione, branding, sviluppo e marketing digitale.
-        Una regia strategica unica per la tua presenza online e la tua identità di marca.
+      <p class="text-[1rem] text-white/45 leading-[1.8] max-w-xl">
+        Siti web, brand identity, grafica, comunicazione e marketing digitale.
+        Dalla strategia all'online — in giorni, non mesi.
       </p>
     </div>
   </div>
 
 
   <!-- Intro -->
-  <section class="py-20 bg-white border-b border-gray-100">
+  <section class="py-20 bg-white border-b border-navy/6">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="reveal">
-          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>L'approccio digitale
-          </div>
-          <h2 class="font-heading font-semibold text-navy leading-[1.15]"
-              style="font-size: clamp(1.8rem, 3vw, 2.4rem);">
-            Strategia prima.<br />Esecuzione dopo.
+          <div class="label-chip mb-6">L'approccio digitale</div>
+          <h2 class="font-display uppercase text-navy leading-[0.92]"
+              style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
+            Sito in 48h.<br />Brand in una settimana.
           </h2>
         </div>
         <div class="reveal delay-2">
-          <p class="text-[1rem] text-gray-500 leading-[1.85] mb-5">
-            Arsolving Digital raccoglie tutte le competenze di comunicazione, design e sviluppo
-            tecnologico del gruppo. Non lavoriamo a compartimenti stagni: brand, contenuti,
-            web e marketing vengono progettati come un sistema unico e coerente.
+          <p class="text-[1rem] text-navy/55 leading-[1.85] mb-5">
+            Abbiamo consegnato un sito completo per un ristorante in apertura in 48 ore.
+            Abbiamo creato il brand e l'identità digitale di un temporary store in pochi giorni,
+            insieme all'allestimento fisico.
           </p>
-          <p class="text-[1rem] text-gray-500 leading-[1.85]">
-            Il risultato è una presenza digitale che funziona davvero, non una collezione
-            di asset scoordinati. Dal logo al sito, dalla campagna alla piattaforma.
+          <p class="text-[1rem] text-navy/55 leading-[1.85]">
+            Non facciamo bellezza fine a sé stessa. Brand, contenuti, web e marketing
+            vengono progettati come un sistema unico: ogni pezzo serve a qualcosa.
           </p>
         </div>
       </div>
@@ -92,35 +133,31 @@ const services = [
   </section>
 
 
-  <!-- Services grid -->
-  <section class="py-28 bg-cream">
+  <!-- Servizi -->
+  <section class="py-24 bg-off-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal mb-14 text-center">
-        <div class="flex items-center justify-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">
-          <span class="block w-7 h-px bg-gold"></span>I servizi<span class="block w-7 h-px bg-gold"></span>
-        </div>
-        <h2 class="font-heading font-semibold text-navy leading-[1.15]"
-            style="font-size: clamp(1.8rem, 3vw, 2.6rem);">
-          Aree di competenza
+      <div class="reveal mb-12 text-center">
+        <div class="label-chip justify-center mb-5">Competenze</div>
+        <h2 class="font-display uppercase text-navy leading-[0.92]"
+            style="font-size: clamp(2rem, 4vw, 4rem);">
+          Cosa facciamo
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {services.map((s, i) => (
-          <div class={`reveal delay-${(i % 3) + 1} group bg-white border border-gray-100 rounded-lg p-8
-                       relative overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300`}>
-            <div class="absolute top-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100
-                        transition-transform duration-400 origin-left"
-                 style="background: linear-gradient(90deg, #B5973A, #1D2D50);"></div>
-            <div class="font-heading text-[2.8rem] font-bold text-gray-100 leading-none mb-4">{s.n}</div>
-            <div class="w-10 h-10 bg-navy rounded flex items-center justify-center text-gold mb-5
-                        group-hover:bg-gold group-hover:text-navy-dark transition-colors duration-300">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d={s.icon}/>
-              </svg>
+          <div class={`reveal delay-${(i % 3) + 1} service-card group`}>
+            <div class="flex items-start justify-between mb-5">
+              <div class="w-11 h-11 bg-navy rounded-sm flex items-center justify-center text-gold
+                          group-hover:bg-gold group-hover:text-navy transition-colors duration-300">
+                <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={s.icon}/>
+                </svg>
+              </div>
+              <span class="font-display text-navy/10 text-[2.5rem] leading-none">{s.n}</span>
             </div>
-            <h3 class="text-[1rem] font-semibold text-navy mb-3">{s.title}</h3>
-            <p class="text-[0.87rem] text-gray-500 leading-[1.78]">{s.desc}</p>
+            <h3 class="font-heading font-semibold text-navy text-[1rem] mb-3">{s.title}</h3>
+            <p class="text-[0.84rem] text-navy/52 leading-[1.78]">{s.desc}</p>
           </div>
         ))}
       </div>
@@ -128,110 +165,51 @@ const services = [
   </section>
 
 
-  <!-- Lavori selezionati -->
-  <section class="py-28 bg-white border-t border-gray-100">
+  <!-- Portfolio -->
+  <section class="py-24 bg-white border-t border-navy/6">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal mb-14">
-        <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">
-          <span class="block w-7 h-px bg-gold"></span>Portfolio
-        </div>
+      <div class="reveal mb-12">
+        <div class="label-chip mb-5">Portfolio</div>
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-          <h2 class="font-heading font-semibold text-navy leading-[1.15]"
-              style="font-size: clamp(1.8rem, 3vw, 2.6rem);">
+          <h2 class="font-display uppercase text-navy leading-[0.92]"
+              style="font-size: clamp(2rem, 4vw, 4rem);">
             Lavori selezionati
           </h2>
-          <p class="text-[0.88rem] text-gray-400 leading-[1.7] max-w-sm">
-            Progetti sviluppati dalla divisione Digital per clienti in settori diversi.
+          <p class="text-navy/45 text-[0.88rem] leading-[1.7] max-w-[34ch] lg:text-right">
+            Progetti sviluppati per clienti in settori diversi.
           </p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          {
-            title: 'AgriPlanet Store',
-            tags: ['E-commerce', 'Web Design', 'Brand Identity'],
-            desc: "E-commerce specializzato nella vendita di fitofarmaci, concimi, sementi e macchine agricole. Progettazione dell'identità e sviluppo della piattaforma di vendita online.",
-            url: 'https://agriplanetstore.it',
-            img: 'https://stacomunicazionedesign.it/assets/img/agriplanetstore.png',
-          },
-          {
-            title: 'Girofacile',
-            tags: ['Web App', 'UI/UX', 'Logistica'],
-            desc: 'Dashboard per la gestione delle consegne e la logistica dell\'ultimo miglio. Interfaccia operativa progettata per semplicità e velocità d\'uso in contesti reali.',
-            url: null,
-            img: null,
-          },
-          {
-            title: 'Sostanza Servizi',
-            tags: ['Web Platform', 'Brand Strategy', 'UX Design'],
-            desc: 'Piattaforma web per un gruppo di servizi multicomparto: raccolta rifiuti, pulizie e ristrutturazioni. Strategia di brand e architettura della comunicazione.',
-            url: 'https://sostanzaservizi.it',
-            img: 'https://stacomunicazionedesign.it/assets/img/sostanza-multiservizi.png',
-          },
-          {
-            title: 'Hurka',
-            tags: ['Rebranding', 'Website', 'UX/UI'],
-            desc: 'Rebranding completo e nuovo sito per una società di consulenza energetica specializzata in fotovoltaico ed efficienza energetica. Posizionamento premium nel settore.',
-            url: 'https://hurka.it',
-            img: 'https://stacomunicazionedesign.it/assets/img/hurka_mobile.png',
-          },
-          {
-            title: 'De Marco Studio Legale',
-            tags: ['Corporate Website', 'UX', 'Copywriting'],
-            desc: 'Sito corporate per studio legale penalista e civilista con sede a Pescara. Copywriting strategico e architettura orientata alla conversione e alla credibilità istituzionale.',
-            url: 'https://demarcostudiolegale.it',
-            img: 'https://stacomunicazionedesign.it/assets/img/demarcostudiolegale_mobile.png',
-          },
-          {
-            title: 'Vignaluna',
-            tags: ['Restaurant Website', 'Food Experience', 'UX/UI'],
-            desc: 'Sito per una pizzeria a legna ed enoteca a Santa Marinella. Progettazione dell\'esperienza digitale attorno all\'identità del locale: territorio, gusto, atmosfera.',
-            url: 'https://ristorantevignaluna.it',
-            img: `https://s.wordpress.com/mshots/v1/${encodeURIComponent('https://ristorantevignaluna.it')}?w=1200`,
-          },
-        ].map((p, i) => (
-          <div class={`reveal delay-${(i % 3) + 1} group flex flex-col bg-white border border-gray-100 rounded-lg overflow-hidden
-                       hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300`}>
-            <!-- Image area -->
-            <div class="relative overflow-hidden bg-cream h-52 flex-shrink-0">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {portfolio.map((p, i) => (
+          <div class={`reveal delay-${(i % 3) + 1} group flex flex-col bg-white border border-navy/8 rounded-sm overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300`}>
+            <div class="relative overflow-hidden bg-cream h-48 flex-shrink-0">
               {p.img ? (
                 <img src={p.img} alt={p.title}
-                     class="w-full h-full object-cover object-top
-                            group-hover:scale-[1.03] transition-transform duration-500" />
+                     class="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500" />
               ) : (
                 <div class="w-full h-full flex items-center justify-center">
-                  <div class="text-center">
-                    <div class="font-heading italic text-gold/50 text-[1rem] mb-1">In sviluppo</div>
-                    <div class="text-[0.72rem] text-gray-300 tracking-[0.15em] uppercase">Preview non disponibile</div>
-                  </div>
+                  <span class="text-navy/20 font-display text-[0.7rem] tracking-[0.2em] uppercase">Preview in arrivo</span>
                 </div>
               )}
-              <!-- Gradient overlay -->
-              <div class="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent opacity-0
-                          group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-
-            <!-- Content -->
-            <div class="p-6 flex flex-col flex-1">
-              <div class="flex flex-wrap gap-1.5 mb-4">
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex flex-wrap gap-1.5 mb-3">
                 {p.tags.map(tag => (
-                  <span class="text-[0.62rem] tracking-[0.14em] uppercase font-medium
-                               text-gold border border-gold/30 rounded px-2 py-0.5">
+                  <span class="text-[0.58rem] tracking-[0.14em] uppercase font-bold text-gold border border-gold/30 px-2 py-0.5 rounded-sm">
                     {tag}
                   </span>
                 ))}
               </div>
-              <h3 class="font-heading font-semibold text-navy text-[1.15rem] mb-2 leading-tight">{p.title}</h3>
-              <p class="text-[0.82rem] text-gray-400 leading-[1.7] flex-1">{p.desc}</p>
+              <h3 class="font-heading font-semibold text-navy text-[1.05rem] mb-2">{p.title}</h3>
+              <p class="text-[0.82rem] text-navy/50 leading-[1.7] flex-1">{p.desc}</p>
               {p.url && (
                 <a href={p.url} target="_blank" rel="noopener noreferrer"
-                   class="inline-flex items-center gap-2 mt-5 text-[0.72rem] tracking-[0.14em] uppercase
-                          font-semibold text-navy/55 hover:text-gold transition-colors duration-200">
+                   class="inline-flex items-center gap-2 mt-4 text-[0.7rem] tracking-[0.14em] uppercase font-bold text-navy/40 hover:text-gold transition-colors duration-200">
                   Visita il sito
                   <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                   </svg>
                 </a>
               )}
@@ -244,34 +222,28 @@ const services = [
 
 
   <!-- Come lavoriamo -->
-  <section class="py-24 bg-navy-dark relative overflow-hidden">
-    <div class="absolute inset-0 pointer-events-none"
-         style="background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(181,151,58,0.05) 0%, transparent 60%);"></div>
+  <section class="py-24 bg-navy">
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal text-center max-w-xl mx-auto mb-14">
-        <div class="flex items-center justify-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">
-          <span class="block w-7 h-px bg-gold"></span>Come lavoriamo<span class="block w-7 h-px bg-gold"></span>
-        </div>
-        <h2 class="font-heading font-semibold text-white leading-[1.15]"
-            style="font-size: clamp(1.8rem, 3vw, 2.4rem);">
+      <div class="reveal text-center mb-12">
+        <div class="section-label justify-center mb-5">Il processo</div>
+        <h2 class="font-display uppercase text-white leading-[0.92]"
+            style="font-size: clamp(2rem, 4vw, 4rem);">
           Dalla strategia al pixel.
         </h2>
       </div>
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
         {[
-          { n: '01', title: 'Brief',      text: 'Ascoltiamo, analizziamo il contesto e gli obiettivi di business prima di qualsiasi proposta.' },
-          { n: '02', title: 'Strategia',  text: 'Progettiamo la soluzione con una logica documentata. Niente estetismo fine a sé stesso.' },
-          { n: '03', title: 'Delivery',   text: 'Eseguiamo con precisione, rispettando feedback, milestone e budget concordati.' },
-          { n: '04', title: 'Misurazione',text: 'Misuriamo l\'impatto delle scelte con KPI reali. Il lavoro non finisce alla consegna.' },
+          { n: '01', title: 'Brief',       text: 'Ascoltiamo e analizziamo il contesto prima di qualsiasi proposta.' },
+          { n: '02', title: 'Strategia',   text: 'Progettiamo la soluzione con logica documentata. Niente estetismo fine a sé stesso.' },
+          { n: '03', title: 'Delivery',    text: 'Eseguiamo con precisione, rispettando feedback e milestone.' },
+          { n: '04', title: 'Misurazione', text: 'Misuriamo l\'impatto con KPI reali. Il lavoro non finisce alla consegna.' },
         ].map((step, i) => (
-          <div class={`reveal delay-${i+1} text-center group`}>
-            <div class="w-12 h-12 rounded-full border border-gold/35 flex items-center justify-center
-                        mx-auto mb-5 group-hover:bg-gold group-hover:border-gold transition-all duration-300">
-              <span class="font-heading text-[0.82rem] text-gold group-hover:text-navy-dark
-                           transition-colors duration-300 font-semibold">{step.n}</span>
+          <div class={`reveal delay-${i + 1} text-center`}>
+            <div class="w-11 h-11 rounded-full border border-gold/30 flex items-center justify-center mx-auto mb-4">
+              <span class="font-display text-gold text-[0.8rem]">{step.n}</span>
             </div>
-            <h4 class="text-[0.9rem] font-semibold text-white mb-2">{step.title}</h4>
-            <p class="text-[0.8rem] text-white/38 leading-[1.65]">{step.text}</p>
+            <h4 class="font-heading font-semibold text-white text-[0.9rem] mb-2">{step.title}</h4>
+            <p class="text-white/35 text-[0.78rem] leading-[1.65]">{step.text}</p>
           </div>
         ))}
       </div>
@@ -280,22 +252,17 @@ const services = [
 
 
   <!-- CTA -->
-  <section class="py-20 bg-white border-t border-gray-100">
+  <section class="py-20 bg-white border-t border-navy/6">
     <div class="max-w-3xl mx-auto px-6 text-center reveal">
-      <h2 class="font-heading font-semibold text-navy leading-[1.2] mb-5"
-          style="font-size: clamp(1.8rem, 3vw, 2.4rem);">
+      <h2 class="font-display uppercase text-navy leading-[0.92] mb-5"
+          style="font-size: clamp(2rem, 4vw, 4rem);">
         Hai un progetto digitale?
       </h2>
-      <p class="text-[1rem] text-gray-400 leading-[1.8] mb-10">
-        Che si tratti di un rebranding, un sito nuovo o una campagna strutturata,
-        iniziamo dalla strategia.
+      <p class="text-navy/50 text-[1rem] leading-[1.8] mb-10">
+        Sito, brand, grafica o campagna — iniziamo dalla strategia.
+        Poi eseguiamo in fretta.
       </p>
-      <a href={`${base}/contatti/`}
-         class="inline-block px-10 py-4 bg-gold text-navy-dark text-[0.8rem] font-semibold
-                tracking-[0.16em] uppercase rounded hover:bg-gold-light
-                transition-all duration-200 hover:-translate-y-0.5">
-        Parliamone
-      </a>
+      <a href={`${base}/contatti/`} class="btn-gold">Parliamone</a>
     </div>
   </section>
 

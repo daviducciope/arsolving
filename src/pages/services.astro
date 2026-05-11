@@ -5,33 +5,33 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 const services = [
   {
     n: '01',
-    title: 'Edifici & Condomini',
-    desc: 'Gestione integrata degli spazi condominiali e delle aree comuni. Pianificazione degli interventi, coordinamento con amministratori e supervisione continuativa della qualità.',
-    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
-  },
-  {
-    n: '02',
-    title: 'Isole Ecologiche',
-    desc: 'Gestione professionale delle isole ecologiche condominiali e di quartiere. Organizzazione dei flussi, pulizia strutturata e rispetto dei protocolli normativi locali.',
-    icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
-  },
-  {
-    n: '03',
     title: 'Pulizie Professionali',
-    desc: 'Servizi di pulizia con standard industriali per uffici, spazi commerciali e residenziali. Protocolli documentati, materiali certificati, personale qualificato.',
+    desc: 'Uffici, spazi commerciali, residenze, vetrate con elevatore mobile. Protocolli documentati, materiali certificati, personale qualificato. Interventi programmati o urgenti.',
     icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
   },
   {
+    n: '02',
+    title: 'Allestimenti & Eventi',
+    desc: 'Food & beverage, spazi temporanei, stand, temporary store. Dalla logistica al montaggio, anche last-minute. Abbiamo allestito eventi sportivi, fiere e pop-up in tempi record.',
+    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+  },
+  {
+    n: '03',
+    title: 'Forniture Urgenti',
+    desc: 'Tabelle stradali, segnaletica, attrezzature, arredi, consumabili. Reperiamo quello che serve quando non riesci a trovarlo. Consegna in 24h dove possibile.',
+    icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+  },
+  {
     n: '04',
-    title: 'Gestione Aree Verdi',
-    desc: 'Manutenzione programmata di aree verdi private e condominiali. Taglio, potatura, trattamenti stagionali e ripristino. Pianificazione annuale su richiesta.',
-    icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064',
+    title: 'Manutenzione Edifici',
+    desc: 'Interventi di manutenzione per edifici e spazi condominiali: idraulica, elettricità di base, riparazioni, ripristini. Tempistica rapida, ogni intervento tracciato.',
+    icon: 'M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z',
   },
   {
     n: '05',
-    title: 'Manutenzione Ordinaria',
-    desc: 'Interventi di manutenzione per edifici e spazi: idraulica, elettricità di base, riparazioni, ripristini estetici. Tempistica rapida, ogni intervento tracciato.',
-    icon: 'M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z',
+    title: 'Gestione Aree Verdi',
+    desc: 'Manutenzione programmata di aree verdi private e condominiali. Taglio, potatura, trattamenti stagionali. Pianificazione annuale su richiesta.',
+    icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064',
   },
   {
     n: '06',
@@ -42,49 +42,46 @@ const services = [
 ]
 ---
 
-<Base title="Arsolving Services"
-      description="Arsolving Services — gestione operativa di edifici, strutture e spazi. Facility management, isole ecologiche, manutenzione, pulizie.">
+<Base title="Arsolving Operativa"
+      description="Arsolving Operativa — pulizie, allestimenti, forniture urgenti, manutenzione, facility management. Sul campo in ore.">
 
   <!-- Hero -->
   <div class="page-hero">
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-        <span class="block w-7 h-px bg-gold"></span>Arsolving
-      </div>
-      <h1 class="font-heading font-semibold text-white leading-[1.1] mb-5"
-          style="font-size: clamp(2.5rem, 5vw, 4rem);">
-        Services
+      <div class="section-label mb-6">Arsolving</div>
+      <h1 class="font-display uppercase text-white leading-[0.9] mb-5"
+          style="font-size: clamp(3rem, 7vw, 6.5rem);">
+        Area Operativa
       </h1>
-      <p class="text-[1.05rem] text-white/48 leading-[1.8] max-w-xl">
-        Gestione operativa professionale per edifici, strutture e spazi.
-        Protocolli documentati, referente dedicato, standard uniformi.
+      <p class="text-[1rem] text-white/45 leading-[1.8] max-w-xl">
+        Pulizie, allestimenti, forniture urgenti, manutenzione, facility.
+        Sul campo in ore — non in settimane.
       </p>
     </div>
   </div>
 
 
-  <!-- ── Intro ── -->
-  <section class="py-24 bg-white border-b border-gray-100">
+  <!-- Intro -->
+  <section class="py-20 bg-white border-b border-navy/6">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="reveal">
-          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>L'approccio
-          </div>
-          <h2 class="font-heading font-semibold text-navy leading-[1.15]"
-              style="font-size: clamp(1.8rem, 3vw, 2.4rem);">
-            Operatività strutturata.<br />Non improvvisazione.
+          <div class="label-chip mb-6">L'approccio</div>
+          <h2 class="font-display uppercase text-navy leading-[0.92]"
+              style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
+            Il problema arriva.<br />Noi siamo già lì.
           </h2>
         </div>
         <div class="reveal delay-2">
-          <p class="text-[1rem] text-gray-500 leading-[1.85] mb-5">
-            Arsolving Services è la divisione operativa del gruppo. Gestiamo edifici,
-            aree esterne, isole ecologiche e strutture con la stessa cura metodologica
-            che applichiamo ai servizi strategici e digitali.
+          <p class="text-[1rem] text-navy/55 leading-[1.85] mb-5">
+            Abbiamo pulito finestre fino al terzo piano con elevatore mobile e risolto
+            un'infestazione di piccioni per il Comune di Montesilvano — lo stesso giorno.
+            Abbiamo allestito food & beverage per un torneo sportivo rimasto senza fornitori.
           </p>
-          <p class="text-[1rem] text-gray-500 leading-[1.85]">
-            Non siamo un'impresa generalista. Lavoriamo con protocolli documentati,
-            reportistica trasparente e un referente dedicato per ogni cliente.
+          <p class="text-[1rem] text-navy/55 leading-[1.85]">
+            Qualsiasi problema operativo ha una soluzione. Non lavoriamo con
+            protocolli rigidi che rallentano: leggiamo il contesto, ci muoviamo in fretta,
+            documentiamo tutto.
           </p>
         </div>
       </div>
@@ -92,37 +89,31 @@ const services = [
   </section>
 
 
-  <!-- ── Servizi ── -->
-  <section class="py-28 bg-cream">
+  <!-- Servizi -->
+  <section class="py-24 bg-off-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal mb-14 text-center">
-        <div class="flex items-center justify-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">
-          <span class="block w-7 h-px bg-gold"></span>Aree di intervento<span class="block w-7 h-px bg-gold"></span>
-        </div>
-        <h2 class="font-heading font-semibold text-navy leading-[1.15]"
-            style="font-size: clamp(1.8rem, 3vw, 2.6rem);">
+      <div class="reveal mb-12 text-center">
+        <div class="label-chip justify-center mb-5">Aree di intervento</div>
+        <h2 class="font-display uppercase text-navy leading-[0.92]"
+            style="font-size: clamp(2rem, 4vw, 4rem);">
           Cosa gestiamo
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {services.map((s, i) => (
-          <div class={`reveal delay-${(i % 3) + 1} group bg-white border border-gray-100 rounded-lg p-8
-                       relative overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all duration-300`}>
-            <!-- Hover gradient top bar -->
-            <div class="absolute top-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100
-                        transition-transform duration-350 origin-left"
-                 style="background: linear-gradient(90deg, #1D2D50, #B5973A);"></div>
-            <div class="font-heading text-[2.8rem] font-bold text-gray-100 leading-none mb-4">{s.n}</div>
-            <!-- Icon -->
-            <div class="w-10 h-10 bg-navy rounded flex items-center justify-center text-gold mb-5
-                        group-hover:bg-gold group-hover:text-navy-dark transition-colors duration-300">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d={s.icon}/>
-              </svg>
+          <div class={`reveal delay-${(i % 3) + 1} service-card group`}>
+            <div class="flex items-start justify-between mb-5">
+              <div class="w-11 h-11 bg-navy rounded-sm flex items-center justify-center text-gold
+                          group-hover:bg-gold group-hover:text-navy transition-colors duration-300">
+                <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={s.icon}/>
+                </svg>
+              </div>
+              <span class="font-display text-navy/10 text-[2.5rem] leading-none">{s.n}</span>
             </div>
-            <h3 class="text-[1rem] font-semibold text-navy mb-3">{s.title}</h3>
-            <p class="text-[0.87rem] text-gray-500 leading-[1.78]">{s.desc}</p>
+            <h3 class="font-heading font-semibold text-navy text-[1rem] mb-3">{s.title}</h3>
+            <p class="text-[0.84rem] text-navy/52 leading-[1.78]">{s.desc}</p>
           </div>
         ))}
       </div>
@@ -130,42 +121,37 @@ const services = [
   </section>
 
 
-  <!-- ── Il vantaggio ── -->
-  <section class="py-24 bg-navy-dark relative overflow-hidden">
-    <div class="absolute inset-0 pointer-events-none"
-         style="background: radial-gradient(ellipse 60% 60% at 20% 50%, rgba(181,151,58,0.05) 0%, transparent 60%);"></div>
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+  <!-- Il vantaggio -->
+  <section class="py-24 bg-navy">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
         <div class="reveal">
-          <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-            <span class="block w-7 h-px bg-gold"></span>Il vantaggio
-          </div>
-          <h2 class="font-heading font-semibold text-white leading-[1.15] mb-6"
-              style="font-size: clamp(1.8rem, 3vw, 2.4rem);">
+          <div class="section-label mb-6">Il vantaggio</div>
+          <h2 class="font-display uppercase text-white leading-[0.92] mb-6"
+              style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
             Un referente.<br />Zero frammentazione.
           </h2>
-          <p class="text-[1rem] text-white/48 leading-[1.85]">
+          <p class="text-white/45 text-[1rem] leading-[1.85]">
             Gestire edifici e strutture significa coordinare più variabili in contemporanea.
-            Con Arsolving Services hai un unico interlocutore che supervisiona tutto,
-            traccia ogni intervento e risponde direttamente.
+            Con ARSOLVING hai un unico interlocutore che supervisiona tutto, traccia ogni
+            intervento e risponde direttamente.
           </p>
         </div>
 
         <div class="reveal delay-2 flex flex-col gap-0">
           {[
-            'Protocolli operativi documentati per ogni servizio',
-            'Reportistica periodica e trasparente',
-            'Referente dedicato per ogni struttura',
-            'Interventi tracciati con tempi e responsabilità definite',
+            'Interventi anche urgenti e last-minute',
+            'Referente dedicato per ogni cliente',
+            'Ogni intervento tracciato con tempi definiti',
+            'Rete di fornitori specializzati già attiva',
             'Standard qualitativi uniformi su tutti i fronti',
           ].map((item, i) => (
-            <div class={`flex items-start gap-4 py-4 ${i > 0 ? 'border-t border-white/8' : ''}`}>
-              <div class="w-5 h-5 rounded-full border border-gold/35 flex items-center
-                          justify-center flex-shrink-0 mt-0.5">
+            <div class={`flex items-center gap-4 py-4 ${i > 0 ? 'border-t border-white/8' : ''}`}>
+              <div class="w-5 h-5 rounded-full border border-gold/35 flex items-center justify-center flex-shrink-0">
                 <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
               </div>
-              <p class="text-[0.9rem] text-white/52 leading-[1.7]">{item}</p>
+              <p class="text-[0.9rem] text-white/50 leading-[1.7]">{item}</p>
             </div>
           ))}
         </div>
@@ -175,22 +161,17 @@ const services = [
   </section>
 
 
-  <!-- ── CTA ── -->
-  <section class="py-20 bg-white border-t border-gray-100">
+  <!-- CTA -->
+  <section class="py-20 bg-white border-t border-navy/6">
     <div class="max-w-3xl mx-auto px-6 text-center reveal">
-      <h2 class="font-heading font-semibold text-navy leading-[1.2] mb-5"
-          style="font-size: clamp(1.8rem, 3vw, 2.4rem);">
-        Cerchi un partner operativo strutturato?
+      <h2 class="font-display uppercase text-navy leading-[0.92] mb-5"
+          style="font-size: clamp(2rem, 4vw, 4rem);">
+        Hai un problema operativo?
       </h2>
-      <p class="text-[1rem] text-gray-400 leading-[1.8] mb-10">
-        Analizziamo le tue esigenze e costruiamo insieme il presidio operativo più adatto.
+      <p class="text-navy/50 text-[1rem] leading-[1.8] mb-10">
+        Descrivici la situazione. In 30 minuti capiamo cosa serve e ci muoviamo.
       </p>
-      <a href={`${base}/contatti/`}
-         class="inline-block px-10 py-4 bg-gold text-navy-dark text-[0.8rem] font-semibold
-                tracking-[0.16em] uppercase rounded hover:bg-gold-light
-                transition-all duration-200 hover:-translate-y-0.5">
-        Richiedi una consulenza
-      </a>
+      <a href={`${base}/contatti/`} class="btn-gold">Raccontaci il problema</a>
     </div>
   </section>
 
