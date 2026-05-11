@@ -1,187 +1,120 @@
 ---
 import Base from '../layouts/Base.astro'
-const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 ---
 
 <Base title="Contatti"
-      description="Racconta ad ARSOLVING la complessità da risolvere e avvia una richiesta di analisi.">
+      description="Racconta ad ARSOLVING il problema da risolvere e avvia una richiesta di analisi.">
 
-  <!-- Hero -->
-  <div class="page-hero">
+  <section class="contact-lab relative overflow-hidden bg-[#07101f] pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <div class="stellar-field absolute inset-0 pointer-events-none"></div>
+    <div class="hero-grid absolute inset-0 pointer-events-none"></div>
+    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_80%_24%,rgba(181,151,58,0.18),transparent_32%),radial-gradient(circle_at_20%_80%,rgba(77,107,160,0.22),transparent_34%)]"></div>
+
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="flex items-center gap-3 text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">
-        <span class="block w-7 h-px bg-gold"></span>Contatti
-      </div>
-      <h1 class="font-heading font-semibold text-white leading-[1.1] mb-5"
-          style="font-size: clamp(2.5rem, 5vw, 4rem);">
-        Raccontaci la complessità.
-      </h1>
-      <p class="text-[1.05rem] text-white/48 leading-[1.8] max-w-lg">
-        Ogni confronto parte dal contesto: cosa rallenta, cosa disperde, cosa va ricondotto a sistema.
-      </p>
-    </div>
-  </div>
-
-
-  <!-- Contatti + Form -->
-  <section class="py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
-
-        <!-- Info contatti -->
-        <div class="lg:col-span-2 reveal">
-          <h2 class="font-heading font-semibold text-navy leading-[1.15] mb-8"
-              style="font-size: clamp(1.5rem, 2.5vw, 2rem);">
-            Prima il contesto
-          </h2>
-
-          <div class="flex flex-col gap-6 mb-12">
-            {[
-              {
-                icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-                label: 'Email',
-                value: 'info@arsolving.com',
-              },
-              {
-                icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
-                label: 'Avvio',
-                value: 'Richiesta di analisi',
-              },
-            ].map(item => (
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded bg-cream flex items-center justify-center text-gold flex-shrink-0">
-                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d={item.icon}/>
-                  </svg>
-                </div>
-                <div>
-                  <div class="text-[0.68rem] tracking-[0.2em] uppercase text-gray-400 mb-1">{item.label}</div>
-                  <div class="text-[0.95rem] text-navy font-medium">{item.value}</div>
-                </div>
-              </div>
-            ))}
+      <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-start">
+        <div class="reveal lg:sticky lg:top-32">
+          <div class="inline-flex items-center gap-3 rounded-full border border-gold/25 bg-white/[0.035] px-4 py-2 text-gold text-[0.68rem] tracking-[0.22em] uppercase mb-7">
+            <span class="h-1.5 w-1.5 rounded-full bg-gold shadow-[0_0_18px_rgba(181,151,58,0.9)]"></span>
+            Avvio analisi
           </div>
 
-          <!-- Due percorsi -->
-          <div class="border-t border-gray-100 pt-8">
-            <h3 class="text-[0.82rem] font-semibold text-navy mb-5">Che tipo di complessità puoi portare</h3>
-            <div class="flex flex-col gap-4">
-              <div class="flex items-start gap-3 p-4 bg-cream rounded-lg border border-gray-100">
-                <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2 flex-shrink-0"></div>
-                <div>
-                  <div class="text-[0.82rem] font-semibold text-navy mb-1">Contesto operativo, digitale o misto</div>
-                  <p class="text-[0.76rem] text-gray-400 leading-[1.6]">
-                    Spazi, processi, identità, comunicazione, strumenti o coordinamento.
-                  </p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3 p-4 bg-cream rounded-lg border border-gray-100">
-                <div class="w-1.5 h-1.5 rounded-full bg-navy mt-2 flex-shrink-0"></div>
-                <div>
-                  <div class="text-[0.82rem] font-semibold text-navy mb-1">Sviluppo e partnership</div>
-                  <p class="text-[0.76rem] text-gray-400 leading-[1.6]">
-                    Idee, iniziative, collaborazioni o percorsi da strutturare.
-                  </p>
-                </div>
-              </div>
+          <h1 class="font-heading font-semibold text-white leading-[0.98] mb-7"
+              style="font-size: clamp(3.2rem, 7vw, 7rem);">
+            Raccontaci il problema.
+          </h1>
+
+          <p class="text-[1.08rem] text-white/62 leading-[1.7] max-w-xl mb-10">
+            Non mandare una richiesta generica. Portaci il contesto: cosa non funziona, cosa vuoi ottenere, cosa oggi blocca il sistema.
+          </p>
+
+          <div class="contact-signal">
+            <div>
+              <span>01</span>
+              <strong>Leggiamo</strong>
+              <p>Capire prima di proporre.</p>
+            </div>
+            <div>
+              <span>02</span>
+              <strong>Ordiniamo</strong>
+              <p>Priorità, ruoli, direzione.</p>
+            </div>
+            <div>
+              <span>03</span>
+              <strong>Costruiamo</strong>
+              <p>Un percorso attuabile.</p>
             </div>
           </div>
         </div>
 
-        <!-- Form -->
-        <div class="lg:col-span-3 reveal delay-2">
-          <div class="bg-cream border border-gray-100 rounded-lg p-10">
-            <h3 class="font-heading font-semibold text-navy text-[1.5rem] mb-8">Richiedi un'analisi</h3>
+        <div class="reveal delay-2">
+          <form id="contact-form" class="analysis-form">
+            <div class="analysis-form-head">
+              <span>Diagnosi iniziale</span>
+              <h2>Mettiamo a fuoco il contesto.</h2>
+            </div>
 
-            <form id="contact-form" class="flex flex-col gap-4">
+            <div class="form-row">
+              <label>
+                <span>Nome</span>
+                <input type="text" name="nome" placeholder="Nome e cognome" required />
+              </label>
+              <label>
+                <span>Realtà</span>
+                <input type="text" name="azienda" placeholder="Azienda / progetto" />
+              </label>
+            </div>
 
-              <!-- Tipo richiesta -->
-              <div class="grid grid-cols-2 gap-3 mb-2">
-                <label class="cursor-pointer">
-                  <input type="radio" name="tipo" value="servizi" class="sr-only peer" checked />
-                  <div class="text-center py-3 text-[0.75rem] tracking-[0.12em] uppercase font-medium
-                              border border-navy/20 rounded text-navy/60
-                              peer-checked:border-gold peer-checked:text-gold peer-checked:bg-gold-pale
-                              hover:border-navy/35 transition-all duration-200 cursor-pointer">
-                    Operativo / Digitale
-                  </div>
-                </label>
-                <label class="cursor-pointer">
-                  <input type="radio" name="tipo" value="partnership" class="sr-only peer" />
-                  <div class="text-center py-3 text-[0.75rem] tracking-[0.12em] uppercase font-medium
-                              border border-navy/20 rounded text-navy/60
-                              peer-checked:border-gold peer-checked:text-gold peer-checked:bg-gold-pale
-                              hover:border-navy/35 transition-all duration-200 cursor-pointer">
-                    Strategico / Misto
-                  </div>
-                </label>
+            <div class="form-row">
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" placeholder="nome@azienda.it" required />
+              </label>
+              <label>
+                <span>Telefono</span>
+                <input type="tel" name="telefono" placeholder="+39" />
+              </label>
+            </div>
+
+            <fieldset>
+              <legend>Che tipo di problema è?</legend>
+              <div class="context-options">
+                {['Operativo', 'Digitale', 'Strategico', 'Misto'].map((item, i) => (
+                  <label>
+                    <input type="radio" name="contesto" value={item.toLowerCase()} checked={i === 0} />
+                    <span>{item}</span>
+                  </label>
+                ))}
               </div>
+            </fieldset>
 
-              <div class="grid grid-cols-2 gap-4">
-                <input type="text" name="nome" placeholder="Nome e cognome" required
-                       class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
-                              text-navy placeholder:text-gray-300
-                              focus:border-gold focus:outline-none transition-colors duration-200" />
-                <input type="text" name="azienda" placeholder="Azienda / Ente"
-                       class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
-                              text-navy placeholder:text-gray-300
-                              focus:border-gold focus:outline-none transition-colors duration-200" />
-              </div>
+            <label>
+              <span>Il blocco principale</span>
+              <textarea name="problema" rows="5" placeholder="Descrivi cosa non funziona, cosa rallenta o cosa va costruito meglio." required></textarea>
+            </label>
 
-              <input type="email" name="email" placeholder="Email" required
-                     class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
-                            text-navy placeholder:text-gray-300
-                            focus:border-gold focus:outline-none transition-colors duration-200" />
+            <div class="form-row">
+              <label>
+                <span>Stato attuale</span>
+                <select name="struttura">
+                  <option value="" disabled selected>Com’è messo oggi?</option>
+                  <option value="zero">Si parte da zero</option>
+                  <option value="parziale">Esiste qualcosa, ma è frammentato</option>
+                  <option value="esistente">Esiste già una struttura</option>
+                </select>
+              </label>
+              <label>
+                <span>Priorità</span>
+                <input type="text" name="priorita" placeholder="Tempistiche / urgenza / budget" />
+              </label>
+            </div>
 
-              <input type="tel" name="telefono" placeholder="Telefono"
-                     class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
-                            text-navy placeholder:text-gray-300
-                            focus:border-gold focus:outline-none transition-colors duration-200" />
+            <button type="submit">Invia richiesta di analisi</button>
 
-              <select name="area"
-                      class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
-                             text-gray-400 focus:border-gold focus:outline-none transition-colors duration-200 appearance-none">
-                <option value="" disabled selected>Tipologia contesto</option>
-                <option value="operativo">Operativo</option>
-                <option value="digitale">Digitale</option>
-                <option value="strategico">Strategico</option>
-                <option value="misto">Misto / da inquadrare</option>
-              </select>
-
-              <textarea name="messaggio" rows="5"
-                        placeholder="Che problema vuoi risolvere?"
-                        class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
-                               text-navy placeholder:text-gray-300
-                               focus:border-gold focus:outline-none transition-colors duration-200 resize-none"></textarea>
-
-              <select name="struttura"
-                      class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
-                             text-gray-400 focus:border-gold focus:outline-none transition-colors duration-200 appearance-none">
-                <option value="" disabled selected>Hai già una struttura?</option>
-                <option value="esistente">Sì, esiste già</option>
-                <option value="parziale">Parziale / da ordinare</option>
-                <option value="zero">Partiamo da zero</option>
-              </select>
-
-              <input type="text" name="priorita" placeholder="Budget o priorità temporale (opzionale)"
-                     class="bg-white border border-gray-200 rounded px-4 py-3.5 text-[0.9rem]
-                            text-navy placeholder:text-gray-300
-                            focus:border-gold focus:outline-none transition-colors duration-200" />
-
-              <button type="submit"
-                      class="w-full py-4 bg-gold text-navy-dark font-semibold text-[0.8rem]
-                             tracking-[0.18em] uppercase rounded
-                             hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
-                Invia la richiesta di analisi
-              </button>
-
-              <p class="text-center text-[0.72rem] text-gray-300 leading-relaxed">
-                Ti risponderemo entro 24 ore nei giorni lavorativi.
-              </p>
-            </form>
-          </div>
+            <p class="form-note">
+              Risposta via email da <strong>info@arsolving.com</strong>. Il collegamento a un backend form resta da configurare.
+            </p>
+          </form>
         </div>
-
       </div>
     </div>
   </section>

@@ -11,24 +11,37 @@ const method = [
   ['V', 'Valorizza', 'Genera continuità e valore.'],
 ]
 
-const dimensions = [
-  ['Operativa', 'Spazi, strutture, attività quotidiane.', 'Facility / gestione / continuità', `${base}/services/`],
-  ['Digitale', 'Identità, strumenti, presenza e linguaggi.', 'Brand / web / piattaforme', `${base}/digital/`],
-  ['Strategica', 'Idee, iniziative, partnership e crescita.', 'Sviluppo / regia / opportunità', `${base}/projects/`],
+const problemMatrix = [
+  {
+    problem: 'Operatività fuori controllo',
+    signal: 'Troppe attività, fornitori scollegati, responsabilità poco chiare.',
+    action: 'Ridisegniamo presidio, priorità, processo e controllo.',
+    output: 'Gestione ordinata',
+  },
+  {
+    problem: 'Valore non percepito',
+    signal: 'Il progetto esiste, ma identità, messaggio e presenza non lo rendono credibile.',
+    action: 'Allineiamo brand, linguaggio, strumenti digitali e direzione commerciale.',
+    output: 'Percezione forte',
+  },
+  {
+    problem: 'Crescita senza struttura',
+    signal: 'L’idea funziona, ma manca una regia per scalarla senza dispersione.',
+    action: 'Costruiamo fasi, ruoli, priorità e condizioni operative sostenibili.',
+    output: 'Percorso scalabile',
+  },
 ]
 
-const problems = [
-  'Disordine operativo',
-  'Identità debole',
-  'Processi frammentati',
-  'Crescita senza struttura',
-  'Gestione discontinua',
+const dimensions = [
+  ['Operativo', 'Spazi, strutture, attività quotidiane', `${base}/services/`],
+  ['Digitale', 'Identità, comunicazione, strumenti', `${base}/digital/`],
+  ['Strategico', 'Iniziative, partnership, sviluppo', `${base}/projects/`],
 ]
 ---
 
 <Base
   title="Home"
-  description="ARSOLVING trasforma complessità operative, digitali e strategiche in sistemi chiari, integrati e gestibili."
+  description="ARSOLVING trasforma problemi operativi, digitali e strategici in sistemi chiari, integrati e gestibili."
 >
 
   <!-- Hero -->
@@ -46,13 +59,13 @@ const problems = [
         </div>
 
         <h1 class="animate-fade-in-up font-heading font-semibold text-white leading-[0.92] max-w-[11ch] mb-7"
-            style="font-size: clamp(4.1rem, 10vw, 9.5rem); animation-delay:0.16s;">
-          Caos. Metodo. Sistema.
+            style="font-size: clamp(3.9rem, 9.4vw, 9.2rem); animation-delay:0.16s;">
+          Problema. Metodo. Sistema.
         </h1>
 
-        <p class="animate-fade-in-up text-[1.05rem] md:text-[1.2rem] text-white/68 leading-[1.7] max-w-2xl mb-9"
+        <p class="animate-fade-in-up text-[1.05rem] md:text-[1.22rem] text-white/70 leading-[1.65] max-w-2xl mb-9"
            style="animation-delay:0.28s;">
-          Arsolving entra dove tutto è frammentato e costruisce una regia unica: operativa, digitale, strategica.
+          Entriamo dove qualcosa non funziona, leggiamo il contesto e costruiamo una regia unica: operativa, digitale, strategica.
         </p>
 
         <div class="animate-fade-in-up flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10"
@@ -61,17 +74,17 @@ const problems = [
              class="inline-flex justify-center px-7 py-4 bg-gold text-navy-dark text-[0.78rem] font-bold tracking-[0.16em] uppercase rounded hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5">
             Avvia analisi
           </a>
-          <a href="#arsolv"
+          <a href="#cosa-risolviamo"
              class="inline-flex justify-center px-7 py-4 border border-white/24 text-white text-[0.78rem] font-semibold tracking-[0.16em] uppercase rounded hover:border-gold/60 hover:text-gold transition-all duration-200">
-            Vedi il metodo
+            Cosa risolviamo
           </a>
         </div>
 
         <div class="animate-fade-in-up grid grid-cols-3 gap-3 max-w-xl" style="animation-delay:0.52s;">
-          {['Problema', 'Regia', 'Sistema'].map((item, i) => (
+          {['Leggere', 'Ordinare', 'Far funzionare'].map((item, i) => (
             <div class="border border-white/10 bg-white/[0.035] rounded p-4">
               <div class="text-[0.62rem] tracking-[0.18em] uppercase text-gold/70 mb-2">0{i + 1}</div>
-              <div class="text-[0.82rem] font-semibold text-white">{item}</div>
+              <div class="text-[0.82rem] font-semibold text-white leading-tight">{item}</div>
             </div>
           ))}
         </div>
@@ -90,35 +103,6 @@ const problems = [
               <span>{step[0]}</span>
             </div>
           ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Manifesto -->
-  <section class="bg-white py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-18 items-start">
-        <div class="reveal">
-          <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">Cambio di paradigma</div>
-          <h2 class="font-heading font-semibold text-navy leading-[1.02] max-w-[12ch]"
-              style="font-size: clamp(2.6rem, 5vw, 5.2rem);">
-            Non siamo un catalogo.
-          </h2>
-        </div>
-
-        <div class="reveal delay-2">
-          <p class="text-[1.18rem] lg:text-[1.35rem] leading-[1.55] text-navy/72 mb-8">
-            Partiamo dal problema, troviamo la struttura, coordiniamo le competenze. Il risultato non è una lista di servizi: è un sistema che funziona.
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {['Meno frammentazione', 'Più controllo', 'Una sola regia'].map((item) => (
-              <div class="bg-cream border border-gray-100 rounded p-5">
-                <div class="h-1 w-10 bg-gold mb-5"></div>
-                <p class="text-[0.92rem] font-semibold text-navy leading-snug">{item}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </div>
@@ -153,70 +137,50 @@ const problems = [
     </div>
   </section>
 
-  <!-- Dimensions -->
-  <section id="cosa-risolviamo" class="bg-cream py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
-        <div>
-          <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">Cosa risolviamo</div>
-          <h2 class="font-heading font-semibold text-navy leading-[1.02] max-w-[11ch]"
-              style="font-size: clamp(2.7rem, 5.6vw, 5.8rem);">
-            Tre campi. Una regia.
-          </h2>
-        </div>
-        <p class="text-[1rem] text-navy/58 leading-[1.7] max-w-xl">
-          Non separiamo i problemi in reparti. Li leggiamo come parti dello stesso sistema.
+  <!-- Problems -->
+  <section id="cosa-risolviamo" class="problem-lab relative overflow-hidden bg-cream py-20 lg:py-28">
+    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_90%_10%,rgba(181,151,58,0.18),transparent_34%)]"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="reveal max-w-4xl mb-14">
+        <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">Cosa risolviamo</div>
+        <h2 class="font-heading font-semibold text-navy leading-[1.02] mb-6"
+            style="font-size: clamp(2.7rem, 5.8vw, 6.2rem);">
+          Non vendiamo pezzi. Risolviamo blocchi.
+        </h2>
+        <p class="text-[1.05rem] lg:text-[1.2rem] text-navy/62 leading-[1.7] max-w-3xl">
+          Se il problema è confuso, il primo lavoro è renderlo leggibile. Da lì nasce la soluzione: non prima.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-12">
-        {dimensions.map((dimension, i) => (
-          <a href={dimension[3]}
-             class={`solution-panel reveal delay-${i + 1} group`}>
-            <div class="flex items-start justify-between mb-12">
-              <span class="text-[0.68rem] tracking-[0.22em] uppercase text-gold">0{i + 1}</span>
-              <span class="text-gold/60 group-hover:text-gold group-hover:translate-x-1 transition-all">→</span>
+      <div class="problem-matrix reveal delay-1">
+        <div class="problem-head problem-head-main">Problema reale</div>
+        <div class="problem-head">Segnale</div>
+        <div class="problem-head">Regia Arsolving</div>
+        <div class="problem-head">Output</div>
+
+        {problemMatrix.map((item, i) => (
+          <>
+            <div class="problem-cell problem-name">
+              <span>0{i + 1}</span>
+              <strong>{item.problem}</strong>
             </div>
-            <h3>{dimension[0]}</h3>
+            <div class="problem-cell" data-label="Segnale">{item.signal}</div>
+            <div class="problem-cell" data-label="Regia Arsolving">{item.action}</div>
+            <div class="problem-cell problem-output" data-label="Output">{item.output}</div>
+          </>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-12">
+        {dimensions.map((dimension, i) => (
+          <a href={dimension[2]} class={`dimension-rail reveal delay-${i + 2} group`}>
+            <span>0{i + 1}</span>
+            <strong>{dimension[0]}</strong>
             <p>{dimension[1]}</p>
-            <div>{dimension[2]}</div>
+            <div>Approfondisci →</div>
           </a>
         ))}
-      </div>
-
-      <div class="reveal delay-2 flex flex-wrap gap-3">
-        {problems.map((problem) => (
-          <span class="rounded-full border border-navy/10 bg-white px-4 py-2 text-[0.78rem] font-semibold text-navy/62">
-            {problem}
-          </span>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- System flow -->
-  <section id="soluzioni-applicate" class="bg-white py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="system-flow reveal">
-        <div>
-          <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-5">Da problema a sistema</div>
-          <h2 class="font-heading font-semibold text-navy leading-[1.04] mb-6"
-              style="font-size: clamp(2.5rem, 5.2vw, 5.4rem);">
-            La soluzione non è l’intervento. È la struttura.
-          </h2>
-          <p class="text-[1.02rem] text-navy/58 leading-[1.7] max-w-2xl">
-            Analisi, metodo, esecuzione e continuità diventano un unico percorso.
-          </p>
-        </div>
-
-        <div class="flow-steps">
-          {['Contesto', 'Metodo', 'Sistema', 'Continuità'].map((item, i) => (
-            <div>
-              <span>0{i + 1}</span>
-              <strong>{item}</strong>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   </section>
@@ -230,7 +194,7 @@ const problems = [
       <div class="text-gold text-[0.68rem] tracking-[0.24em] uppercase mb-6">Avvio analisi</div>
       <h2 class="font-heading font-semibold text-white leading-[1.02] mb-7"
           style="font-size: clamp(3rem, 7vw, 7rem);">
-        Portaci il caos.
+        Portaci il problema.
       </h2>
       <p class="text-[1.05rem] text-white/60 leading-[1.7] max-w-2xl mx-auto mb-9">
         Lo leggiamo, lo ordiniamo e costruiamo il sistema più adatto.

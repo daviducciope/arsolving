@@ -10,7 +10,7 @@ export interface Props {
 
 const {
   title,
-  description = 'ARSOLVING — Premium Multiservice Group. Soluzioni operative, digitali e strategiche per aziende e progetti in crescita.'
+  description = 'ARSOLVING — Arsolv Mindset. Problemi operativi, digitali e strategici trasformati in sistemi.'
 } = Astro.props
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
@@ -21,7 +21,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title === 'Home' ? 'ARSOLVING — Premium Multiservice Group' : `${title} — ARSOLVING`}</title>
+  <title>{title === 'Home' ? "ARSOLVING — Arsolv' Mindset" : `${title} — ARSOLVING`}</title>
   <meta name="description" content={description} />
   <link rel="icon" href={`${base}/logo.jpeg`} type="image/jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
