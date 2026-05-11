@@ -6,73 +6,463 @@ function active(segment: string): boolean {
   if (segment === '') return p === base + '/' || p === base || p === base + '/index.html'
   return p.startsWith(base + '/' + segment)
 }
-
-const linkClass = (segment: string) =>
-  `text-[0.72rem] tracking-[0.14em] uppercase font-medium transition-colors duration-200 ${
-    active(segment) ? 'text-gold' : 'text-white/60 hover:text-white'
-  }`
 ---
 
-<nav id="navbar"
-     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-     style="background:transparent;">
+<nav id="navbar" class="navbar-root">
 
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="flex items-center justify-between h-[4.5rem]">
+  <!-- Gold laser line — visible only when scrolled -->
+  <div class="navbar-laser" aria-hidden="true"></div>
 
-      <!-- Logo -->
-      <a href={`${base}/`} class="flex items-center gap-3 group flex-shrink-0">
-        <img src={`${base}/logo.jpeg`} alt="ARSOLVING"
-             class="w-10 h-10 rounded-full object-contain bg-white" />
-        <div class="flex flex-col leading-none">
-          <span class="font-heading text-[1.05rem] tracking-widest text-white font-semibold">
-            <span class="font-bold">AR</span><span class="text-gold font-light">SOLVING</span>
-          </span>
-          <span class="text-[0.5rem] tracking-[0.24em] uppercase text-gold/55 mt-0.5">
-            Premium Multiservice
-          </span>
-        </div>
-      </a>
+  <div class="navbar-inner max-w-7xl mx-auto px-6 lg:px-12">
 
-      <!-- Desktop links -->
-      <div class="hidden xl:flex items-center gap-8">
-        <a href={`${base}/`}                   class={linkClass('')}>Home</a>
-        <a href={`${base}/#interventi`}        class="text-[0.72rem] tracking-[0.14em] uppercase font-medium text-white/60 hover:text-white transition-colors duration-200">Interventi</a>
-        <a href={`${base}/#aree`}              class="text-[0.72rem] tracking-[0.14em] uppercase font-medium text-white/60 hover:text-white transition-colors duration-200">Cosa facciamo</a>
-        <a href={`${base}/il-gruppo/`}         class={linkClass('il-gruppo')}>Il Gruppo</a>
-        <a href={`${base}/contatti/`}
-           class="ml-2 text-[0.7rem] tracking-[0.16em] uppercase font-bold
-                  text-navy bg-gold px-5 py-2.5 rounded-sm
-                  hover:bg-gold-light transition-all duration-200">
-          Avvia analisi
-        </a>
+    <!-- ── LOGO ── -->
+    <a href={`${base}/`} class="navbar-logo group" aria-label="ARSOLVING — Home">
+
+      <!-- Maze SVG icon (light version for dark bg) -->
+      <div class="navbar-icon-wrap">
+        <svg viewBox="0 0 114 82" fill="none" xmlns="http://www.w3.org/2000/svg"
+             class="navbar-maze-svg" aria-hidden="true">
+          <!-- Outer maze frame -->
+          <rect x="4" y="4" width="72" height="72" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linejoin="miter"/>
+          <!-- Horizontal walls -->
+          <line x1="4"  y1="22" x2="52" y2="22" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
+          <line x1="4"  y1="40" x2="28" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
+          <line x1="52" y1="40" x2="76" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
+          <line x1="28" y1="58" x2="76" y2="58" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
+          <!-- Vertical walls -->
+          <line x1="28" y1="4"  x2="28" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
+          <line x1="28" y1="58" x2="28" y2="76" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
+          <line x1="52" y1="4"  x2="52" y2="22" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
+          <line x1="52" y1="40" x2="52" y2="76" stroke="rgba(255,255,255,0.85)" stroke-width="3.5" stroke-linecap="square"/>
+          <!-- Solved path (gold) -->
+          <polyline points="4,67 16,67 16,49 40,49 40,31 64,31 64,4"
+                    stroke="#C7A24A" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Checkmark (gold) -->
+          <polyline points="84,24 93,36 112,14"
+                    stroke="#C7A24A" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <!-- Glow ring behind icon -->
+        <div class="navbar-icon-glow" aria-hidden="true"></div>
       </div>
 
-      <!-- Hamburger -->
-      <button id="hamburger"
-              class="xl:hidden flex flex-col gap-[5px] p-2 text-white"
-              aria-label="Apri menu" aria-expanded="false">
-        <span class="block w-6 h-[1.5px] bg-white transition-all"></span>
-        <span class="block w-6 h-[1.5px] bg-white transition-all"></span>
-        <span class="block w-4 h-[1.5px] bg-white transition-all"></span>
-      </button>
+      <!-- Brand wordmark -->
+      <div class="navbar-brand">
+        <span class="navbar-brand-name">
+          <span class="text-white">AR</span><span class="text-gold">SOLVING</span>
+        </span>
+        <span class="navbar-brand-sub">Premium Multiservice</span>
+      </div>
 
-    </div>
-  </div>
+    </a>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden xl:hidden bg-navy border-t border-gold/10">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col">
-      <a href={`${base}/`}             class="py-3 border-b border-white/6 text-[0.85rem] tracking-[0.14em] uppercase text-white/60 hover:text-gold transition-colors">Home</a>
-      <a href={`${base}/#interventi`}  class="py-3 border-b border-white/6 text-[0.85rem] tracking-[0.14em] uppercase text-white/60 hover:text-gold transition-colors">Interventi</a>
-      <a href={`${base}/#aree`}        class="py-3 border-b border-white/6 text-[0.85rem] tracking-[0.14em] uppercase text-white/60 hover:text-gold transition-colors">Cosa facciamo</a>
-      <a href={`${base}/il-gruppo/`}   class="py-3 border-b border-white/6 text-[0.85rem] tracking-[0.14em] uppercase text-white/60 hover:text-gold transition-colors">Il Gruppo</a>
-      <a href={`${base}/contatti/`}    class="mt-5 text-center text-[0.8rem] tracking-[0.16em] uppercase font-bold text-navy bg-gold py-3 rounded-sm hover:bg-gold-light transition-all">
-        Avvia analisi
+    <!-- ── DESKTOP NAV ── -->
+    <div class="navbar-links" role="navigation" aria-label="Navigazione principale">
+      <a href={`${base}/`}              class={`nav-link ${active('') ? 'nav-link--active' : ''}`}>Home</a>
+      <a href={`${base}/#interventi`}  class="nav-link">Interventi</a>
+      <a href={`${base}/#aree`}        class="nav-link">Cosa facciamo</a>
+      <a href={`${base}/il-gruppo/`}   class={`nav-link ${active('il-gruppo') ? 'nav-link--active' : ''}`}>Il Gruppo</a>
+
+      <div class="nav-divider" aria-hidden="true"></div>
+
+      <a href={`${base}/contatti/`} class="nav-cta" aria-label="Avvia analisi con ARSOLVING">
+        <span>Avvia analisi</span>
+        <svg class="nav-cta-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </a>
     </div>
-  </div>
 
+    <!-- ── HAMBURGER ── -->
+    <button id="hamburger"
+            class="navbar-hamburger xl:hidden"
+            aria-label="Apri menu di navigazione"
+            aria-expanded="false"
+            aria-controls="mobile-menu">
+      <span class="ham-line ham-line-1"></span>
+      <span class="ham-line ham-line-2"></span>
+      <span class="ham-line ham-line-3"></span>
+    </button>
+
+  </div>
 </nav>
+
+<!-- ── MOBILE MENU (full-screen overlay) ── -->
+<div id="mobile-menu"
+     class="mobile-overlay hidden"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Menu di navigazione">
+
+  <div class="mobile-overlay-bg" aria-hidden="true"></div>
+
+  <div class="mobile-overlay-content">
+
+    <!-- Header -->
+    <div class="mobile-overlay-header">
+      <span class="navbar-brand-name text-white text-[1.5rem]">
+        <span>AR</span><span class="text-gold">SOLVING</span>
+      </span>
+      <button onclick="document.getElementById('hamburger').click()"
+              class="text-white/50 hover:text-white transition-colors p-2"
+              aria-label="Chiudi menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <path d="M4 4l14 14M18 4L4 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Nav links -->
+    <nav class="mobile-nav" aria-label="Menu mobile">
+      <a href={`${base}/`}             class="mobile-nav-link">
+        <span class="mobile-nav-num">01</span>Home
+      </a>
+      <a href={`${base}/#interventi`}  class="mobile-nav-link">
+        <span class="mobile-nav-num">02</span>Interventi
+      </a>
+      <a href={`${base}/#aree`}        class="mobile-nav-link">
+        <span class="mobile-nav-num">03</span>Cosa facciamo
+      </a>
+      <a href={`${base}/il-gruppo/`}   class="mobile-nav-link">
+        <span class="mobile-nav-num">04</span>Il Gruppo
+      </a>
+    </nav>
+
+    <!-- CTA -->
+    <div class="mobile-overlay-footer">
+      <a href={`${base}/contatti/`} class="btn-gold w-full justify-center text-center py-4">
+        Avvia analisi →
+      </a>
+      <p class="text-white/25 text-[0.65rem] tracking-[0.2em] uppercase text-center mt-4">
+        Global Vision / Arsolv' Mindset
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* ══════════════════════════════════════
+   NAVBAR ROOT
+══════════════════════════════════════ */
+.navbar-root {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  border-bottom: 1px solid transparent;
+}
+.navbar-root.is-scrolled {
+  background: rgba(14,29,52,0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+  border-bottom-color: rgba(199,162,74,0.1);
+}
+
+/* Laser line at top */
+.navbar-laser {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(199,162,74,0.0) 10%,
+    rgba(199,162,74,0.8) 35%,
+    #C7A24A 50%,
+    rgba(199,162,74,0.8) 65%,
+    rgba(199,162,74,0.0) 90%,
+    transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.navbar-root.is-scrolled .navbar-laser {
+  opacity: 1;
+}
+
+/* ── Inner container ── */
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5.5rem;
+  transition: height 0.35s ease;
+}
+.navbar-root.is-scrolled .navbar-inner {
+  height: 4.25rem;
+}
+
+/* ══════════════════════════════════════
+   LOGO
+══════════════════════════════════════ */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+/* Maze icon container */
+.navbar-icon-wrap {
+  position: relative;
+  width: 3rem;
+  height: 2.2rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.navbar-logo:hover .navbar-icon-wrap {
+  transform: scale(1.05);
+}
+.navbar-maze-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Glow behind maze icon */
+.navbar-icon-glow {
+  position: absolute;
+  inset: -50%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(199,162,74,0.18) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.navbar-logo:hover .navbar-icon-glow {
+  opacity: 1;
+}
+
+/* Brand text */
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 0.2rem;
+}
+.navbar-brand-name {
+  font-family: var(--font-heading, 'Sora', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+.navbar-brand-sub {
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(199,162,74,0.55);
+  transition: color 0.25s ease;
+}
+.navbar-logo:hover .navbar-brand-sub {
+  color: rgba(199,162,74,0.8);
+}
+
+/* ══════════════════════════════════════
+   DESKTOP LINKS
+══════════════════════════════════════ */
+.navbar-links {
+  display: none;
+  align-items: center;
+  gap: 0.2rem;
+}
+@media (min-width: 1280px) {
+  .navbar-links { display: flex; }
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  transition: color 0.22s ease;
+  border-radius: 3px;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; right: 50%;
+  height: 1px;
+  background: #C7A24A;
+  transition: left 0.25s ease, right 0.25s ease;
+}
+.nav-link:hover,
+.nav-link--active {
+  color: rgba(255,255,255,0.95);
+}
+.nav-link:hover::after,
+.nav-link--active::after {
+  left: 0.85rem;
+  right: 0.85rem;
+}
+.nav-link--active {
+  color: #C7A24A;
+}
+.nav-link--active::after {
+  background: #C7A24A;
+}
+
+/* Divider before CTA */
+.nav-divider {
+  width: 1px;
+  height: 1.4rem;
+  background: rgba(255,255,255,0.12);
+  margin: 0 0.6rem;
+}
+
+/* CTA */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.3rem;
+  background: #C7A24A;
+  color: #0E1D34;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+  box-shadow: 0 0 0 rgba(199,162,74,0);
+}
+.nav-cta:hover {
+  background: #D4B464;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 24px rgba(199,162,74,0.35);
+}
+.nav-cta-arrow {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.22s ease;
+}
+.nav-cta:hover .nav-cta-arrow {
+  transform: translateX(3px);
+}
+
+/* ══════════════════════════════════════
+   HAMBURGER
+══════════════════════════════════════ */
+.navbar-hamburger {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0.3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.ham-line {
+  display: block;
+  height: 1.5px;
+  background: white;
+  border-radius: 1px;
+  transform-origin: center;
+  transition: transform 0.28s ease, opacity 0.28s ease, width 0.28s ease;
+}
+.ham-line-1 { width: 22px; }
+.ham-line-2 { width: 22px; }
+.ham-line-3 { width: 14px; }
+
+.navbar-hamburger.menu-open .ham-line-1 {
+  transform: translateY(6.5px) rotate(45deg);
+  width: 22px;
+}
+.navbar-hamburger.menu-open .ham-line-2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.navbar-hamburger.menu-open .ham-line-3 {
+  transform: translateY(-6.5px) rotate(-45deg);
+  width: 22px;
+}
+
+/* ══════════════════════════════════════
+   MOBILE OVERLAY
+══════════════════════════════════════ */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-overlay.hidden { display: none; }
+
+.mobile-overlay-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(14,29,52,0.98);
+  backdrop-filter: blur(24px);
+}
+
+.mobile-overlay-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 1.5rem 2rem;
+}
+
+.mobile-overlay-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 2rem;
+}
+
+.mobile-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.65);
+  font-family: var(--font-display, 'Bebas Neue', sans-serif);
+  font-size: clamp(2rem, 8vw, 3rem);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+.mobile-nav-link:hover {
+  color: white;
+}
+
+.mobile-nav-num {
+  font-family: var(--font-body, 'Manrope', sans-serif);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(199,162,74,0.5);
+  margin-top: 0.35rem;
+  flex-shrink: 0;
+}
+
+.mobile-overlay-footer {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+</style>
 
 <script src="../scripts/nav.js"></script>
