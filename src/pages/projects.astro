@@ -14,7 +14,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
           style="font-size: clamp(3rem, 7vw, 6.5rem);">
         Area Strategica
       </h1>
-      <p class="text-[1rem] text-white/45 leading-[1.8] max-w-xl">
+      <p class="text-[1rem] text-white/66 leading-[1.8] max-w-xl">
         Partnership, sviluppo iniziative, consulenza e nuovi progetti costruiti da zero.
         Dalla visione alla realtà operativa.
       </p>
@@ -33,7 +33,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
               style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
             Costruiamo<br />da zero.
           </h2>
-          <div class="space-y-5 text-[1rem] text-navy/55 leading-[1.85]">
+          <div class="space-y-5 text-[1rem] text-navy/72 leading-[1.85]">
             <p>
               Abbiamo aperto un temporary store in dicembre: trovato il locale,
               allestito, ingaggiati i fornitori, creato il logo e il brand digitale.
@@ -52,7 +52,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
         </div>
 
         <div class="reveal delay-2">
-          <div class="bg-off-white border border-navy/8 p-10 mb-4">
+          <div class="bg-off-white border border-navy/14 p-10 mb-4">
             <div class="font-heading italic text-gold text-[1rem] mb-6 leading-relaxed">
               "Non ogni idea diventa un progetto.<br />
               Ma ogni progetto inizia da un'idea<br />
@@ -64,11 +64,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
                 { label: 'Sviluppo graduale',   val: 'Procediamo per fasi validate. Nessun "big bang": prima si funziona, poi si scala.' },
                 { label: 'Partnership mirate',  val: 'Collaboriamo con partner selezionati su obiettivi e valori condivisi.' },
               ].map((item, i) => (
-                <div class={`flex items-start gap-4 pt-4 ${i > 0 ? 'border-t border-navy/8' : ''}`}>
+                <div class={`flex items-start gap-4 pt-4 ${i > 0 ? 'border-t border-navy/14' : ''}`}>
                   <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2 flex-shrink-0"></div>
                   <div>
                     <div class="text-[0.8rem] font-semibold text-navy mb-1">{item.label}</div>
-                    <div class="text-[0.82rem] text-navy/45 leading-[1.65]">{item.val}</div>
+                    <div class="text-[0.82rem] text-navy/66 leading-[1.65]">{item.val}</div>
                   </div>
                 </div>
               ))}
@@ -111,11 +111,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
             desc: 'Temporary store, nuovi concept, iniziative locali. Se c\'è un\'opportunità concreta, ARSOLVING è in grado di costruire l\'intera struttura operativa intorno ad essa.',
           },
         ].map((item, i) => (
-          <div class={`reveal delay-${(i % 2) + 1} bg-white border border-navy/8 p-8 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 relative`}>
+          <div class={`reveal delay-${(i % 2) + 1} bg-white border border-navy/14 p-8 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 relative`}>
             <div class="absolute top-0 left-0 bottom-0 w-[2px]"
                  style="background: linear-gradient(180deg, #0E1D34, #C7A24A);"></div>
             <h3 class="font-heading font-semibold text-navy text-[1rem] mb-3 pl-4">{item.title}</h3>
-            <p class="text-[0.86rem] text-navy/50 leading-[1.75] pl-4">{item.desc}</p>
+            <p class="text-[0.86rem] text-navy/78 leading-[1.75] pl-4">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -131,7 +131,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
           style="font-size: clamp(2.2rem, 5vw, 5rem);">
         Hai un'idea<br />o una proposta?
       </h2>
-      <p class="text-white/45 text-[1rem] leading-[1.8] mb-10">
+      <p class="text-white/66 text-[1rem] leading-[1.8] mb-10">
         Valutiamo ogni proposta con attenzione. Se hai un progetto concreto
         o una visione da sviluppare insieme, parliamoci senza impegno.
       </p>

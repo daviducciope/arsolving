@@ -101,7 +101,7 @@ const method = [
       <!-- Sub + CTAs -->
       <div class="animate-fade-in-up flex flex-col lg:flex-row items-start lg:items-end gap-5 lg:gap-16"
            style="animation-delay: 0.3s;">
-        <p class="text-white/55 text-[1rem] lg:text-[1.1rem] leading-[1.75] max-w-[44ch]">
+        <p class="text-white/74 text-[1rem] lg:text-[1.1rem] leading-[1.75] max-w-[44ch]">
           ARSOLVING nasce da una <strong class="font-semibold text-white/82">capacità fuori dal comune</strong>:
           <strong class="font-semibold text-white/82">risolvere qualsiasi tipo di problema</strong> in
           <strong class="font-semibold text-white/82">qualsiasi contesto</strong>.
@@ -117,7 +117,7 @@ const method = [
 
 
   <!-- ═══ STATS BAR ═══ -->
-  <div class="bg-navy border-y border-gold/12 py-6">
+  <div class="bg-navy border-y border-gold/22 py-6">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-x divide-white/8">
         {[
@@ -129,7 +129,7 @@ const method = [
           <div class={`flex flex-col gap-1 ${i % 2 === 0 ? 'pr-6' : 'pl-6'} lg:px-10 ${i === 0 ? 'lg:pl-0' : ''} py-1`}>
             <span class="font-display text-gold leading-none"
                   style="font-size: clamp(2rem, 4vw, 3rem);">{s.value}</span>
-            <span class="text-white/38 text-[0.68rem] tracking-[0.12em] uppercase">{s.label}</span>
+            <span class="text-white/60 text-[0.68rem] tracking-[0.12em] uppercase">{s.label}</span>
           </div>
         ))}
       </div>
@@ -148,7 +148,7 @@ const method = [
               style="font-size: clamp(2.8rem, 6vw, 6rem);">
             Arsolv'<br /><span class="text-gold">mindset.</span>
           </h2>
-          <p class="text-navy/52 text-[0.9rem] leading-[1.7] max-w-[36ch] lg:text-right">
+          <p class="text-navy/70 text-[0.9rem] leading-[1.7] max-w-[36ch] lg:text-right">
             La nostra attività nasce da una capacità concreta di problem solving ad alto livello.
             Questi sono i casi reali — niente gonfiato, solo quello che è successo davvero.
           </p>
@@ -169,29 +169,29 @@ const method = [
             <div class="mb-5">
               <div class="flex items-center gap-2 mb-3">
                 <span class="w-1.5 h-1.5 rounded-full bg-red-400/70 flex-shrink-0"></span>
-                <span class="text-[0.55rem] tracking-[0.28em] uppercase font-bold text-navy/35">Problema</span>
+                <span class="text-[0.55rem] tracking-[0.28em] uppercase font-bold text-navy/58">Problema</span>
               </div>
               <p class="font-heading font-semibold text-navy text-[1.05rem] leading-[1.4]">{c.problem}</p>
             </div>
 
             <!-- Divider: gold arrow -->
             <div class="flex items-center gap-3 my-5">
-              <div class="h-px flex-1 bg-navy/6"></div>
-              <div class="w-7 h-7 rounded-full border border-gold/35 flex items-center justify-center flex-shrink-0 group-hover:border-gold/70 group-hover:bg-gold/5 transition-all duration-300">
+              <div class="h-px flex-1 bg-navy/12"></div>
+              <div class="w-7 h-7 rounded-full border border-gold/50 flex items-center justify-center flex-shrink-0 group-hover:border-gold/70 group-hover:bg-gold/10 transition-all duration-300">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M1 6h10M7 2.5l3.5 3.5L7 9.5" stroke="#C7A24A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <div class="h-px flex-1 bg-gold/20"></div>
+              <div class="h-px flex-1 bg-gold/32"></div>
             </div>
 
             <!-- Solution block -->
             <div>
               <div class="flex items-center gap-2 mb-3">
                 <span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"></span>
-                <span class="text-[0.55rem] tracking-[0.28em] uppercase font-bold text-gold/75">Soluzione</span>
+                <span class="text-[0.55rem] tracking-[0.28em] uppercase font-bold text-gold/90">Soluzione</span>
               </div>
-              <p class="text-[0.88rem] text-navy/65 leading-[1.72]">{c.action}</p>
+              <p class="text-[0.88rem] text-navy/76 leading-[1.72]">{c.action}</p>
             </div>
 
           </div>
@@ -202,7 +202,7 @@ const method = [
 
 
   <!-- ═══ COME LAVORIAMO ═══ -->
-  <section class="py-20 lg:py-28 bg-white border-y border-navy/6">
+  <section class="py-20 lg:py-28 bg-white border-y border-navy/12">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
       <div class="reveal mb-12 lg:mb-16 text-center">
@@ -234,7 +234,7 @@ const method = [
           <div class={`reveal delay-${i + 1} step-card`}>
             <div class="step-number">{s.n}</div>
             <h3 class="font-heading font-semibold text-navy text-[1.1rem] mb-3">{s.title}</h3>
-            <p class="text-navy/55 text-[0.88rem] leading-[1.75]">{s.desc}</p>
+            <p class="text-navy/72 text-[0.88rem] leading-[1.75]">{s.desc}</p>
             {i < 2 && (
               <div class="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -261,7 +261,7 @@ const method = [
               style="font-size: clamp(2.8rem, 6vw, 6rem);">
             Tre aree.<br />Un solo interlocutore.
           </h2>
-          <p class="text-white/45 text-[0.9rem] leading-[1.7] max-w-[38ch] lg:text-right">
+          <p class="text-white/66 text-[0.9rem] leading-[1.7] max-w-[38ch] lg:text-right">
             Non siamo un'agenzia né un'impresa generalista. Siamo il partner che risolve — qualunque sia il fronte.
           </p>
         </div>
@@ -271,19 +271,19 @@ const method = [
         {areas.map((area, i) => (
           <a href={area.href} class={`reveal delay-${i + 1} area-panel group`}>
             <div class="flex items-start justify-between mb-6">
-              <span class="text-gold/50 font-display text-[0.75rem] tracking-[0.3em]">{area.n}</span>
-              <svg class="w-4 h-4 text-gold/30 group-hover:text-gold transition-colors duration-200"
+              <span class="text-gold/85 font-display text-[0.75rem] tracking-[0.3em]">{area.n}</span>
+              <svg class="w-4 h-4 text-gold/55 group-hover:text-gold transition-colors duration-200"
                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/>
               </svg>
             </div>
             <span class="text-gold text-[0.68rem] tracking-[0.22em] uppercase font-bold mb-2 block">{area.label}</span>
             <h3 class="font-display text-white text-[2rem] leading-none uppercase mb-4">{area.title}</h3>
-            <p class="text-white/45 text-[0.86rem] leading-[1.7] mb-6 flex-1">{area.desc}</p>
+            <p class="text-white/66 text-[0.86rem] leading-[1.7] mb-6 flex-1">{area.desc}</p>
             <ul class="space-y-1.5">
               {area.items.map(item => (
-                <li class="flex items-center gap-2.5 text-white/38 text-[0.78rem]">
-                  <span class="w-1 h-1 rounded-full bg-gold/50 flex-shrink-0"></span>
+                <li class="flex items-center gap-2.5 text-white/60 text-[0.78rem]">
+                  <span class="w-1 h-1 rounded-full bg-gold flex-shrink-0"></span>
                   {item}
                 </li>
               ))}
@@ -308,7 +308,7 @@ const method = [
             Il metodo dietro<br /><span class="text-gold">ogni soluzione.</span>
           </h2>
         </div>
-        <p class="text-white/38 text-[0.88rem] leading-[1.8] max-w-[38ch] lg:text-right">
+        <p class="text-white/60 text-[0.88rem] leading-[1.8] max-w-[38ch] lg:text-right">
           Non è improvvisazione — è metodo. Sei passaggi che trasformano qualsiasi problema in una soluzione strutturata e duratura.
         </p>
       </div>
@@ -343,7 +343,7 @@ const method = [
           style="font-size: clamp(3.5rem, 9vw, 9rem);">
         Hai un<br /><span class="text-gold">problema?</span>
       </h2>
-      <p class="text-white/52 text-[1rem] leading-[1.75] max-w-[38ch] mx-auto mb-10">
+      <p class="text-white/72 text-[1rem] leading-[1.75] max-w-[38ch] mx-auto mb-10">
         Descrivici la situazione, anche se è complicata da spiegare.
         In 30 minuti capiamo cosa fare e ci mettiamo in moto.
       </p>

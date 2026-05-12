@@ -125,8 +125,8 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.9rem 2rem;
-  border: 1px solid rgba(255,255,255,0.22);
-  color: rgba(255,255,255,0.82);
+  border: 1px solid rgba(255,255,255,0.34);
+  color: rgba(255,255,255,0.9);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -143,8 +143,8 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.9rem 2rem;
-  border: 1px solid rgba(14,29,52,0.22);
-  color: rgba(14,29,52,0.7);
+  border: 1px solid rgba(14,29,52,0.32);
+  color: rgba(14,29,52,0.82);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -181,7 +181,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(199,162,74,0.8);
+  color: rgba(212,180,100,0.95);
   font-size: 0.64rem;
   font-weight: 800;
   letter-spacing: 0.26em;
@@ -192,7 +192,7 @@ body {
   display: block;
   width: 1.8rem;
   height: 1px;
-  background: rgba(199,162,74,0.8);
+  background: rgba(212,180,100,0.95);
 }
 
 /* ── Case cards ── */
@@ -226,7 +226,7 @@ body {
   position: relative;
   overflow: hidden;
   background: #fff;
-  border: 1px solid rgba(14,29,52,0.07);
+  border: 1px solid rgba(14,29,52,0.12);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -245,7 +245,7 @@ body {
 .case-card-v2:hover {
   transform: translateY(-3px);
   box-shadow: 0 20px 56px rgba(14,29,52,0.1);
-  border-color: rgba(199,162,74,0.22);
+  border-color: rgba(199,162,74,0.36);
 }
 .case-card-v2:hover::after { transform: scaleY(1); }
 
@@ -256,7 +256,7 @@ body {
   font-weight: 800;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  border: 1px solid rgba(199,162,74,0.35);
+  border: 1px solid rgba(199,162,74,0.55);
   padding: 0.25rem 0.6rem;
   border-radius: 2px;
   margin-bottom: 1rem;
@@ -267,14 +267,14 @@ body {
   position: relative;
   padding: 2rem;
   background: #fff;
-  border: 1px solid rgba(14,29,52,0.07);
+  border: 1px solid rgba(14,29,52,0.12);
   border-radius: 2px;
 }
 .step-number {
   font-family: var(--font-display);
   font-size: 5rem;
   line-height: 1;
-  color: rgba(14,29,52,0.06);
+  color: rgba(14,29,52,0.12);
   margin-bottom: 1.2rem;
   letter-spacing: 0.02em;
 }
@@ -284,15 +284,15 @@ body {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.06);
   border-radius: 2px;
   transition: background 0.25s ease, border-color 0.25s ease;
   text-decoration: none;
 }
 .area-panel:hover {
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(199,162,74,0.3);
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(199,162,74,0.45);
 }
 
 /* ── ARSOLV section ── */
@@ -305,7 +305,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  border-bottom: 1px solid rgba(255,255,255,0.14);
   margin-bottom: 0;
 }
 @media (min-width: 1024px) {
@@ -325,7 +325,7 @@ body {
   align-items: center;
   column-gap: 2.5rem;
   padding: 1.6rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
   transition: background 0.3s ease;
   overflow: hidden;
 }
@@ -349,7 +349,7 @@ body {
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.22em;
-  color: rgba(199,162,74,0.3);
+  color: rgba(212,180,100,0.62);
   font-family: var(--font-body);
   line-height: 1;
 }
@@ -358,13 +358,13 @@ body {
   font-family: var(--font-display);
   font-size: clamp(4rem, 7.5vw, 8rem);
   line-height: 0.9;
-  color: rgba(255,255,255,0.045);
+  color: rgba(255,255,255,0.1);
   transition: color 0.4s ease, text-shadow 0.4s ease;
   user-select: none;
   flex-shrink: 0;
 }
 .arsolv-row:hover .arsolv-ghost {
-  color: rgba(199,162,74,0.42);
+  color: rgba(212,180,100,0.62);
   text-shadow: 0 0 80px rgba(199,162,74,0.18);
 }
 
@@ -374,7 +374,7 @@ body {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3.2vw, 3rem);
   text-transform: uppercase;
-  color: rgba(255,255,255,0.78);
+  color: rgba(255,255,255,0.9);
   line-height: 1;
   letter-spacing: 0.03em;
   transition: color 0.3s ease;
@@ -383,11 +383,11 @@ body {
 
 .arsolv-desc {
   font-size: 0.84rem;
-  color: rgba(255,255,255,0.32);
+  color: rgba(255,255,255,0.62);
   line-height: 1.6;
   transition: color 0.3s ease;
 }
-.arsolv-row:hover .arsolv-desc { color: rgba(255,255,255,0.58); }
+.arsolv-row:hover .arsolv-desc { color: rgba(255,255,255,0.78); }
 
 /* ── Page hero (inner pages) ── */
 .page-hero {
@@ -402,8 +402,8 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(199,162,74,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(199,162,74,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(199,162,74,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199,162,74,0.06) 1px, transparent 1px);
   background-size: 64px 64px;
   pointer-events: none;
 }
@@ -413,7 +413,7 @@ body {
   position: relative;
   overflow: hidden;
   background: #fff;
-  border: 1px solid rgba(14,29,52,0.08);
+  border: 1px solid rgba(14,29,52,0.12);
   border-radius: 2px;
   padding: 2rem;
   transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
@@ -421,7 +421,7 @@ body {
 .service-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 20px 50px rgba(14,29,52,0.08);
-  border-color: rgba(199,162,74,0.25);
+  border-color: rgba(199,162,74,0.38);
 }
 .service-card::before {
   content: '';
@@ -438,14 +438,14 @@ body {
 /* ── Contact form ── */
 .analysis-form {
   padding: clamp(1.5rem, 3vw, 2.5rem);
-  border: 1px solid rgba(199,162,74,0.2);
-  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(199,162,74,0.36);
+  background: rgba(255,255,255,0.08);
   backdrop-filter: blur(16px);
 }
 .analysis-form label { display: grid; gap: 0.5rem; }
 .analysis-form label > span,
 .analysis-form legend {
-  color: rgba(255,255,255,0.52);
+  color: rgba(255,255,255,0.72);
   font-size: 0.64rem;
   font-weight: 800;
   letter-spacing: 0.18em;
@@ -455,8 +455,8 @@ body {
 .analysis-form select,
 .analysis-form textarea {
   width: 100%;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(14,29,52,0.5);
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(14,29,52,0.72);
   color: white;
   border-radius: 2px;
   padding: 0.9rem 1rem;
@@ -465,7 +465,7 @@ body {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .analysis-form input::placeholder,
-.analysis-form textarea::placeholder { color: rgba(255,255,255,0.25); }
+.analysis-form textarea::placeholder { color: rgba(255,255,255,0.48); }
 .analysis-form input:focus,
 .analysis-form select:focus,
 .analysis-form textarea:focus {
@@ -489,9 +489,9 @@ body {
   display: grid;
   place-items: center;
   min-height: 3rem;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.03);
-  color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.76);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -534,7 +534,7 @@ body {
   align-items: end;
   padding-bottom: 3rem;
   margin-bottom: 3rem;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  border-bottom: 1px solid rgba(255,255,255,0.14);
 }
 .footer-command h2 {
   color: white;
@@ -589,17 +589,17 @@ body {
 .footer-logo strong span { color: white; }
 .footer-logo small {
   display: block;
-  color: rgba(199,162,74,0.5);
+  color: rgba(212,180,100,0.78);
   font-size: 0.56rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-top: 0.2rem;
 }
-.footer-brand p { color: rgba(255,255,255,0.38); line-height: 1.8; }
+.footer-brand p { color: rgba(255,255,255,0.68); line-height: 1.8; }
 .footer-nav span,
 .footer-contact span {
   display: block;
-  color: rgba(199,162,74,0.7);
+  color: rgba(212,180,100,0.9);
   font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.22em;
@@ -609,22 +609,22 @@ body {
 .footer-nav a,
 .footer-contact a {
   display: block;
-  color: rgba(255,255,255,0.42);
+  color: rgba(255,255,255,0.68);
   margin-bottom: 0.6rem;
   font-size: 0.88rem;
   transition: color 0.2s ease;
 }
 .footer-nav a:hover,
 .footer-contact a:hover { color: rgba(255,255,255,0.9); }
-.footer-contact p { color: rgba(255,255,255,0.35); font-size: 0.82rem; line-height: 1.7; margin-top: 0.5rem; }
+.footer-contact p { color: rgba(255,255,255,0.62); font-size: 0.82rem; line-height: 1.7; margin-top: 0.5rem; }
 .footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.14);
   padding-top: 1.4rem;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.54);
   font-size: 0.7rem;
 }
 
@@ -650,14 +650,14 @@ body {
   padding: 1.2rem;
 }
 .problem-head {
-  color: rgba(14,29,52,0.42);
+  color: rgba(14,29,52,0.66);
   font-size: 0.64rem;
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 .problem-head-main { color: #C7A24A; }
-.problem-cell { color: rgba(14,29,52,0.68); font-size: 0.88rem; line-height: 1.65; }
+.problem-cell { color: rgba(14,29,52,0.78); font-size: 0.88rem; line-height: 1.65; }
 .problem-name { display: flex; flex-direction: column; gap: 0.6rem; }
 .problem-name span { color: #C7A24A; font-size: 0.64rem; font-weight: 800; letter-spacing: 0.18em; }
 .problem-name strong {

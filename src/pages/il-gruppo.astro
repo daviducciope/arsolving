@@ -14,7 +14,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
           style="font-size: clamp(3rem, 7vw, 6.5rem);">
         Chi è ARSOLVING
       </h1>
-      <p class="text-[1rem] text-white/45 leading-[1.8] max-w-xl">
+      <p class="text-[1rem] text-white/66 leading-[1.8] max-w-xl">
         Un'azienda nata da una capacità fuori dal comune: il problem solving ad alto livello.
         Non siamo specializzati in un settore — siamo specializzati nel risolvere.
       </p>
@@ -33,7 +33,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
               style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
             Perché nasce ARSOLVING
           </h2>
-          <div class="space-y-5 text-[1rem] text-navy/55 leading-[1.85]">
+          <div class="space-y-5 text-[1rem] text-navy/72 leading-[1.85]">
             <p>
               ARSOLVING nasce da una competenza specifica, rara e concreta: la capacità di
               risolvere problemi ad alto livello, in qualsiasi contesto. Non siamo
@@ -62,7 +62,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
               Non da un settore di riferimento,<br />
               ma dalla capacità di risolvere qualsiasi cosa."
             </blockquote>
-            <cite class="text-[0.62rem] tracking-[0.22em] uppercase text-white/25 not-italic">
+            <cite class="text-[0.62rem] tracking-[0.22em] uppercase text-white/74 not-italic">
               — ARSOLVING, Vision Statement
             </cite>
           </div>
@@ -74,9 +74,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
               { v: 'Affidabilità',    d: 'Consegniamo quello che promettiamo, nei tempi concordati.' },
               { v: 'Multidisciplina', d: 'Operativa, digitale, strategica: una sola chiamata.' },
             ].map(item => (
-              <div class="bg-off-white border border-navy/8 p-5 hover:border-gold/25 transition-colors duration-200">
+              <div class="bg-off-white border border-navy/14 p-5 hover:border-gold/38 transition-colors duration-200">
                 <h4 class="text-[0.85rem] font-semibold text-navy mb-2">{item.v}</h4>
-                <p class="text-[0.76rem] text-navy/45 leading-[1.6]">{item.d}</p>
+                <p class="text-[0.76rem] text-navy/66 leading-[1.6]">{item.d}</p>
               </div>
             ))}
           </div>
@@ -116,12 +116,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
             text: 'Non promettiamo velocità e poi mandiamo preventivi per settimane. Quando diciamo 24h, è 24h. Quando diciamo 48h, è 48h. Abbiamo i casi a dimostrarlo.',
           },
         ].map((item, i) => (
-          <div class={`reveal delay-${i+1} bg-white border border-navy/8 p-8 relative overflow-hidden hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300`}>
+          <div class={`reveal delay-${i+1} bg-white border border-navy/14 p-8 relative overflow-hidden hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300`}>
             <div class="absolute top-0 left-0 right-0 h-[2px]"
                  style="background: linear-gradient(90deg, #0E1D34, #C7A24A);"></div>
             <div class="font-display text-navy/8 text-[3rem] leading-none mb-4">{item.n}</div>
             <h3 class="font-heading font-semibold text-navy text-[1rem] mb-3">{item.title}</h3>
-            <p class="text-[0.86rem] text-navy/50 leading-[1.75]">{item.text}</p>
+            <p class="text-[0.86rem] text-navy/78 leading-[1.75]">{item.text}</p>
           </div>
         ))}
       </div>
@@ -136,8 +136,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
         <div class="reveal flex justify-center">
           <div class="relative w-full max-w-md">
-            <div class="absolute inset-x-[-24px] top-1/2 h-px bg-gold/12"></div>
-            <div class="absolute inset-[-28px] border border-gold/8"></div>
+            <div class="absolute inset-x-[-24px] top-1/2 h-px bg-gold/22"></div>
+            <div class="absolute inset-[-28px] border border-gold/18"></div>
             <img src={`${base}/logo_arsolving_light.svg`} alt="ARSOLVING"
                  class="relative w-full h-auto object-contain"
                  style="filter: drop-shadow(0 0 40px rgba(199,162,74,0.18));" />
@@ -150,7 +150,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
               style="font-size: clamp(2rem, 4vw, 4rem);">
             Un'identità che<br />riflette la sostanza.
           </h2>
-          <div class="space-y-4 text-[0.92rem] text-white/45 leading-[1.8]">
+          <div class="space-y-4 text-[0.92rem] text-white/66 leading-[1.8]">
             <p>
               Il <span class="text-white/72 font-medium">blu navy profondo</span> rappresenta
               solidità, competenza tecnica e affidabilità operativa.
@@ -160,7 +160,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
               eccellenza nei risultati, cura del dettaglio, visione a lungo termine.
             </p>
             <p>
-              Il payoff <span class="font-heading italic text-gold/60">Global Vision /
+              Il payoff <span class="font-heading italic text-gold/78">Global Vision /
               Arsolv' Mindset</span> sintetizza i due assi: lettura sistemica del contesto
               e orientamento concreto alla soluzione.
             </p>
@@ -173,13 +173,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 
   <!-- CTA -->
-  <section class="py-20 bg-white border-t border-navy/6">
+  <section class="py-20 bg-white border-t border-navy/12">
     <div class="max-w-3xl mx-auto px-6 text-center reveal">
       <h2 class="font-display uppercase text-navy leading-[0.92] mb-5"
           style="font-size: clamp(2rem, 4vw, 4rem);">
         Vuoi lavorare con noi?
       </h2>
-      <p class="text-navy/50 text-[1rem] leading-[1.8] mb-10">
+      <p class="text-navy/78 text-[1rem] leading-[1.8] mb-10">
         Contattaci direttamente. Nessun form complicato, nessun impegno preliminare.
       </p>
       <div class="flex flex-wrap justify-center gap-3">

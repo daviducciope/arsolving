@@ -53,7 +53,7 @@ const services = [
           style="font-size: clamp(3rem, 7vw, 6.5rem);">
         Area Operativa
       </h1>
-      <p class="text-[1rem] text-white/45 leading-[1.8] max-w-xl">
+      <p class="text-[1rem] text-white/66 leading-[1.8] max-w-xl">
         Pulizie, allestimenti, forniture urgenti, manutenzione, facility.
         Sul campo in ore — non in settimane.
       </p>
@@ -62,7 +62,7 @@ const services = [
 
 
   <!-- Intro -->
-  <section class="py-20 bg-white border-b border-navy/6">
+  <section class="py-20 bg-white border-b border-navy/12">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="reveal">
@@ -73,12 +73,12 @@ const services = [
           </h2>
         </div>
         <div class="reveal delay-2">
-          <p class="text-[1rem] text-navy/55 leading-[1.85] mb-5">
+          <p class="text-[1rem] text-navy/72 leading-[1.85] mb-5">
             Abbiamo pulito finestre fino al terzo piano con elevatore mobile e risolto
             un'infestazione di piccioni per il Comune di Montesilvano — lo stesso giorno.
             Abbiamo allestito food & beverage per un torneo sportivo rimasto senza fornitori.
           </p>
-          <p class="text-[1rem] text-navy/55 leading-[1.85]">
+          <p class="text-[1rem] text-navy/72 leading-[1.85]">
             Qualsiasi problema operativo ha una soluzione. Non lavoriamo con
             protocolli rigidi che rallentano: leggiamo il contesto, ci muoviamo in fretta,
             documentiamo tutto.
@@ -113,7 +113,7 @@ const services = [
               <span class="font-display text-navy/10 text-[2.5rem] leading-none">{s.n}</span>
             </div>
             <h3 class="font-heading font-semibold text-navy text-[1rem] mb-3">{s.title}</h3>
-            <p class="text-[0.84rem] text-navy/52 leading-[1.78]">{s.desc}</p>
+            <p class="text-[0.84rem] text-navy/70 leading-[1.78]">{s.desc}</p>
           </div>
         ))}
       </div>
@@ -132,7 +132,7 @@ const services = [
               style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
             Un referente.<br />Zero frammentazione.
           </h2>
-          <p class="text-white/45 text-[1rem] leading-[1.85]">
+          <p class="text-white/66 text-[1rem] leading-[1.85]">
             Gestire edifici e strutture significa coordinare più variabili in contemporanea.
             Con ARSOLVING hai un unico interlocutore che supervisiona tutto, traccia ogni
             intervento e risponde direttamente.
@@ -147,11 +147,11 @@ const services = [
             'Rete di fornitori specializzati già attiva',
             'Standard qualitativi uniformi su tutti i fronti',
           ].map((item, i) => (
-            <div class={`flex items-center gap-4 py-4 ${i > 0 ? 'border-t border-white/8' : ''}`}>
-              <div class="w-5 h-5 rounded-full border border-gold/35 flex items-center justify-center flex-shrink-0">
+            <div class={`flex items-center gap-4 py-4 ${i > 0 ? 'border-t border-white/14' : ''}`}>
+              <div class="w-5 h-5 rounded-full border border-gold/50 flex items-center justify-center flex-shrink-0">
                 <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
               </div>
-              <p class="text-[0.9rem] text-white/50 leading-[1.7]">{item}</p>
+              <p class="text-[0.9rem] text-white/70 leading-[1.7]">{item}</p>
             </div>
           ))}
         </div>
@@ -162,13 +162,13 @@ const services = [
 
 
   <!-- CTA -->
-  <section class="py-20 bg-white border-t border-navy/6">
+  <section class="py-20 bg-white border-t border-navy/12">
     <div class="max-w-3xl mx-auto px-6 text-center reveal">
       <h2 class="font-display uppercase text-navy leading-[0.92] mb-5"
           style="font-size: clamp(2rem, 4vw, 4rem);">
         Hai un problema operativo?
       </h2>
-      <p class="text-navy/50 text-[1rem] leading-[1.8] mb-10">
+      <p class="text-navy/78 text-[1rem] leading-[1.8] mb-10">
         Descrivici la situazione. In 30 minuti capiamo cosa serve e ci muoviamo.
       </p>
       <a href={`${base}/contatti/`} class="btn-gold">Raccontaci il problema</a>

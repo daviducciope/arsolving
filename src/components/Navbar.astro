@@ -60,7 +60,7 @@ function active(segment: string): boolean {
     <div class="mobile-overlay-header">
       <img src={`${base}/logo_arsolving_light.svg`} alt="ARSOLVING" class="mobile-logo-img" />
       <button onclick="document.getElementById('hamburger').click()"
-              class="text-white/50 hover:text-white transition-colors p-2"
+              class="text-white/80 hover:text-white transition-colors p-2"
               aria-label="Chiudi menu">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
           <path d="M4 4l14 14M18 4L4 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -79,7 +79,7 @@ function active(segment: string): boolean {
       <a href={`${base}/contatti/`} class="btn-gold w-full justify-center text-center py-4">
         Avvia analisi →
       </a>
-      <p class="text-white/25 text-[0.65rem] tracking-[0.2em] uppercase text-center mt-4">
+      <p class="text-white/74 text-[0.65rem] tracking-[0.2em] uppercase text-center mt-4">
         Global Vision / Arsolv' Mindset
       </p>
     </div>
@@ -101,7 +101,7 @@ function active(segment: string): boolean {
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   box-shadow: 0 8px 48px rgba(0,0,0,0.38);
-  border-bottom-color: rgba(199,162,74,0.1);
+  border-bottom-color: rgba(199,162,74,0.22);
 }
 
 /* Laser line */
@@ -166,7 +166,7 @@ function active(segment: string): boolean {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.52);
+  color: rgba(255,255,255,0.72);
   text-decoration: none;
   transition: color 0.22s ease;
 }
@@ -187,7 +187,7 @@ function active(segment: string): boolean {
 
 .nav-divider {
   width: 1px; height: 1.25rem;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.18);
   margin: 0 0.5rem;
 }
 
@@ -265,15 +265,15 @@ function active(segment: string): boolean {
 .mobile-overlay-header {
   display: flex; align-items: center; justify-content: space-between;
   height: 5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.14);
   margin-bottom: 2rem;
 }
 .mobile-nav { flex: 1; display: flex; flex-direction: column; }
 .mobile-nav-link {
   display: flex; align-items: center; gap: 1rem;
   padding: 1.1rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  color: rgba(255,255,255,0.62);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.82);
   font-family: var(--font-display,'Bebas Neue',sans-serif);
   font-size: clamp(2rem, 8vw, 3rem);
   letter-spacing: 0.06em;
@@ -285,12 +285,12 @@ function active(segment: string): boolean {
   font-family: var(--font-body,'Manrope',sans-serif);
   font-size: 0.6rem; font-weight: 700;
   letter-spacing: 0.2em;
-  color: rgba(199,162,74,0.5);
+  color: rgba(212,180,100,0.78);
   margin-top: 0.35rem; flex-shrink: 0;
 }
 .mobile-overlay-footer {
   padding-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.14);
 }
 </style>
 
