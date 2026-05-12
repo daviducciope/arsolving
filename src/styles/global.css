@@ -249,6 +249,52 @@ body {
 }
 .case-card-v2:hover::after { transform: scaleY(1); }
 
+/* ── Cases mobile swipe ── */
+@media (max-width: 1023px) {
+  .cases-swipe {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 0.75rem;
+    padding: 0.5rem 1.5rem 1.5rem;
+    margin: 0 -1.5rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cases-swipe::-webkit-scrollbar { display: none; }
+  .cases-swipe .case-card-v2 {
+    flex-shrink: 0;
+    width: 82vw;
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+}
+
+/* ── Cases dots ── */
+.cases-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1.5rem;
+}
+@media (min-width: 1024px) { .cases-dots { display: none; } }
+
+.cases-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(14,29,52,0.18);
+  cursor: pointer;
+  transition: width 0.35s cubic-bezier(0.4,0,0.2,1), background 0.35s ease, border-radius 0.35s ease;
+}
+.cases-dot.is-active {
+  width: 22px;
+  border-radius: 3px;
+  background: #C7A24A;
+}
+
 .case-tag {
   display: inline-block;
   color: #C7A24A;
@@ -297,7 +343,7 @@ body {
 
 /* ── ARSOLV section ── */
 .arsolv-section {
-  background: #0E1D34;
+  background: #FAF8F4;
   padding: 5rem 0 6rem;
 }
 .arsolv-header {
@@ -305,7 +351,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(255,255,255,0.14);
+  border-bottom: 1px solid rgba(14,29,52,0.1);
   margin-bottom: 0;
 }
 @media (min-width: 1024px) {
@@ -325,7 +371,7 @@ body {
   align-items: center;
   column-gap: 2.5rem;
   padding: 1.6rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(14,29,52,0.1);
   transition: background 0.3s ease;
   overflow: hidden;
 }
@@ -358,14 +404,14 @@ body {
   font-family: var(--font-display);
   font-size: clamp(4rem, 7.5vw, 8rem);
   line-height: 0.9;
-  color: rgba(255,255,255,0.1);
+  color: rgba(14,29,52,0.07);
   transition: color 0.4s ease, text-shadow 0.4s ease;
   user-select: none;
   flex-shrink: 0;
 }
 .arsolv-row:hover .arsolv-ghost {
-  color: rgba(212,180,100,0.62);
-  text-shadow: 0 0 80px rgba(199,162,74,0.18);
+  color: rgba(199,162,74,0.5);
+  text-shadow: 0 0 80px rgba(199,162,74,0.12);
 }
 
 .arsolv-body { display: flex; flex-direction: column; gap: 0.35rem; }
@@ -374,20 +420,95 @@ body {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3.2vw, 3rem);
   text-transform: uppercase;
-  color: rgba(255,255,255,0.9);
+  color: rgba(14,29,52,0.9);
   line-height: 1;
   letter-spacing: 0.03em;
   transition: color 0.3s ease;
 }
-.arsolv-row:hover .arsolv-word { color: #fff; }
+.arsolv-row:hover .arsolv-word { color: #0E1D34; }
 
 .arsolv-desc {
   font-size: 0.84rem;
-  color: rgba(255,255,255,0.62);
+  color: rgba(14,29,52,0.58);
   line-height: 1.6;
   transition: color 0.3s ease;
 }
-.arsolv-row:hover .arsolv-desc { color: rgba(255,255,255,0.78); }
+.arsolv-row:hover .arsolv-desc { color: rgba(14,29,52,0.78); }
+
+/* ── ARSOLV mobile swipe ── */
+@media (max-width: 1023px) {
+  .arsolv-section .arsolv-rows {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 0.75rem;
+    padding: 2rem 1.5rem 2rem;
+    margin: 0 -1.5rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .arsolv-section .arsolv-rows::-webkit-scrollbar { display: none; }
+
+  .arsolv-section .arsolv-row {
+    flex-shrink: 0;
+    width: 78vw;
+    max-width: 300px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 1.75rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-radius: 3px;
+    grid-template-columns: unset;
+    overflow: hidden;
+    transition: border-color 0.35s ease, background 0.35s ease;
+  }
+  .arsolv-section .arsolv-row::before {
+    left: 0; top: 0; bottom: auto;
+    width: 100%; height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .arsolv-section .arsolv-row.is-snapped { border-color: rgba(199,162,74,0.4); }
+  .arsolv-section .arsolv-row.is-snapped::before { transform: scaleX(1); }
+
+  .arsolv-section .arsolv-ghost {
+    font-size: clamp(5rem, 22vw, 7rem);
+    line-height: 0.85;
+    margin-bottom: 1.25rem;
+    align-self: flex-end;
+  }
+  .arsolv-section .arsolv-idx { margin-bottom: 0.5rem; }
+  .arsolv-section .arsolv-word { font-size: clamp(2rem, 7vw, 2.6rem); }
+}
+
+/* ── ARSOLV dots ── */
+.arsolv-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1.75rem;
+}
+@media (min-width: 1024px) { .arsolv-dots { display: none; } }
+
+.arsolv-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(14,29,52,0.18);
+  cursor: pointer;
+  transition: width 0.35s cubic-bezier(0.4,0,0.2,1), background 0.35s ease, border-radius 0.35s ease;
+}
+.arsolv-dot.is-active {
+  width: 22px;
+  border-radius: 3px;
+  background: #C7A24A;
+}
 
 /* ── Page hero (inner pages) ── */
 .page-hero {

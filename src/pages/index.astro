@@ -84,7 +84,7 @@ const method = [
 >
 
   <!-- ═══ HERO ═══ -->
-  <section class="relative min-h-[92svh] lg:min-h-[100svh] bg-navy overflow-hidden flex flex-col justify-center lg:justify-end pb-10 lg:pb-24 pt-20 lg:pt-24">
+  <section class="relative min-h-[65svh] lg:min-h-[75svh] bg-navy overflow-hidden flex flex-col justify-start pb-6 lg:pb-10 pt-[7.5rem]">
     <div class="absolute inset-0 pointer-events-none"
          style="background: radial-gradient(ellipse 70% 60% at 15% 80%, rgba(199,162,74,0.1) 0%, transparent 60%), radial-gradient(ellipse 40% 50% at 85% 20%, rgba(26,43,74,0.8) 0%, transparent 60%);"></div>
 
@@ -95,7 +95,7 @@ const method = [
         Qualsiasi<br />
         <span class="text-gold">problema.</span><br />
         Noi lo<br />
-        risolviamo.
+        <span class="text-gold">risolviamo!</span><br />
       </h1>
 
       <!-- Sub + CTAs -->
@@ -116,25 +116,7 @@ const method = [
   </section>
 
 
-  <!-- ═══ STATS BAR ═══ -->
-  <div class="bg-navy border-y border-gold/22 py-6">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-x divide-white/8">
-        {[
-          { value: '6+',    label: 'Interventi documentati' },
-          { value: '24h',   label: 'Tempo di risposta medio' },
-          { value: '3',     label: 'Aree operative' },
-          { value: 'PE',    label: 'Base operativa, Abruzzo' },
-        ].map((s, i) => (
-          <div class={`flex flex-col gap-1 ${i % 2 === 0 ? 'pr-6' : 'pl-6'} lg:px-10 ${i === 0 ? 'lg:pl-0' : ''} py-1`}>
-            <span class="font-display text-gold leading-none"
-                  style="font-size: clamp(2rem, 4vw, 3rem);">{s.value}</span>
-            <span class="text-white/60 text-[0.68rem] tracking-[0.12em] uppercase">{s.label}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
+  
 
 
   <!-- ═══ INTERVENTI ═══ -->
@@ -142,20 +124,20 @@ const method = [
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
       <div class="reveal mb-12 lg:mb-16">
-        <div class="label-chip mb-5">Interventi recenti</div>
+        
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
           <h2 class="font-display uppercase text-navy leading-[0.92]"
               style="font-size: clamp(2.8rem, 6vw, 6rem);">
-            Arsolv'<br /><span class="text-gold">mindset.</span>
+            Arsolv'<span class="text-gold">mindset.</span>
           </h2>
-          <p class="text-navy/70 text-[0.9rem] leading-[1.7] max-w-[36ch] lg:text-right">
-            La nostra attività nasce da una capacità concreta di problem solving ad alto livello.
-            Questi sono i casi reali — niente gonfiato, solo quello che è successo davvero.
+          <p class="text-navy/70 text-[0.9rem] leading-[1.7] max-w-[39ch] lg:text-right">
+            La nostra attività nasce da una capacità concreta di problem solving.
+            Questi sono alcuni casi reali.
           </p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="cases-swipe grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="cases-track">
         {cases.map((c, i) => (
           <div class={`reveal delay-${(i % 3) + 1} case-card-v2 group`}>
 
@@ -197,61 +179,54 @@ const method = [
           </div>
         ))}
       </div>
-    </div>
-  </section>
 
-
-  <!-- ═══ COME LAVORIAMO ═══ -->
-  <section class="py-20 lg:py-28 bg-white border-y border-navy/12">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-
-      <div class="reveal mb-12 lg:mb-16 text-center">
-        <div class="label-chip justify-center mb-5">Come funziona</div>
-        <h2 class="font-display uppercase text-navy leading-[0.92]"
-            style="font-size: clamp(2.4rem, 5vw, 5rem);">
-          Tre passi. Nessuna burocrazia.
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {[
-          {
-            n: '01',
-            title: 'Ci chiami o scrivi',
-            desc: 'Descrivi il problema, anche se non sai come descriverlo. Non servono capitolati né brief formali. Basta una telefonata o un messaggio.',
-          },
-          {
-            n: '02',
-            title: 'Capiamo in 30 minuti',
-            desc: 'Valutiamo il problema, proponiamo come risolverlo e ci mettiamo in moto. Niente attese, niente riunioni infinite.',
-          },
-          {
-            n: '03',
-            title: 'Problema risolto',
-            desc: 'Consegniamo, documentiamo e rimaniamo disponibili. Se qualcosa non va, torniamo. Non chiudiamo il file finché non è davvero risolto.',
-          },
-        ].map((s, i) => (
-          <div class={`reveal delay-${i + 1} step-card`}>
-            <div class="step-number">{s.n}</div>
-            <h3 class="font-heading font-semibold text-navy text-[1.1rem] mb-3">{s.title}</h3>
-            <p class="text-navy/72 text-[0.88rem] leading-[1.75]">{s.desc}</p>
-            {i < 2 && (
-              <div class="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M9 18l6-6-6-6" stroke="#C7A24A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            )}
-          </div>
+      <!-- Dots (mobile only) -->
+      <div class="cases-dots" id="cases-dots">
+        {cases.map((_, i) => (
+          <button class={`cases-dot${i === 0 ? ' is-active' : ''}`} aria-label={`Caso ${i + 1}`} data-idx={i} />
         ))}
       </div>
 
     </div>
   </section>
 
+  <script>
+    const casesTrack = document.getElementById('cases-track')
+    const casesDots  = document.getElementById('cases-dots')
+    if (casesTrack && casesDots) {
+      const cards = Array.from(casesTrack.querySelectorAll('.case-card-v2'))
+      const dots  = Array.from(casesDots.querySelectorAll('.cases-dot'))
+
+      const setActive = (idx: number) => {
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === idx))
+      }
+
+      let ticking = false
+      casesTrack.addEventListener('scroll', () => {
+        if (ticking) return
+        ticking = true
+        requestAnimationFrame(() => {
+          const gap = 12
+          const cardW = cards[0] ? cards[0].getBoundingClientRect().width + gap : 1
+          setActive(Math.round(casesTrack.scrollLeft / cardW))
+          ticking = false
+        })
+      }, { passive: true })
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          const gap = 12
+          const cardW = cards[0] ? cards[0].getBoundingClientRect().width + gap : 1
+          casesTrack.scrollTo({ left: i * cardW, behavior: 'smooth' })
+        })
+      })
+
+      setActive(0)
+    }
+  </script>
 
   <!-- ═══ LE 3 AREE ═══ -->
-  <section id="aree" class="py-20 lg:py-28 bg-navy">
+  <section id="aree" class="py-20 lg:py-28 bg-navy-mid">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
       <div class="reveal mb-12 lg:mb-16">
@@ -302,19 +277,19 @@ const method = [
       <!-- Header -->
       <div class="reveal arsolv-header">
         <div>
-          <div class="section-label mb-5">Metodo</div>
-          <h2 class="font-display uppercase text-white leading-[0.88]"
+          <div class="label-chip mb-5">Metodo</div>
+          <h2 class="font-display uppercase text-navy leading-[0.88]"
               style="font-size: clamp(3rem, 6vw, 5.5rem);">
             Il metodo dietro<br /><span class="text-gold">ogni soluzione.</span>
           </h2>
         </div>
-        <p class="text-white/60 text-[0.88rem] leading-[1.8] max-w-[38ch] lg:text-right">
+        <p class="text-navy/60 text-[0.88rem] leading-[1.8] max-w-[38ch] lg:text-right">
           Non è improvvisazione — è metodo. Sei passaggi che trasformano qualsiasi problema in una soluzione strutturata e duratura.
         </p>
       </div>
 
       <!-- Rows -->
-      <div class="arsolv-rows">
+      <div class="arsolv-rows" id="arsolv-track">
         {method.map((step, i) => (
           <div class={`reveal delay-${Math.min(i + 1, 5)} arsolv-row group`}>
             <span class="arsolv-idx">0{i + 1}</span>
@@ -327,8 +302,54 @@ const method = [
         ))}
       </div>
 
+      <!-- Dots (mobile only) -->
+      <div class="arsolv-dots" id="arsolv-dots">
+        {method.map((_, i) => (
+          <button class={`arsolv-dot${i === 0 ? ' is-active' : ''}`} aria-label={`Step ${i + 1}`} data-idx={i} />
+        ))}
+      </div>
+
     </div>
   </section>
+
+  <script>
+    const track = document.getElementById('arsolv-track')
+    const dotsEl = document.getElementById('arsolv-dots')
+    if (track && dotsEl) {
+      const cards = Array.from(track.querySelectorAll('.arsolv-row'))
+      const dots  = Array.from(dotsEl.querySelectorAll('.arsolv-dot'))
+
+      const setActive = (idx: number) => {
+        cards.forEach((c, i) => c.classList.toggle('is-snapped', i === idx))
+        dots.forEach((d, i)  => d.classList.toggle('is-active',  i === idx))
+      }
+
+      // Scroll → update active
+      let ticking = false
+      track.addEventListener('scroll', () => {
+        if (ticking) return
+        ticking = true
+        requestAnimationFrame(() => {
+          const gap = 12 // 0.75rem
+          const cardW = cards[0] ? cards[0].getBoundingClientRect().width + gap : 1
+          setActive(Math.round(track.scrollLeft / cardW))
+          ticking = false
+        })
+      }, { passive: true })
+
+      // Dots → scroll to card
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          const gap = 12
+          const cardW = cards[0] ? cards[0].getBoundingClientRect().width + gap : 1
+          track.scrollTo({ left: i * cardW, behavior: 'smooth' })
+        })
+      })
+
+      setActive(0)
+    }
+  </script>
+
 
 
   <!-- ═══ CTA FINALE ═══ -->
