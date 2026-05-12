@@ -69,12 +69,42 @@ const areas = [
 ]
 
 const method = [
-  ['A', 'Analizza', 'Legge il contesto reale.'],
-  ['R', 'Riduce', 'Taglia dispersioni e attriti.'],
-  ['S', 'Struttura', 'Ordina processi e responsabilità.'],
-  ['O', 'Opera', "Porta metodo nell'esecuzione."],
-  ['L', 'Lega', 'Connette competenze diverse.'],
-  ['V', 'Valorizza', 'Genera continuità e valore.'],
+  {
+    n: '01', letter: 'A', word: 'Analizza',
+    claim: 'Leggiamo il contesto reale, non quello dichiarato.',
+    in: 'Una richiesta, spesso confusa.',
+    out: 'Un quadro chiaro: vincoli, tempi, leve.',
+  },
+  {
+    n: '02', letter: 'R', word: 'Riduce',
+    claim: 'Tagliamo dispersioni, ridondanze e attriti inutili.',
+    in: 'Tante variabili, tante priorità.',
+    out: 'Le poche cose che contano davvero.',
+  },
+  {
+    n: '03', letter: 'S', word: 'Struttura',
+    claim: 'Ordiniamo processi, ruoli e responsabilità.',
+    in: 'Caos operativo.',
+    out: 'Sequenza chiara, ruoli definiti, scadenze.',
+  },
+  {
+    n: '04', letter: 'O', word: 'Opera',
+    claim: "Portiamo metodo nell'esecuzione, sul campo.",
+    in: 'Un piano sulla carta.',
+    out: 'Lavoro fatto. Niente ritardi, niente scuse.',
+  },
+  {
+    n: '05', letter: 'L', word: 'Lega',
+    claim: 'Connettiamo competenze, fornitori, persone diverse.',
+    in: 'Specialisti scollegati.',
+    out: 'Una squadra che parla la stessa lingua.',
+  },
+  {
+    n: '06', letter: 'V', word: 'Valorizza',
+    claim: 'Trasformiamo la soluzione in valore che dura nel tempo.',
+    in: 'Un problema risolto.',
+    out: 'Un sistema che continua a funzionare.',
+  },
 ]
 ---
 
@@ -230,7 +260,7 @@ const method = [
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
       <div class="reveal mb-12 lg:mb-16">
-        <div class="section-label mb-5">Cosa facciamo</div>
+       
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
           <h2 class="font-display uppercase text-white leading-[0.92]"
               style="font-size: clamp(2.8rem, 6vw, 6rem);">
@@ -277,14 +307,15 @@ const method = [
       <!-- Header -->
       <div class="reveal arsolv-header">
         <div>
-          <div class="label-chip mb-5">Metodo</div>
+          <p class="arsolv-eyebrow">A · R · S · O · L · V</p>
           <h2 class="font-display uppercase text-navy leading-[0.88]"
               style="font-size: clamp(3rem, 6vw, 5.5rem);">
             Il metodo dietro<br /><span class="text-gold">ogni soluzione.</span>
           </h2>
         </div>
         <p class="text-navy/60 text-[0.88rem] leading-[1.8] max-w-[38ch] lg:text-right">
-          Non è improvvisazione — è metodo. Sei passaggi che trasformano qualsiasi problema in una soluzione strutturata e duratura.
+          Non è improvvisazione — è metodo. Sei passaggi che trasformano
+          qualsiasi problema in una soluzione strutturata e duratura.
         </p>
       </div>
 
@@ -292,11 +323,26 @@ const method = [
       <div class="arsolv-rows" id="arsolv-track">
         {method.map((step, i) => (
           <div class={`reveal delay-${Math.min(i + 1, 5)} arsolv-row group`}>
-            <span class="arsolv-idx">0{i + 1}</span>
-            <span class="arsolv-ghost">{step[0]}</span>
+            <span class="arsolv-idx">{step.n}</span>
+            <span class="arsolv-ghost">{step.letter}</span>
             <div class="arsolv-body">
-              <h3 class="arsolv-word">{step[1]}</h3>
-              <p class="arsolv-desc">{step[2]}</p>
+              <h3 class="arsolv-word">{step.word}</h3>
+              <p class="arsolv-claim">{step.claim}</p>
+              <div class="arsolv-flow">
+                <div class="arsolv-flow-col arsolv-flow-in">
+                  <span class="arsolv-flow-label">Cosa entra</span>
+                  <span class="arsolv-flow-text">{step.in}</span>
+                </div>
+                <div class="arsolv-flow-arrow" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                    <path d="M1 6h10M7 2.5l3.5 3.5L7 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="arsolv-flow-col arsolv-flow-out">
+                  <span class="arsolv-flow-label">Cosa esce</span>
+                  <span class="arsolv-flow-text">{step.out}</span>
+                </div>
+              </div>
             </div>
           </div>
         ))}
@@ -308,6 +354,13 @@ const method = [
           <button class={`arsolv-dot${i === 0 ? ' is-active' : ''}`} aria-label={`Step ${i + 1}`} data-idx={i} />
         ))}
       </div>
+
+      <!-- Closing line -->
+      <p class="arsolv-footer">
+        <span>ARSOLV — il metodo.</span>
+        <span class="arsolv-footer-sep" aria-hidden="true"></span>
+        <span><strong>ARSOLVING</strong> — chi lo applica.</span>
+      </p>
 
     </div>
   </section>
@@ -359,7 +412,7 @@ const method = [
          style="background: radial-gradient(ellipse 60% 80% at 50% 110%, rgba(199,162,74,0.12) 0%, transparent 60%);"></div>
 
     <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
-      <div class="section-label justify-center mb-6">Avvia analisi</div>
+      
       <h2 class="font-display uppercase text-white leading-[0.88] mb-8"
           style="font-size: clamp(3.5rem, 9vw, 9rem);">
         Hai un<br /><span class="text-gold">problema?</span>

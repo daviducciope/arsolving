@@ -41,6 +41,27 @@ const services = [
   },
 ]
 
+const staFeatures = [
+  {
+    n: '01',
+    label: 'Identità',
+    title: 'Brand sistematici',
+    desc: 'Logo, palette, tipografia, materiale coordinato. Sistemi visivi coerenti,costruiti per adattarsi a ogni contesto.',
+  },
+  {
+    n: '02',
+    label: 'Web',
+    title: 'Siti che convertono',
+    desc: 'Architettura orientata agli obiettivi, performance reale, mobile-first. Online in giorni.',
+  },
+  {
+    n: '03',
+    label: 'Crescita',
+    title: 'Adv & social misurabili',
+    desc: 'Google Ads, Meta, social strategy. Budget chiari, KPI di business, report trasparenti.',
+  },
+]
+
 const portfolio = [
   {
     title: 'AgriPlanet Store',
@@ -93,60 +114,151 @@ const portfolio = [
   <!-- Hero -->
   <div class="page-hero">
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="section-label mb-6">Arsolving</div>
       <h1 class="font-display uppercase text-white leading-[0.9] mb-5"
           style="font-size: clamp(3rem, 7vw, 6.5rem);">
         Area Digitale
       </h1>
-      <p class="text-[1rem] text-white/66 leading-[1.8] max-w-xl">
-        Siti web, brand identity, grafica, comunicazione e marketing digitale.
-        Dalla strategia all'online — in giorni, non mesi.
+      <p class="text-[1rem] text-white/66 leading-[1.8] max-w-2xl">
+        Per ogni progetto digitale ARSOLVING opera con
+        <span class="text-gold font-semibold">stà comunicazione &amp; design</span> — la
+        divisione specializzata in identità visiva, web e advertising.
+        Dalla strategia all'online, in giorni.
       </p>
     </div>
   </div>
 
 
-  <!-- Intro -->
-  <section class="py-20 bg-white border-b border-navy/12">
+  <!-- Si chiama stà -->
+  <section class="py-24 bg-white border-b border-navy/12">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="reveal">
-          <div class="label-chip mb-6">L'approccio digitale</div>
-          <h2 class="font-display uppercase text-navy leading-[0.92]"
-              style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
-            Sito in 48h.<br />Brand in una settimana.
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+
+        <div class="reveal lg:col-span-7">
+          <h2 class="font-display uppercase text-navy leading-[0.92] mb-7"
+              style="font-size: clamp(2.4rem, 5vw, 5rem);">
+            Si chiama <span class="text-gold">stà.</span><br />
+            <span class="text-navy/55" style="font-size: 0.6em;">comunicazione &amp; design</span>
           </h2>
+          <div class="space-y-5 text-[1rem] text-navy/72 leading-[1.85]">
+            <p>
+              Dietro ogni sito, brand identity o campagna firmata ARSOLVING c'è
+              <strong class="text-navy font-semibold">stà comunicazione &amp; design</strong>:
+              agenzia di comunicazione e design con base a
+              <span class="text-navy font-medium">Montesilvano (PE)</span>, parte integrante
+              del gruppo, dedicata interamente al digitale.
+            </p>
+            <p>
+              È stà che progetta i sistemi visivi, sviluppa i siti, costruisce le campagne adv.
+              ARSOLVING porta il metodo, la velocità e la regia di progetto — stà porta
+              competenza specialistica, sensibilità estetica e cura della delivery.
+            </p>
+            <p class="font-heading italic text-navy/68 text-[0.95rem]">
+              "Diamo forma alla tua sostanza." — il payoff con cui stà racconta il proprio modo di lavorare.
+            </p>
+          </div>
+
+          <div class="mt-9 flex flex-wrap items-center gap-3">
+            <a href="https://stacomunicazionedesign.it" target="_blank" rel="noopener noreferrer"
+               class="btn-gold">
+              Visita stacomunicazionedesign.it
+              <svg class="w-3 h-3 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 4h6m0 0v6m0-6L10 14M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4"/>
+              </svg>
+            </a>
+            <a href={`${base}/contatti/`} class="btn-outline-navy">Brief con ARSOLVING</a>
+          </div>
         </div>
-        <div class="reveal delay-2">
-          <p class="text-[1rem] text-navy/72 leading-[1.85] mb-5">
-            Abbiamo consegnato un sito completo per un ristorante in apertura in 48 ore.
-            Abbiamo creato il brand e l'identità digitale di un temporary store in pochi giorni,
-            insieme all'allestimento fisico.
-          </p>
-          <p class="text-[1rem] text-navy/72 leading-[1.85]">
-            Non facciamo bellezza fine a sé stessa. Brand, contenuti, web e marketing
-            vengono progettati come un sistema unico: ogni pezzo serve a qualcosa.
+
+        <div class="reveal delay-2 lg:col-span-5">
+          <div class="sta-card">
+            <div class="sta-card-frame">
+              <span class="sta-card-eyebrow">Sub-brand di ARSOLVING</span>
+              <div class="sta-wordmark font-display">
+                <span class="sta-wordmark-main">stà.</span>
+                <span class="sta-wordmark-sub">comunicazione &amp; design</span>
+              </div>
+              <div class="sta-divider"></div>
+              <dl class="sta-meta">
+                <div>
+                  <dt>Sede</dt><dd>Montesilvano · Pescara</dd>
+                </div>
+                <div>
+                  <dt>Focus</dt><dd>Brand · Web · Adv · Social</dd>
+                </div>
+                <div>
+                  <dt>Mercato</dt><dd>Abruzzo &amp; clienti in tutta Italia</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Cosa porta in dote stà -->
+  <section class="py-24 bg-navy-mid">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+      <div class="reveal mb-12 lg:mb-16">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+          <h2 class="font-display uppercase text-white leading-[0.92]"
+              style="font-size: clamp(2.4rem, 5vw, 5rem);">
+            Tre cose,<br />fatte bene.
+          </h2>
+          <p class="text-white/66 text-[0.9rem] leading-[1.7] max-w-[38ch] lg:text-right">
+            Non un'agenzia generalista. Una struttura focalizzata su tre fronti
+            che si tengono per mano: identità, web, crescita.
           </p>
         </div>
       </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
+        {staFeatures.map((f, i) => (
+          <div class={`reveal delay-${i + 1} area-panel`}>
+            <div class="flex items-start justify-between mb-6">
+              <span class="text-gold/85 font-display text-[0.75rem] tracking-[0.3em]">{f.n}</span>
+              <span class="text-white/45 text-[0.58rem] tracking-[0.22em] uppercase font-bold">{f.label}</span>
+            </div>
+            <h3 class="font-display uppercase text-white text-[1.6rem] leading-[1.05] mb-3">
+              {f.title}
+            </h3>
+            <p class="text-white/66 text-[0.86rem] leading-[1.75]">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+
     </div>
   </section>
 
 
   <!-- Servizi -->
   <section class="py-24 bg-off-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal mb-12 text-center">
-        <div class="label-chip justify-center mb-5">Competenze</div>
-        <h2 class="font-display uppercase text-navy leading-[0.92]"
-            style="font-size: clamp(2rem, 4vw, 4rem);">
-          Cosa facciamo
-        </h2>
+    <div class="max-w-7xl mx-auto pl-6 lg:pl-10">
+      <div class="reveal mb-10 pr-6 lg:pr-10">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+          <h2 class="font-display uppercase text-navy leading-[0.92]"
+              style="font-size: clamp(2rem, 4vw, 4rem);">
+            Cosa fa stà,<br />nel concreto.
+          </h2>
+          <p class="text-navy/66 text-[0.88rem] leading-[1.7] max-w-[36ch] lg:text-right">
+            Sei aree operative. Una sola squadra che le coordina,
+            con metodo e tempi certi.
+          </p>
+        </div>
+        <div class="h-carousel-hint mt-6">
+          <span>Scorri</span>
+          <svg class="w-8 h-2" viewBox="0 0 32 8" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M0 4h28m-4-4l4 4-4 4"/>
+          </svg>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {services.map((s, i) => (
-          <div class={`reveal delay-${(i % 3) + 1} service-card group`}>
+      <div class="h-carousel">
+        {services.map((s) => (
+          <div class="h-carousel-item service-card group">
             <div class="flex items-start justify-between mb-5">
               <div class="w-11 h-11 bg-navy rounded-sm flex items-center justify-center text-gold
                           group-hover:bg-gold group-hover:text-navy transition-colors duration-300">
@@ -160,6 +272,7 @@ const portfolio = [
             <p class="text-[0.84rem] text-navy/70 leading-[1.78]">{s.desc}</p>
           </div>
         ))}
+        <div class="h-carousel-spacer" aria-hidden="true"></div>
       </div>
     </div>
   </section>
@@ -167,23 +280,29 @@ const portfolio = [
 
   <!-- Portfolio -->
   <section class="py-24 bg-white border-t border-navy/12">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal mb-12">
-        <div class="label-chip mb-5">Portfolio</div>
+    <div class="max-w-7xl mx-auto pl-6 lg:pl-10">
+      <div class="reveal mb-10 pr-6 lg:pr-10">
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
           <h2 class="font-display uppercase text-navy leading-[0.92]"
               style="font-size: clamp(2rem, 4vw, 4rem);">
             Lavori selezionati
           </h2>
           <p class="text-navy/66 text-[0.88rem] leading-[1.7] max-w-[34ch] lg:text-right">
-            Progetti sviluppati per clienti in settori diversi.
+            Una selezione di progetti realizzati da stà per clienti
+            in settori molto diversi tra loro.
           </p>
+        </div>
+        <div class="h-carousel-hint mt-6">
+          <span>Scorri</span>
+          <svg class="w-8 h-2" viewBox="0 0 32 8" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M0 4h28m-4-4l4 4-4 4"/>
+          </svg>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {portfolio.map((p, i) => (
-          <div class={`reveal delay-${(i % 3) + 1} group flex flex-col bg-white border border-navy/14 rounded-sm overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300`}>
+      <div class="h-carousel">
+        {portfolio.map((p) => (
+          <div class="h-carousel-item group flex flex-col bg-white border border-navy/14 rounded-sm overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
             <div class="relative overflow-hidden bg-cream h-48 flex-shrink-0">
               {p.img ? (
                 <img src={p.img} alt={p.title}
@@ -216,32 +335,39 @@ const portfolio = [
             </div>
           </div>
         ))}
+        <div class="h-carousel-spacer" aria-hidden="true"></div>
       </div>
     </div>
   </section>
 
 
-  <!-- Come lavoriamo -->
+  <!-- Come lavoriamo: ARSOLVING + stà -->
   <section class="py-24 bg-navy">
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal text-center mb-12">
-        <div class="section-label justify-center mb-5">Il processo</div>
-        <h2 class="font-display uppercase text-white leading-[0.92]"
-            style="font-size: clamp(2rem, 4vw, 4rem);">
-          Dalla strategia al pixel.
-        </h2>
+      <div class="reveal mb-12">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+          <h2 class="font-display uppercase text-white leading-[0.92]"
+              style="font-size: clamp(2rem, 4vw, 4rem);">
+            ARSOLVING porta il problema.<br />stà lo trasforma in design.
+          </h2>
+          <p class="text-white/60 text-[0.88rem] leading-[1.7] max-w-[36ch] lg:text-right">
+            Una sola squadra, due competenze. Tu parli con un solo interlocutore;
+            in cabina di regia ci muoviamo insieme.
+          </p>
+        </div>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
         {[
-          { n: '01', title: 'Brief',       text: 'Ascoltiamo e analizziamo il contesto prima di qualsiasi proposta.' },
-          { n: '02', title: 'Strategia',   text: 'Progettiamo la soluzione con logica documentata. Niente estetismo fine a sé stesso.' },
-          { n: '03', title: 'Delivery',    text: 'Eseguiamo con precisione, rispettando feedback e milestone.' },
-          { n: '04', title: 'Misurazione', text: 'Misuriamo l\'impatto con KPI reali. Il lavoro non finisce alla consegna.' },
+          { n: '01', tag: 'ARSOLVING', title: 'Brief',     text: 'Leggiamo il problema digitale nel contesto reale: business, tempi, budget.' },
+          { n: '02', tag: 'stà',       title: 'Strategia', text: 'Tradotto in soluzione progettuale: identità, web, campagne. Logica documentata.' },
+          { n: '03', tag: 'stà',       title: 'Delivery',  text: 'Esecuzione su milestone. Codice pulito, design system coerente, feedback rapidi.' },
+          { n: '04', tag: 'ARSOLVING', title: 'Risultati', text: 'KPI di business misurati. Il lavoro continua dopo il go-live, non finisce lì.' },
         ].map((step, i) => (
           <div class={`reveal delay-${i + 1} text-center`}>
             <div class="w-11 h-11 rounded-full border border-gold/45 flex items-center justify-center mx-auto mb-4">
               <span class="font-display text-gold text-[0.8rem]">{step.n}</span>
             </div>
+            <span class="block text-[0.55rem] tracking-[0.24em] uppercase font-bold text-gold/75 mb-1.5">{step.tag}</span>
             <h4 class="font-heading font-semibold text-white text-[0.9rem] mb-2">{step.title}</h4>
             <p class="text-white/58 text-[0.78rem] leading-[1.65]">{step.text}</p>
           </div>
@@ -259,10 +385,16 @@ const portfolio = [
         Hai un progetto digitale?
       </h2>
       <p class="text-navy/78 text-[1rem] leading-[1.8] mb-10">
-        Sito, brand, grafica o campagna — iniziamo dalla strategia.
-        Poi eseguiamo in fretta.
+        Sito, brand, grafica o campagna — parlane con ARSOLVING per il brief,
+        oppure esplora il lavoro di stà nel dettaglio.
       </p>
-      <a href={`${base}/contatti/`} class="btn-gold">Parliamone</a>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href={`${base}/contatti/`} class="btn-gold">Parliamone con ARSOLVING</a>
+        <a href="https://stacomunicazionedesign.it" target="_blank" rel="noopener noreferrer"
+           class="btn-outline-navy">
+          Vai su stacomunicazionedesign.it
+        </a>
+      </div>
     </div>
   </section>
 
