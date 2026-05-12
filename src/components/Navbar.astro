@@ -17,7 +17,7 @@ function active(segment: string): boolean {
 
     <!-- ── LOGO ── -->
     <a href={`${base}/`} class="navbar-logo-link" aria-label="ARSOLVING — Home">
-      <img src={`${base}/logo_arsolving.svg`} alt="ARSOLVING" class="navbar-logo-img" />
+      <img src={`${base}/logo_arsolving_light.svg`} alt="ARSOLVING" class="navbar-logo-img" />
     </a>
 
     <!-- ── DESKTOP NAV ── -->
@@ -58,7 +58,7 @@ function active(segment: string): boolean {
   <div class="mobile-overlay-content">
 
     <div class="mobile-overlay-header">
-      <img src={`${base}/logo_arsolving.svg`} alt="ARSOLVING" class="mobile-logo-img" />
+      <img src={`${base}/logo_arsolving_light.svg`} alt="ARSOLVING" class="mobile-logo-img" />
       <button onclick="document.getElementById('hamburger').click()"
               class="text-white/50 hover:text-white transition-colors p-2"
               aria-label="Chiudi menu">
@@ -225,6 +225,9 @@ function active(segment: string): boolean {
   background: transparent;
   border: none;
   cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .navbar-hamburger { display: none; }
 }
 .ham-line {
   display: block;
