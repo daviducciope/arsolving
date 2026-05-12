@@ -17,7 +17,7 @@ function active(segment: string): boolean {
 
     <!-- ── LOGO ── -->
     <a href={`${base}/`} class="navbar-logo-link" aria-label="ARSOLVING — Home">
-      <img src={`${base}/logo2.jpeg`} alt="ARSOLVING" class="navbar-logo-img" />
+      <img src={`${base}/logo_arsolving.svg`} alt="ARSOLVING" class="navbar-logo-img" />
     </a>
 
     <!-- ── DESKTOP NAV ── -->
@@ -58,7 +58,7 @@ function active(segment: string): boolean {
   <div class="mobile-overlay-content">
 
     <div class="mobile-overlay-header">
-      <img src={`${base}/logo2.jpeg`} alt="ARSOLVING" class="mobile-logo-img" />
+      <img src={`${base}/logo_arsolving.svg`} alt="ARSOLVING" class="mobile-logo-img" />
       <button onclick="document.getElementById('hamburger').click()"
               class="text-white/50 hover:text-white transition-colors p-2"
               aria-label="Chiudi menu">
@@ -141,7 +141,6 @@ function active(segment: string): boolean {
   display: block;
   height: 52px;
   width: auto;
-  border-radius: 3px;
   transition: height 0.38s ease;
 }
 .navbar-root.is-scrolled .navbar-logo-img { height: 36px; }
@@ -150,7 +149,6 @@ function active(segment: string): boolean {
   display: block;
   height: 36px;
   width: auto;
-  border-radius: 2px;
 }
 
 /* ══ DESKTOP LINKS ══ */
