@@ -37,21 +37,5 @@ const counterObs = new IntersectionObserver(
 )
 document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el))
 
-// Contact form feedback
-const form = document.getElementById('contact-form')
-if (form) {
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    const btn = form.querySelector('button[type=submit]')
-    const orig = btn.textContent
-    btn.textContent = 'Messaggio inviato ✓'
-    btn.disabled = true
-    btn.style.background = '#16a34a'
-    setTimeout(() => {
-      btn.textContent = orig
-      btn.disabled = false
-      btn.style.background = ''
-      form.reset()
-    }, 3500)
-  })
-}
+// Contact form handler is implemented inline in src/pages/contatti.astro
+// (real fetch to API Gateway / Lambda).

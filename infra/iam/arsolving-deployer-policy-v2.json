@@ -1,0 +1,158 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3BucketAndObjects",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation",
+        "s3:GetBucketPolicy",
+        "s3:PutBucketPolicy",
+        "s3:DeleteBucketPolicy",
+        "s3:GetBucketVersioning",
+        "s3:PutBucketVersioning",
+        "s3:GetBucketPublicAccessBlock",
+        "s3:PutBucketPublicAccessBlock"
+      ],
+      "Resource": [
+        "arn:aws:s3:::arsolving.it",
+        "arn:aws:s3:::www.arsolving.it"
+      ]
+    },
+    {
+      "Sid": "S3Objects",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:GetObjectAcl",
+        "s3:PutObjectAcl"
+      ],
+      "Resource": [
+        "arn:aws:s3:::arsolving.it/*",
+        "arn:aws:s3:::www.arsolving.it/*"
+      ]
+    },
+    {
+      "Sid": "CloudFrontDistribution",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:CreateDistribution",
+        "cloudfront:UpdateDistribution",
+        "cloudfront:GetDistribution",
+        "cloudfront:GetDistributionConfig",
+        "cloudfront:ListDistributions",
+        "cloudfront:TagResource",
+        "cloudfront:CreateInvalidation",
+        "cloudfront:GetInvalidation",
+        "cloudfront:ListInvalidations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudFrontOAC",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:CreateOriginAccessControl",
+        "cloudfront:GetOriginAccessControl",
+        "cloudfront:GetOriginAccessControlConfig",
+        "cloudfront:ListOriginAccessControls",
+        "cloudfront:UpdateOriginAccessControl",
+        "cloudfront:DeleteOriginAccessControl"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudFrontFunctions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:CreateFunction",
+        "cloudfront:UpdateFunction",
+        "cloudfront:PublishFunction",
+        "cloudfront:DescribeFunction",
+        "cloudfront:GetFunction",
+        "cloudfront:ListFunctions",
+        "cloudfront:TestFunction",
+        "cloudfront:DeleteFunction"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudFrontCachePolicies",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:ListCachePolicies",
+        "cloudfront:GetCachePolicy",
+        "cloudfront:ListResponseHeadersPolicies",
+        "cloudfront:GetResponseHeadersPolicy"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ACMReadUsEast1",
+      "Effect": "Allow",
+      "Action": [
+        "acm:DescribeCertificate",
+        "acm:ListCertificates",
+        "acm:GetCertificate"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Route53HostedZoneArsolving",
+      "Effect": "Allow",
+      "Action": [
+        "route53:ListHostedZones",
+        "route53:GetHostedZone",
+        "route53:ListResourceRecordSets",
+        "route53:ChangeResourceRecordSets",
+        "route53:GetChange"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ArsolvingLambdaContactForm",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:CreateFunction",
+        "lambda:UpdateFunctionCode",
+        "lambda:UpdateFunctionConfiguration",
+        "lambda:GetFunction",
+        "lambda:GetFunctionConfiguration",
+        "lambda:DeleteFunction",
+        "lambda:AddPermission",
+        "lambda:RemovePermission",
+        "lambda:GetPolicy",
+        "lambda:InvokeFunction",
+        "lambda:CreateFunctionUrlConfig",
+        "lambda:GetFunctionUrlConfig",
+        "lambda:UpdateFunctionUrlConfig",
+        "lambda:DeleteFunctionUrlConfig"
+      ],
+      "Resource": "arn:aws:lambda:*:089081311517:function:arsolving-*"
+    },
+    {
+      "Sid": "ArsolvingApiGateway",
+      "Effect": "Allow",
+      "Action": [
+        "apigateway:POST",
+        "apigateway:GET",
+        "apigateway:PUT",
+        "apigateway:PATCH",
+        "apigateway:DELETE"
+      ],
+      "Resource": "arn:aws:apigateway:eu-south-1::*"
+    },
+    {
+      "Sid": "ArsolvingIamPassRole",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::089081311517:role/sta-contact-form-role",
+      "Condition": {
+        "StringEquals": { "iam:PassedToService": "lambda.amazonaws.com" }
+      }
+    }
+  ]
+}

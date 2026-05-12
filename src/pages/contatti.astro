@@ -46,25 +46,32 @@ import Base from '../layouts/Base.astro'
 
           <!-- Contact info -->
           <div class="space-y-3">
-            <a href="mailto:info@arsolving.com"
+            <a href="mailto:info@arsolving.it"
                class="flex items-center gap-3 text-white/70 hover:text-white transition-colors text-[0.88rem]">
               <svg class="w-4 h-4 text-gold/78 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
               </svg>
-              info@arsolving.com
+              info@arsolving.it
             </a>
           </div>
         </div>
 
         <!-- Right col: form -->
         <div class="reveal delay-2">
-          <form id="contact-form" class="analysis-form">
+          <form id="contact-form" class="analysis-form" novalidate>
             <div class="mb-7">
               <p class="text-gold/85 text-[0.62rem] tracking-[0.24em] uppercase font-bold mb-2">Diagnosi iniziale</p>
               <h2 class="font-display uppercase text-white leading-[0.92]"
                   style="font-size: clamp(1.8rem, 3.5vw, 3rem);">
                 Mettiamo a fuoco il contesto.
               </h2>
+            </div>
+
+            <!-- Honeypot anti-spam (nascosto) -->
+            <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+              <label>Sito web (lascia vuoto)
+                <input type="text" name="website" tabindex="-1" autocomplete="off" />
+              </label>
             </div>
 
             <div class="form-row">
@@ -126,8 +133,10 @@ import Base from '../layouts/Base.astro'
 
             <button type="submit">Invia richiesta di analisi →</button>
 
+            <p id="form-feedback" class="form-feedback mt-4" role="status" aria-live="polite"></p>
+
             <p class="form-note mt-4">
-              Risposta entro 30 minuti su <strong>info@arsolving.com</strong>
+              Risposta entro 30 minuti su <strong>info@arsolving.it</strong>
             </p>
           </form>
         </div>
@@ -135,5 +144,71 @@ import Base from '../layouts/Base.astro'
       </div>
     </div>
   </section>
+
+  <script is:inline define:vars={{ endpoint: import.meta.env.PUBLIC_CONTACT_ENDPOINT || '' }}>
+    (function () {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+
+      const feedback = document.getElementById('form-feedback');
+      const btn = form.querySelector('button[type=submit]');
+      const originalBtnText = btn ? btn.textContent : '';
+
+      const ENDPOINT = endpoint || 'https://ks1sbfw0j8.execute-api.eu-central-1.amazonaws.com/contact';
+
+      const setFeedback = (msg, type) => {
+        if (!feedback) return;
+        feedback.textContent = msg || '';
+        feedback.dataset.state = type || '';
+      };
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!btn) return;
+
+        const data = Object.fromEntries(new FormData(form).entries());
+        if (!data.nome || !data.email || !data.problema) {
+          setFeedback('Compila Nome, Email e Descrizione del problema.', 'error');
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Invio in corso…';
+        setFeedback('', '');
+
+        try {
+          const res = await fetch(ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+          const payload = await res.json().catch(() => ({}));
+          if (!res.ok || !payload.success) {
+            throw new Error(payload.error || 'Errore di rete. Riprova.');
+          }
+          form.reset();
+          btn.textContent = 'Richiesta inviata ✓';
+          btn.style.background = '#16a34a';
+          setFeedback('Grazie! Ti rispondiamo entro 30 minuti.', 'success');
+          setTimeout(() => {
+            btn.textContent = originalBtnText;
+            btn.disabled = false;
+            btn.style.background = '';
+          }, 4000);
+        } catch (err) {
+          console.error('contact form error:', err);
+          btn.disabled = false;
+          btn.textContent = originalBtnText;
+          setFeedback(err.message || 'Si è verificato un errore. Riprova o scrivi a info@arsolving.it', 'error');
+        }
+      });
+    })();
+  </script>
+
+  <style>
+    .form-feedback { font-size: 0.85rem; min-height: 1.2em; color: rgba(255,255,255,0.65); }
+    .form-feedback[data-state="error"]   { color: #fca5a5; }
+    .form-feedback[data-state="success"] { color: #86efac; }
+  </style>
 
 </Base>

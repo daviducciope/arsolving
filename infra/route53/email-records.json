@@ -1,0 +1,67 @@
+{
+  "Comment": "arsolving.it email setup: SendGrid domain auth + forwardemail.net forwarding + SPF/DMARC",
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "em.arsolving.it.",
+        "Type": "CNAME",
+        "TTL": 3600,
+        "ResourceRecords": [{ "Value": "u106682332.wl083.sendgrid.net" }]
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "s1._domainkey.arsolving.it.",
+        "Type": "CNAME",
+        "TTL": 3600,
+        "ResourceRecords": [{ "Value": "s1.domainkey.u106682332.wl083.sendgrid.net" }]
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "s2._domainkey.arsolving.it.",
+        "Type": "CNAME",
+        "TTL": 3600,
+        "ResourceRecords": [{ "Value": "s2.domainkey.u106682332.wl083.sendgrid.net" }]
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "arsolving.it.",
+        "Type": "MX",
+        "TTL": 3600,
+        "ResourceRecords": [
+          { "Value": "10 mx1.forwardemail.net." },
+          { "Value": "10 mx2.forwardemail.net." }
+        ]
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "arsolving.it.",
+        "Type": "TXT",
+        "TTL": 3600,
+        "ResourceRecords": [
+          { "Value": "\"v=spf1 include:sendgrid.net include:spf.forwardemail.net ~all\"" },
+          { "Value": "\"forward-email=arsolving@gmail.com\"" }
+        ]
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "_dmarc.arsolving.it.",
+        "Type": "TXT",
+        "TTL": 3600,
+        "ResourceRecords": [
+          { "Value": "\"v=DMARC1; p=none; rua=mailto:arsolving@gmail.com\"" }
+        ]
+      }
+    }
+  ]
+}

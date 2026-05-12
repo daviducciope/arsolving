@@ -19,6 +19,10 @@ dist-ssr
 .astro/settings.json
 docs/aws_credential.md
 
+# Lambda deploy artifacts (contain secrets / build output)
+infra/lambda/**/env.json
+infra/lambda/**/function.zip
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
