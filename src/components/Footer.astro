@@ -3,50 +3,75 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 const year = new Date().getFullYear()
 ---
 
-<footer class="site-footer">
+<footer class="site-footer relative overflow-hidden bg-navy pt-24 pb-10">
+  <!-- Sfondo "spaziale" o d'impatto -->
+  <div class="absolute inset-0 pointer-events-none"
+       style="background: radial-gradient(circle at 50% 0%, rgba(199,162,74,0.08) 0%, transparent 60%), radial-gradient(circle at 100% 100%, rgba(26,43,74,0.8) 0%, transparent 50%);"></div>
+  <div class="hero-grid absolute inset-0 pointer-events-none opacity-20"></div>
+
   <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
 
-    <!-- Logo grande in cima al footer -->
-    <div class="border-b border-white/14 pb-10 mb-10">
-      <a href={`${base}/`} class="block hover:opacity-80 transition-opacity duration-200 inline-block">
-        <img src={`${base}/logo_arsolving_light.svg`} alt="ARSOLVING" class="footer-logo-img" />
-      </a>
-      <p class="mt-5 text-white/60 text-[0.9rem] leading-[1.8] max-w-lg">
-        Qualsiasi problema — operativo, digitale, logistico, commerciale.
-        ARSOLVING lo risolve. Oggi, non domani.
-      </p>
-    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 border-b border-white/10 pb-16 mb-8">
 
-    <!-- Columns -->
-    <div class="footer-main">
-
-      <nav class="footer-nav" aria-label="Navigazione">
-        <span>Navigazione</span>
-        <a href={`${base}/`}>Home</a>
-        <a href={`${base}/#interventi`}>Interventi</a>
-        <a href={`${base}/#arsolv`}>Metodo</a>
-        <a href={`${base}/il-gruppo/`}>Il Gruppo</a>
-      </nav>
-
-      <div class="footer-nav">
-        <span>Aree</span>
-        <a href={`${base}/services/`}>Operativa</a>
-        <a href={`${base}/digital/`}>Digitale</a>
-        <a href={`${base}/projects/`}>Strategica</a>
+      <!-- Colonna Logo e Testo -->
+      <div class="lg:col-span-5">
+        <a href={`${base}/`} class="block hover:opacity-80 transition-opacity duration-200 mb-8">
+          <img src={`${base}/logo_arsolving_light.svg`} alt="ARSOLVING" class="h-16 w-auto" />
+        </a>
+        <p class="text-white/60 text-[0.95rem] leading-[1.8] max-w-sm">
+          Qualsiasi problema — operativo, digitale, logistico, commerciale.
+          ARSOLVING lo risolve. Oggi, non domani.
+        </p>
       </div>
 
-      <div class="footer-contact">
-        <span>Contatto</span>
-        <a href="mailto:info@arsolving.com">info@arsolving.com</a>
-        <p>Operativa, digitale, strategica o mista — descrivi il problema, il resto è nostro.</p>
+      <!-- Navigazione -->
+      <div class="lg:col-span-3">
+        <span class="block text-gold text-[0.65rem] tracking-[0.25em] uppercase font-bold mb-6">Esplora</span>
+        <nav class="flex flex-col gap-3" aria-label="Navigazione footer">
+          <a href={`${base}/`} class="text-white/70 hover:text-white text-[0.9rem] transition-colors">Home</a>
+          <a href={`${base}/services/`} class="text-white/70 hover:text-white text-[0.9rem] transition-colors">Operativa</a>
+          <a href={`${base}/digital/`} class="text-white/70 hover:text-white text-[0.9rem] transition-colors">Digitale</a>
+          <a href={`${base}/projects/`} class="text-white/70 hover:text-white text-[0.9rem] transition-colors">Strategica</a>
+          <a href={`${base}/il-gruppo/`} class="text-white/70 hover:text-white text-[0.9rem] transition-colors">Il Gruppo</a>
+        </nav>
+      </div>
+
+      <!-- Contatti Reali -->
+      <div class="lg:col-span-4">
+        <span class="block text-gold text-[0.65rem] tracking-[0.25em] uppercase font-bold mb-6">Contatti</span>
+        <div class="text-white/70 text-[0.9rem] leading-[1.8] space-y-4">
+          <div>
+            <strong class="block text-white font-semibold text-[1rem]">ARSOLVING</strong>
+            <span class="block">Multiservice Group S.R.L.S.</span>
+          </div>
+          <div>
+            <span class="block text-white/50 text-[0.75rem] uppercase tracking-wider mb-1">Sede legale</span>
+            Strada della Bonifica 48/1<br />
+            65129 Pescara (PE)
+          </div>
+          <div class="pt-2">
+            <span class="block"><strong class="text-white/50 font-normal mr-2">PEC:</strong> <a href="mailto:arsolving@pec.it" class="hover:text-gold transition-colors">arsolving@pec.it</a></span>
+            <span class="block"><strong class="text-white/50 font-normal mr-2">Email:</strong> <a href="mailto:info@arsolving.com" class="hover:text-gold transition-colors">info@arsolving.com</a></span>
+          </div>
+        </div>
       </div>
 
     </div>
 
-    <div class="footer-bottom">
-      <p>© {year} ARSOLVING. Tutti i diritti riservati.</p>
-      <p>Solved Path. Premium Solutions.</p>
+    <!-- Footer Bottom -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-[0.75rem]">
+      <p>© 2026 Arsolving Multiservice Group S.R.L.S. — Tutti i diritti riservati.</p>
+      <div class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <span>·</span>
+        <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+        <span>·</span>
+        <a href="#" class="hover:text-white transition-colors">Termini e condizioni</a>
+        <span>·</span>
+        <a href={`${base}/contatti/`} class="hover:text-white transition-colors">Contatti</a>
+      </div>
     </div>
+
   </div>
 </footer>
 
