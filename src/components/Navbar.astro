@@ -22,10 +22,11 @@ function active(segment: string): boolean {
 
     <!-- ── DESKTOP NAV ── -->
     <div class="navbar-links" role="navigation" aria-label="Navigazione principale">
-      <a href={`${base}/`}             class={`nav-link ${active('') ? 'nav-link--active' : ''}`}>Home</a>
-      <a href={`${base}/#interventi`}  class="nav-link">Interventi</a>
-      <a href={`${base}/#aree`}        class="nav-link">Cosa facciamo</a>
-      <a href={`${base}/il-gruppo/`}   class={`nav-link ${active('il-gruppo') ? 'nav-link--active' : ''}`}>Il Gruppo</a>
+      <a href={`${base}/`}            class={`nav-link ${active('') ? 'nav-link--active' : ''}`}>Home</a>
+      <a href={`${base}/services/`}   class={`nav-link ${active('services') ? 'nav-link--active' : ''}`}>Operativa</a>
+      <a href={`${base}/digital/`}    class={`nav-link ${active('digital') ? 'nav-link--active' : ''}`}>Digitale</a>
+      <a href={`${base}/projects/`}   class={`nav-link ${active('projects') ? 'nav-link--active' : ''}`}>Strategica</a>
+      <a href={`${base}/il-gruppo/`}  class={`nav-link ${active('il-gruppo') ? 'nav-link--active' : ''}`}>Il Gruppo</a>
 
       <div class="nav-divider" aria-hidden="true"></div>
 
@@ -69,10 +70,11 @@ function active(segment: string): boolean {
     </div>
 
     <nav class="mobile-nav" aria-label="Menu mobile">
-      <a href={`${base}/`}             class="mobile-nav-link"><span class="mobile-nav-num">01</span>Home</a>
-      <a href={`${base}/#interventi`}  class="mobile-nav-link"><span class="mobile-nav-num">02</span>Interventi</a>
-      <a href={`${base}/#aree`}        class="mobile-nav-link"><span class="mobile-nav-num">03</span>Cosa facciamo</a>
-      <a href={`${base}/il-gruppo/`}   class="mobile-nav-link"><span class="mobile-nav-num">04</span>Il Gruppo</a>
+      <a href={`${base}/`}           class="mobile-nav-link"><span class="mobile-nav-num">01</span>Home</a>
+      <a href={`${base}/services/`}  class="mobile-nav-link"><span class="mobile-nav-num">02</span>Operativa</a>
+      <a href={`${base}/digital/`}   class="mobile-nav-link"><span class="mobile-nav-num">03</span>Digitale</a>
+      <a href={`${base}/projects/`}  class="mobile-nav-link"><span class="mobile-nav-num">04</span>Strategica</a>
+      <a href={`${base}/il-gruppo/`} class="mobile-nav-link"><span class="mobile-nav-num">05</span>Il Gruppo</a>
     </nav>
 
     <div class="mobile-overlay-footer">
