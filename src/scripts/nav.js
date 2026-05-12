@@ -19,8 +19,18 @@ if (hamburger && mobileMenu) {
     hamburger.classList.toggle('menu-open', open)
     document.body.style.overflow = open ? 'hidden' : ''
   }
+
   hamburger.addEventListener('click', () => toggle())
+
   mobileMenu.querySelectorAll('a').forEach(a =>
     a.addEventListener('click', () => toggle(false))
   )
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') toggle(false)
+  })
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) toggle(false)
+  })
 }

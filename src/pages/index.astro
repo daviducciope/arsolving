@@ -84,14 +84,14 @@ const method = [
 >
 
   <!-- ═══ HERO ═══ -->
-  <section class="relative min-h-[100svh] bg-navy overflow-hidden flex flex-col justify-end pb-16 lg:pb-24 pt-24">
+  <section class="relative min-h-[92svh] lg:min-h-[100svh] bg-navy overflow-hidden flex flex-col justify-center lg:justify-end pb-10 lg:pb-24 pt-20 lg:pt-24">
     <div class="absolute inset-0 pointer-events-none"
          style="background: radial-gradient(ellipse 70% 60% at 15% 80%, rgba(199,162,74,0.1) 0%, transparent 60%), radial-gradient(ellipse 40% 50% at 85% 20%, rgba(26,43,74,0.8) 0%, transparent 60%);"></div>
 
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10 w-full">
       <!-- Headline -->
-      <h1 class="animate-fade-in-up font-display text-white uppercase leading-[0.88] mb-8 lg:mb-10"
-          style="font-size: clamp(4.2rem, 11.5vw, 13rem); animation-delay: 0.12s;">
+      <h1 class="animate-fade-in-up font-display text-white uppercase leading-[0.88] mb-5 lg:mb-10"
+          style="font-size: clamp(3.45rem, 11.5vw, 13rem); animation-delay: 0.12s;">
         Qualsiasi<br />
         <span class="text-gold">problema.</span><br />
         Noi lo<br />
@@ -99,7 +99,7 @@ const method = [
       </h1>
 
       <!-- Sub + CTAs -->
-      <div class="animate-fade-in-up flex flex-col lg:flex-row items-start lg:items-end gap-8 lg:gap-16"
+      <div class="animate-fade-in-up flex flex-col lg:flex-row items-start lg:items-end gap-5 lg:gap-16"
            style="animation-delay: 0.3s;">
         <p class="text-white/55 text-[1rem] lg:text-[1.1rem] leading-[1.75] max-w-[44ch]">
           ARSOLVING nasce da una <strong class="font-semibold text-white/82">capacità fuori dal comune</strong>:
@@ -110,16 +110,8 @@ const method = [
         </p>
         <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
           <a href={`${base}/contatti/`} class="btn-gold">Raccontaci il problema</a>
-          <a href="#interventi"         class="btn-outline">Guarda cosa abbiamo fatto</a>
         </div>
       </div>
-    </div>
-
-    <!-- Scroll cue -->
-    <div class="animate-fade-in-up absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-         style="animation-delay:0.6s;">
-      <span class="text-white/25 text-[0.56rem] tracking-[0.3em] uppercase">Scorri</span>
-      <div class="w-px h-10 bg-gradient-to-b from-white/20 to-transparent"></div>
     </div>
   </section>
 

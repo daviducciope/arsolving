@@ -24,6 +24,33 @@ html {
   html { font-size: 18px; }
 }
 
+@media (max-width: 767px) {
+  .py-20,
+  .py-24 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .pt-28 {
+    padding-top: 5.5rem;
+  }
+
+  .pb-20 {
+    padding-bottom: 3.5rem;
+  }
+
+  .mb-12,
+  .mb-14,
+  .mb-16 {
+    margin-bottom: 2rem;
+  }
+
+  .gap-16,
+  .gap-20 {
+    gap: 2.5rem;
+  }
+}
+
 body {
   font-family: var(--font-body);
   background: #FAF8F4;
