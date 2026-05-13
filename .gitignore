@@ -23,6 +23,12 @@ docs/aws_credential.md
 infra/lambda/**/env.json
 infra/lambda/**/function.zip
 
+# Temporary session dumps (DNS audit, API responses, migration logs)
+infra/_*_tmp*
+infra/_*_tmp.json
+infra/_*_tmp.log
+infra/_*_tmp.txt
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

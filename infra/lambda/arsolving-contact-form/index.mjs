@@ -62,19 +62,33 @@ export const handler = async (event) => {
   };
 
   const ctx = contesto || 'non specificato';
+  const notifFields = { nome, azienda, email, telefono, contesto: ctx, problema, struttura, priorita };
   const notification = {
     personalizations: [{ to: [{ email: TO_EMAIL }] }],
     from: { email: FROM_EMAIL, name: FROM_NAME },
     reply_to: { email, name: nome },
     subject: `Nuova richiesta analisi — ${ctx} — ${nome}`,
-    content: [{ type: 'text/html', value: notificationHtml({ nome, azienda, email, telefono, contesto: ctx, problema, struttura, priorita }) }],
+    content: [
+      { type: 'text/plain', value: notificationText(notifFields) },
+      { type: 'text/html',  value: notificationHtml(notifFields) },
+    ],
   };
 
   const autoReply = {
     personalizations: [{ to: [{ email, name: nome }] }],
     from: { email: FROM_EMAIL, name: FROM_NAME },
+    reply_to: { email: FROM_EMAIL, name: FROM_NAME },
     subject: 'Abbiamo ricevuto la tua richiesta — ARSOLVING',
-    content: [{ type: 'text/html', value: autoReplyHtml({ nome, contesto: ctx }) }],
+    headers: {
+      'List-Unsubscribe': `<mailto:${FROM_EMAIL}?subject=unsubscribe>`,
+      'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+      'Auto-Submitted': 'auto-replied',
+      'X-Auto-Response-Suppress': 'All',
+    },
+    content: [
+      { type: 'text/plain', value: autoReplyText({ nome, contesto: ctx }) },
+      { type: 'text/html',  value: autoReplyHtml({ nome, contesto: ctx }) },
+    ],
   };
 
   try {
@@ -165,4 +179,50 @@ function autoReplyHtml({ nome, contesto }) {
   </td></tr>
 </table>
 </td></tr></table></body></html>`;
+}
+
+
+function notificationText({ nome, azienda, email, telefono, contesto, problema, struttura, priorita }) {
+  const line = (label, value) => value ? `${label}: ${value}\n` : '';
+  return (
+`Nuova richiesta dal sito ARSOLVING
+==================================
+
+${line('Nome', nome)}${line('Azienda / progetto', azienda)}${line('Email', email)}${line('Telefono', telefono)}${line('Tipo di problema', contesto)}${line('Stato attuale', struttura)}${line('Urgenza / tempistiche', priorita)}
+Descrizione:
+${problema}
+
+--
+Per rispondere usa il pulsante "Rispondi" (Reply-To impostato sull'email del richiedente).
+
+ARSOLVING — Multiservice Group S.R.L.S.
+Strada della Bonifica 48/1, 65129 Pescara (PE)
+info@arsolving.it · https://arsolving.it
+`);
+}
+
+function autoReplyText({ nome, contesto }) {
+  const ctxLine = contesto && contesto !== 'non specificato'
+    ? ` su ambito ${contesto}`
+    : '';
+  return (
+`Ciao ${nome},
+
+abbiamo ricevuto la tua richiesta di analisi${ctxLine}.
+Il nostro team sta già esaminando il contesto.
+
+Ti rispondiamo entro 30 minuti nei nostri orari operativi con i prossimi passi.
+
+Cosa succede ora:
+01. Capiamo il contesto in 30 minuti.
+02. Ti proponiamo come muoverci.
+03. Operativi dal primo giorno utile.
+
+--
+ARSOLVING — Multiservice Group S.R.L.S.
+Strada della Bonifica 48/1, 65129 Pescara (PE)
+info@arsolving.it · https://arsolving.it
+
+Per non ricevere più questi messaggi rispondi con oggetto "unsubscribe".
+`);
 }
