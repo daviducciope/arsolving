@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arsolving.it/sitemap-index.xml
+Sitemap: https://arsolving.it/sitemap.xml
