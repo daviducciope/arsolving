@@ -171,10 +171,9 @@ const method = [
         {cases.map((c, i) => (
           <div class={`reveal delay-${(i % 3) + 1} case-card-v2 group`}>
 
-            <!-- Header: tag + badge -->
-            <div class="flex items-center justify-between mb-6">
+            <!-- Header: tag -->
+            <div class="flex items-center mb-6">
               <span class="case-tag">{c.tag}</span>
-              <span class="font-display text-[2.4rem] leading-none text-navy/8 group-hover:text-gold/18 transition-colors duration-400 select-none">{c.badge}</span>
             </div>
 
             <!-- Problem block -->
@@ -267,7 +266,7 @@ const method = [
             Tre aree.<br />Un solo interlocutore.
           </h2>
           <p class="text-white/66 text-[0.9rem] leading-[1.7] max-w-[38ch] lg:text-right">
-            Non siamo un'agenzia né un'impresa generalista. Siamo il partner che risolve — qualunque sia il fronte.
+            Non siamo un'agenzia né un'impresa generalista. Siamo il partner che risolve, qualunque sia il settore.
           </p>
         </div>
       </div>
@@ -276,7 +275,7 @@ const method = [
         {areas.map((area, i) => (
           <a href={area.href} class={`reveal delay-${i + 1} area-panel group`}>
             <div class="flex items-start justify-between mb-6">
-              <span class="text-gold/85 font-display text-[0.75rem] tracking-[0.3em]">{area.n}</span>
+              <span class="text-gold/85 font-display text-[1.1rem] tracking-[0.3em]">{area.n}</span>
               <svg class="w-4 h-4 text-gold/55 group-hover:text-gold transition-colors duration-200"
                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/>
@@ -314,7 +313,7 @@ const method = [
           </h2>
         </div>
         <p class="text-navy/60 text-[0.88rem] leading-[1.8] max-w-[38ch] lg:text-right">
-          Non è improvvisazione — è metodo. Sei passaggi che trasformano
+          Non è improvvisazione, è metodo. Sei passaggi che trasformano
           qualsiasi problema in una soluzione strutturata e duratura.
         </p>
       </div>
@@ -324,7 +323,6 @@ const method = [
         {method.map((step, i) => (
           <div class={`reveal delay-${Math.min(i + 1, 5)} arsolv-row group`}>
             <span class="arsolv-idx">{step.n}</span>
-            <span class="arsolv-ghost">{step.letter}</span>
             <div class="arsolv-body">
               <h3 class="arsolv-word">{step.word}</h3>
               <p class="arsolv-claim">{step.claim}</p>
@@ -355,12 +353,6 @@ const method = [
         ))}
       </div>
 
-      <!-- Closing line -->
-      <p class="arsolv-footer">
-        <span>ARSOLV — il metodo.</span>
-        <span class="arsolv-footer-sep" aria-hidden="true"></span>
-        <span><strong>ARSOLVING</strong> — chi lo applica.</span>
-      </p>
 
     </div>
   </section>
@@ -419,11 +411,9 @@ const method = [
       </h2>
       <p class="text-white/72 text-[1rem] leading-[1.75] max-w-[38ch] mx-auto mb-10">
         Descrivici la situazione, anche se è complicata da spiegare.
-        In 30 minuti capiamo cosa fare e ci mettiamo in moto.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
         <a href={`${base}/contatti/`} class="btn-gold">Raccontaci il problema</a>
-        <a href={`${base}/il-gruppo/`} class="btn-outline">Chi siamo</a>
       </div>
     </div>
   </section>

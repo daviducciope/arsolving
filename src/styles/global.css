@@ -392,7 +392,7 @@ body {
 .arsolv-row:hover::before { transform: scaleY(1); }
 
 .arsolv-idx {
-  font-size: 0.58rem;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.22em;
   color: rgba(212,180,100,0.62);
@@ -540,7 +540,6 @@ body {
   align-items: center;
   gap: 1.1rem;
   padding-top: 0.85rem;
-  border-top: 1px dashed rgba(14,29,52,0.14);
   max-width: 44rem;
 }
 .arsolv-flow-col { display: flex; flex-direction: column; gap: 0.28rem; min-width: 0; }
