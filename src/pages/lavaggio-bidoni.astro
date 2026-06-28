@@ -45,6 +45,10 @@ const faqs = [
     a: 'Bidone a 2 ruote (domestico): 15€ + IVA. Bidone a 4 ruote (grande/condominiale): 25€ + IVA. Per servizi periodici o condominiali prepariamo un preventivo dedicato.',
   },
   {
+    q: 'Lavate anche l\'isola ecologica del condominio?',
+    a: 'Sì. Oltre ai singoli bidoni laviamo e sanifichiamo l\'intera piazzola di raccolta ad alta pressione: pavimento, pareti e contenitori. Il prezzo parte da 49€ + IVA e viene definito con un preventivo dedicato in base a superficie e stato dell\'area.',
+  },
+  {
     q: 'Posso programmare lavaggi periodici?',
     a: 'Sì. Per condomini, attività e clienti che vogliono un calendario ricorrente (settimanale, quindicinale o mensile) prepariamo un piano su misura con tariffe dedicate.',
   },
@@ -66,6 +70,8 @@ const faqs = [
         Igienizziamo e sanifichiamo i tuoi bidoni della spazzatura direttamente
         a casa tua, con un sistema a base di enzimi che deterge in modo naturale,
         a ciclo chiuso, <strong class="text-white/85">senza sporcare nulla</strong>.
+        Per condomini e attività laviamo anche l'intera
+        <strong class="text-white/85">isola ecologica</strong> ad alta pressione.
       </p>
       <div class="flex flex-wrap gap-4">
         <a href="#prenota" class="btn-gold">Prenota il lavaggio</a>
@@ -158,8 +164,48 @@ const faqs = [
   </section>
 
 
+  <!-- Isola ecologica -->
+  <section class="py-24 bg-white border-b border-navy/12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="reveal delay-2 order-2 lg:order-1 flex flex-col gap-0">
+          {[
+            'Lavaggio ad alta pressione di pavimento, pareti e contenitori',
+            'Rimozione di incrostazioni, percolato e residui organici',
+            'Sanificazione completa e abbattimento dei cattivi odori',
+            'Ideale per condomini, attività commerciali e aree comuni',
+            'Programmabile con interventi periodici a tariffa dedicata',
+          ].map((item, i) => (
+            <div class={`flex items-center gap-4 py-4 ${i > 0 ? 'border-t border-navy/12' : ''}`}>
+              <div class="w-5 h-5 rounded-full border border-gold/60 flex items-center justify-center flex-shrink-0">
+                <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+              </div>
+              <p class="text-[0.9rem] text-navy/72 leading-[1.7]">{item}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="reveal order-1 lg:order-2">
+          <div class="section-label section-label--dark mb-6">In più</div>
+          <h2 class="font-display uppercase text-navy leading-[0.92] mb-6"
+              style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
+            Lavaggio<br />isola ecologica
+          </h2>
+          <p class="text-navy/72 text-[1rem] leading-[1.85]">
+            Non solo i bidoni: laviamo e sanifichiamo l'intera piazzola di raccolta
+            ad alta pressione. Rimuoviamo lo sporco che si accumula a terra e sulle
+            pareti, eliminiamo gli odori e restituiamo un'area pulita e in ordine.
+            Il prezzo dipende da superficie e stato dell'isola: ti prepariamo un
+            <strong class="text-navy">preventivo dedicato</strong> su richiesta.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- Prezzi -->
-  <section id="prezzi" class="py-24 bg-white border-b border-navy/12">
+  <section id="prezzi" class="py-24 bg-off-white border-b border-navy/12">
     <div class="max-w-5xl mx-auto px-6 lg:px-10">
       <div class="reveal mb-14 text-center">
         <div class="section-label section-label--dark mb-5 justify-center">Tariffe trasparenti</div>
@@ -169,7 +215,7 @@ const faqs = [
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <div class="reveal delay-1 price-card">
           <span class="block text-navy/45 text-[0.7rem] tracking-[0.22em] uppercase font-bold mb-4">Bidone 2 ruote</span>
           <p class="font-heading text-navy/70 text-[0.9rem] mb-5">Domestico / piccolo formato</p>
@@ -185,6 +231,16 @@ const faqs = [
             <span class="font-display text-navy text-[3.5rem] leading-none">25€</span>
             <span class="text-navy/55 text-[0.85rem]">+ IVA</span>
           </div>
+        </div>
+        <div class="reveal delay-3 price-card price-card--feature">
+          <span class="block text-gold text-[0.7rem] tracking-[0.22em] uppercase font-bold mb-4">Isola ecologica</span>
+          <p class="font-heading text-navy/70 text-[0.9rem] mb-5">Lavaggio + sanificazione ad alta pressione</p>
+          <div class="flex items-baseline gap-2">
+            <span class="text-navy/55 text-[0.8rem]">a partire da</span>
+            <span class="font-display text-navy text-[3.5rem] leading-none">49€</span>
+            <span class="text-navy/55 text-[0.85rem]">+ IVA</span>
+          </div>
+          <p class="text-navy/55 text-[0.78rem] mt-3">Prezzo finale su preventivo dedicato</p>
         </div>
       </div>
 
@@ -263,10 +319,24 @@ const faqs = [
               </label>
             </div>
 
+            <!-- Isola ecologica -->
+            <label class="isola-toggle">
+              <input type="checkbox" name="isola" value="si" />
+              <span class="isola-toggle-box">
+                <strong>Aggiungi lavaggio isola ecologica</strong>
+                <em>Su preventivo dedicato — a partire da 49€ + IVA</em>
+              </span>
+            </label>
+
             <!-- Importo stimato -->
             <div class="price-estimate" aria-live="polite">
-              <span class="price-estimate-label">Importo stimato (IVA 22% inclusa)</span>
-              <span id="price-total" class="price-estimate-value">18,30 €</span>
+              <div class="price-estimate-main">
+                <span class="price-estimate-label">Importo stimato bidoni (IVA 22% inclusa)</span>
+                <span id="price-total" class="price-estimate-value">18,30 €</span>
+              </div>
+              <p id="price-isola-note" class="price-estimate-note" hidden>
+                + lavaggio isola ecologica su preventivo dedicato
+              </p>
             </div>
 
             <div class="form-row">
@@ -368,7 +438,8 @@ const faqs = [
     "description": "Lavaggio e sanificazione bidoni della spazzatura a domicilio con sistema a base di enzimi, a ciclo chiuso.",
     "offers": [
       { "@type": "Offer", "name": "Bidone 2 ruote", "price": "15", "priceCurrency": "EUR" },
-      { "@type": "Offer", "name": "Bidone 4 ruote", "price": "25", "priceCurrency": "EUR" }
+      { "@type": "Offer", "name": "Bidone 4 ruote", "price": "25", "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Lavaggio isola ecologica", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "49", "priceCurrency": "EUR" } }
     ]
   })} />
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -388,6 +459,7 @@ const faqs = [
 
       const PRICE_2 = 15, PRICE_4 = 25, VAT = 1.22;
       const totalEl = document.getElementById('price-total');
+      const isolaNote = document.getElementById('price-isola-note');
       const feedback = document.getElementById('booking-feedback');
       const btn = form.querySelector('button[type=submit]');
       const originalBtnText = btn ? btn.textContent : '';
@@ -398,13 +470,16 @@ const faqs = [
       const calc = () => {
         const b2 = Math.max(0, parseInt(form.bidoni2.value, 10) || 0);
         const b4 = Math.max(0, parseInt(form.bidoni4.value, 10) || 0);
+        const isola = form.isola.checked;
         const total = (b2 * PRICE_2 + b4 * PRICE_4) * VAT;
         if (totalEl) totalEl.textContent = fmt(total);
-        return { b2, b4, total };
+        if (isolaNote) isolaNote.hidden = !isola;
+        return { b2, b4, isola, total };
       };
 
       form.bidoni2.addEventListener('input', calc);
       form.bidoni4.addEventListener('input', calc);
+      form.isola.addEventListener('change', calc);
       calc();
 
       const setFeedback = (msg, type) => {
@@ -417,11 +492,11 @@ const faqs = [
         e.preventDefault();
         if (!btn) return;
 
-        const { b2, b4, total } = calc();
+        const { b2, b4, isola, total } = calc();
         const data = Object.fromEntries(new FormData(form).entries());
 
-        if ((b2 + b4) < 1) {
-          setFeedback('Indica almeno un bidone da lavare.', 'error');
+        if ((b2 + b4) < 1 && !isola) {
+          setFeedback('Indica almeno un bidone o seleziona il lavaggio isola ecologica.', 'error');
           return;
         }
         if (!data.nome || !data.email || !data.telefono || !data.indirizzo) {
@@ -429,11 +504,15 @@ const faqs = [
           return;
         }
 
-        data.servizio = 'Lavaggio bidoni a domicilio';
+        data.servizio = isola
+          ? 'Lavaggio bidoni a domicilio + isola ecologica (preventivo)'
+          : 'Lavaggio bidoni a domicilio';
+        data.isola_ecologica = isola ? 'Sì — preventivo dedicato' : 'No';
         data.importo_stimato = fmt(total);
-        data.problema = `Prenotazione lavaggio bidoni — ${b2} bidone/i 2 ruote, ${b4} bidone/i 4 ruote. ` +
+        data.problema = `Richiesta lavaggio — ${b2} bidone/i 2 ruote, ${b4} bidone/i 4 ruote. ` +
+          `Isola ecologica: ${isola ? 'SÌ (preventivo dedicato)' : 'no'}. ` +
           `Indirizzo: ${data.indirizzo}. Data preferita: ${data.data || 'non indicata'}. ` +
-          `Importo stimato: ${fmt(total)}. Note: ${data.note || '—'}`;
+          `Importo stimato bidoni: ${fmt(total)}. Note: ${data.note || '—'}`;
 
         btn.disabled = true;
         btn.textContent = 'Invio in corso…';
@@ -505,17 +584,86 @@ const faqs = [
       box-shadow: 0 20px 50px rgba(14,29,52,0.08);
       border-color: rgba(199,162,74,0.4);
     }
+    .price-card--feature {
+      border-color: rgba(199,162,74,0.5);
+      background: linear-gradient(180deg, rgba(199,162,74,0.07) 0%, #fff 55%);
+    }
+
+    /* Toggle isola nel form */
+    .isola-toggle {
+      display: block !important;
+      margin: 1.25rem 0;
+      cursor: pointer;
+    }
+    .isola-toggle input { position: absolute; opacity: 0; pointer-events: none; }
+    .isola-toggle-box {
+      display: block;
+      padding: 0.95rem 1.1rem;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.07);
+      border-radius: 2px;
+      transition: border-color 0.18s ease, background 0.18s ease;
+    }
+    .isola-toggle-box strong {
+      display: block;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .isola-toggle-box em {
+      display: block;
+      margin-top: 0.2rem;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.76rem;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: normal;
+      text-transform: none;
+    }
+    .isola-toggle-box::before {
+      content: '+';
+      float: right;
+      width: 1.4rem; height: 1.4rem;
+      margin-left: 0.75rem;
+      display: grid; place-items: center;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 3px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 700;
+      transition: all 0.18s ease;
+    }
+    .isola-toggle input:checked + .isola-toggle-box {
+      border-color: rgba(199,162,74,0.75);
+      background: rgba(199,162,74,0.14);
+    }
+    .isola-toggle input:checked + .isola-toggle-box::before {
+      content: '✓';
+      border-color: #C7A24A;
+      background: #C7A24A;
+      color: #0E1D34;
+    }
 
     .price-estimate {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
       margin: 1.25rem 0;
       padding: 1rem 1.1rem;
       border: 1px solid rgba(199,162,74,0.4);
       background: rgba(199,162,74,0.1);
       border-radius: 2px;
+    }
+    .price-estimate-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .price-estimate-note {
+      margin: 0.6rem 0 0;
+      padding-top: 0.6rem;
+      border-top: 1px solid rgba(199,162,74,0.25);
+      color: rgba(255,255,255,0.72);
+      font-size: 0.78rem;
     }
     .price-estimate-label {
       color: rgba(255,255,255,0.7);
