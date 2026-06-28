@@ -1,0 +1,578 @@
+---
+import Base from '../layouts/Base.astro'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+
+const pillars = [
+  {
+    title: 'Prodotti a base di enzimi',
+    desc: 'Igienizziamo e detergiamo in modo naturale con un sistema a base di enzimi: degrada lo sporco organico e neutralizza i batteri, senza solventi aggressivi.',
+    icon: 'M12 3c-1.5 4-6 5.5-6 10a6 6 0 0012 0c0-4.5-4.5-6-6-10z',
+  },
+  {
+    title: 'Non sporca nulla',
+    desc: 'Sistema a ciclo chiuso: l\'acqua di lavaggio viene recuperata e trattata. Niente residui a terra, niente cattivi odori, nessun disagio per te o per i vicini.',
+    icon: 'M12 2.25c-4.97 0-9 4.03-9 9 0 6 9 10.5 9 10.5s9-4.5 9-10.5c0-4.97-4.03-9-9-9zm0 12a3 3 0 110-6 3 3 0 010 6z',
+  },
+  {
+    title: 'Certificati e a norma',
+    desc: 'Operatori qualificati e attrezzatura professionale. Prodotti biodegradabili e procedure tracciate, nel pieno rispetto delle normative ambientali.',
+    icon: 'M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+]
+
+const steps = [
+  { n: '01', title: 'Prenoti online', desc: 'Compili il form indicando numero di bidoni e indirizzo. Ricevi la conferma con data e importo stimato.' },
+  { n: '02', title: 'Arriviamo a domicilio', desc: 'Il nostro operatore raggiunge il tuo indirizzo con l\'attrezzatura professionale. Non devi essere presente: basta che i bidoni siano accessibili.' },
+  { n: '03', title: 'Laviamo e sanifichiamo', desc: 'Lavaggio interno ed esterno con sistema enzimatico ad alta pressione. Eliminiamo germi, larve, residui e cattivi odori.' },
+  { n: '04', title: 'Bidone come nuovo', desc: 'Bidone igienizzato, asciutto e profumato. Acqua recuperata, zero sporco lasciato sul posto.' },
+]
+
+const faqs = [
+  {
+    q: 'Rischiate di sporcare davanti casa?',
+    a: 'No. Lavoriamo con un sistema a ciclo chiuso che recupera l\'acqua di lavaggio: non resta nulla a terra e nessun residuo nelle vicinanze.',
+  },
+  {
+    q: 'Quali prodotti usate?',
+    a: 'Utilizziamo prodotti a base di enzimi, naturali, biodegradabili e sicuri per persone, animali e ambiente. Niente sostanze aggressive.',
+  },
+  {
+    q: 'Devo essere presente durante il lavaggio?',
+    a: 'No, non è necessario. È sufficiente che il bidone sia accessibile all\'orario concordato. Al termine ti inviamo conferma dell\'intervento.',
+  },
+  {
+    q: 'Quanto costa il servizio?',
+    a: 'Bidone a 2 ruote (domestico): 15€ + IVA. Bidone a 4 ruote (grande/condominiale): 25€ + IVA. Per servizi periodici o condominiali prepariamo un preventivo dedicato.',
+  },
+  {
+    q: 'Posso programmare lavaggi periodici?',
+    a: 'Sì. Per condomini, attività e clienti che vogliono un calendario ricorrente (settimanale, quindicinale o mensile) prepariamo un piano su misura con tariffe dedicate.',
+  },
+]
+---
+
+<Base title="Lavaggio Bidoni a Domicilio"
+      description="Lavaggio e sanificazione bidoni a domicilio a Pescara e dintorni. Sistema a base di enzimi, a ciclo chiuso: igienizza in modo naturale senza sporcare nulla. Prenota online.">
+
+  <!-- Hero -->
+  <div class="page-hero">
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="section-label mb-7">Servizio a domicilio</div>
+      <h1 class="font-display uppercase text-white leading-[0.9] mb-5"
+          style="font-size: clamp(2.6rem, 6.5vw, 6rem);">
+        Lavaggio Bidoni<br />a Domicilio
+      </h1>
+      <p class="text-[1rem] text-white/66 leading-[1.8] max-w-2xl mb-9">
+        Igienizziamo e sanifichiamo i tuoi bidoni della spazzatura direttamente
+        a casa tua, con un sistema a base di enzimi che deterge in modo naturale,
+        a ciclo chiuso, <strong class="text-white/85">senza sporcare nulla</strong>.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#prenota" class="btn-gold">Prenota il lavaggio</a>
+        <a href="#prezzi" class="btn-ghost-light">Vedi i prezzi</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Pilastri -->
+  <section class="py-24 bg-white border-b border-navy/12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {pillars.map((p, i) => (
+          <div class={`reveal delay-${(i % 3) + 1} service-card group`}>
+            <div class="w-11 h-11 bg-navy rounded-sm flex items-center justify-center text-gold mb-5
+                        group-hover:bg-gold group-hover:text-navy transition-colors duration-300">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d={p.icon}/>
+              </svg>
+            </div>
+            <h3 class="font-heading font-semibold text-navy text-[1.05rem] mb-3">{p.title}</h3>
+            <p class="text-[0.86rem] text-navy/70 leading-[1.78]">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Come funziona -->
+  <section class="py-24 bg-off-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="reveal mb-14 text-center">
+        <div class="section-label section-label--dark mb-5 justify-center">Come funziona</div>
+        <h2 class="font-display uppercase text-navy leading-[0.92]"
+            style="font-size: clamp(2rem, 4vw, 4rem);">
+          Quattro passaggi, zero pensieri
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {steps.map((s, i) => (
+          <div class={`reveal delay-${(i % 4) + 1} service-card`}>
+            <span class="font-display text-navy/12 text-[3rem] leading-none block mb-3">{s.n}</span>
+            <h3 class="font-heading font-semibold text-navy text-[1rem] mb-3">{s.title}</h3>
+            <p class="text-[0.84rem] text-navy/70 leading-[1.75]">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Tecnologia enzimatica -->
+  <section class="py-24 bg-navy">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="reveal">
+          <div class="section-label mb-6">Tecnologia</div>
+          <h2 class="font-display uppercase text-white leading-[0.92] mb-6"
+              style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
+            Sanificazione<br />a base di enzimi
+          </h2>
+          <p class="text-white/66 text-[1rem] leading-[1.85]">
+            Gli enzimi degradano lo sporco organico e neutralizzano i batteri là dove
+            si annidano i cattivi odori. Un sistema naturale ed efficace, che lavora
+            senza solventi aggressivi e con acqua recuperata a fine ciclo.
+          </p>
+        </div>
+
+        <div class="reveal delay-2 flex flex-col gap-0">
+          {[
+            'Elimina germi, batteri e larve dal fondo del bidone',
+            'Rimuove i cattivi odori alla radice, non li copre',
+            'Prodotti biodegradabili e sicuri per persone e animali',
+            'Acqua di lavaggio recuperata e trattata a ciclo chiuso',
+            'Lavaggio interno ed esterno, bidone asciutto a fine intervento',
+          ].map((item, i) => (
+            <div class={`flex items-center gap-4 py-4 ${i > 0 ? 'border-t border-white/14' : ''}`}>
+              <div class="w-5 h-5 rounded-full border border-gold/50 flex items-center justify-center flex-shrink-0">
+                <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+              </div>
+              <p class="text-[0.9rem] text-white/70 leading-[1.7]">{item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Prezzi -->
+  <section id="prezzi" class="py-24 bg-white border-b border-navy/12">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10">
+      <div class="reveal mb-14 text-center">
+        <div class="section-label section-label--dark mb-5 justify-center">Tariffe trasparenti</div>
+        <h2 class="font-display uppercase text-navy leading-[0.92]"
+            style="font-size: clamp(2rem, 4vw, 4rem);">
+          Prezzi chiari, nessuna sorpresa
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <div class="reveal delay-1 price-card">
+          <span class="block text-navy/45 text-[0.7rem] tracking-[0.22em] uppercase font-bold mb-4">Bidone 2 ruote</span>
+          <p class="font-heading text-navy/70 text-[0.9rem] mb-5">Domestico / piccolo formato</p>
+          <div class="flex items-baseline gap-2">
+            <span class="font-display text-navy text-[3.5rem] leading-none">15€</span>
+            <span class="text-navy/55 text-[0.85rem]">+ IVA</span>
+          </div>
+        </div>
+        <div class="reveal delay-2 price-card">
+          <span class="block text-navy/45 text-[0.7rem] tracking-[0.22em] uppercase font-bold mb-4">Bidone 4 ruote</span>
+          <p class="font-heading text-navy/70 text-[0.9rem] mb-5">Grande formato / condominiale</p>
+          <div class="flex items-baseline gap-2">
+            <span class="font-display text-navy text-[3.5rem] leading-none">25€</span>
+            <span class="text-navy/55 text-[0.85rem]">+ IVA</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="reveal text-center text-navy/60 text-[0.9rem] leading-[1.7]">
+        Per servizi periodici, condomini e attività prepariamo un
+        <strong class="text-navy">preventivo dedicato</strong> con tariffe agevolate.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- Form prenotazione -->
+  <section id="prenota" class="relative overflow-hidden bg-navy pt-24 pb-28">
+    <div class="hero-grid absolute inset-0 pointer-events-none"></div>
+    <div class="absolute inset-0 pointer-events-none"
+         style="background: radial-gradient(ellipse 60% 70% at 80% 20%, rgba(199,162,74,0.1) 0%, transparent 50%);"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-start">
+
+        <!-- Left: info -->
+        <div class="reveal lg:sticky lg:top-28">
+          <div class="section-label mb-7">Prenota ora</div>
+          <h2 class="font-display uppercase text-white leading-[0.9] mb-7"
+              style="font-size: clamp(2.4rem, 5vw, 4.5rem);">
+            Prenota il<br />lavaggio
+          </h2>
+          <p class="text-[1rem] text-white/74 leading-[1.75] max-w-xl mb-10">
+            Indica quanti bidoni vuoi far lavare e dove. Calcoliamo subito l'importo
+            stimato e ti ricontattiamo per confermare data e orario.
+          </p>
+
+          <div class="space-y-0 border border-white/14">
+            {[
+              { n: '01', title: 'Compili il form', sub: 'Bastano numero di bidoni e indirizzo.' },
+              { n: '02', title: 'Confermiamo', sub: 'Ti scriviamo con data, orario e importo.' },
+              { n: '03', title: 'Bidone pulito', sub: 'Interveniamo a domicilio, senza sporcare.' },
+            ].map((s, i) => (
+              <div class={`flex items-start gap-4 p-5 ${i > 0 ? 'border-t border-white/14' : ''} bg-white/[0.07]`}>
+                <span class="font-display text-gold/85 text-[0.7rem] tracking-[0.3em] flex-shrink-0 mt-0.5">{s.n}</span>
+                <div>
+                  <strong class="block text-white font-heading font-semibold text-[0.95rem] mb-0.5">{s.title}</strong>
+                  <p class="text-white/62 text-[0.8rem]">{s.sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="reveal delay-2">
+          <form id="booking-form" class="analysis-form" novalidate>
+            <div class="mb-7">
+              <p class="text-gold/85 text-[0.62rem] tracking-[0.24em] uppercase font-bold mb-2">Richiesta di lavaggio</p>
+              <h3 class="font-display uppercase text-white leading-[0.92]"
+                  style="font-size: clamp(1.7rem, 3.5vw, 2.6rem);">
+                I tuoi bidoni, igienizzati.
+              </h3>
+            </div>
+
+            <!-- Honeypot anti-spam -->
+            <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+              <label>Sito web (lascia vuoto)
+                <input type="text" name="website" tabindex="-1" autocomplete="off" />
+              </label>
+            </div>
+
+            <div class="form-row">
+              <label>
+                <span>Bidoni 2 ruote (15€)</span>
+                <input type="number" name="bidoni2" min="0" max="50" value="1" />
+              </label>
+              <label>
+                <span>Bidoni 4 ruote (25€)</span>
+                <input type="number" name="bidoni4" min="0" max="50" value="0" />
+              </label>
+            </div>
+
+            <!-- Importo stimato -->
+            <div class="price-estimate" aria-live="polite">
+              <span class="price-estimate-label">Importo stimato (IVA 22% inclusa)</span>
+              <span id="price-total" class="price-estimate-value">18,30 €</span>
+            </div>
+
+            <div class="form-row">
+              <label>
+                <span>Nome e cognome</span>
+                <input type="text" name="nome" placeholder="Nome e cognome" required />
+              </label>
+              <label>
+                <span>Telefono</span>
+                <input type="tel" name="telefono" placeholder="+39" required />
+              </label>
+            </div>
+
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="nome@dominio.it" required />
+            </label>
+
+            <label>
+              <span>Indirizzo del lavaggio</span>
+              <input type="text" name="indirizzo" placeholder="Via, numero civico, città" required />
+            </label>
+
+            <div class="form-row">
+              <label>
+                <span>Data preferita (facoltativa)</span>
+                <input type="date" name="data" />
+              </label>
+              <label>
+                <span>Note (facoltative)</span>
+                <input type="text" name="note" placeholder="Es: bidone sul retro" />
+              </label>
+            </div>
+
+            <button type="submit">Invia la prenotazione →</button>
+
+            <p id="booking-feedback" class="form-feedback mt-4" role="status" aria-live="polite"></p>
+
+            <p class="form-note mt-4">
+              Ti ricontattiamo per confermare su <strong>info@arsolving.it</strong>
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="py-24 bg-off-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10">
+      <div class="reveal mb-12 text-center">
+        <div class="section-label section-label--dark mb-5 justify-center">Domande frequenti</div>
+        <h2 class="font-display uppercase text-navy leading-[0.92]"
+            style="font-size: clamp(2rem, 4vw, 4rem);">
+          Le domande più comuni
+        </h2>
+      </div>
+
+      <div class="flex flex-col">
+        {faqs.map((f, i) => (
+          <details class={`faq-item reveal delay-${(i % 3) + 1}`}>
+            <summary>
+              <span>{f.q}</span>
+              <svg class="faq-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA finale -->
+  <section class="py-20 bg-white border-t border-navy/12">
+    <div class="max-w-3xl mx-auto px-6 text-center reveal">
+      <h2 class="font-display uppercase text-navy leading-[0.92] mb-5"
+          style="font-size: clamp(2rem, 4vw, 4rem);">
+        Bidoni puliti, senza pensieri
+      </h2>
+      <p class="text-navy/78 text-[1rem] leading-[1.8] mb-10">
+        Prenota il lavaggio a domicilio o richiedi un preventivo per il tuo condominio.
+      </p>
+      <a href="#prenota" class="btn-gold">Prenota il lavaggio</a>
+    </div>
+  </section>
+
+  <!-- JSON-LD Service + FAQ -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Lavaggio e sanificazione bidoni a domicilio",
+    "provider": { "@type": "Organization", "name": "ARSOLVING Multiservice Group" },
+    "areaServed": { "@type": "City", "name": "Pescara" },
+    "description": "Lavaggio e sanificazione bidoni della spazzatura a domicilio con sistema a base di enzimi, a ciclo chiuso.",
+    "offers": [
+      { "@type": "Offer", "name": "Bidone 2 ruote", "price": "15", "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Bidone 4 ruote", "price": "25", "priceCurrency": "EUR" }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  })} />
+
+  <script is:inline define:vars={{ endpoint: import.meta.env.PUBLIC_CONTACT_ENDPOINT || '' }}>
+    (function () {
+      const form = document.getElementById('booking-form');
+      if (!form) return;
+
+      const PRICE_2 = 15, PRICE_4 = 25, VAT = 1.22;
+      const totalEl = document.getElementById('price-total');
+      const feedback = document.getElementById('booking-feedback');
+      const btn = form.querySelector('button[type=submit]');
+      const originalBtnText = btn ? btn.textContent : '';
+      const ENDPOINT = endpoint || 'https://ks1sbfw0j8.execute-api.eu-central-1.amazonaws.com/contact';
+
+      const fmt = (n) => n.toLocaleString('it-IT', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+
+      const calc = () => {
+        const b2 = Math.max(0, parseInt(form.bidoni2.value, 10) || 0);
+        const b4 = Math.max(0, parseInt(form.bidoni4.value, 10) || 0);
+        const total = (b2 * PRICE_2 + b4 * PRICE_4) * VAT;
+        if (totalEl) totalEl.textContent = fmt(total);
+        return { b2, b4, total };
+      };
+
+      form.bidoni2.addEventListener('input', calc);
+      form.bidoni4.addEventListener('input', calc);
+      calc();
+
+      const setFeedback = (msg, type) => {
+        if (!feedback) return;
+        feedback.textContent = msg || '';
+        feedback.dataset.state = type || '';
+      };
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!btn) return;
+
+        const { b2, b4, total } = calc();
+        const data = Object.fromEntries(new FormData(form).entries());
+
+        if ((b2 + b4) < 1) {
+          setFeedback('Indica almeno un bidone da lavare.', 'error');
+          return;
+        }
+        if (!data.nome || !data.email || !data.telefono || !data.indirizzo) {
+          setFeedback('Compila Nome, Telefono, Email e Indirizzo.', 'error');
+          return;
+        }
+
+        data.servizio = 'Lavaggio bidoni a domicilio';
+        data.importo_stimato = fmt(total);
+        data.problema = `Prenotazione lavaggio bidoni — ${b2} bidone/i 2 ruote, ${b4} bidone/i 4 ruote. ` +
+          `Indirizzo: ${data.indirizzo}. Data preferita: ${data.data || 'non indicata'}. ` +
+          `Importo stimato: ${fmt(total)}. Note: ${data.note || '—'}`;
+
+        btn.disabled = true;
+        btn.textContent = 'Invio in corso…';
+        setFeedback('', '');
+
+        try {
+          const res = await fetch(ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+          const payload = await res.json().catch(() => ({}));
+          if (!res.ok || !payload.success) {
+            throw new Error(payload.error || 'Errore di rete. Riprova.');
+          }
+          form.reset();
+          calc();
+          btn.textContent = 'Prenotazione inviata ✓';
+          btn.style.background = '#16a34a';
+          setFeedback('Grazie! Ti ricontattiamo a breve per confermare data e orario.', 'success');
+          setTimeout(() => {
+            btn.textContent = originalBtnText;
+            btn.disabled = false;
+            btn.style.background = '';
+          }, 4000);
+        } catch (err) {
+          console.error('booking form error:', err);
+          btn.disabled = false;
+          btn.textContent = originalBtnText;
+          setFeedback(err.message || 'Si è verificato un errore. Riprova o scrivi a info@arsolving.it', 'error');
+        }
+      });
+    })();
+  </script>
+
+  <style>
+    .btn-ghost-light {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.85rem 1.6rem;
+      border: 1px solid rgba(255,255,255,0.28);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: border-color 0.22s ease, background 0.22s ease, color 0.22s ease;
+    }
+    .btn-ghost-light:hover {
+      border-color: rgba(199,162,74,0.7);
+      background: rgba(199,162,74,0.12);
+      color: #fff;
+    }
+
+    .section-label--dark { color: rgba(14,29,52,0.65); }
+    .section-label--dark::before { background: #C7A24A; }
+
+    .price-card {
+      background: #fff;
+      border: 1px solid rgba(14,29,52,0.12);
+      border-radius: 2px;
+      padding: 2.2rem;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .price-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(14,29,52,0.08);
+      border-color: rgba(199,162,74,0.4);
+    }
+
+    .price-estimate {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 1.25rem 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(199,162,74,0.4);
+      background: rgba(199,162,74,0.1);
+      border-radius: 2px;
+    }
+    .price-estimate-label {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.64rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .price-estimate-value {
+      color: #C7A24A;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .form-feedback { font-size: 0.85rem; min-height: 1.2em; color: rgba(255,255,255,0.65); }
+    .form-feedback[data-state="error"]   { color: #fca5a5; }
+    .form-feedback[data-state="success"] { color: #86efac; }
+
+    .form-note { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+    .form-note strong { color: rgba(255,255,255,0.78); font-weight: 700; }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid rgba(14,29,52,0.14);
+    }
+    .faq-item summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.35rem 0.25rem;
+      cursor: pointer;
+      list-style: none;
+      color: #0E1D34;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-icon {
+      width: 16px; height: 16px;
+      flex-shrink: 0;
+      color: #C7A24A;
+      transition: transform 0.25s ease;
+    }
+    .faq-item[open] .faq-icon { transform: rotate(45deg); }
+    .faq-item p {
+      margin: 0;
+      padding: 0 2rem 1.5rem 0.25rem;
+      color: rgba(14,29,52,0.7);
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+  </style>
+
+</Base>
+</content>
+</invoke>

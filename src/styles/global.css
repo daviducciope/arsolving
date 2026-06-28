@@ -367,7 +367,7 @@ body {
 .arsolv-row {
   position: relative;
   display: grid;
-  grid-template-columns: 2.8rem 5.5rem 1fr;
+  grid-template-columns: 2.8rem 1fr;
   align-items: center;
   column-gap: 2.5rem;
   padding: 1.6rem 0;
@@ -376,7 +376,7 @@ body {
   overflow: hidden;
 }
 @media (min-width: 1024px) {
-  .arsolv-row { grid-template-columns: 2.8rem 8rem 1fr; padding: 2rem 0; }
+  .arsolv-row { grid-template-columns: 2.8rem 1fr; padding: 2rem 0; }
 }
 .arsolv-row::before {
   content: '';
@@ -579,7 +579,7 @@ body {
     content: '';
     position: absolute;
     top: 4.5rem; bottom: 4.5rem;
-    left: calc(2.8rem + 1.25rem); /* between idx column and ghost letter */
+    left: calc(1.4rem); /* centered within idx column */
     width: 2px;
     background: linear-gradient(to bottom,
       rgba(199,162,74,0) 0%,
