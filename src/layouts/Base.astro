@@ -55,7 +55,13 @@ const ogImage = `${siteUrl}/og-image.png`
     "name": "ARSOLVING",
     "alternateName": "ARSOLVING Multiservice Group",
     "url": siteUrl,
-    "logo": ogImage,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/logo_arsolving.png`,
+      "width": 6250,
+      "height": 2084
+    },
+    "image": `${siteUrl}/og-image.png`,
     "description": "Qualsiasi problema: operativo, digitale, logistico, commerciale. ARSOLVING lo risolve.",
     "address": {
       "@type": "PostalAddress",
