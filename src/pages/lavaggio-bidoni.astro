@@ -2,6 +2,12 @@
 import Base from '../layouts/Base.astro'
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
+const areas = [
+  'Montesilvano', 'Pescara', 'Spoltore', "Città Sant'Angelo",
+  'Francavilla al Mare', 'Cepagatti', 'San Giovanni Teatino',
+  'Cappelle sul Tavo', 'Silvi', 'Chieti',
+]
+
 const pillars = [
   {
     title: 'Prodotti a base di enzimi',
@@ -29,6 +35,10 @@ const steps = [
 
 const faqs = [
   {
+    q: 'In quali zone fate il lavaggio bidoni a domicilio?',
+    a: 'Operiamo a Montesilvano, Pescara e nei comuni limitrofi: Spoltore, Città Sant\'Angelo, Francavilla al Mare, Cepagatti, San Giovanni Teatino, Cappelle sul Tavo, Silvi e Chieti. Se il tuo comune non è in elenco scrivici lo stesso: valutiamo ogni richiesta nell\'area di Pescara e Chieti.',
+  },
+  {
     q: 'Rischiate di sporcare davanti casa?',
     a: 'No. Lavoriamo con un sistema a ciclo chiuso che recupera l\'acqua di lavaggio: non resta nulla a terra e nessun residuo nelle vicinanze.',
   },
@@ -55,22 +65,24 @@ const faqs = [
 ]
 ---
 
-<Base title="Lavaggio Bidoni a Domicilio"
-      description="Lavaggio e sanificazione bidoni a domicilio a Pescara e dintorni. Sistema a base di enzimi, a ciclo chiuso: igienizza in modo naturale senza sporcare nulla. Prenota online.">
+<Base title="Lavaggio Bidoni a Domicilio a Montesilvano e Pescara"
+      description="Lavaggio e sanificazione bidoni a domicilio a Montesilvano, Pescara e zone limitrofe. Sistema a base di enzimi che igienizza senza sporcare. Anche isole ecologiche e cassonetti condominiali. Prenota online."
+      noindex={true}>
 
   <!-- Hero -->
   <div class="page-hero">
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="section-label mb-7">Servizio a domicilio</div>
+      <div class="section-label mb-7">Montesilvano · Pescara · zone limitrofe</div>
       <h1 class="font-display uppercase text-white leading-[0.9] mb-5"
-          style="font-size: clamp(2.6rem, 6.5vw, 6rem);">
-        Lavaggio Bidoni<br />a Domicilio
+          style="font-size: clamp(2.4rem, 6vw, 5.6rem);">
+        Lavaggio e Sanificazione<br />Bidoni a Domicilio
       </h1>
       <p class="text-[1rem] text-white/66 leading-[1.8] max-w-2xl mb-9">
-        Igienizziamo e sanifichiamo i tuoi bidoni della spazzatura direttamente
-        a casa tua, con un sistema a base di enzimi che deterge in modo naturale,
-        a ciclo chiuso, <strong class="text-white/85">senza sporcare nulla</strong>.
-        Per condomini e attività laviamo anche l'intera
+        Igienizziamo e sanifichiamo i tuoi bidoni della spazzatura a domicilio a
+        <strong class="text-white/85">Montesilvano, Pescara e dintorni</strong>,
+        con un sistema a base di enzimi che deterge in modo naturale, a ciclo chiuso,
+        <strong class="text-white/85">senza sporcare nulla</strong>. Per condomini e
+        attività laviamo anche cassonetti e l'intera
         <strong class="text-white/85">isola ecologica</strong> ad alta pressione.
       </p>
       <div class="flex flex-wrap gap-4">
@@ -193,9 +205,11 @@ const faqs = [
           </h2>
           <p class="text-navy/72 text-[1rem] leading-[1.85]">
             Non solo i bidoni: laviamo e sanifichiamo l'intera piazzola di raccolta
-            ad alta pressione. Rimuoviamo lo sporco che si accumula a terra e sulle
-            pareti, eliminiamo gli odori e restituiamo un'area pulita e in ordine.
-            Il prezzo dipende da superficie e stato dell'isola: ti prepariamo un
+            ad alta pressione, compresi cassonetti e contenitori condominiali.
+            Rimuoviamo lo sporco che si accumula a terra e sulle pareti, eliminiamo
+            gli odori e restituiamo un'area pulita e in ordine. Soluzione ideale per
+            amministratori di condominio e attività: il prezzo dipende da superficie
+            e stato dell'isola, perciò ti prepariamo un
             <strong class="text-navy">preventivo dedicato</strong> su richiesta.
           </p>
         </div>
@@ -234,7 +248,7 @@ const faqs = [
         </div>
         <div class="reveal delay-3 price-card price-card--feature">
           <span class="block text-gold text-[0.7rem] tracking-[0.22em] uppercase font-bold mb-4">Isola ecologica</span>
-          <p class="font-heading text-navy/70 text-[0.9rem] mb-5">Lavaggio + sanificazione ad alta pressione</p>
+          <p class="font-heading text-navy/70 text-[0.9rem] mb-5">Lavaggio ad alta pressione + sanificazione</p>
           <div class="flex items-baseline gap-2">
             <span class="text-navy/55 text-[0.8rem]">a partire da</span>
             <span class="font-display text-navy text-[3.5rem] leading-none">49€</span>
@@ -247,6 +261,37 @@ const faqs = [
       <p class="reveal text-center text-navy/60 text-[0.9rem] leading-[1.7]">
         Per servizi periodici, condomini e attività prepariamo un
         <strong class="text-navy">preventivo dedicato</strong> con tariffe agevolate.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- Dove operiamo -->
+  <section class="py-24 bg-white border-b border-navy/12">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10 text-center">
+      <div class="reveal">
+        <div class="section-label section-label--dark mb-5 justify-center">Zone servite</div>
+        <h2 class="font-display uppercase text-navy leading-[0.92] mb-6"
+            style="font-size: clamp(2rem, 4vw, 4rem);">
+          Lavaggio bidoni a Montesilvano,<br />Pescara e zone limitrofe
+        </h2>
+        <p class="text-navy/72 text-[1rem] leading-[1.85] max-w-2xl mx-auto mb-10">
+          Operiamo con il servizio di lavaggio e sanificazione bidoni a domicilio in
+          tutta l'area metropolitana di Pescara. Raggiungiamo abitazioni, attività
+          commerciali e condomini in città e nei comuni vicini.
+        </p>
+      </div>
+
+      <ul class="reveal delay-1 flex flex-wrap justify-center gap-2.5" aria-label="Comuni serviti">
+        {areas.map((a) => (
+          <li class="area-chip">{a}</li>
+        ))}
+      </ul>
+
+      <p class="reveal delay-2 text-navy/55 text-[0.88rem] mt-8">
+        Il tuo comune non è in elenco?
+        <a href="#prenota" class="text-gold font-semibold hover:underline">Scrivici lo stesso</a>:
+        valutiamo ogni richiesta nella zona di Pescara e Chieti.
       </p>
     </div>
   </section>
@@ -428,18 +473,49 @@ const faqs = [
     </div>
   </section>
 
-  <!-- JSON-LD Service + FAQ -->
+  <!-- JSON-LD Service + LocalBusiness + Breadcrumb + FAQ -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Lavaggio e sanificazione bidoni a domicilio",
-    "provider": { "@type": "Organization", "name": "ARSOLVING Multiservice Group" },
-    "areaServed": { "@type": "City", "name": "Pescara" },
-    "description": "Lavaggio e sanificazione bidoni della spazzatura a domicilio con sistema a base di enzimi, a ciclo chiuso.",
-    "offers": [
-      { "@type": "Offer", "name": "Bidone 2 ruote", "price": "15", "priceCurrency": "EUR" },
-      { "@type": "Offer", "name": "Bidone 4 ruote", "price": "25", "priceCurrency": "EUR" },
-      { "@type": "Offer", "name": "Lavaggio isola ecologica", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "49", "priceCurrency": "EUR" } }
+    "name": "Lavaggio e sanificazione bidoni a domicilio e isole ecologiche",
+    "description": "Lavaggio, sanificazione e igienizzazione di bidoni, cassonetti e isole ecologiche a domicilio a Montesilvano, Pescara e zone limitrofe, con sistema a base di enzimi.",
+    "category": "Pulizia e sanificazione",
+    "url": "https://arsolving.it/lavaggio-bidoni/",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "ARSOLVING Multiservice Group",
+      "image": "https://arsolving.it/og-image.png",
+      "url": "https://arsolving.it",
+      "email": "info@arsolving.it",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Strada della Bonifica 48/1",
+        "addressLocality": "Pescara",
+        "postalCode": "65129",
+        "addressRegion": "PE",
+        "addressCountry": "IT"
+      },
+      "areaServed": areas.map(a => ({ "@type": "City", "name": a }))
+    },
+    "areaServed": areas.map(a => ({ "@type": "City", "name": a })),
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Lavaggio bidoni e isole ecologiche",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Lavaggio bidone 2 ruote", "price": "15", "priceCurrency": "EUR" },
+        { "@type": "Offer", "name": "Lavaggio bidone 4 ruote", "price": "25", "priceCurrency": "EUR" },
+        { "@type": "Offer", "name": "Lavaggio e sanificazione isola ecologica", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "49", "priceCurrency": "EUR" } }
+      ]
+    }
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://arsolving.it/" },
+      { "@type": "ListItem", "position": 2, "name": "Lavaggio Bidoni a Domicilio", "item": "https://arsolving.it/lavaggio-bidoni/" }
     ]
   })} />
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -571,6 +647,24 @@ const faqs = [
 
     .section-label--dark { color: rgba(14,29,52,0.65); }
     .section-label--dark::before { background: #C7A24A; }
+
+    .area-chip {
+      list-style: none;
+      padding: 0.5rem 1.05rem;
+      border: 1px solid rgba(14,29,52,0.16);
+      border-radius: 999px;
+      background: #fff;
+      color: rgba(14,29,52,0.78);
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+    .area-chip:hover {
+      border-color: rgba(199,162,74,0.6);
+      background: rgba(199,162,74,0.08);
+      color: #0E1D34;
+    }
 
     .price-card {
       background: #fff;
