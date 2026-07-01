@@ -70,7 +70,7 @@ const faqs = [
       noindex={true}>
 
   <!-- Fascia: servizio in fase di attivazione -->
-  <div class="activation-banner">
+  <div id="activation-banner" class="activation-banner">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-start gap-3">
       <svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0 3.75h.008M12 3a9 9 0 100 18 9 9 0 000-18z"/>
@@ -82,6 +82,18 @@ const faqs = [
       </p>
     </div>
   </div>
+
+  <script is:inline>
+    (function () {
+      const banner = document.getElementById('activation-banner');
+      if (!banner) return;
+      const setH = () => document.documentElement.style.setProperty('--activation-h', banner.offsetHeight + 'px');
+      setH();
+      window.addEventListener('resize', setH);
+      window.addEventListener('load', setH);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(setH);
+    })();
+  </script>
 
   <!-- Hero -->
   <div class="page-hero">
@@ -636,10 +648,17 @@ const faqs = [
 
   <style>
     .activation-banner {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 60;
       background: #C7A24A;
       color: #0E1D34;
     }
     .activation-banner strong { color: #0E1D34; }
+
+    /* La fascia sta sopra la navbar: spingo giù navbar ed hero della sua altezza */
+    :global(.navbar-root) { top: var(--activation-h, 0px); }
+    .page-hero { padding-top: calc(136px + var(--activation-h, 0px)); }
 
     .hero-claim {
       letter-spacing: 0.01em;
