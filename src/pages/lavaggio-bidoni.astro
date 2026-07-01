@@ -27,7 +27,7 @@ const pillars = [
 ]
 
 const steps = [
-  { n: '01', title: 'Prenoti online', desc: 'Compili il form indicando numero di bidoni e indirizzo. Ricevi la conferma con data e importo stimato.' },
+  { n: '01', title: 'Invii la richiesta', desc: 'Compili il form indicando numero di bidoni e indirizzo. Ti ricontattiamo per valutare la richiesta e inserirti nel calendario di partenza.' },
   { n: '02', title: 'Arriviamo a domicilio', desc: 'Il nostro operatore raggiunge il tuo indirizzo con l\'attrezzatura professionale. Non devi essere presente: basta che i bidoni siano accessibili.' },
   { n: '03', title: 'Laviamo e sanifichiamo', desc: 'Lavaggio interno ed esterno con sistema enzimatico ad alta pressione. Eliminiamo germi, larve, residui e cattivi odori.' },
   { n: '04', title: 'Bidone come nuovo', desc: 'Bidone igienizzato, asciutto e profumato. Acqua recuperata, zero sporco lasciato sul posto.' },
@@ -66,8 +66,22 @@ const faqs = [
 ---
 
 <Base title="Lavaggio Bidoni a Domicilio a Montesilvano e Pescara"
-      description="Lavaggio e sanificazione bidoni a domicilio a Montesilvano, Pescara e zone limitrofe. Sistema a base di enzimi che igienizza senza sporcare. Anche isole ecologiche e cassonetti condominiali. Prenota online."
+      description="Lavaggio e sanificazione bidoni a domicilio a Montesilvano, Pescara e zone limitrofe. Sistema a base di enzimi che igienizza senza sporcare. Anche isole ecologiche e cassonetti condominiali. Servizio in attivazione: richiedi un sopralluogo o entra nella lista prioritaria."
       noindex={true}>
+
+  <!-- Fascia: servizio in fase di attivazione -->
+  <div class="activation-banner">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-start gap-3">
+      <svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0 3.75h.008M12 3a9 9 0 100 18 9 9 0 000-18z"/>
+      </svg>
+      <p class="text-[0.8rem] sm:text-[0.86rem] font-heading leading-[1.55]">
+        <strong class="font-bold uppercase tracking-wide">Servizio in fase di attivazione</strong>
+        — stiamo raccogliendo le prime richieste per Montesilvano, Pescara e zone limitrofe.
+        Richiedi ora un sopralluogo o entra nella lista prioritaria.
+      </p>
+    </div>
+  </div>
 
   <!-- Hero -->
   <div class="page-hero">
@@ -77,8 +91,14 @@ const faqs = [
           style="font-size: clamp(2.4rem, 6vw, 5.6rem);">
         Lavaggio e Sanificazione<br />Bidoni a Domicilio
       </h1>
+      <p class="hero-claim text-gold font-display uppercase leading-[1.05] mb-6"
+         style="font-size: clamp(1.1rem, 2.4vw, 1.7rem);">
+        Il problema non è il bidone.<br />È l'odore che lascia.
+      </p>
       <p class="text-[1rem] text-white/66 leading-[1.8] max-w-2xl mb-9">
-        Igienizziamo e sanifichiamo i tuoi bidoni della spazzatura a domicilio a
+        Eliminiamo uno dei problemi più fastidiosi di condomini e attività:
+        <strong class="text-white/85">bidoni sporchi, odori e aree rifiuti trascurate</strong>.
+        Igienizziamo e sanifichiamo a domicilio a
         <strong class="text-white/85">Montesilvano, Pescara e dintorni</strong>,
         con un sistema a base di enzimi che deterge in modo naturale, a ciclo chiuso,
         <strong class="text-white/85">senza sporcare nulla</strong>. Per condomini e
@@ -86,8 +106,8 @@ const faqs = [
         <strong class="text-white/85">isola ecologica</strong> ad alta pressione.
       </p>
       <div class="flex flex-wrap gap-4">
-        <a href="#prenota" class="btn-gold">Prenota il lavaggio</a>
-        <a href="#prezzi" class="btn-ghost-light">Vedi i prezzi</a>
+        <a href="#prenota" class="btn-gold">Entra nella lista prioritaria</a>
+        <a href="#prenota" class="btn-ghost-light">Richiedi sopralluogo gratuito</a>
       </div>
     </div>
   </div>
@@ -308,21 +328,21 @@ const faqs = [
 
         <!-- Left: info -->
         <div class="reveal lg:sticky lg:top-28">
-          <div class="section-label mb-7">Prenota ora</div>
+          <div class="section-label mb-7">Richiedi disponibilità</div>
           <h2 class="font-display uppercase text-white leading-[0.9] mb-7"
               style="font-size: clamp(2.4rem, 5vw, 4.5rem);">
-            Prenota il<br />lavaggio
+            Richiedi<br />disponibilità
           </h2>
           <p class="text-[1rem] text-white/74 leading-[1.75] max-w-xl mb-10">
-            Indica quanti bidoni vuoi far lavare e dove. Calcoliamo subito l'importo
-            stimato e ti ricontattiamo per confermare data e orario.
+            Indica quanti bidoni vuoi far lavare e dove. Ti ricontattiamo per valutare
+            la richiesta e inserirti nel calendario di partenza del servizio.
           </p>
 
           <div class="space-y-0 border border-white/14">
             {[
               { n: '01', title: 'Compili il form', sub: 'Bastano numero di bidoni e indirizzo.' },
-              { n: '02', title: 'Confermiamo', sub: 'Ti scriviamo con data, orario e importo.' },
-              { n: '03', title: 'Bidone pulito', sub: 'Interveniamo a domicilio, senza sporcare.' },
+              { n: '02', title: 'Ti ricontattiamo', sub: 'Valutiamo la richiesta e le zone di partenza.' },
+              { n: '03', title: 'Entri in calendario', sub: 'Ti inseriamo tra i primi interventi in programma.' },
             ].map((s, i) => (
               <div class={`flex items-start gap-4 p-5 ${i > 0 ? 'border-t border-white/14' : ''} bg-white/[0.07]`}>
                 <span class="font-display text-gold/85 text-[0.7rem] tracking-[0.3em] flex-shrink-0 mt-0.5">{s.n}</span>
@@ -339,7 +359,7 @@ const faqs = [
         <div class="reveal delay-2">
           <form id="booking-form" class="analysis-form" novalidate>
             <div class="mb-7">
-              <p class="text-gold/85 text-[0.62rem] tracking-[0.24em] uppercase font-bold mb-2">Richiesta di lavaggio</p>
+              <p class="text-gold/85 text-[0.62rem] tracking-[0.24em] uppercase font-bold mb-2">Richiesta di sopralluogo / disponibilità</p>
               <h3 class="font-display uppercase text-white leading-[0.92]"
                   style="font-size: clamp(1.7rem, 3.5vw, 2.6rem);">
                 I tuoi bidoni, igienizzati.
@@ -373,17 +393,6 @@ const faqs = [
               </span>
             </label>
 
-            <!-- Importo stimato -->
-            <div class="price-estimate" aria-live="polite">
-              <div class="price-estimate-main">
-                <span class="price-estimate-label">Importo stimato bidoni (IVA 22% inclusa)</span>
-                <span id="price-total" class="price-estimate-value">18,30 €</span>
-              </div>
-              <p id="price-isola-note" class="price-estimate-note" hidden>
-                + lavaggio isola ecologica su preventivo dedicato
-              </p>
-            </div>
-
             <div class="form-row">
               <label>
                 <span>Nome e cognome</span>
@@ -416,12 +425,12 @@ const faqs = [
               </label>
             </div>
 
-            <button type="submit">Invia la prenotazione →</button>
+            <button type="submit">Richiedi sopralluogo / informazioni →</button>
 
             <p id="booking-feedback" class="form-feedback mt-4" role="status" aria-live="polite"></p>
 
             <p class="form-note mt-4">
-              Ti ricontattiamo per confermare su <strong>info@arsolving.it</strong>
+              Ti ricontattiamo per valutare la richiesta e inserirti nel calendario di partenza — <strong>info@arsolving.it</strong>
             </p>
           </form>
         </div>
@@ -467,9 +476,10 @@ const faqs = [
         Bidoni puliti, senza pensieri
       </h2>
       <p class="text-navy/78 text-[1rem] leading-[1.8] mb-10">
-        Prenota il lavaggio a domicilio o richiedi un preventivo per il tuo condominio.
+        Il servizio è in fase di attivazione su Montesilvano, Pescara e zone limitrofe.
+        Entra nella lista prioritaria o richiedi un sopralluogo gratuito per il tuo condominio.
       </p>
-      <a href="#prenota" class="btn-gold">Prenota il lavaggio</a>
+      <a href="#prenota" class="btn-gold">Entra nella lista prioritaria</a>
     </div>
   </section>
 
@@ -606,9 +616,9 @@ const faqs = [
           }
           form.reset();
           calc();
-          btn.textContent = 'Prenotazione inviata ✓';
+          btn.textContent = 'Richiesta inviata ✓';
           btn.style.background = '#16a34a';
-          setFeedback('Grazie! Ti ricontattiamo a breve per confermare data e orario.', 'success');
+          setFeedback('Grazie! Ti ricontattiamo a breve per valutare la richiesta e inserirti nel calendario di partenza.', 'success');
           setTimeout(() => {
             btn.textContent = originalBtnText;
             btn.disabled = false;
@@ -625,6 +635,17 @@ const faqs = [
   </script>
 
   <style>
+    .activation-banner {
+      background: #C7A24A;
+      color: #0E1D34;
+    }
+    .activation-banner strong { color: #0E1D34; }
+
+    .hero-claim {
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 20px rgba(199,162,74,0.15);
+    }
+
     .btn-ghost-light {
       display: inline-flex;
       align-items: center;
