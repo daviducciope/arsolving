@@ -1,5 +1,9 @@
 ---
 import Base from '../layouts/Base.astro'
+import { Image } from 'astro:assets'
+import imgDetergent from '../../assets/arsolving-detergent.png'
+import imgPool from '../../assets/arsolving-man-at-work-with-pool.png'
+import imgWork from '../../assets/img-arsolving-man-at-work.png'
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 const areas = [
@@ -98,28 +102,40 @@ const faqs = [
   <!-- Hero -->
   <div class="page-hero">
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="section-label mb-7">Montesilvano · Pescara · zone limitrofe</div>
-      <h1 class="font-display uppercase text-white leading-[0.9] mb-5"
-          style="font-size: clamp(2.4rem, 6vw, 5.6rem);">
-        Lavaggio e Sanificazione<br />Bidoni a Domicilio
-      </h1>
-      <p class="hero-claim text-gold font-display uppercase leading-[1.05] mb-6"
-         style="font-size: clamp(1.1rem, 2.4vw, 1.7rem);">
-        Il problema non è il bidone.<br />È l'odore che lascia.
-      </p>
-      <p class="text-[1rem] text-white/66 leading-[1.8] max-w-2xl mb-9">
-        Eliminiamo uno dei problemi più fastidiosi di condomini e attività:
-        <strong class="text-white/85">bidoni sporchi, odori e aree rifiuti trascurate</strong>.
-        Igienizziamo e sanifichiamo a domicilio a
-        <strong class="text-white/85">Montesilvano, Pescara e dintorni</strong>,
-        con un sistema a base di enzimi che deterge in modo naturale, a ciclo chiuso,
-        <strong class="text-white/85">senza sporcare nulla</strong>. Per condomini e
-        attività laviamo anche cassonetti e l'intera
-        <strong class="text-white/85">isola ecologica</strong> ad alta pressione.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="#prenota" class="btn-gold">Entra nella lista prioritaria</a>
-        <a href="#prenota" class="btn-ghost-light">Richiedi sopralluogo gratuito</a>
+      <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-14 items-center">
+        <div>
+          <div class="section-label mb-7">Montesilvano · Pescara · zone limitrofe</div>
+          <h1 class="font-display uppercase text-white leading-[0.9] mb-5"
+              style="font-size: clamp(2.4rem, 6vw, 5.6rem);">
+            Lavaggio e Sanificazione<br />Bidoni a Domicilio
+          </h1>
+          <p class="hero-claim text-gold font-display uppercase leading-[1.05] mb-6"
+             style="font-size: clamp(1.1rem, 2.4vw, 1.7rem);">
+            Il problema non è il bidone.<br />È l'odore che lascia.
+          </p>
+          <p class="text-[1rem] text-white/66 leading-[1.8] max-w-2xl mb-9">
+            Eliminiamo uno dei problemi più fastidiosi di condomini e attività:
+            <strong class="text-white/85">bidoni sporchi, odori e aree rifiuti trascurate</strong>.
+            Igienizziamo e sanifichiamo a domicilio a
+            <strong class="text-white/85">Montesilvano, Pescara e dintorni</strong>,
+            con un sistema a base di enzimi che deterge in modo naturale, a ciclo chiuso,
+            <strong class="text-white/85">senza sporcare nulla</strong>. Per condomini e
+            attività laviamo anche cassonetti e l'intera
+            <strong class="text-white/85">isola ecologica</strong> ad alta pressione.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#prenota" class="btn-gold">Entra nella lista prioritaria</a>
+            <a href="#prenota" class="btn-ghost-light">Richiedi sopralluogo gratuito</a>
+          </div>
+        </div>
+
+        <!-- Immagine hero: solo desktop, non aggiunge altezza su mobile -->
+        <div class="hidden lg:block rounded-sm overflow-hidden aspect-[4/3] border border-white/12">
+          <Image src={imgWork} alt="Operatore ARSOLVING durante il lavaggio e la sanificazione dei bidoni a domicilio"
+                 widths={[500, 760]} sizes="480px"
+                 loading="lazy" decoding="async"
+                 class="w-full h-full object-cover" />
+        </div>
       </div>
     </div>
   </div>
@@ -187,21 +203,11 @@ const faqs = [
           </p>
         </div>
 
-        <div class="reveal delay-2 flex flex-col gap-0">
-          {[
-            'Elimina germi, batteri e larve dal fondo del bidone',
-            'Rimuove i cattivi odori alla radice, non li copre',
-            'Prodotti biodegradabili e sicuri per persone e animali',
-            'Acqua di lavaggio recuperata e trattata a ciclo chiuso',
-            'Lavaggio interno ed esterno, bidone asciutto a fine intervento',
-          ].map((item, i) => (
-            <div class={`flex items-center gap-4 py-4 ${i > 0 ? 'border-t border-white/14' : ''}`}>
-              <div class="w-5 h-5 rounded-full border border-gold/50 flex items-center justify-center flex-shrink-0">
-                <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
-              </div>
-              <p class="text-[0.9rem] text-white/70 leading-[1.7]">{item}</p>
-            </div>
-          ))}
+        <div class="reveal delay-2 rounded-sm overflow-hidden aspect-[3/2] border border-white/12">
+          <Image src={imgDetergent} alt="Detergente enzimatico biodegradabile usato da ARSOLVING per igienizzare i bidoni"
+                 widths={[400, 600, 900]} sizes="(min-width: 1024px) 540px, 100vw"
+                 loading="lazy" decoding="async"
+                 class="w-full h-full object-cover" />
         </div>
       </div>
     </div>
@@ -212,21 +218,11 @@ const faqs = [
   <section class="py-24 bg-white border-b border-navy/12">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <div class="reveal delay-2 order-2 lg:order-1 flex flex-col gap-0">
-          {[
-            'Lavaggio ad alta pressione di pavimento, pareti e contenitori',
-            'Rimozione di incrostazioni, percolato e residui organici',
-            'Sanificazione completa e abbattimento dei cattivi odori',
-            'Ideale per condomini, attività commerciali e aree comuni',
-            'Programmabile con interventi periodici a tariffa dedicata',
-          ].map((item, i) => (
-            <div class={`flex items-center gap-4 py-4 ${i > 0 ? 'border-t border-navy/12' : ''}`}>
-              <div class="w-5 h-5 rounded-full border border-gold/60 flex items-center justify-center flex-shrink-0">
-                <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
-              </div>
-              <p class="text-[0.9rem] text-navy/72 leading-[1.7]">{item}</p>
-            </div>
-          ))}
+        <div class="reveal delay-2 order-2 lg:order-1 rounded-sm overflow-hidden aspect-[3/2] border border-navy/12">
+          <Image src={imgPool} alt="Operatore ARSOLVING durante il lavaggio ad alta pressione dell'isola ecologica"
+                 widths={[400, 600, 900]} sizes="(min-width: 1024px) 540px, 100vw"
+                 loading="lazy" decoding="async"
+                 class="w-full h-full object-cover" />
         </div>
 
         <div class="reveal order-1 lg:order-2">
