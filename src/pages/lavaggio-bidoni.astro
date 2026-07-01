@@ -656,9 +656,10 @@ const faqs = [
     }
     .activation-banner strong { color: #0E1D34; }
 
-    /* La fascia sta sopra la navbar: spingo giù navbar ed hero della sua altezza */
-    :global(.navbar-root) { top: var(--activation-h, 0px); }
-    .page-hero { padding-top: calc(136px + var(--activation-h, 0px)); }
+    /* La fascia sta sopra la navbar: navbar ed hero scendono della sua altezza.
+       #navbar (id) batte .navbar-root (classe) nel cascade. */
+    :global(#navbar) { top: var(--activation-h, 52px); }
+    .page-hero { padding-top: calc(136px + var(--activation-h, 52px)); }
 
     .hero-claim {
       letter-spacing: 0.01em;
