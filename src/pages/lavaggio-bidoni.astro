@@ -293,10 +293,9 @@ const faqs = [
         <div class="reveal">
           <form id="booking-form" class="analysis-form" novalidate>
             <div class="mb-7">
-              <p class="text-gold/85 text-[0.62rem] tracking-[0.24em] uppercase font-bold mb-2">Richiesta di sopralluogo / disponibilità</p>
               <h3 class="font-display uppercase text-white leading-[0.92]"
                   style="font-size: clamp(1.7rem, 3.5vw, 2.6rem);">
-                I tuoi bidoni, igienizzati.
+                Compila il form, preventivo gratuito. .
               </h3>
             </div>
 
@@ -347,17 +346,6 @@ const faqs = [
               <span>Indirizzo del lavaggio</span>
               <input type="text" name="indirizzo" placeholder="Via, numero civico, città" required />
             </label>
-
-            <div class="form-row">
-              <label>
-                <span>Data preferita (facoltativa)</span>
-                <input type="date" name="data" />
-              </label>
-              <label>
-                <span>Note (facoltative)</span>
-                <input type="text" name="note" placeholder="Es: bidone sul retro" />
-              </label>
-            </div>
 
             <button type="submit">Richiedi sopralluogo / informazioni →</button>
 
@@ -515,8 +503,8 @@ const faqs = [
         data.importo_stimato = fmt(total);
         data.problema = `Richiesta lavaggio — ${b2} bidone/i 2 ruote, ${b4} bidone/i 4 ruote. ` +
           `Isola ecologica: ${isola ? 'SÌ (preventivo dedicato)' : 'no'}. ` +
-          `Indirizzo: ${data.indirizzo}. Data preferita: ${data.data || 'non indicata'}. ` +
-          `Importo stimato bidoni: ${fmt(total)}. Note: ${data.note || '—'}`;
+          `Indirizzo: ${data.indirizzo}. ` +
+          `Importo stimato bidoni: ${fmt(total)}.`;
 
         btn.disabled = true;
         btn.textContent = 'Invio in corso…';
