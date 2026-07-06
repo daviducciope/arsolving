@@ -35,9 +35,9 @@ html, body {
   background: var(--gold);
   color: var(--navy);
   font-family: var(--font-heading);
-  font-size: 8.2pt;
+  font-size: 7.8pt;
   font-weight: 600;
-  padding: 3mm 12mm;
+  padding: 2.4mm 12mm;
 }
 .topbar strong {
   font-weight: 800;
@@ -49,17 +49,17 @@ html, body {
 header {
   background: var(--navy);
   color: #fff;
-  padding: 10mm 12mm 9mm;
+  padding: 7mm 12mm 7mm;
 }
-header .logo { height: 12mm; margin-bottom: 7mm; }
+header .logo { height: 10mm; margin-bottom: 5mm; }
 .kicker {
   font-family: var(--font-heading);
-  font-size: 7.5pt;
+  font-size: 7pt;
   font-weight: 800;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
-  margin-bottom: 4mm;
+  margin-bottom: 3mm;
 }
 .kicker::before {
   content: '';
@@ -72,50 +72,50 @@ header .logo { height: 12mm; margin-bottom: 7mm; }
 header h1 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 33pt;
+  font-size: 27pt;
   line-height: 0.94;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  margin-bottom: 4mm;
+  margin-bottom: 3.5mm;
 }
 .audience {
   display: inline-block;
   font-family: var(--font-heading);
-  font-size: 10.5pt;
+  font-size: 9.5pt;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold);
   border: 1.5px solid rgba(199,162,74,0.55);
   border-radius: 2px;
-  padding: 2.2mm 4.5mm;
+  padding: 1.8mm 4mm;
 }
 
 /* ── Corpo ── */
 main {
   flex: 1;
-  padding: 8mm 12mm 0;
+  padding: 5.5mm 12mm 0;
   display: flex;
   flex-direction: column;
 }
 
 .intro-row {
   display: flex;
-  gap: 7mm;
+  gap: 6mm;
   align-items: stretch;
-  margin-bottom: 7mm;
+  margin-bottom: 5mm;
 }
 .intro {
   flex: 1;
-  font-size: 10.5pt;
-  line-height: 1.65;
+  font-size: 9.5pt;
+  line-height: 1.6;
   color: rgba(14,29,52,0.82);
   align-self: center;
 }
 .intro strong { color: var(--navy); }
 .photo {
-  width: 62mm;
-  height: 42mm;
+  width: 58mm;
+  height: 36mm;
   object-fit: cover;
   border-radius: 2px;
   border: 1px solid rgba(14,29,52,0.15);
@@ -125,48 +125,48 @@ main {
 .benefits {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4mm;
-  margin-bottom: 7mm;
+  gap: 3.5mm;
+  margin-bottom: 5mm;
 }
 .benefit {
   border: 1px solid rgba(14,29,52,0.14);
   border-left: 3px solid var(--gold);
   border-radius: 2px;
   background: var(--off-white);
-  padding: 4.5mm 5mm;
+  padding: 3.5mm 4mm;
 }
 .benefit h3 {
   font-family: var(--font-heading);
-  font-size: 10.5pt;
+  font-size: 9.5pt;
   font-weight: 700;
-  margin-bottom: 2mm;
+  margin-bottom: 1.5mm;
 }
 .benefit p {
-  font-size: 8.8pt;
-  line-height: 1.55;
+  font-size: 8.2pt;
+  line-height: 1.5;
   color: rgba(14,29,52,0.72);
 }
 
 /* Prezzi */
 .prices-title {
   font-family: var(--font-heading);
-  font-size: 8pt;
+  font-size: 7.5pt;
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(14,29,52,0.5);
-  margin-bottom: 3mm;
+  margin-bottom: 2.5mm;
 }
 .prices {
   display: grid;
   grid-template-columns: 1fr 1fr 1.25fr;
-  gap: 4mm;
-  margin-bottom: 5mm;
+  gap: 3.5mm;
+  margin-bottom: 4mm;
 }
 .price {
   border: 1px solid rgba(14,29,52,0.14);
   border-radius: 2px;
-  padding: 4mm 4.5mm;
+  padding: 3mm 4mm;
 }
 .price--feature {
   border-color: rgba(199,162,74,0.6);
@@ -175,32 +175,33 @@ main {
 .price .label {
   display: block;
   font-family: var(--font-heading);
-  font-size: 7pt;
+  font-size: 6.8pt;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(14,29,52,0.5);
-  margin-bottom: 1.5mm;
+  margin-bottom: 1.2mm;
 }
 .price--feature .label { color: #A8852F; }
 .price .desc {
-  font-size: 7.8pt;
+  font-size: 7.4pt;
+  line-height: 1.4;
   color: rgba(14,29,52,0.65);
-  margin-bottom: 2.5mm;
-  min-height: 8mm;
+  margin-bottom: 2mm;
+  min-height: 7mm;
 }
 .price .value {
   font-family: var(--font-display);
-  font-size: 22pt;
+  font-size: 18pt;
   line-height: 1;
 }
 .price .value small {
   font-family: var(--font-body);
-  font-size: 8pt;
+  font-size: 7.5pt;
   color: rgba(14,29,52,0.6);
 }
 .price .from {
-  font-size: 7.5pt;
+  font-size: 7pt;
   color: rgba(14,29,52,0.6);
   margin-right: 1mm;
 }
@@ -208,10 +209,10 @@ main {
 .periodic {
   text-align: center;
   font-family: var(--font-heading);
-  font-size: 11.5pt;
+  font-size: 10pt;
   font-weight: 700;
-  line-height: 1.5;
-  padding: 4mm 6mm;
+  line-height: 1.45;
+  padding: 3mm 6mm;
   border: 1.5px solid rgba(199,162,74,0.55);
   border-radius: 2px;
   background: rgba(199,162,74,0.08);
@@ -222,20 +223,20 @@ main {
 footer {
   background: var(--navy);
   color: #fff;
-  padding: 7mm 12mm 8mm;
-  margin-top: 7mm;
+  padding: 5mm 12mm 5.5mm;
+  margin-top: 5mm;
 }
 .cta-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8mm;
-  margin-bottom: 5mm;
+  margin-bottom: 3.5mm;
 }
 .cta-text {
   font-family: var(--font-display);
-  font-size: 19pt;
-  line-height: 1;
+  font-size: 16pt;
+  line-height: 1.02;
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
@@ -244,28 +245,28 @@ footer {
   background: var(--gold);
   color: var(--navy);
   font-family: var(--font-heading);
-  font-size: 9.5pt;
+  font-size: 8.5pt;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   border-radius: 2px;
-  padding: 3.5mm 6mm;
+  padding: 3mm 5mm;
 }
 .contacts {
   display: flex;
   flex-wrap: wrap;
-  gap: 2mm 7mm;
+  gap: 1.5mm 6mm;
   font-family: var(--font-heading);
-  font-size: 8.5pt;
+  font-size: 8pt;
   font-weight: 600;
   color: rgba(255,255,255,0.85);
   border-top: 1px solid rgba(255,255,255,0.18);
-  padding-top: 4mm;
-  margin-bottom: 3mm;
+  padding-top: 3mm;
+  margin-bottom: 2mm;
 }
 .contacts span strong { color: var(--gold); font-weight: 800; }
 .zones {
-  font-size: 7.5pt;
+  font-size: 6.8pt;
   color: rgba(255,255,255,0.55);
-  line-height: 1.6;
+  line-height: 1.5;
 }

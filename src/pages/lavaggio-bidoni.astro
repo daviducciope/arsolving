@@ -100,7 +100,7 @@ const faqs = [
           <div class="section-label mb-7">Montesilvano · Pescara · zone limitrofe</div>
           <h1 class="font-display uppercase text-white leading-[0.9] mb-5"
               style="font-size: clamp(2.4rem, 6vw, 5.6rem);">
-            Lavaggio e Sanificazione<br />Isole Ecologiche a Domicilio
+            Lavaggio e Sanificazione<br />Bidoni e Isole Ecologiche
           </h1>
           <p class="text-[1rem] text-white/66 leading-[1.8] max-w-2xl mb-9">
             Igienizziamo e sanifichiamo <strong class="text-white/85">bidoni, cassonetti e
@@ -175,36 +175,6 @@ const faqs = [
   </section>
 
 
-  <!-- Isola ecologica -->
-  <section class="py-24 bg-white border-b border-navy/12">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <div class="reveal delay-2 order-2 lg:order-1 rounded-sm overflow-hidden aspect-[3/2] border border-navy/12">
-          <Image src={imgPool} alt="Operatore ARSOLVING durante il lavaggio ad alta pressione dell'isola ecologica"
-                 widths={[400, 600, 900]} sizes="(min-width: 1024px) 540px, 100vw"
-                 loading="lazy" decoding="async"
-                 class="w-full h-full object-cover" />
-        </div>
-
-        <div class="reveal order-1 lg:order-2">
-         
-          <h2 class="font-display uppercase text-navy leading-[0.92] mb-6"
-              style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
-            Lavaggio<br />isola ecologica
-          </h2>
-          <p class="text-navy/72 text-[1rem] leading-[1.85]">
-            Non solo i bidoni: laviamo e sanifichiamo l'intera piazzola di raccolta
-            ad alta pressione, compresi cassonetti e contenitori condominiali.
-            Rimuoviamo lo sporco che si accumula a terra e sulle pareti, eliminiamo
-            gli odori e restituiamo un'area pulita e in ordine.
-            <strong class="text-navy">Soluzione ideale per condomini e attività commerciali.</strong>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
   <!-- Prezzi -->
   <section id="prezzi" class="py-24 bg-off-white border-b border-navy/12">
     <div class="max-w-5xl mx-auto px-6 lg:px-10">
@@ -212,7 +182,7 @@ const faqs = [
         <div class="section-label section-label--dark mb-5 justify-center">Tariffe trasparenti</div>
         <h2 class="font-display uppercase text-navy leading-[0.92]"
             style="font-size: clamp(2rem, 4vw, 4rem);">
-          Prezzi chiari, nessuna sorpresa
+          Lavaggio Bidoni
         </h2>
       </div>
 
@@ -234,6 +204,12 @@ const faqs = [
           </div>
         </div>
         <div class="reveal delay-3 price-card price-card--feature">
+          <div class="rounded-sm overflow-hidden aspect-[3/2] border border-navy/12 mb-5">
+            <Image src={imgPool} alt="Operatore ARSOLVING durante il lavaggio ad alta pressione dell'isola ecologica"
+                   widths={[400, 600, 900]} sizes="(min-width: 768px) 320px, 100vw"
+                   loading="lazy" decoding="async"
+                   class="w-full h-full object-cover" />
+          </div>
           <span class="block text-gold text-[0.7rem] tracking-[0.22em] uppercase font-bold mb-4">Isola ecologica</span>
           <p class="font-heading text-navy/70 text-[0.9rem] mb-5">Lavaggio ad alta pressione + sanificazione</p>
           <div class="flex items-baseline gap-2">
@@ -250,6 +226,26 @@ const faqs = [
         Per servizi periodici, condomini e attività prepariamo un
         <strong class="text-gold">preventivo dedicato</strong> con tariffe agevolate.
       </p>
+    </div>
+  </section>
+
+
+  <!-- Isola ecologica -->
+  <section class="py-24 bg-white border-b border-navy/12">
+    <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+      <div class="reveal">
+        <h2 class="font-display uppercase text-navy leading-[0.92] mb-6"
+            style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
+          Lavaggio<br />isola ecologica
+        </h2>
+        <p class="text-navy/72 text-[1rem] leading-[1.85]">
+          Non solo i bidoni: laviamo e sanifichiamo l'intera piazzola di raccolta
+          ad alta pressione, compresi cassonetti e contenitori condominiali.
+          Rimuoviamo lo sporco che si accumula a terra e sulle pareti, eliminiamo
+          gli odori e restituiamo un'area pulita e in ordine.
+          <strong class="text-navy">Soluzione ideale per condomini e attività commerciali.</strong>
+        </p>
+      </div>
     </div>
   </section>
 
@@ -295,7 +291,7 @@ const faqs = [
             <div class="mb-7">
               <h3 class="font-display uppercase text-white leading-[0.92]"
                   style="font-size: clamp(1.7rem, 3.5vw, 2.6rem);">
-                Compila il form, preventivo gratuito. .
+                Compila il form, preventivo gratuito. 
               </h3>
             </div>
 
