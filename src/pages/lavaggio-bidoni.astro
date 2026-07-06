@@ -30,13 +30,6 @@ const pillars = [
   },
 ]
 
-const steps = [
-  { n: '01', title: 'Invii la richiesta', desc: 'Compili il form indicando numero di bidoni e indirizzo. Ti ricontattiamo per valutare la richiesta e inserirti nel calendario di partenza.' },
-  { n: '02', title: 'Arriviamo a domicilio', desc: 'Il nostro operatore raggiunge il tuo indirizzo con l\'attrezzatura professionale. Non devi essere presente: basta che i bidoni siano accessibili.' },
-  { n: '03', title: 'Laviamo e sanifichiamo', desc: 'Lavaggio interno ed esterno con sistema enzimatico ad alta pressione. Eliminiamo germi, larve, residui e cattivi odori.' },
-  { n: '04', title: 'Bidone come nuovo', desc: 'Bidone igienizzato, asciutto e profumato. Acqua recuperata, zero sporco lasciato sul posto.' },
-]
-
 const faqs = [
   {
     q: 'In quali zone fate il lavaggio bidoni a domicilio?',
@@ -107,21 +100,14 @@ const faqs = [
           <div class="section-label mb-7">Montesilvano · Pescara · zone limitrofe</div>
           <h1 class="font-display uppercase text-white leading-[0.9] mb-5"
               style="font-size: clamp(2.4rem, 6vw, 5.6rem);">
-            Lavaggio e Sanificazione<br />Bidoni a Domicilio
+            Lavaggio e Sanificazione<br />Isole Ecologiche a Domicilio
           </h1>
-          <p class="hero-claim text-gold font-display uppercase leading-[1.05] mb-6"
-             style="font-size: clamp(1.1rem, 2.4vw, 1.7rem);">
-            Il problema non è il bidone.<br />È l'odore che lascia.
-          </p>
           <p class="text-[1rem] text-white/66 leading-[1.8] max-w-2xl mb-9">
-            Eliminiamo uno dei problemi più fastidiosi di condomini e attività:
-            <strong class="text-white/85">bidoni sporchi, odori e aree rifiuti trascurate</strong>.
-            Igienizziamo e sanifichiamo a domicilio a
+            Igienizziamo e sanifichiamo <strong class="text-white/85">bidoni, cassonetti e
+            isole ecologiche</strong> a domicilio a
             <strong class="text-white/85">Montesilvano, Pescara e dintorni</strong>,
-            con un sistema a base di enzimi che deterge in modo naturale, a ciclo chiuso,
-            <strong class="text-white/85">senza sporcare nulla</strong>. Per condomini e
-            attività laviamo anche cassonetti e l'intera
-            <strong class="text-white/85">isola ecologica</strong> ad alta pressione.
+            con un sistema a base di enzimi a ciclo chiuso che deterge in modo naturale,
+            <strong class="text-white/85">senza sporcare nulla</strong>.
           </p>
           <div class="flex flex-wrap gap-4">
             <a href="#prenota" class="btn-gold">Prenota un sopralluogo</a>
@@ -154,30 +140,6 @@ const faqs = [
             </div>
             <h3 class="font-heading font-semibold text-navy text-[1.05rem] mb-3">{p.title}</h3>
             <p class="text-[0.86rem] text-navy/70 leading-[1.78]">{p.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Come funziona -->
-  <section class="py-24 bg-off-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="reveal mb-14 text-center">
-        <div class="section-label section-label--dark mb-5 justify-center">Come funziona</div>
-        <h2 class="font-display uppercase text-navy leading-[0.92]"
-            style="font-size: clamp(2rem, 4vw, 4rem);">
-          Quattro passaggi, zero pensieri
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {steps.map((s, i) => (
-          <div class={`reveal delay-${(i % 4) + 1} service-card`}>
-            <span class="font-display text-navy/12 text-[3rem] leading-none block mb-3">{s.n}</span>
-            <h3 class="font-heading font-semibold text-navy text-[1rem] mb-3">{s.title}</h3>
-            <p class="text-[0.84rem] text-navy/70 leading-[1.75]">{s.desc}</p>
           </div>
         ))}
       </div>
@@ -225,7 +187,7 @@ const faqs = [
         </div>
 
         <div class="reveal order-1 lg:order-2">
-          <div class="section-label section-label--dark mb-6">In più</div>
+         
           <h2 class="font-display uppercase text-navy leading-[0.92] mb-6"
               style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
             Lavaggio<br />isola ecologica
@@ -234,10 +196,8 @@ const faqs = [
             Non solo i bidoni: laviamo e sanifichiamo l'intera piazzola di raccolta
             ad alta pressione, compresi cassonetti e contenitori condominiali.
             Rimuoviamo lo sporco che si accumula a terra e sulle pareti, eliminiamo
-            gli odori e restituiamo un'area pulita e in ordine. Soluzione ideale per
-            amministratori di condominio e attività: il prezzo dipende da superficie
-            e stato dell'isola, perciò ti prepariamo un
-            <strong class="text-navy">preventivo dedicato</strong> su richiesta.
+            gli odori e restituiamo un'area pulita e in ordine.
+            <strong class="text-navy">Soluzione ideale per condomini e attività commerciali.</strong>
           </p>
         </div>
       </div>
@@ -285,9 +245,10 @@ const faqs = [
         </div>
       </div>
 
-      <p class="reveal text-center text-navy/60 text-[0.9rem] leading-[1.7]">
+      <p class="reveal text-center text-navy font-heading font-semibold leading-[1.6]"
+         style="font-size: clamp(1.1rem, 2.2vw, 1.5rem);">
         Per servizi periodici, condomini e attività prepariamo un
-        <strong class="text-navy">preventivo dedicato</strong> con tariffe agevolate.
+        <strong class="text-gold">preventivo dedicato</strong> con tariffe agevolate.
       </p>
     </div>
   </section>
@@ -318,7 +279,7 @@ const faqs = [
       <p class="reveal delay-2 text-navy/55 text-[0.88rem] mt-8">
         Il tuo comune non è in elenco?
         <a href="#prenota" class="text-gold font-semibold hover:underline">Scrivici lo stesso</a>:
-        valutiamo ogni richiesta nella zona di Pescara e Chieti.
+        valutiamo ogni richiesta nella zona di Pescara, Chieti e Teramo.
       </p>
     </div>
   </section>
@@ -326,44 +287,10 @@ const faqs = [
 
   <!-- Form prenotazione -->
   <section id="prenota" class="relative overflow-hidden bg-navy pt-24 pb-28">
-    <div class="hero-grid absolute inset-0 pointer-events-none"></div>
-    <div class="absolute inset-0 pointer-events-none"
-         style="background: radial-gradient(ellipse 60% 70% at 80% 20%, rgba(199,162,74,0.1) 0%, transparent 50%);"></div>
+    <div class="relative max-w-3xl mx-auto px-6 lg:px-10">
 
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-start">
-
-        <!-- Left: info -->
-        <div class="reveal lg:sticky lg:top-28">
-          <div class="section-label mb-7">Richiedi disponibilità</div>
-          <h2 class="font-display uppercase text-white leading-[0.9] mb-7"
-              style="font-size: clamp(2.4rem, 5vw, 4.5rem);">
-            Richiedi<br />disponibilità
-          </h2>
-          <p class="text-[1rem] text-white/74 leading-[1.75] max-w-xl mb-10">
-            Indica quanti bidoni vuoi far lavare e dove. Ti ricontattiamo per valutare
-            la richiesta e inserirti nel calendario di partenza del servizio.
-          </p>
-
-          <div class="space-y-0 border border-white/14">
-            {[
-              { n: '01', title: 'Compili il form', sub: 'Bastano numero di bidoni e indirizzo.' },
-              { n: '02', title: 'Ti ricontattiamo', sub: 'Valutiamo la richiesta e le zone di partenza.' },
-              { n: '03', title: 'Entri in calendario', sub: 'Ti inseriamo tra i primi interventi in programma.' },
-            ].map((s, i) => (
-              <div class={`flex items-start gap-4 p-5 ${i > 0 ? 'border-t border-white/14' : ''} bg-white/[0.07]`}>
-                <span class="font-display text-gold/85 text-[0.7rem] tracking-[0.3em] flex-shrink-0 mt-0.5">{s.n}</span>
-                <div>
-                  <strong class="block text-white font-heading font-semibold text-[0.95rem] mb-0.5">{s.title}</strong>
-                  <p class="text-white/62 text-[0.8rem]">{s.sub}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- Right: form -->
-        <div class="reveal delay-2">
+        <!-- Form -->
+        <div class="reveal">
           <form id="booking-form" class="analysis-form" novalidate>
             <div class="mb-7">
               <p class="text-gold/85 text-[0.62rem] tracking-[0.24em] uppercase font-bold mb-2">Richiesta di sopralluogo / disponibilità</p>
@@ -442,7 +369,6 @@ const faqs = [
           </form>
         </div>
 
-      </div>
     </div>
   </section>
 
@@ -474,21 +400,6 @@ const faqs = [
     </div>
   </section>
 
-
-  <!-- CTA finale -->
-  <section class="py-20 bg-white border-t border-navy/12">
-    <div class="max-w-3xl mx-auto px-6 text-center reveal">
-      <h2 class="font-display uppercase text-navy leading-[0.92] mb-5"
-          style="font-size: clamp(2rem, 4vw, 4rem);">
-        Bidoni puliti, senza pensieri
-      </h2>
-      <p class="text-navy/78 text-[1rem] leading-[1.8] mb-10">
-        Il servizio è in fase di attivazione su Montesilvano, Pescara e zone limitrofe.
-        Entra nella lista prioritaria o richiedi un sopralluogo gratuito per il tuo condominio.
-      </p>
-      <a href="#prenota" class="btn-gold">Entra nella lista prioritaria</a>
-    </div>
-  </section>
 
   <!-- JSON-LD Service + LocalBusiness + Breadcrumb + FAQ -->
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -656,10 +567,8 @@ const faqs = [
     :global(#navbar) { top: var(--activation-h, 52px); }
     .page-hero { padding-top: calc(136px + var(--activation-h, 52px)); }
 
-    .hero-claim {
-      letter-spacing: 0.01em;
-      text-shadow: 0 1px 20px rgba(199,162,74,0.15);
-    }
+    /* Sfondo blu pieno, senza trama quadrettata */
+    .page-hero::before { display: none; }
 
     .btn-ghost-light {
       display: inline-flex;
