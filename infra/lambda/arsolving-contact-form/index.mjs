@@ -300,8 +300,8 @@ function lavaggioNotifHtml({ nome, email, telefono, indirizzo, b2, b4, isola_eco
 <table width="640" cellpadding="0" cellspacing="0" style="background:#0B1A2E;border-radius:14px;border:1px solid rgba(199,162,74,0.25);">
   <tr><td style="height:3px;background:linear-gradient(90deg,#0E1D34,#C7A24A,#0E1D34);border-radius:14px 14px 0 0;"></td></tr>
   <tr><td style="padding:32px 40px 22px;border-bottom:1px solid rgba(255,255,255,0.06);">
-    <p style="margin:0 0 6px;color:#C7A24A;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;">Lavaggio Bidoni</p>
-    <h1 style="margin:0;font-size:22px;color:#fff;font-weight:800;letter-spacing:-0.3px;">Nuova prenotazione servizio</h1>
+    <p style="margin:0 0 6px;color:#C7A24A;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;">Lead Lavaggio Bidoni</p>
+    <h1 style="margin:0;font-size:22px;color:#fff;font-weight:800;letter-spacing:-0.3px;">Nuova richiesta da ${escape(nome)}</h1>
   </td></tr>
   <tr><td style="padding:28px 40px;">
     <table width="100%" cellpadding="0" cellspacing="0">
@@ -309,16 +309,16 @@ function lavaggioNotifHtml({ nome, email, telefono, indirizzo, b2, b4, isola_eco
       ${row('Telefono', telefono)}
       ${row('Email', email)}
       ${row('Indirizzo lavaggio', indirizzo)}
-      ${row('Bidoni 2 ruote', b2 !== undefined ? `${b2} bidone/i` : '')}
-      ${row('Bidoni 4 ruote', b4 !== undefined ? `${b4} bidone/i` : '')}
+      ${row('Bidoni 2 ruote', b2 !== undefined ? `${b2} unità` : '')}
+      ${row('Bidoni 4 ruote', b4 !== undefined ? `${b4} unità` : '')}
       ${row('Isola ecologica', isola_ecologica)}
-      ${row('Importo stimato', importo_stimato)}
-      <tr><td style="padding:8px 0 4px;color:#94a3b8;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:1.5px;">Riepilogo richiesta</td></tr>
-      <tr><td style="padding:0 0 6px;color:#e2e8f0;font-size:14px;line-height:1.7;white-space:pre-wrap;">${escape(problema)}</td></tr>
+      ${row('Base economica indicativa', importo_stimato)}
+      <tr><td style="padding:12px 0 6px;color:#C7A24A;font-size:11px;text-transform:uppercase;font-weight:800;letter-spacing:1.5px;">Dettaglio voci &amp; Proposta commerciale</td></tr>
+      <tr><td style="padding:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;color:#e2e8f0;font-size:13.5px;line-height:1.75;font-family:monospace,sans-serif;white-space:pre-wrap;">${escape(problema)}</td></tr>
     </table>
   </td></tr>
   <tr><td style="padding:18px 40px 28px;border-top:1px solid rgba(255,255,255,0.06);">
-    <a href="mailto:${escape(email)}?subject=Re: Prenotazione lavaggio bidoni ARSOLVING"
+    <a href="mailto:${escape(email)}?subject=Re: Richiesta lavaggio bidoni ARSOLVING"
        style="display:inline-block;background:#C7A24A;color:#0E1D34;padding:12px 26px;border-radius:6px;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;">Rispondi a ${escape(nome)} →</a>
   </td></tr>
 </table>
@@ -327,8 +327,8 @@ function lavaggioNotifHtml({ nome, email, telefono, indirizzo, b2, b4, isola_eco
 
 function lavaggioNotifText({ nome, email, telefono, indirizzo, b2, b4, isola_ecologica, importo_stimato, problema }) {
   return (
-`Nuova prenotazione Lavaggio Bidoni ARSOLVING
-=============================================
+`Nuova richiesta Lavaggio Bidoni ARSOLVING
+=========================================
 
 Cliente: ${nome}
 Telefono: ${telefono || '-'}
@@ -337,9 +337,9 @@ Indirizzo: ${indirizzo || '-'}
 Bidoni 2 ruote: ${b2 ?? '-'}
 Bidoni 4 ruote: ${b4 ?? '-'}
 Isola ecologica: ${isola_ecologica || '-'}
-Importo stimato: ${importo_stimato || '-'}
+Base economica indicativa: ${importo_stimato || '-'}
 
-Riepilogo:
+Dettaglio voci & Proposta commerciale:
 ${problema}
 
 --
@@ -368,7 +368,7 @@ function lavaggioAutoReplyHtml({ nome, indirizzo, b2, b4, isola_ecologica, impor
       Grazie per averci contattato! Abbiamo ricevuto la tua richiesta per il servizio di <strong style="color:#C7A24A;">Lavaggio e Sanificazione Bidoni a Domicilio</strong>${hasIsola ? ' con lavaggio isola ecologica' : ''}.
     </p>
     <p style="margin:0;color:#cbd5e1;font-size:15px;line-height:1.75;">
-      Stiamo pianificando i giri operativi nell'area di <strong style="color:#fff;">Montesilvano, Pescara e zone limitrofe</strong> e ti ricontatteremo a breve per confermare data, fascia oraria e dettagli dell'intervento.
+      Verrai ricontattato al più presto dal nostro team per confermare i dettagli e <strong style="color:#fff;">programmare un sopralluogo gratuito o definire l'intervento</strong>.
     </p>
   </td></tr>
 
@@ -381,7 +381,7 @@ function lavaggioAutoReplyHtml({ nome, indirizzo, b2, b4, isola_ecologica, impor
           ${indirizzo ? `<tr><td style="color:#94a3b8;width:140px;padding:3px 0;">Indirizzo:</td><td style="color:#fff;font-weight:600;padding:3px 0;">${escape(indirizzo)}</td></tr>` : ''}
           ${(b2 || b4) ? `<tr><td style="color:#94a3b8;padding:3px 0;">Bidoni richiesti:</td><td style="color:#fff;font-weight:600;padding:3px 0;">${b2 ? `${b2} da 2 ruote` : ''}${b2 && b4 ? ' · ' : ''}${b4 ? `${b4} da 4 ruote` : ''}</td></tr>` : ''}
           ${hasIsola ? `<tr><td style="color:#94a3b8;padding:3px 0;">Isola ecologica:</td><td style="color:#C7A24A;font-weight:600;padding:3px 0;">Inclusa (richiesto preventivo/sopralluogo)</td></tr>` : ''}
-          ${importo_stimato ? `<tr><td style="color:#94a3b8;padding:3px 0;">Stima indicativa bidoni:</td><td style="color:#C7A24A;font-weight:700;padding:3px 0;">${escape(importo_stimato)} + IVA</td></tr>` : ''}
+          ${importo_stimato ? `<tr><td style="color:#94a3b8;padding:3px 0;">Stima di partenza:</td><td style="color:#C7A24A;font-weight:700;padding:3px 0;">${escape(importo_stimato)}</td></tr>` : ''}
         </table>
       </td></tr>
     </table>
@@ -393,9 +393,9 @@ function lavaggioAutoReplyHtml({ nome, indirizzo, b2, b4, isola_ecologica, impor
       <tr><td>
         <p style="margin:0 0 6px;color:#C7A24A;font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;">Cosa succede adesso</p>
         <p style="margin:8px 0 0;color:#e2e8f0;font-size:13px;line-height:1.75;">
-          <strong style="color:#fff;">01. Verifica del percorso:</strong> verifichiamo la tua zona e l'inserimento nel calendario operativo.<br/>
-          <strong style="color:#fff;">02. Conferma appuntamento:</strong> ti contattiamo telefonicamente o via email per concordare data e fascia oraria.<br/>
-          <strong style="color:#fff;">03. Intervento a domicilio:</strong> laviamo e igienizziamo a ciclo chiuso con enzimi naturali senza sporcare nulla. Non serve che tu stia a casa, basta che i bidoni siano accessibili.
+          <strong style="color:#fff;">01. Verifica dei dettagli:</strong> esaminiamo l'indirizzo indicato e le specifiche del tuo stabile o abitazione.<br/>
+          <strong style="color:#fff;">02. Contatto e programmazione:</strong> ti ricontattiamo al più presto per concordare data, orario e pianificare il sopralluogo.<br/>
+          <strong style="color:#fff;">03. Intervento a ciclo chiuso:</strong> laviamo e igienizziamo a fondo con enzimi naturali senza sporcare alcuno spazio esterno.
         </p>
       </td></tr>
     </table>
@@ -425,12 +425,14 @@ function lavaggioAutoReplyText({ nome, indirizzo, b2, b4, isola_ecologica, impor
 
 grazie per averci contattato! Abbiamo ricevuto la tua richiesta per il servizio di Lavaggio e Sanificazione Bidoni a Domicilio${hasIsola ? ' con lavaggio isola ecologica' : ''}.
 
+Verrai ricontattato al più presto dal nostro team per confermare i dettagli e programmare un sopralluogo gratuito o definire l'intervento.
+
 Riepilogo della richiesta:
-${indirizzo ? `- Indirizzo: ${indirizzo}\n` : ''}${bidoniStr ? `- Bidoni: ${bidoniStr}\n` : ''}${hasIsola ? `- Isola ecologica: Inclusa (richiesto preventivo/sopralluogo)\n` : ''}${importo_stimato ? `- Stima indicativa bidoni: ${importo_stimato} + IVA\n` : ''}
+${indirizzo ? `- Indirizzo: ${indirizzo}\n` : ''}${bidoniStr ? `- Bidoni: ${bidoniStr}\n` : ''}${hasIsola ? `- Isola ecologica: Inclusa (richiesto preventivo/sopralluogo)\n` : ''}${importo_stimato ? `- Stima di partenza: ${importo_stimato}\n` : ''}
 Cosa succede adesso:
-01. Verifica del percorso: verifichiamo la tua zona e l'inserimento nel calendario operativo di Montesilvano, Pescara e limitrofi.
-02. Conferma appuntamento: ti contattiamo telefonicamente o via email per concordare data e fascia oraria.
-03. Intervento a domicilio: laviamo e igienizziamo a ciclo chiuso con enzimi naturali senza sporcare nulla. Non serve che tu stia a casa, basta che i bidoni siano accessibili.
+01. Verifica dei dettagli: esaminiamo l'indirizzo indicato e le specifiche del tuo stabile o abitazione.
+02. Contatto e programmazione: ti ricontattiamo al più presto per concordare data, orario e pianificare il sopralluogo.
+03. Intervento a ciclo chiuso: laviamo e igienizziamo a fondo con enzimi naturali senza sporcare alcuno spazio esterno.
 
 --
 ARSOLVING — Multiservice Group S.R.L.S.

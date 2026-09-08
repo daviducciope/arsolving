@@ -555,6 +555,12 @@ const faqs = [
           return;
         }
 
+        const b2Cost = b2 * PRICE_2;
+        const b4Cost = b4 * PRICE_4;
+        const subtotal = b2Cost + b4Cost;
+        const ivaAmount = Math.round((subtotal * 0.22) * 100) / 100;
+        const totalWithVat = total;
+
         data.tipo = 'lavaggio-bidoni';
         data.servizio = isola
           ? 'Lavaggio bidoni a domicilio + isola ecologica (preventivo)'
@@ -562,12 +568,28 @@ const faqs = [
         data.contesto = data.servizio;
         data.bidoni2 = b2;
         data.bidoni4 = b4;
+        data.costo_b2 = fmt(b2Cost);
+        data.costo_b4 = fmt(b4Cost);
+        data.subtotale = fmt(subtotal);
+        data.iva = fmt(ivaAmount);
+        data.totale_ivato = fmt(totalWithVat);
         data.isola_ecologica = isola ? 'Sì — preventivo dedicato' : 'No';
-        data.importo_stimato = total > 0 ? `a partire da ${fmt(total)}` : 'su preventivo';
-        data.problema = `Richiesta lavaggio — ${b2} bidone/i 2 ruote, ${b4} bidone/i 4 ruote. ` +
-          `Isola ecologica: ${isola ? 'SÌ (preventivo dedicato)' : 'no'}. ` +
-          `Indirizzo: ${data.indirizzo}. ` +
-          (total > 0 ? `Importo base indicativo: a partire da ${fmt(total)}.` : 'Richiesto preventivo su misura.');
+        data.importo_stimato = totalWithVat > 0 ? `a partire da ${fmt(totalWithVat)}` : 'su preventivo';
+
+        data.problema =
+`• INDIRIZZO INTERVENTO:
+  ${data.indirizzo}
+
+• RIEPILOGO VOCI & CALCOLO PREVENTIVO:
+  - Bidoni 2 ruote: ${b2} unità × ${PRICE_2}€ = ${fmt(b2Cost)} + IVA
+  - Bidoni 4 ruote: ${b4} unità × ${PRICE_4}€ = ${fmt(b4Cost)} + IVA
+  - Isola ecologica: ${isola ? 'SÌ (richiesto sopralluogo / preventivo dedicato)' : 'NO (non richiesta)'}
+
+• BASE ECONOMICA SUGGERITA PER TRATTATIVA:
+  - Subtotale imponibile: ${fmt(subtotal)} + IVA
+  - IVA (22%): ${fmt(ivaAmount)}
+  - TOTALE IVATO SUGGERITO: ${fmt(totalWithVat)}
+${isola ? '  (Nota: l\'isola ecologica va aggiunta a parte dopo sopralluogo, consigliato da 49€ + IVA)' : ''}`;
 
         btn.disabled = true;
         btn.textContent = 'Invio in corso…';
