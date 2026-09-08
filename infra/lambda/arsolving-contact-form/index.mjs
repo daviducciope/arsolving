@@ -381,7 +381,6 @@ function lavaggioAutoReplyHtml({ nome, indirizzo, b2, b4, isola_ecologica, impor
           ${indirizzo ? `<tr><td style="color:#94a3b8;width:140px;padding:3px 0;">Indirizzo:</td><td style="color:#fff;font-weight:600;padding:3px 0;">${escape(indirizzo)}</td></tr>` : ''}
           ${(b2 || b4) ? `<tr><td style="color:#94a3b8;padding:3px 0;">Bidoni richiesti:</td><td style="color:#fff;font-weight:600;padding:3px 0;">${b2 ? `${b2} da 2 ruote` : ''}${b2 && b4 ? ' · ' : ''}${b4 ? `${b4} da 4 ruote` : ''}</td></tr>` : ''}
           ${hasIsola ? `<tr><td style="color:#94a3b8;padding:3px 0;">Isola ecologica:</td><td style="color:#C7A24A;font-weight:600;padding:3px 0;">Inclusa (richiesto preventivo/sopralluogo)</td></tr>` : ''}
-          ${importo_stimato ? `<tr><td style="color:#94a3b8;padding:3px 0;">Stima di partenza:</td><td style="color:#C7A24A;font-weight:700;padding:3px 0;">${escape(importo_stimato)}</td></tr>` : ''}
         </table>
       </td></tr>
     </table>
@@ -428,7 +427,7 @@ grazie per averci contattato! Abbiamo ricevuto la tua richiesta per il servizio 
 Verrai ricontattato al più presto dal nostro team per confermare i dettagli e programmare un sopralluogo gratuito o definire l'intervento.
 
 Riepilogo della richiesta:
-${indirizzo ? `- Indirizzo: ${indirizzo}\n` : ''}${bidoniStr ? `- Bidoni: ${bidoniStr}\n` : ''}${hasIsola ? `- Isola ecologica: Inclusa (richiesto preventivo/sopralluogo)\n` : ''}${importo_stimato ? `- Stima di partenza: ${importo_stimato}\n` : ''}
+${indirizzo ? `- Indirizzo: ${indirizzo}\n` : ''}${bidoniStr ? `- Bidoni: ${bidoniStr}\n` : ''}${hasIsola ? `- Isola ecologica: Inclusa (richiesto preventivo/sopralluogo)\n` : ''}
 Cosa succede adesso:
 01. Verifica dei dettagli: esaminiamo l'indirizzo indicato e le specifiche del tuo stabile o abitazione.
 02. Contatto e programmazione: ti ricontattiamo al più presto per concordare data, orario e pianificare il sopralluogo.
