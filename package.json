@@ -15,7 +15,7 @@
     "vite": "^8.0.4"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.2",
-    "astro": "^4.16.19"
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.2"
   }
 }

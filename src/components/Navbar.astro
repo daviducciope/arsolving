@@ -24,6 +24,7 @@ function active(segment: string): boolean {
     <div class="navbar-links" role="navigation" aria-label="Navigazione principale">
       <a href={`${base}/`}            class={`nav-link ${active('') ? 'nav-link--active' : ''}`}>Home</a>
       <a href={`${base}/services/`}   class={`nav-link ${active('services') ? 'nav-link--active' : ''}`}>Operativa</a>
+      <a href={`${base}/lavaggio-bidoni/`} class={`nav-link ${active('lavaggio-bidoni') ? 'nav-link--active' : ''}`}>Lavaggio Bidoni</a>
       <a href={`${base}/digital/`}    class={`nav-link ${active('digital') ? 'nav-link--active' : ''}`}>Digitale</a>
       <a href={`${base}/projects/`}   class={`nav-link ${active('projects') ? 'nav-link--active' : ''}`}>Strategica</a>
       <a href={`${base}/il-gruppo/`}  class={`nav-link ${active('il-gruppo') ? 'nav-link--active' : ''}`}>Il Gruppo</a>
@@ -75,6 +76,12 @@ function active(segment: string): boolean {
       <a href={`${base}/digital/`}   class="mobile-nav-link"><span class="mobile-nav-num">03</span>Digitale</a>
       <a href={`${base}/projects/`}  class="mobile-nav-link"><span class="mobile-nav-num">04</span>Strategica</a>
       <a href={`${base}/il-gruppo/`} class="mobile-nav-link"><span class="mobile-nav-num">05</span>Il Gruppo</a>
+      <a href={`${base}/`}                  class="mobile-nav-link"><span class="mobile-nav-num">01</span>Home</a>
+      <a href={`${base}/services/`}         class="mobile-nav-link"><span class="mobile-nav-num">02</span>Operativa</a>
+      <a href={`${base}/lavaggio-bidoni/`}  class="mobile-nav-link"><span class="mobile-nav-num">03</span>Lavaggio Bidoni</a>
+      <a href={`${base}/digital/`}          class="mobile-nav-link"><span class="mobile-nav-num">04</span>Digitale</a>
+      <a href={`${base}/projects/`}         class="mobile-nav-link"><span class="mobile-nav-num">05</span>Strategica</a>
+      <a href={`${base}/il-gruppo/`}        class="mobile-nav-link"><span class="mobile-nav-num">06</span>Il Gruppo</a>
     </nav>
 
     <div class="mobile-overlay-footer">

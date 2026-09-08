@@ -49,11 +49,11 @@ const faqs = [
   },
   {
     q: 'Quanto costa il servizio?',
-    a: 'Bidone a 2 ruote (domestico): 15€ + IVA. Bidone a 4 ruote (grande/condominiale): 25€ + IVA. Per servizi periodici o condominiali prepariamo un preventivo dedicato.',
+    a: 'Il servizio parte da 15€ + IVA per il singolo bidone domestico (2 ruote). Per condomini, grandi formati (4 ruote), lavaggio completo dell\'isola ecologica o servizi periodici ricorrenti formuliamo un preventivo su misura con tariffe dedicate e sconti volume.',
   },
   {
     q: 'Lavate anche l\'isola ecologica del condominio?',
-    a: 'Sì. Oltre ai singoli bidoni laviamo e sanifichiamo l\'intera piazzola di raccolta ad alta pressione: pavimento, pareti e contenitori. Il prezzo parte da 49€ + IVA e viene definito con un preventivo dedicato in base a superficie e stato dell\'area.',
+    a: 'Sì. Oltre ai singoli bidoni laviamo e sanifichiamo l\'intera piazzola di raccolta ad alta pressione: pavimento, pareti e cassonetti. Il servizio viene concordato su preventivo dedicato in base alla superficie e allo stato dell\'area.',
   },
   {
     q: 'Posso programmare lavaggi periodici?',
@@ -63,8 +63,7 @@ const faqs = [
 ---
 
 <Base title="Lavaggio Bidoni a Domicilio a Montesilvano e Pescara"
-      description="Lavaggio e sanificazione bidoni a domicilio a Montesilvano, Pescara e zone limitrofe. Sistema a base di enzimi che igienizza senza sporcare. Anche isole ecologiche e cassonetti condominiali. Servizio in attivazione: richiedi un sopralluogo o entra nella lista prioritaria."
-      noindex={true}>
+      description="Lavaggio e sanificazione bidoni a domicilio a Montesilvano, Pescara e zone limitrofe da 15€ + IVA. Sistema a base di enzimi che igienizza senza sporcare. Anche isole ecologiche e cassonetti condominiali.">
 
   <!-- Fascia: servizio in fase di attivazione -->
   <div id="activation-banner" class="activation-banner">
@@ -73,9 +72,7 @@ const faqs = [
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0 3.75h.008M12 3a9 9 0 100 18 9 9 0 000-18z"/>
       </svg>
       <p class="text-[0.8rem] sm:text-[0.86rem] font-heading leading-[1.55]">
-        <strong class="font-bold uppercase tracking-wide">Servizio in fase di attivazione</strong>
-        — stiamo raccogliendo le prime richieste per Montesilvano, Pescara e zone limitrofe.
-        Richiedi ora un sopralluogo o entra nella lista prioritaria.
+        <strong class="font-bold uppercase tracking-wide">Servizio in fase di attivazione</strong> — stiamo raccogliendo le prime richieste per Montesilvano, Pescara e zone limitrofe. Richiedi ora un sopralluogo o entra nella lista prioritaria.
       </p>
     </div>
   </div>
@@ -103,11 +100,7 @@ const faqs = [
             Lavaggio e Sanificazione<br />Bidoni e Isole Ecologiche
           </h1>
           <p class="text-[1rem] text-white/66 leading-[1.8] max-w-2xl mb-9">
-            Igienizziamo e sanifichiamo <strong class="text-white/85">bidoni, cassonetti e
-            isole ecologiche</strong> a domicilio a
-            <strong class="text-white/85">Montesilvano, Pescara e dintorni</strong>,
-            con un sistema a base di enzimi a ciclo chiuso che deterge in modo naturale,
-            <strong class="text-white/85">senza sporcare nulla</strong>.
+            Igienizziamo e sanifichiamo <strong class="text-white/85">bidoni, cassonetti e isole ecologiche</strong> a domicilio a <strong class="text-white/85">Montesilvano, Pescara e dintorni</strong>, con un sistema a base di enzimi a ciclo chiuso che deterge in modo naturale, <strong class="text-white/85">senza sporcare nulla</strong>.
           </p>
           <div class="flex flex-wrap gap-4">
             <a href="#prenota" class="btn-gold">Prenota un sopralluogo</a>
@@ -175,77 +168,111 @@ const faqs = [
   </section>
 
 
-  <!-- Prezzi -->
+  <!-- Servizio Completo & Tariffe (Unificato) -->
   <section id="prezzi" class="py-24 bg-off-white border-b border-navy/12">
-    <div class="max-w-5xl mx-auto px-6 lg:px-10">
-      <div class="reveal mb-14 text-center">
-        <div class="section-label section-label--dark mb-5 justify-center">Tariffe trasparenti</div>
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="reveal mb-12 text-center">
+        <div class="section-label section-label--dark mb-5 justify-center">Tariffe &amp; Servizi</div>
         <h2 class="font-display uppercase text-navy leading-[0.92]"
-            style="font-size: clamp(2rem, 4vw, 4rem);">
-          Lavaggio Bidoni
+            style="font-size: clamp(2.2rem, 4.5vw, 4.2rem);">
+          Lavaggio Bidoni e Isola Ecologica
         </h2>
       </div>
 
-      <div class="reveal mb-8 rounded-sm overflow-hidden aspect-[21/9] border border-navy/12">
+      <!-- Immagine del servizio -->
+      <div class="reveal mb-12 rounded-sm overflow-hidden aspect-[21/9] border border-navy/12">
         <Image src={imgPool} alt="Operatore ARSOLVING durante il lavaggio ad alta pressione dell'isola ecologica"
-               widths={[600, 900, 1200]} sizes="(min-width: 1024px) 928px, 100vw"
+               widths={[600, 900, 1200]} sizes="(min-width: 1024px) 1040px, 100vw"
                loading="lazy" decoding="async"
                class="w-full h-full object-cover" />
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <div class="reveal delay-1 price-card">
-          <span class="block text-navy/45 text-[0.7rem] tracking-[0.22em] uppercase font-bold mb-4">Bidone 2 ruote</span>
-          <p class="font-heading text-navy/70 text-[0.9rem] mb-5">Condominiale / piccolo formato</p>
-          <div class="flex items-baseline gap-2">
-            <span class="font-display text-navy text-[3.5rem] leading-none">15€</span>
-            <span class="text-navy/55 text-[0.85rem]">+ IVA</span>
+      <!-- Griglia 2 colonne: Valore / Isola Ecologica a sinistra, Card Prezzo Civetta a destra -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Colonna Sinistra (7 col): Il servizio completo -->
+        <div class="reveal lg:col-span-7 bg-white p-8 sm:p-10 border border-navy/12 rounded-sm flex flex-col justify-between">
+          <div>
+            <div class="section-label section-label--dark mb-4">Intervento Completo</div>
+            <h3 class="font-display uppercase text-navy text-[1.6rem] sm:text-[2rem] leading-[1.05] mb-4">
+              Igiene totale: dal singolo bidone all'intera piazzola
+            </h3>
+            <p class="text-navy/75 text-[0.98rem] leading-[1.8] mb-6">
+              Non ci limitiamo ai soli bidoni: laviamo e sanifichiamo l'intera piazzola di raccolta ad alta pressione con sistema enzimatico a ciclo chiuso, compresi cassonetti e contenitori condominiali. Rimuoviamo lo sporco ostinato a terra e sulle pareti, neutralizziamo i cattivi odori e restituiamo un'area salubre, decorosa e perfettamente in ordine.
+            </p>
+
+            <ul class="space-y-3.5 mb-6">
+              <li class="flex items-start gap-3 text-[0.92rem] text-navy/80">
+                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span><strong>Bidoni 2 e 4 ruote:</strong> lavaggio interno ed esterno con disinfezione enzimatica naturale.</span>
+              </li>
+              <li class="flex items-start gap-3 text-[0.92rem] text-navy/80">
+                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span><strong>Piazzola e isola ecologica:</strong> rimozione macchie, incrostazioni e sanificazione pavimentazione.</span>
+              </li>
+              <li class="flex items-start gap-3 text-[0.92rem] text-navy/80">
+                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span><strong>Ciclo chiuso senza sporcare:</strong> acqua recuperata e nessun residuo davanti casa o nel cortile.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-5 border-t border-navy/8">
+            <span class="inline-block font-heading text-[0.84rem] uppercase tracking-wider font-bold text-navy/70">
+              Ideale per: condomini, abitazioni private e attività commerciali
+            </span>
           </div>
         </div>
-        <div class="reveal delay-2 price-card">
-          <span class="block text-navy/45 text-[0.7rem] tracking-[0.22em] uppercase font-bold mb-4">Bidone 4 ruote</span>
-          <p class="font-heading text-navy/70 text-[0.9rem] mb-5">Grande formato / condominiale</p>
-          <div class="flex items-baseline gap-2">
-            <span class="font-display text-navy text-[3.5rem] leading-none">25€</span>
-            <span class="text-navy/55 text-[0.85rem]">+ IVA</span>
+
+        <!-- Colonna Destra (5 col): Card Prezzo Civetta + CTA Form -->
+        <div class="reveal delay-1 lg:col-span-5 price-card price-card--feature p-8 sm:p-10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="block text-gold text-[0.72rem] tracking-[0.22em] uppercase font-bold">
+                Tariffa d'ingresso
+              </span>
+              <span class="bg-gold/15 text-navy text-[0.72rem] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                Base
+              </span>
+            </div>
+
+            <div class="mb-5">
+              <div class="flex items-baseline gap-2">
+                <span class="text-navy/55 text-[1rem] font-semibold">a partire da</span>
+                <span class="font-display text-navy text-[3.8rem] sm:text-[4.2rem] leading-none">15€</span>
+                <span class="text-navy/55 text-[0.9rem] font-medium">+ IVA</span>
+              </div>
+              <p class="text-navy/65 text-[0.85rem] mt-1.5">
+                Tariffa di partenza per singolo bidone domestico (2 ruote).
+              </p>
+            </div>
+
+            <div class="p-4 bg-navy/5 border border-navy/10 rounded-sm mb-6 space-y-2">
+              <p class="text-[0.88rem] text-navy/85 leading-[1.6]">
+                <strong>Sei un condominio o hai più bidoni?</strong>
+              </p>
+              <p class="text-[0.82rem] text-navy/70 leading-[1.6]">
+                Per formati a 4 ruote, servizi periodici (settimanali/quindicinali/mensili) o inclusione dell'isola ecologica formuliamo un <strong>preventivo dedicato con sconti volume</strong> su misura.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <a href="#prenota" class="btn-gold w-full text-center justify-center py-3.5 text-[0.82rem]">
+              Richiedi preventivo gratuito →
+            </a>
+            <p class="text-center text-navy/50 text-[0.75rem] mt-3">
+              Sopralluogo e preventivo senza alcun impegno
+            </p>
           </div>
         </div>
-        <div class="reveal delay-3 price-card price-card--feature">
-          <span class="block text-gold text-[0.7rem] tracking-[0.22em] uppercase font-bold mb-4">Isola ecologica</span>
-          <p class="font-heading text-navy/70 text-[0.9rem] mb-5">Lavaggio ad alta pressione + sanificazione</p>
-          <div class="flex items-baseline gap-2">
-            <span class="text-navy/55 text-[0.8rem]">a partire da</span>
-            <span class="font-display text-navy text-[3.5rem] leading-none">49€</span>
-            <span class="text-navy/55 text-[0.85rem]">+ IVA</span>
-          </div>
-          <p class="text-navy/55 text-[0.78rem] mt-3">Prezzo finale su preventivo dedicato</p>
-        </div>
-      </div>
 
-      <p class="reveal text-center text-navy font-heading font-semibold leading-[1.6]"
-         style="font-size: clamp(1.1rem, 2.2vw, 1.5rem);">
-        Per servizi periodici, condomini e attività prepariamo un
-        <strong class="text-gold">preventivo dedicato</strong> con tariffe agevolate.
-      </p>
-    </div>
-  </section>
-
-
-  <!-- Isola ecologica -->
-  <section class="py-24 bg-white border-b border-navy/12">
-    <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
-      <div class="reveal">
-        <h2 class="font-display uppercase text-navy leading-[0.92] mb-6"
-            style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
-          Lavaggio<br />isola ecologica
-        </h2>
-        <p class="text-navy/72 text-[1rem] leading-[1.85]">
-          Non solo i bidoni: laviamo e sanifichiamo l'intera piazzola di raccolta
-          ad alta pressione, compresi cassonetti e contenitori condominiali.
-          Rimuoviamo lo sporco che si accumula a terra e sulle pareti, eliminiamo
-          gli odori e restituiamo un'area pulita e in ordine.
-          <strong class="text-navy">Soluzione ideale per condomini e attività commerciali.</strong>
-        </p>
       </div>
     </div>
   </section>
@@ -274,8 +301,7 @@ const faqs = [
       </ul>
 
       <p class="reveal delay-2 text-navy/55 text-[0.88rem] mt-8">
-        Il tuo comune non è in elenco?
-        <a href="#prenota" class="text-gold font-semibold hover:underline">Scrivici lo stesso</a>:
+        Il tuo comune non è in elenco? <a href="#prenota" class="text-gold font-semibold hover:underline">Scrivici lo stesso</a>:
         valutiamo ogni richiesta nella zona di Pescara, Chieti e Teramo.
       </p>
     </div>
@@ -321,7 +347,7 @@ const faqs = [
             <div class="mb-7">
               <h3 class="font-display uppercase text-white leading-[0.92]"
                   style="font-size: clamp(1.7rem, 3.5vw, 2.6rem);">
-                Compila il form, preventivo gratuito. 
+                Richiedi un preventivo gratuito.
               </h3>
             </div>
 
@@ -334,11 +360,11 @@ const faqs = [
 
             <div class="form-row">
               <label>
-                <span>Bidoni 2 ruote (15€)</span>
+                <span>Bidoni 2 ruote (da 15€ / piccolo formato)</span>
                 <input type="number" name="bidoni2" min="0" max="50" value="1" />
               </label>
               <label>
-                <span>Bidoni 4 ruote (25€)</span>
+                <span>Bidoni 4 ruote (grande formato / condominiale)</span>
                 <input type="number" name="bidoni4" min="0" max="50" value="0" />
               </label>
             </div>
@@ -348,7 +374,7 @@ const faqs = [
               <input type="checkbox" name="isola" value="si" />
               <span class="isola-toggle-box">
                 <strong>Aggiungi lavaggio isola ecologica</strong>
-                <em>Su preventivo dedicato — a partire da 49€ + IVA</em>
+                <em>Sanificazione piazzola, pareti e cassonetti — su preventivo dedicato</em>
               </span>
             </label>
 
@@ -446,9 +472,16 @@ const faqs = [
       "@type": "OfferCatalog",
       "name": "Lavaggio bidoni e isole ecologiche",
       "itemListElement": [
-        { "@type": "Offer", "name": "Lavaggio bidone 2 ruote", "price": "15", "priceCurrency": "EUR" },
-        { "@type": "Offer", "name": "Lavaggio bidone 4 ruote", "price": "25", "priceCurrency": "EUR" },
-        { "@type": "Offer", "name": "Lavaggio e sanificazione isola ecologica", "priceCurrency": "EUR", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "49", "priceCurrency": "EUR" } }
+        {
+          "@type": "Offer",
+          "name": "Lavaggio e sanificazione bidoni a domicilio",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "15",
+            "priceCurrency": "EUR"
+          }
+        }
       ]
     }
   })} />
@@ -522,15 +555,19 @@ const faqs = [
           return;
         }
 
+        data.tipo = 'lavaggio-bidoni';
         data.servizio = isola
           ? 'Lavaggio bidoni a domicilio + isola ecologica (preventivo)'
           : 'Lavaggio bidoni a domicilio';
+        data.contesto = data.servizio;
+        data.bidoni2 = b2;
+        data.bidoni4 = b4;
         data.isola_ecologica = isola ? 'Sì — preventivo dedicato' : 'No';
-        data.importo_stimato = fmt(total);
+        data.importo_stimato = total > 0 ? `a partire da ${fmt(total)}` : 'su preventivo';
         data.problema = `Richiesta lavaggio — ${b2} bidone/i 2 ruote, ${b4} bidone/i 4 ruote. ` +
           `Isola ecologica: ${isola ? 'SÌ (preventivo dedicato)' : 'no'}. ` +
           `Indirizzo: ${data.indirizzo}. ` +
-          `Importo stimato bidoni: ${fmt(total)}.`;
+          (total > 0 ? `Importo base indicativo: a partire da ${fmt(total)}.` : 'Richiesto preventivo su misura.');
 
         btn.disabled = true;
         btn.textContent = 'Invio in corso…';
@@ -775,5 +812,3 @@ const faqs = [
   </style>
 
 </Base>
-</content>
-</invoke>
