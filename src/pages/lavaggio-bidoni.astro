@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: 'Quanto costa il servizio?',
-    a: 'Il servizio parte da 15€ + IVA per il singolo bidone domestico (2 ruote). Per condomini, grandi formati (4 ruote), lavaggio completo dell\'isola ecologica o servizi periodici ricorrenti formuliamo un preventivo su misura con tariffe dedicate e sconti volume.',
+    a: 'Il servizio parte da 20€ + IVA per il singolo bidone domestico (2 ruote). Per condomini, grandi formati (4 ruote), lavaggio completo dell\'isola ecologica o servizi periodici ricorrenti formuliamo un preventivo su misura con tariffe dedicate e sconti volume.',
   },
   {
     q: 'Lavate anche l\'isola ecologica del condominio?',
@@ -63,7 +63,7 @@ const faqs = [
 ---
 
 <Base title="Lavaggio Bidoni a Domicilio a Montesilvano e Pescara"
-      description="Lavaggio e sanificazione bidoni a domicilio a Montesilvano, Pescara e zone limitrofe da 15€ + IVA. Sistema a base di enzimi che igienizza senza sporcare. Anche isole ecologiche e cassonetti condominiali.">
+      description="Lavaggio e sanificazione bidoni a domicilio a Montesilvano, Pescara e zone limitrofe da 20€ + IVA. Sistema a base di enzimi che igienizza senza sporcare. Anche isole ecologiche e cassonetti condominiali.">
 
   <!-- Fascia: servizio in fase di attivazione -->
   <div id="activation-banner" class="activation-banner">
@@ -245,7 +245,7 @@ const faqs = [
             <div class="mb-5">
               <div class="flex items-baseline gap-2">
                 <span class="text-navy/55 text-[1rem] font-semibold">a partire da</span>
-                <span class="font-display text-navy text-[3.8rem] sm:text-[4.2rem] leading-none">15€</span>
+                <span class="font-display text-navy text-[3.8rem] sm:text-[4.2rem] leading-none">20€</span>
                 <span class="text-navy/55 text-[0.9rem] font-medium">+ IVA</span>
               </div>
               <p class="text-navy/65 text-[0.85rem] mt-1.5">
@@ -360,7 +360,7 @@ const faqs = [
 
             <div class="form-row">
               <label>
-                <span>Bidoni 2 ruote (da 15€ / piccolo formato)</span>
+                <span>Bidoni 2 ruote (da 20€ / piccolo formato)</span>
                 <input type="number" name="bidoni2" min="0" max="50" value="1" />
               </label>
               <label>
@@ -478,7 +478,7 @@ const faqs = [
           "priceCurrency": "EUR",
           "priceSpecification": {
             "@type": "PriceSpecification",
-            "minPrice": "15",
+            "minPrice": "20",
             "priceCurrency": "EUR"
           }
         }
@@ -508,7 +508,7 @@ const faqs = [
       const form = document.getElementById('booking-form');
       if (!form) return;
 
-      const PRICE_2 = 15, PRICE_4 = 25, VAT = 1.22;
+      const PRICE_2 = 20, PRICE_4 = 25, VAT = 1.22;
       const totalEl = document.getElementById('price-total');
       const isolaNote = document.getElementById('price-isola-note');
       const feedback = document.getElementById('booking-feedback');
