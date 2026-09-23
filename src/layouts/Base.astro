@@ -34,7 +34,13 @@ const ogImage = `${siteUrl}/og-image.png`
   <meta name="description" content={description} />
   {noindex && <meta name="robots" content="noindex, nofollow" />}
   <link rel="canonical" href={canonicalURL} />
-  <link rel="icon" href={`${base}/logo_arsolving.svg`} type="image/svg+xml" />
+  <!-- Favicon & App Icons (Google Search & Browsers) -->
+  <link rel="icon" href={`${base}/favicon.ico`} sizes="32x32" />
+  <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="48x48" href={`${base}/favicon-48x48.png`} />
+  <link rel="icon" type="image/png" sizes="96x96" href={`${base}/favicon-96x96.png`} />
+  <link rel="icon" type="image/png" sizes="192x192" href={`${base}/favicon-192x192.png`} />
+  <link rel="apple-touch-icon" sizes="180x180" href={`${base}/apple-touch-icon.png`} />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
