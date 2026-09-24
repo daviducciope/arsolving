@@ -65,30 +65,6 @@ const faqs = [
 <Base title="Lavaggio Bidoni a Domicilio a Montesilvano e Pescara"
       description="Lavaggio e sanificazione bidoni a domicilio a Montesilvano, Pescara e zone limitrofe da 20€ + IVA. Sistema a base di enzimi che igienizza senza sporcare. Anche isole ecologiche e cassonetti condominiali.">
 
-  <!-- Fascia: servizio in fase di attivazione -->
-  <div id="activation-banner" class="activation-banner">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-start gap-3">
-      <svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0 3.75h.008M12 3a9 9 0 100 18 9 9 0 000-18z"/>
-      </svg>
-      <p class="text-[0.8rem] sm:text-[0.86rem] font-heading leading-[1.55]">
-        <strong class="font-bold uppercase tracking-wide">Servizio in fase di attivazione</strong> — stiamo raccogliendo le prime richieste per Montesilvano, Pescara e zone limitrofe. Richiedi ora un sopralluogo o entra nella lista prioritaria.
-      </p>
-    </div>
-  </div>
-
-  <script is:inline>
-    (function () {
-      const banner = document.getElementById('activation-banner');
-      if (!banner) return;
-      const setH = () => document.documentElement.style.setProperty('--activation-h', banner.offsetHeight + 'px');
-      setH();
-      window.addEventListener('resize', setH);
-      window.addEventListener('load', setH);
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(setH);
-    })();
-  </script>
-
   <!-- Hero -->
   <div class="page-hero">
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
