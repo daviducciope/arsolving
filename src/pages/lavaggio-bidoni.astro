@@ -602,20 +602,6 @@ ${isola ? '  (Nota: l\'isola ecologica va aggiunta a parte dopo sopralluogo, con
   </script>
 
   <style>
-    .activation-banner {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 60;
-      background: #C7A24A;
-      color: #0E1D34;
-    }
-    .activation-banner strong { color: #0E1D34; }
-
-    /* La fascia sta sopra la navbar: navbar ed hero scendono della sua altezza.
-       #navbar (id) batte .navbar-root (classe) nel cascade. */
-    :global(#navbar) { top: var(--activation-h, 52px); }
-    .page-hero { padding-top: calc(136px + var(--activation-h, 52px)); }
-
     /* Sfondo blu pieno, senza trama quadrettata */
     .page-hero::before { display: none; }
 
