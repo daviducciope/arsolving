@@ -50,12 +50,12 @@ Nessuna dipendenza UI esterna (no Bootstrap, no component library). Tutto custom
 - Page hero
 - Intro 2-col approccio
 - Grid 3-col dei 6 servizi (stessa card pattern, hover bar invertita gold→navy)
-- Sezione **Portfolio** con 6 case study (card con immagine h-52 + tags + link esterno)
+- Sezione **Portfolio** con 7 case study (card con immagine h-52 + tags + link esterno)
 - CTA
 
 **Servizi presenti:** Branding & Identità · Comunicazione Strategica · Graphic Design · Web & Siti · Applicazioni Web · Marketing Digitale
 
-**Portfolio presente:** AgriPlanet Store · Girofacile · Sostanza Servizi · Hurka · De Marco Studio Legale · Vignaluna
+**Portfolio presente:** Sir Compare (immagine self-hosted in `/public/portfolio/`) · AgriPlanet Store · Girofacile · Sostanza Servizi · Hurka · De Marco Studio Legale · Vignaluna
 
 ### `/projects/` — Projects & Ventures
 *Sviluppo iniziative, partnership strategiche*
