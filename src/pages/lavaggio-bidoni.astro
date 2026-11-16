@@ -1,9 +1,18 @@
 ---
 import Base from '../layouts/Base.astro'
 import { Image } from 'astro:assets'
-import imgDetergent from '../../assets/arsolving-detergent.png'
-import imgPool from '../../assets/arsolving-man-at-work-with-pool.png'
-import imgWork from '../../assets/img-arsolving-man-at-work.png'
+import imgClosedLoop from '../assets/lavaggio-a-ciclo-chiuso.webp'
+import imgContainers from '../assets/cassonetti-isola-ecologica.webp'
+import imgWork from '../assets/lavaggio-cassonetti-sul-posto.webp'
+import imgOnSite from '../assets/lavaggio-bidoni-intervento.webp'
+
+const media = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/media/lavaggio-bidoni`
+const socialImage = `${media}/condivisione-lavaggio-isole-targa-oscurata.jpg`
+const absoluteSocialImage = new URL(socialImage, Astro.site).href
+const videoSrc = `${media}/lavaggio-isole-ecologiche-prima-e-dopo.mp4`
+const binVideoSrc = `${media}/lavaggio-e-sanificazione-bidoni.mp4`
+const videoPoster = `${media}/anteprima-procedimento-lavaggio-isole-ecologiche.jpg`
+const phone = { display: "351 495 1838", international: "+393514951838" }
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 const areas = [
@@ -62,360 +71,323 @@ const faqs = [
 ]
 ---
 
-<Base title="Lavaggio Bidoni a Domicilio a Montesilvano e Pescara"
-      description="Lavaggio e sanificazione bidoni a domicilio a Montesilvano, Pescara e zone limitrofe da 20€ + IVA. Sistema a base di enzimi che igienizza senza sporcare. Anche isole ecologiche e cassonetti condominiali.">
+<Base title="Lavaggio bidoni a domicilio | Pescara e Montesilvano"
+      description="Lavaggio e sanificazione di bidoni, cassonetti e isole ecologiche a domicilio a Pescara e Montesilvano. Da 20 € + IVA. Richiedi un sopralluogo gratuito."
+      socialImage={socialImage}
+      socialImageAlt="Lavaggio di un cassonetto nella vasca blu accanto al mezzo attrezzato">
 
-  <!-- Hero -->
-  <div class="page-hero">
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-14 items-center">
-        <div>
-          <div class="section-label mb-7">Montesilvano · Pescara · zone limitrofe</div>
-          <h1 class="font-display uppercase text-white leading-[0.9] mb-5"
-              style="font-size: clamp(2.4rem, 6vw, 5.6rem);">
-            Lavaggio e Sanificazione<br />Bidoni e Isole Ecologiche
-          </h1>
-          <p class="text-[1rem] text-white/66 leading-[1.8] max-w-2xl mb-9">
-            Igienizziamo e sanifichiamo <strong class="text-white/85">bidoni, cassonetti e isole ecologiche</strong> a domicilio a <strong class="text-white/85">Montesilvano, Pescara e dintorni</strong>, con un sistema a base di enzimi a ciclo chiuso che deterge in modo naturale, <strong class="text-white/85">senza sporcare nulla</strong>.
+  <div class="wash-page">
+    <header class="wash-hero">
+      <div class="wash-container hero-grid-layout">
+        <div class="min-w-0">
+          <p class="wash-kicker">Montesilvano · Pescara · zone limitrofe</p>
+          <h1 class="wash-title">Lavaggio e sanificazione <span>bidoni e isole ecologiche</span></h1>
+          <p class="hero-description">
+            Igienizziamo e sanifichiamo <strong>bidoni, cassonetti e isole ecologiche</strong> a domicilio a <strong>Montesilvano, Pescara e dintorni</strong>, con un sistema a base di enzimi a ciclo chiuso che deterge in modo naturale, <strong>senza sporcare nulla</strong>.
           </p>
-          <div class="flex flex-wrap gap-4">
-            <a href="#prenota" class="btn-gold">Prenota un sopralluogo</a>
+          <div class="hero-actions">
+            <a href="#prenota" class="wash-button">Prenota un sopralluogo <span aria-hidden="true">↗</span></a>
+            <a href="#video" class="wash-video-link">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="m5 3 8 5-8 5V3Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              </svg>
+              Guarda il video
+            </a>
           </div>
         </div>
 
-        <!-- Immagine hero: solo desktop, non aggiunge altezza su mobile -->
-        <div class="hidden lg:block rounded-sm overflow-hidden aspect-[4/3] border border-white/12">
-          <Image src={imgWork} alt="Operatore ARSOLVING durante il lavaggio e la sanificazione dei bidoni a domicilio"
-                 widths={[500, 760]} sizes="480px"
-                 loading="lazy" decoding="async"
-                 class="w-full h-full object-cover" />
+        <div class="hero-photo">
+          <Image src={imgWork} alt="Lavaggio di un cassonetto nella vasca blu accanto al mezzo attrezzato"
+                 widths={[360, 640, 900]} sizes="(min-width: 1330px) 660px, (min-width: 960px) 52vw, 100vw"
+                 format="webp" quality={82} loading="eager" fetchpriority="high" decoding="async"
+                 class="wash-image" />
         </div>
       </div>
-    </div>
-  </div>
+    </header>
 
+    <section id="video" class="wash-section" aria-labelledby="video-titolo">
+      <div class="wash-container">
+        <div class="showcase">
+          <div class="showcase-copy">
+            <p class="wash-kicker">Lavaggio a domicilio</p>
+            <h2 id="video-titolo" class="wash-heading">Guarda come lavoriamo</h2>
+            <p id="video-descrizione" class="wash-copy">
+              Dalla pulizia ad alta pressione al recupero dell’acqua, guarda come laviamo e sanifichiamo cassonetti e isole ecologiche sul posto.
+            </p>
+            <a class="previous-spot" href={binVideoSrc}>Guarda anche il lavaggio dei bidoni <span aria-hidden="true">↗</span></a>
+          </div>
+          <figure class="spot-frame">
+            <video width="540" height="960" controls playsinline preload="none" poster={videoPoster}
+                   aria-labelledby="video-titolo" aria-describedby="video-descrizione">
+              <source src={videoSrc} type="video/mp4" />
+              <track kind="captions" src={`${media}/lavaggio-isole-ecologiche-prima-e-dopo-it.vtt`} srclang="it" label="Italiano" />
+              <a href={videoSrc}>Apri lo spot ARSOLVING</a>
+            </video>
+            <figcaption><span>Lavaggio isole ecologiche</span><span>0:32</span></figcaption>
+          </figure>
+          <figure class="site-photo">
+            <Image src={imgOnSite} alt="Cassonetto nero nella vasca blu di raccolta dell'acqua accanto al mezzo di lavaggio"
+                   widths={[360, 540, 760]} sizes="(min-width: 960px) 43vw, 100vw"
+                   format="webp" quality={80} loading="lazy" decoding="async" class="wash-image" />
+            <figcaption>Intervento sul posto con vasca di recupero dell’acqua.</figcaption>
+          </figure>
+        </div>
 
-  <!-- Pilastri -->
-  <section class="py-24 bg-white border-b border-navy/12">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {pillars.map((p, i) => (
-          <div class={`reveal delay-${(i % 3) + 1} service-card group`}>
-            <div class="w-11 h-11 bg-navy rounded-sm flex items-center justify-center text-gold mb-5
-                        group-hover:bg-gold group-hover:text-navy transition-colors duration-300">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <ul class="wash-pillars" aria-label="Caratteristiche del servizio">
+          {pillars.map((p) => (
+            <li>
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d={p.icon}/>
               </svg>
-            </div>
-            <h3 class="font-heading font-semibold text-navy text-[1.05rem] mb-3">{p.title}</h3>
-            <p class="text-[0.86rem] text-navy/70 leading-[1.78]">{p.desc}</p>
-          </div>
-        ))}
+              <div>
+                <h3>{p.title}</h3>
+                <p>{p.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-
-  <!-- Tecnologia enzimatica -->
-  <section class="py-24 bg-navy">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <div class="reveal">
-          <div class="section-label mb-6">Tecnologia</div>
-          <h2 class="font-display uppercase text-white leading-[0.92] mb-6"
-              style="font-size: clamp(2.2rem, 4.5vw, 4.5rem);">
-            Sanificazione<br />a base di enzimi
+    <!-- Tecnologia enzimatica -->
+    <section class="wash-tech" aria-labelledby="tecnologia-titolo">
+      <div class="wash-container wash-split">
+        <div>
+          <p class="wash-kicker">Tecnologia</p>
+          <h2 id="tecnologia-titolo" class="wash-heading">
+            Sanificazione a base di enzimi
           </h2>
-          <p class="text-white/66 text-[1rem] leading-[1.85]">
+          <p class="wash-copy">
             Gli enzimi degradano lo sporco organico e neutralizzano i batteri là dove
             si annidano i cattivi odori. Un sistema naturale ed efficace, che lavora
             senza solventi aggressivi e con acqua recuperata a fine ciclo.
           </p>
         </div>
 
-        <div class="reveal delay-2 rounded-sm overflow-hidden aspect-[3/2] border border-white/12">
-          <Image src={imgDetergent} alt="Detergente enzimatico biodegradabile usato da ARSOLVING per igienizzare i bidoni"
-                 widths={[400, 600, 900]} sizes="(min-width: 1024px) 540px, 100vw"
+        <div class="tech-photo">
+          <Image src={imgClosedLoop} alt="Getto di lavaggio ad alta pressione all’interno della vasca di recupero dell’acqua"
+                 widths={[360, 600]} sizes="(min-width: 960px) 49vw, 100vw"
+                 format="webp"
                  loading="lazy" decoding="async"
                  class="w-full h-full object-cover" />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
 
-  <!-- Servizio Completo & Tariffe (Unificato) -->
-  <section id="prezzi" class="py-24 bg-off-white border-b border-navy/12">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <div class="reveal mb-12 text-center">
-        <div class="section-label section-label--dark mb-5 justify-center">Tariffe &amp; Servizi</div>
-        <h2 class="font-display uppercase text-navy leading-[0.92]"
-            style="font-size: clamp(2.2rem, 4.5vw, 4.2rem);">
-          Lavaggio Bidoni e Isola Ecologica
-        </h2>
-      </div>
+    <section id="prezzi" class="wash-section wash-services" aria-labelledby="tariffe-titolo">
+      <div class="wash-container">
+        <p class="wash-kicker">Tariffe e servizi</p>
+        <h2 id="tariffe-titolo" class="wash-heading">Lavaggio bidoni e isola ecologica</h2>
 
-      <!-- Immagine del servizio -->
-      <div class="reveal mb-12 rounded-sm overflow-hidden aspect-[21/9] border border-navy/12">
-        <Image src={imgPool} alt="Operatore ARSOLVING durante il lavaggio ad alta pressione dell'isola ecologica"
-               widths={[600, 900, 1200]} sizes="(min-width: 1024px) 1040px, 100vw"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-cover" />
-      </div>
-
-      <!-- Griglia 2 colonne: Valore / Isola Ecologica a sinistra, Card Prezzo Civetta a destra -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-        
-        <!-- Colonna Sinistra (7 col): Il servizio completo -->
-        <div class="reveal lg:col-span-7 bg-white p-8 sm:p-10 border border-navy/12 rounded-sm flex flex-col justify-between">
+        <div class="service-layout">
           <div>
-            <div class="section-label section-label--dark mb-4">Intervento Completo</div>
-            <h3 class="font-display uppercase text-navy text-[1.6rem] sm:text-[2rem] leading-[1.05] mb-4">
-              Igiene totale: dal singolo bidone all'intera piazzola
-            </h3>
-            <p class="text-navy/75 text-[0.98rem] leading-[1.8] mb-6">
-              Non ci limitiamo ai soli bidoni: laviamo e sanifichiamo l'intera piazzola di raccolta ad alta pressione con sistema enzimatico a ciclo chiuso, compresi cassonetti e contenitori condominiali. Rimuoviamo lo sporco ostinato a terra e sulle pareti, neutralizziamo i cattivi odori e restituiamo un'area salubre, decorosa e perfettamente in ordine.
-            </p>
-
-            <ul class="space-y-3.5 mb-6">
-              <li class="flex items-start gap-3 text-[0.92rem] text-navy/80">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span><strong>Bidoni 2 e 4 ruote:</strong> lavaggio interno ed esterno con disinfezione enzimatica naturale.</span>
-              </li>
-              <li class="flex items-start gap-3 text-[0.92rem] text-navy/80">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span><strong>Piazzola e isola ecologica:</strong> rimozione macchie, incrostazioni e sanificazione pavimentazione.</span>
-              </li>
-              <li class="flex items-start gap-3 text-[0.92rem] text-navy/80">
-                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span><strong>Ciclo chiuso senza sporcare:</strong> acqua recuperata e nessun residuo davanti casa o nel cortile.</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="pt-5 border-t border-navy/8">
-            <span class="inline-block font-heading text-[0.84rem] uppercase tracking-wider font-bold text-navy/70">
-              Ideale per: condomini, abitazioni private e attività commerciali
-            </span>
-          </div>
-        </div>
-
-        <!-- Colonna Destra (5 col): Card Prezzo Civetta + CTA Form -->
-        <div class="reveal delay-1 lg:col-span-5 price-card price-card--feature p-8 sm:p-10 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="block text-gold text-[0.72rem] tracking-[0.22em] uppercase font-bold">
-                Tariffa d'ingresso
-              </span>
-              <span class="bg-gold/15 text-navy text-[0.72rem] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-                Base
-              </span>
+            <div class="service-photo">
+              <Image src={imgContainers} alt="Cassonetti di raccolta collocati nella vasca blu per il lavaggio"
+                     widths={[360, 640, 900]} sizes="(min-width: 960px) 58vw, 100vw"
+                     format="webp" loading="lazy" decoding="async" class="wash-image" />
             </div>
+            <div class="service-copy">
+              <h3 class="font-heading font-bold text-[1.2rem] mb-4">
+                Igiene totale: dal singolo bidone all'intera piazzola
+              </h3>
+              <p class="text-navy/75 text-[0.98rem] leading-[1.8] mb-6">
+                Non ci limitiamo ai soli bidoni: laviamo e sanifichiamo l'intera piazzola di raccolta ad alta pressione con sistema enzimatico a ciclo chiuso, compresi cassonetti e contenitori condominiali. Rimuoviamo lo sporco ostinato a terra e sulle pareti, neutralizziamo i cattivi odori e restituiamo un'area salubre, decorosa e perfettamente in ordine.
+              </p>
 
-            <div class="mb-5">
-              <div class="flex items-baseline gap-2">
-                <span class="text-navy/55 text-[1rem] font-semibold">a partire da</span>
-                <span class="font-display text-navy text-[3.8rem] sm:text-[4.2rem] leading-none">20€</span>
-                <span class="text-navy/55 text-[0.9rem] font-medium">+ IVA</span>
+              <ul class="space-y-3.5 mb-6">
+                <li class="flex items-start gap-3 text-[0.92rem] text-navy/80">
+                  <svg class="w-5 h-5 service-check flex-shrink-0 mt-0.5" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span><strong>Bidoni 2 e 4 ruote:</strong> lavaggio interno ed esterno con disinfezione enzimatica naturale.</span>
+                </li>
+                <li class="flex items-start gap-3 text-[0.92rem] text-navy/80">
+                  <svg class="w-5 h-5 service-check flex-shrink-0 mt-0.5" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span><strong>Piazzola e isola ecologica:</strong> rimozione macchie, incrostazioni e sanificazione pavimentazione.</span>
+                </li>
+                <li class="flex items-start gap-3 text-[0.92rem] text-navy/80">
+                  <svg class="w-5 h-5 service-check flex-shrink-0 mt-0.5" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span><strong>Ciclo chiuso senza sporcare:</strong> acqua recuperata e nessun residuo davanti casa o nel cortile.</span>
+                </li>
+              </ul>
+
+              <div class="pt-5 border-t border-navy/8">
+                <span class="inline-block font-heading text-[0.84rem] uppercase tracking-wider font-bold text-navy/70">
+                  Ideale per: condomini, abitazioni private e attività commerciali
+                </span>
               </div>
-              <p class="text-navy/65 text-[0.85rem] mt-1.5">
-                Tariffa di partenza per singolo bidone domestico (2 ruote).
-              </p>
-            </div>
-
-            <div class="p-4 bg-navy/5 border border-navy/10 rounded-sm mb-6 space-y-2">
-              <p class="text-[0.88rem] text-navy/85 leading-[1.6]">
-                <strong>Sei un condominio o hai più bidoni?</strong>
-              </p>
-              <p class="text-[0.82rem] text-navy/70 leading-[1.6]">
-                Per formati a 4 ruote, servizi periodici (settimanali/quindicinali/mensili) o inclusione dell'isola ecologica formuliamo un <strong>preventivo dedicato con sconti volume</strong> su misura.
-              </p>
-            </div>
+              </div>
           </div>
 
-          <div>
-            <a href="#prenota" class="btn-gold w-full text-center justify-center py-3.5 text-[0.82rem]">
-              Richiedi preventivo gratuito →
-            </a>
-            <p class="text-center text-navy/50 text-[0.75rem] mt-3">
-              Sopralluogo e preventivo senza alcun impegno
-            </p>
-          </div>
+          <aside class="wash-price" aria-labelledby="tariffa-base">
+            <h3 id="tariffa-base" class="wash-kicker">Tariffa di partenza</h3>
+            <div class="price-line"><span>da</span> <strong>20 €</strong> <span>+ IVA</span></div>
+            <p>Per un singolo bidone domestico a 2 ruote.</p>
+
+            <div class="price-detail">
+              <h4>Sei un condominio o hai più bidoni?</h4>
+              <p>Per formati a 4 ruote, servizi periodici (settimanali/quindicinali/mensili) o inclusione dell'isola ecologica formuliamo un <strong>preventivo dedicato con sconti volume</strong> su misura.</p>
+            </div>
+
+            <a href="#prenota" class="wash-button">Richiedi preventivo <span aria-hidden="true">↗</span></a>
+            <p class="price-note">Sopralluogo e preventivo senza alcun impegno</p>
+          </aside>
+
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
 
-  <!-- Dove operiamo -->
-  <section class="py-24 bg-white border-b border-navy/12">
-    <div class="max-w-5xl mx-auto px-6 lg:px-10 text-center">
-      <div class="reveal">
-        <div class="section-label section-label--dark mb-5 justify-center">Zone servite</div>
-        <h2 class="font-display uppercase text-navy leading-[0.92] mb-6"
-            style="font-size: clamp(2rem, 4vw, 4rem);">
-          Lavaggio bidoni a Montesilvano,<br />Pescara e zone limitrofe
-        </h2>
-        <p class="text-navy/72 text-[1rem] leading-[1.85] max-w-2xl mx-auto mb-10">
-          Operiamo con il servizio di lavaggio e sanificazione bidoni a domicilio in
-          tutta l'area metropolitana di Pescara. Raggiungiamo abitazioni, attività
-          commerciali e condomini in città e nei comuni vicini.
-        </p>
-      </div>
-
-      <ul class="reveal delay-1 flex flex-wrap justify-center gap-2.5" aria-label="Comuni serviti">
-        {areas.map((a) => (
-          <li class="area-chip">{a}</li>
-        ))}
-      </ul>
-
-      <p class="reveal delay-2 text-navy/55 text-[0.88rem] mt-8">
-        Il tuo comune non è in elenco? <a href="#prenota" class="text-gold font-semibold hover:underline">Scrivici lo stesso</a>:
-        valutiamo ogni richiesta nella zona di Pescara, Chieti e Teramo.
-      </p>
-    </div>
-  </section>
-
-
-  <!-- Comuni ed enti / MePA -->
-  <section class="py-16 bg-off-white border-b border-navy/12">
-    <div class="max-w-5xl mx-auto px-6 lg:px-10">
-      <div class="reveal flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
-
-        <svg class="w-10 h-10 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-
-        <div class="flex-1">
-          <strong class="block font-heading font-semibold text-navy text-[1.15rem] mb-2">
-            Sei un comune o un ente pubblico?
-          </strong>
-          <p class="text-navy/72 text-[0.93rem] leading-[1.8]">
-            ARSOLVING è un'impresa abilitata al <strong class="font-semibold text-navy">MePA</strong>,
-            il Mercato Elettronico della Pubblica Amministrazione: puoi affidarci il servizio
-            direttamente sul portale, senza procedura di gara.
+    <section class="wash-section wash-coverage" aria-labelledby="zone-titolo">
+      <div class="wash-container wash-split">
+        <div>
+          <p class="wash-kicker">Zone servite</p>
+          <h2 id="zone-titolo" class="wash-heading">Lavaggio bidoni a Montesilvano, Pescara e zone limitrofe</h2>
+          <p class="wash-copy">
+            Operiamo con il servizio di lavaggio e sanificazione bidoni a domicilio in
+            tutta l'area metropolitana di Pescara. Raggiungiamo abitazioni, attività
+            commerciali e condomini in città e nei comuni vicini.
           </p>
         </div>
-
-        <a href={`${base}/contatti/`} class="btn-outline-navy flex-shrink-0 self-start md:self-auto">
-          Riferimenti MePA
-        </a>
-
+        <div>
+          <ul class="coverage-list" aria-label="Comuni serviti">
+            {areas.map((area) => <li>{area}</li>)}
+          </ul>
+          <p class="coverage-note">
+            Il tuo comune non è in elenco? <a href="#prenota">Scrivici lo stesso</a>:
+            valutiamo ogni richiesta nella zona di Pescara, Chieti e Teramo.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Comuni ed enti / MePA -->
+    <section class="wash-mepa" aria-labelledby="mepa-titolo">
+      <div class="wash-container">
+        <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
 
-  <!-- Form prenotazione -->
-  <section id="prenota" class="relative overflow-hidden bg-navy pt-24 pb-28">
-    <div class="relative max-w-3xl mx-auto px-6 lg:px-10">
+          <svg class="w-10 h-10 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
 
-        <!-- Form -->
-        <div class="reveal">
-          <form id="booking-form" class="analysis-form" novalidate>
-            <div class="mb-7">
-              <h3 class="font-display uppercase text-white leading-[0.92]"
-                  style="font-size: clamp(1.7rem, 3.5vw, 2.6rem);">
-                Richiedi un preventivo gratuito.
-              </h3>
-            </div>
-
-            <!-- Honeypot anti-spam -->
-            <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
-              <label>Sito web (lascia vuoto)
-                <input type="text" name="website" tabindex="-1" autocomplete="off" />
-              </label>
-            </div>
-
-            <div class="form-row">
-              <label>
-                <span>Bidoni 2 ruote (da 20€ / piccolo formato)</span>
-                <input type="number" name="bidoni2" min="0" max="50" value="1" />
-              </label>
-              <label>
-                <span>Bidoni 4 ruote (grande formato / condominiale)</span>
-                <input type="number" name="bidoni4" min="0" max="50" value="0" />
-              </label>
-            </div>
-
-            <!-- Isola ecologica -->
-            <label class="isola-toggle">
-              <input type="checkbox" name="isola" value="si" />
-              <span class="isola-toggle-box">
-                <strong>Aggiungi lavaggio isola ecologica</strong>
-                <em>Sanificazione piazzola, pareti e cassonetti — su preventivo dedicato</em>
-              </span>
-            </label>
-
-            <div class="form-row">
-              <label>
-                <span>Nome e cognome</span>
-                <input type="text" name="nome" placeholder="Nome e cognome" required />
-              </label>
-              <label>
-                <span>Telefono</span>
-                <input type="tel" name="telefono" placeholder="+39" required />
-              </label>
-            </div>
-
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="nome@dominio.it" required />
-            </label>
-
-            <label>
-              <span>Indirizzo del lavaggio</span>
-              <input type="text" name="indirizzo" placeholder="Via, numero civico, città" required />
-            </label>
-
-            <button type="submit">Richiedi sopralluogo / informazioni →</button>
-
-            <p id="booking-feedback" class="form-feedback mt-4" role="status" aria-live="polite"></p>
-
-            <p class="form-note mt-4">
-              Ti ricontattiamo per valutare la richiesta e inserirti nel calendario di partenza — <strong>info@arsolving.it</strong>
+          <div class="flex-1">
+            <h2 id="mepa-titolo" class="font-heading font-semibold text-[1.15rem] mb-2">
+              Sei un comune o un ente pubblico?
+            </h2>
+            <p class="text-navy/72 text-[0.93rem] leading-[1.8]">
+              ARSOLVING è un'impresa abilitata al <strong class="font-semibold text-navy">MePA</strong>,
+              il Mercato Elettronico della Pubblica Amministrazione: puoi affidarci il servizio
+              direttamente sul portale, senza procedura di gara.
             </p>
-          </form>
+          </div>
+
+          <a href={`${base}/contatti/`} class="mepa-link flex-shrink-0 self-start md:self-auto">
+            Riferimenti MePA
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section id="prenota" class="wash-section wash-booking" aria-labelledby="prenota-titolo">
+      <div class="wash-container booking-layout">
+        <div>
+          <p class="wash-kicker">Sopralluogo e informazioni</p>
+          <h2 id="prenota-titolo" class="wash-heading">Richiedi un preventivo gratuito.</h2>
+          <p class="wash-copy">
+            Ti ricontattiamo per valutare la richiesta e inserirti nel calendario di partenza.
+          </p>
+          <div class="booking-contacts">
+            <a href={`tel:${phone.international}`}>Chiama il {phone.display}</a>
+            <a href="mailto:info@arsolving.it">info@arsolving.it</a>
+          </div>
         </div>
 
-    </div>
-  </section>
+        <form id="booking-form" class="analysis-form" method="post">
+          <!-- Honeypot anti-spam -->
+          <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+            <label>Sito web (lascia vuoto)
+              <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
 
+          <div class="form-row">
+            <label>
+              <span>Bidoni 2 ruote (da 20€ / piccolo formato)</span>
+              <input type="number" name="bidoni2" min="0" max="50" value="1" />
+            </label>
+            <label>
+              <span>Bidoni 4 ruote (grande formato / condominiale)</span>
+              <input type="number" name="bidoni4" min="0" max="50" value="0" />
+            </label>
+          </div>
 
-  <!-- FAQ -->
-  <section class="py-24 bg-off-white">
-    <div class="max-w-3xl mx-auto px-6 lg:px-10">
-      <div class="reveal mb-12 text-center">
-        <div class="section-label section-label--dark mb-5 justify-center">Domande frequenti</div>
-        <h2 class="font-display uppercase text-navy leading-[0.92]"
-            style="font-size: clamp(2rem, 4vw, 4rem);">
-          Le domande più comuni
-        </h2>
+          <!-- Isola ecologica -->
+          <label class="isola-toggle">
+            <input type="checkbox" name="isola" value="si" />
+            <span class="isola-toggle-box">
+              <strong>Aggiungi lavaggio isola ecologica</strong>
+              <em>Sanificazione piazzola, pareti e cassonetti — su preventivo dedicato</em>
+            </span>
+          </label>
+
+          <div class="form-row">
+            <label>
+              <span>Nome e cognome</span>
+              <input type="text" name="nome" autocomplete="name" required />
+            </label>
+            <label>
+              <span>Telefono</span>
+              <input type="tel" name="telefono" autocomplete="tel" required />
+            </label>
+          </div>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" spellcheck="false" required />
+          </label>
+
+          <label>
+            <span>Indirizzo del lavaggio</span>
+            <input type="text" name="indirizzo" autocomplete="street-address" placeholder="Via, numero civico, città…" required />
+          </label>
+
+          <button type="submit">Richiedi sopralluogo →</button>
+
+          <p id="booking-feedback" class="form-feedback mt-4" role="status" aria-live="polite"></p>
+        </form>
       </div>
+    </section>
 
-      <div class="flex flex-col">
-        {faqs.map((f, i) => (
-          <details class={`faq-item reveal delay-${(i % 3) + 1}`}>
-            <summary>
-              <span>{f.q}</span>
-              <svg class="faq-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </summary>
-            <p>{f.a}</p>
-          </details>
-        ))}
+    <section class="wash-section" aria-labelledby="faq-titolo">
+      <div class="wash-container faq-layout">
+        <div>
+          <p class="wash-kicker">Domande frequenti</p>
+          <h2 id="faq-titolo" class="wash-heading">Le domande più comuni</h2>
+        </div>
+
+        <div class="flex flex-col">
+          {faqs.map((f) => (
+            <details class="faq-item">
+              <summary>
+                <span>{f.q}</span>
+                <svg class="faq-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-
+    </section>
+  </div>
 
   <!-- JSON-LD Service + LocalBusiness + Breadcrumb + FAQ -->
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -429,9 +401,10 @@ const faqs = [
     "provider": {
       "@type": "LocalBusiness",
       "name": "ARSOLVING Multiservice Group",
-      "image": "https://arsolving.it/og-image.png",
+      "image": absoluteSocialImage,
       "url": "https://arsolving.it",
       "email": "info@arsolving.it",
+      "telephone": phone.international,
       "priceRange": "€€",
       "address": {
         "@type": "PostalAddress",
@@ -454,7 +427,8 @@ const faqs = [
           "priceCurrency": "EUR",
           "priceSpecification": {
             "@type": "PriceSpecification",
-            "minPrice": "20",
+            "minPrice": 20,
+            "valueAddedTaxIncluded": false,
             "priceCurrency": "EUR"
           }
         }
@@ -485,8 +459,6 @@ const faqs = [
       if (!form) return;
 
       const PRICE_2 = 20, PRICE_4 = 25, VAT = 1.22;
-      const totalEl = document.getElementById('price-total');
-      const isolaNote = document.getElementById('price-isola-note');
       const feedback = document.getElementById('booking-feedback');
       const btn = form.querySelector('button[type=submit]');
       const originalBtnText = btn ? btn.textContent : '';
@@ -499,15 +471,8 @@ const faqs = [
         const b4 = Math.max(0, parseInt(form.bidoni4.value, 10) || 0);
         const isola = form.isola.checked;
         const total = (b2 * PRICE_2 + b4 * PRICE_4) * VAT;
-        if (totalEl) totalEl.textContent = fmt(total);
-        if (isolaNote) isolaNote.hidden = !isola;
         return { b2, b4, isola, total };
       };
-
-      form.bidoni2.addEventListener('input', calc);
-      form.bidoni4.addEventListener('input', calc);
-      form.isola.addEventListener('change', calc);
-      calc();
 
       const setFeedback = (msg, type) => {
         if (!feedback) return;
@@ -524,6 +489,7 @@ const faqs = [
 
         if ((b2 + b4) < 1 && !isola) {
           setFeedback('Indica almeno un bidone o seleziona il lavaggio isola ecologica.', 'error');
+          form.bidoni2.focus();
           return;
         }
         if (!data.nome || !data.email || !data.telefono || !data.indirizzo) {
@@ -602,197 +568,395 @@ ${isola ? '  (Nota: l\'isola ecologica va aggiunta a parte dopo sopralluogo, con
   </script>
 
   <style>
-    /* Sfondo blu pieno, senza trama quadrettata */
-    .page-hero::before { display: none; }
+    /* Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V5 */
+    .wash-page {
+      --wash-ink: var(--color-navy);
+      --wash-deep: #091524;
+      --wash-paper: var(--color-off-white);
+      --wash-white: #fff;
+      --wash-stone: #eeece6;
+      --wash-accent: var(--color-gold-light);
+      --wash-ochre: #76581c;
+      --wash-muted: #45536a;
+      --wash-light: #d4deeb;
+      --wash-rule: #d5d8db;
+      --wash-rule-dark: #45536a;
+      --wash-error: #fca5a5;
+      --wash-success: #86efac;
+      background: var(--wash-paper);
+      color: var(--wash-ink);
+    }
 
-    .btn-ghost-light {
+    .wash-container {
+      width: min(100% - clamp(2rem, 8vw, 8rem), 72rem);
+      margin-inline: auto;
+    }
+
+    .wash-section { padding-block: clamp(3.3rem, 7.5vw, 6.5rem); }
+    :global(html:has(.wash-page)), :global(body:has(.wash-page)) { overflow-x: clip; }
+    .wash-page section[id] { scroll-margin-top: 5rem; }
+
+    .wash-hero {
+      padding-block: clamp(6.5rem, 10vw, 8rem) clamp(2.3rem, 6vw, 4.5rem);
+      background: var(--wash-ink);
+      color: var(--wash-white);
+    }
+
+    .hero-grid-layout,
+    .wash-split,
+    .showcase,
+    .service-layout,
+    .booking-layout,
+    .faq-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: clamp(1.6rem, 5vw, 4rem);
+    }
+
+    .hero-grid-layout, .wash-split { align-items: center; }
+
+    .wash-kicker {
+      margin: 0 0 0.9rem;
+      color: var(--wash-ochre);
+      font: 800 0.72rem/1.55 var(--font-body);
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    :is(.wash-hero, .wash-price, .wash-booking) .wash-kicker { color: var(--wash-accent); }
+
+    .wash-title, .wash-heading {
+      font-family: var(--font-display);
+      font-weight: 400;
+      line-height: 0.97;
+      overflow-wrap: anywhere;
+      text-wrap: balance;
+    }
+
+    .wash-title { font-size: clamp(2.65rem, 5.35vw, 5.25rem); }
+    .wash-title span { display: block; color: var(--wash-accent); }
+    .wash-heading { font-size: clamp(2.35rem, 4.6vw, 4.55rem); }
+
+    .hero-description, .wash-copy {
+      max-width: 54ch;
+      margin-top: 1.2rem;
+      color: var(--wash-muted);
+      line-height: 1.75;
+    }
+
+    .hero-description, .wash-booking .wash-copy { color: var(--wash-light); }
+    .hero-description strong { color: var(--wash-white); }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.3rem;
+      margin-top: 1.55rem;
+    }
+
+    .wash-button, .wash-video-link, .mepa-link {
       display: inline-flex;
       align-items: center;
-      padding: 0.85rem 1.6rem;
-      border: 1px solid rgba(255,255,255,0.28);
-      color: rgba(255,255,255,0.9);
-      font-size: 0.72rem;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 2.85rem;
+      padding: 0.55rem 1rem;
       font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: border-color 0.22s ease, background 0.22s ease, color 0.22s ease;
-    }
-    .btn-ghost-light:hover {
-      border-color: rgba(199,162,74,0.7);
-      background: rgba(199,162,74,0.12);
-      color: #fff;
-    }
-
-    .section-label--dark { color: rgba(14,29,52,0.65); }
-    .section-label--dark::before { background: #C7A24A; }
-
-    .area-chip {
-      list-style: none;
-      padding: 0.5rem 1.05rem;
-      border: 1px solid rgba(14,29,52,0.16);
-      border-radius: 999px;
-      background: #fff;
-      color: rgba(14,29,52,0.78);
-      font-family: var(--font-heading);
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
-    }
-    .area-chip:hover {
-      border-color: rgba(199,162,74,0.6);
-      background: rgba(199,162,74,0.08);
-      color: #0E1D34;
-    }
-
-    .price-card {
-      background: #fff;
-      border: 1px solid rgba(14,29,52,0.12);
-      border-radius: 2px;
-      padding: 2.2rem;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-    }
-    .price-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 50px rgba(14,29,52,0.08);
-      border-color: rgba(199,162,74,0.4);
-    }
-    .price-card--feature {
-      border-color: rgba(199,162,74,0.5);
-      background: linear-gradient(180deg, rgba(199,162,74,0.07) 0%, #fff 55%);
-    }
-
-    /* Toggle isola nel form */
-    .isola-toggle {
-      display: block !important;
-      margin: 1.25rem 0;
-      cursor: pointer;
-    }
-    .isola-toggle input { position: absolute; opacity: 0; pointer-events: none; }
-    .isola-toggle-box {
-      display: block;
-      padding: 0.95rem 1.1rem;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.07);
-      border-radius: 2px;
-      transition: border-color 0.18s ease, background 0.18s ease;
-    }
-    .isola-toggle-box strong {
-      display: block;
-      color: rgba(255,255,255,0.9);
       font-size: 0.86rem;
-      font-weight: 700;
-      letter-spacing: 0;
-      text-transform: none;
-    }
-    .isola-toggle-box em {
-      display: block;
-      margin-top: 0.2rem;
-      color: rgba(255,255,255,0.55);
-      font-size: 0.76rem;
-      font-style: normal;
-      font-weight: 500;
-      letter-spacing: normal;
-      text-transform: none;
-    }
-    .isola-toggle-box::before {
-      content: '+';
-      float: right;
-      width: 1.4rem; height: 1.4rem;
-      margin-left: 0.75rem;
-      display: grid; place-items: center;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 3px;
-      color: rgba(255,255,255,0.7);
-      font-weight: 700;
-      transition: all 0.18s ease;
-    }
-    .isola-toggle input:checked + .isola-toggle-box {
-      border-color: rgba(199,162,74,0.75);
-      background: rgba(199,162,74,0.14);
-    }
-    .isola-toggle input:checked + .isola-toggle-box::before {
-      content: '✓';
-      border-color: #C7A24A;
-      background: #C7A24A;
-      color: #0E1D34;
+      white-space: nowrap;
+      touch-action: manipulation;
     }
 
-    .price-estimate {
-      margin: 1.25rem 0;
-      padding: 1rem 1.1rem;
-      border: 1px solid rgba(199,162,74,0.4);
-      background: rgba(199,162,74,0.1);
-      border-radius: 2px;
-    }
-    .price-estimate-main {
-      display: flex;
+    .wash-button { background: var(--wash-accent); color: var(--wash-deep); }
+    .wash-button:hover { background: var(--color-gold-pale); }
+    .wash-video-link { padding-inline: 0.15rem; color: var(--wash-white); }
+    .wash-video-link:hover { color: var(--wash-accent); }
+    .wash-video-link svg { color: var(--wash-accent); }
+
+    .hero-photo, .site-photo, .tech-photo, .service-photo { overflow: clip; }
+    .hero-photo { aspect-ratio: 4 / 3; border-bottom: 4px solid var(--wash-accent); }
+    .wash-image { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .hero-photo .wash-image { object-position: 53% center; }
+
+    .showcase {
       align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      background: var(--wash-white);
+      border: 1px solid var(--wash-rule);
+      padding: clamp(1rem, 4.5vw, 4rem);
     }
-    .price-estimate-note {
-      margin: 0.6rem 0 0;
-      padding-top: 0.6rem;
-      border-top: 1px solid rgba(199,162,74,0.25);
-      color: rgba(255,255,255,0.72);
-      font-size: 0.78rem;
-    }
-    .price-estimate-label {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.64rem;
+
+    .showcase-copy { min-width: 0; }
+    .previous-spot {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.65rem;
+      min-height: 2.6rem;
+      color: var(--wash-ink);
+      font-size: 0.84rem;
       font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
     }
-    .price-estimate-value {
-      color: #C7A24A;
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      line-height: 1;
+    .previous-spot:hover { color: var(--wash-ochre); }
+    .site-photo { align-self: start; }
+    .site-photo .wash-image { aspect-ratio: 16 / 10; object-position: center 56%; }
+    .site-photo figcaption {
+      padding-top: 0.7rem;
+      font-size: 0.76rem;
+      color: var(--wash-muted);
+    }
+
+    .spot-frame {
+      width: min(100%, 17rem);
+      justify-self: center;
+      background: var(--wash-deep);
+      color: var(--wash-light);
+      border: 1px solid var(--wash-deep);
+    }
+
+    .spot-frame video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9 / 16;
+      background: var(--wash-deep);
+    }
+
+    .spot-frame figcaption {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.3rem;
+      padding: 0.65rem 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .spot-frame figcaption span:last-child { font-variant-numeric: tabular-nums; }
+
+    .wash-pillars {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      margin-top: clamp(1.5rem, 4vw, 3.5rem);
+      gap: 1.3rem;
+    }
+
+    .wash-pillars li {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.9rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--wash-rule);
+    }
+
+    .wash-pillars svg, .service-check { color: var(--wash-ochre); }
+    .wash-pillars h3 { font-family: var(--font-heading); font-weight: 700; }
+    .wash-pillars p {
+      margin-top: 0.4rem;
+      color: var(--wash-muted);
+      font-size: 0.89rem;
+      line-height: 1.65;
+    }
+
+    .wash-tech, .wash-coverage {
+      padding-block: clamp(2.5rem, 5vw, 4rem);
+      border-block: 1px solid var(--wash-rule);
+      background: var(--wash-stone);
+    }
+
+    .tech-photo { aspect-ratio: 3 / 2; }
+    .wash-services { background: var(--wash-white); }
+
+    .service-layout {
+      align-items: start;
+      margin-top: clamp(1.5rem, 3.5vw, 2.6rem);
+    }
+
+    .service-photo { aspect-ratio: 16 / 9; }
+    .service-copy { padding-top: 1.4rem; }
+
+    .wash-price {
+      padding: clamp(1rem, 3vw, 2.3rem);
+      border-top: 4px solid var(--wash-accent);
+      background: var(--wash-ink);
+      color: var(--wash-light);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .price-line {
+      display: flex;
+      align-items: baseline;
+      gap: 0.45rem;
       white-space: nowrap;
     }
 
-    .form-feedback { font-size: 0.85rem; min-height: 1.2em; color: rgba(255,255,255,0.65); }
-    .form-feedback[data-state="error"]   { color: #fca5a5; }
-    .form-feedback[data-state="success"] { color: #86efac; }
-
-    .form-note { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
-    .form-note strong { color: rgba(255,255,255,0.78); font-weight: 700; }
-
-    /* FAQ */
-    .faq-item {
-      border-bottom: 1px solid rgba(14,29,52,0.14);
+    .price-line strong {
+      color: var(--wash-white);
+      font: 400 clamp(3.9rem, 7vw, 6.5rem)/1 var(--font-display);
     }
+
+    .price-detail {
+      margin-block: 1.25rem;
+      padding-block: 1.1rem;
+      border-block: 1px solid var(--wash-rule-dark);
+    }
+    .price-detail h4 { margin-bottom: 0.35rem; color: var(--wash-white); font-weight: 800; }
+    .price-note { margin-top: 0.6rem; font-size: 0.76rem; }
+
+    .coverage-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 1.2rem;
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .coverage-list li {
+      padding-block: 0.65rem;
+      border-bottom: 1px solid var(--wash-rule);
+    }
+    .coverage-note { margin-top: 1rem; color: var(--wash-muted); font-size: 0.86rem; }
+    .coverage-note a, .booking-contacts a { text-decoration: underline; text-underline-offset: 0.2em; }
+    .coverage-note a { color: var(--wash-ink); font-weight: 800; }
+
+    .wash-mepa { padding-block: 1.55rem; }
+    .mepa-link { border: 1px solid var(--wash-ink); }
+    .mepa-link:hover { background: var(--wash-ink); color: var(--wash-white); }
+
+    .wash-booking { background: var(--wash-ink); color: var(--wash-white); }
+    .booking-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1.1rem;
+      margin-top: 0.8rem;
+    }
+    .booking-contacts a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.6rem;
+      color: var(--wash-accent);
+    }
+    .booking-contacts a:hover { color: var(--wash-white); }
+    .wash-booking .analysis-form { padding: clamp(0.85rem, 4vw, 2.15rem); }
+
+    .analysis-form :is(input, button) { min-height: 2.7rem; }
+    .analysis-form .form-row { grid-template-columns: minmax(0, 1fr); }
+    .analysis-form .form-row label { grid-template-rows: 1fr auto; }
+    .analysis-form button {
+      font-size: 0.87rem;
+      letter-spacing: 0;
+      text-transform: none;
+      padding-inline: 0.5rem;
+    }
+    .analysis-form button:disabled { opacity: 0.72; cursor: wait; transform: none; }
+
+    .isola-toggle { position: relative; cursor: pointer; }
+    .isola-toggle input {
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 1px;
+      height: 1px;
+      min-height: 0;
+      padding: 0;
+      opacity: 0;
+    }
+
+    .isola-toggle-box {
+      display: block;
+      padding: 0.85rem;
+      border: 1px solid var(--wash-rule-dark);
+      background: var(--wash-ink);
+    }
+    .isola-toggle-box strong, .isola-toggle-box em {
+      display: block;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .isola-toggle-box strong { color: var(--wash-white); font-size: 0.86rem; }
+    .isola-toggle-box em { color: var(--wash-light); font-size: 0.75rem; font-style: normal; }
+    .isola-toggle-box::before {
+      content: '+';
+      display: grid;
+      place-items: center;
+      float: right;
+      margin-left: 0.6rem;
+      width: 1.45rem;
+      height: 1.45rem;
+      color: var(--wash-white);
+      border: 1px solid var(--wash-light);
+      font-size: 0.9rem;
+    }
+    .isola-toggle input:checked + span { border-color: var(--wash-accent); }
+    .isola-toggle input:checked + span::before {
+      content: '✓';
+      background: var(--wash-accent);
+      border-color: var(--wash-accent);
+      color: var(--wash-deep);
+    }
+
+    .form-feedback:empty { display: none; }
+    .form-feedback { font-size: 0.85rem; }
+    .form-feedback[data-state="error"] { color: var(--wash-error); }
+    .form-feedback[data-state="success"] { color: var(--wash-success); }
+
+    .faq-item { border-bottom: 1px solid var(--wash-rule); }
+    .faq-item:first-child { border-top: 1px solid var(--wash-rule); }
     .faq-item summary {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding: 1.35rem 0.25rem;
+      padding-block: 1rem;
       cursor: pointer;
       list-style: none;
-      color: #0E1D34;
       font-family: var(--font-heading);
-      font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.9rem;
+      font-weight: 700;
     }
     .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-icon {
-      width: 16px; height: 16px;
-      flex-shrink: 0;
-      color: #C7A24A;
-      transition: transform 0.25s ease;
-    }
+    .faq-icon { width: 1rem; height: 1rem; flex-shrink: 0; color: var(--wash-ochre); }
     .faq-item[open] .faq-icon { transform: rotate(45deg); }
-    .faq-item p {
-      margin: 0;
-      padding: 0 2rem 1.5rem 0.25rem;
-      color: rgba(14,29,52,0.7);
-      font-size: 0.92rem;
-      line-height: 1.8;
+    .faq-item p { padding: 0 1.4rem 1rem 0; color: var(--wash-muted); line-height: 1.75; }
+
+    .wash-page :is(a, summary, video):focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+    }
+    .wash-hero .wash-button:focus-visible, .wash-price .wash-button:focus-visible,
+    .analysis-form :is(input, button):focus-visible,
+    .isola-toggle input:focus-visible + span {
+      outline: 2px solid var(--wash-accent);
+      outline-offset: 3px;
+    }
+    .spot-frame video:focus-visible { outline-color: var(--wash-accent); }
+
+    @media (min-width: 680px) {
+      .showcase {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.75fr);
+        grid-template-rows: auto 1fr;
+        column-gap: clamp(1.6rem, 5vw, 4rem);
+        row-gap: 1.5rem;
+      }
+      .showcase-copy { align-self: end; }
+      .site-photo { grid-column: 1; grid-row: 2; }
+      .spot-frame { grid-column: 2; grid-row: 1 / span 2; }
+      .wash-pillars { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .analysis-form .form-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (min-width: 960px) {
+      .hero-grid-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.22fr); }
+      .hero-photo { aspect-ratio: 1.32; }
+      .wash-split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .service-layout { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); }
+      .booking-layout, .faq-layout { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.25fr); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      :global(html:has(.wash-page)) { scroll-behavior: auto; }
+      .analysis-form button { transition: none; }
     }
   </style>
-
 </Base>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://arsolving.it/</loc>
     <lastmod>2026-05-17</lastmod>
@@ -8,9 +9,16 @@
   </url>
   <url>
     <loc>https://arsolving.it/lavaggio-bidoni/</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <video:video>
+      <video:thumbnail_loc>https://arsolving.it/media/lavaggio-bidoni/anteprima-procedimento-lavaggio-isole-ecologiche.jpg</video:thumbnail_loc>
+      <video:title>Lavaggio e sanificazione isole ecologiche | ARSOLVING</video:title>
+      <video:description>Il procedimento ARSOLVING per il lavaggio di cassonetti e isole ecologiche: alta pressione, pulizia manuale, risciacquo, fondo del bidone dopo il lavaggio e recupero dell’acqua.</video:description>
+      <video:content_loc>https://arsolving.it/media/lavaggio-bidoni/lavaggio-isole-ecologiche-prima-e-dopo.mp4</video:content_loc>
+      <video:duration>32</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://arsolving.it/services/</loc>

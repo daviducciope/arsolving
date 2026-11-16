@@ -7,12 +7,16 @@ export interface Props {
   title: string
   description?: string
   noindex?: boolean
+  socialImage?: string
+  socialImageAlt?: string
 }
 
 const {
   title,
   description = 'ARSOLVING — Qualsiasi problema. Noi lo risolviamo. Operativi, digitali e strategici.',
-  noindex = false
+  noindex = false,
+  socialImage = "/og-image.png",
+  socialImageAlt
 } = Astro.props
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
@@ -22,7 +26,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteUrl).href
 const pageTitle = title === 'Home'
   ? 'ARSOLVING — Qualsiasi problema. Noi lo risolviamo.'
   : `${title} — ARSOLVING`
-const ogImage = `${siteUrl}/og-image.png`
+const ogImage = new URL(socialImage, siteUrl).href
 ---
 
 <!doctype html>
@@ -49,6 +53,7 @@ const ogImage = `${siteUrl}/og-image.png`
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={ogImage} />
+  {socialImageAlt && <meta property="og:image:alt" content={socialImageAlt} />}
   <meta property="og:locale" content="it_IT" />
 
   <!-- Twitter / X Card -->
@@ -56,6 +61,8 @@ const ogImage = `${siteUrl}/og-image.png`
   <meta name="twitter:title" content={pageTitle} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
+
+  {socialImageAlt && <meta name="twitter:image:alt" content={socialImageAlt} />}
 
   <!-- JSON-LD Organization -->
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -101,11 +108,26 @@ const ogImage = `${siteUrl}/og-image.png`
   </script>
 </head>
 <body class="bg-off-white text-navy overflow-x-hidden">
+  <a href="#main-content" class="skip-link">Vai al contenuto</a>
   <Navbar />
-  <main>
+  <main id="main-content" tabindex="-1">
     <slot />
   </main>
   <Footer />
   <script src="../scripts/reveal.js"></script>
 </body>
 </html>
+
+<style>
+  .skip-link {
+    position: fixed;
+    z-index: 100;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.65rem 1rem;
+    background: var(--color-off-white);
+    color: var(--color-navy);
+    transform: translateY(-200%);
+  }
+  .skip-link:focus { transform: none; }
+</style>
